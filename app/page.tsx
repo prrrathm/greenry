@@ -1,103 +1,113 @@
+import SplitText from "@/components/animations/SplitText";
+import GalleryCarousel from "@/components/carousel/Gallery";
+import FAQs from "@/components/FAQ";
+import AutoPlayVideo from "@/components/VideoPlayer";
+import { EmblaOptionsType } from "embla-carousel";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
+// import { useRef } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	const bannerVideoURL = "videos/home-banner.mp4";
+	// const videoRef = useRef<HTMLVideoElement>(null);
+	// useEffect(() => {
+	// 	videoRef.current.load();
+	// 	const playPromise = videoRef.current.play();
+	// 	if (playPromise !== undefined) {
+	// 		playPromise.catch((error) => {
+	// 			console.warn("Autoplay failed:", error);
+	// 		});
+	// 	}
+	// }, []);
+	const OPTIONS: EmblaOptionsType = { loop: true };
+	const SLIDE_COUNT = 5;
+	const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+	const faqs = [
+		{
+		  q: "What is Greenry?",
+		  a: "Greenry is an environmental organization focused on biodiversity conservation and ecological restoration."
+		},
+		{
+		  q: "What types of projects does Greenry undertake?",
+		  a: "Greenry undertakes projects such as afforestation, wetland restoration, habitat creation, and native species reintroduction."
+		},
+		{
+		  q: "How can I get involved with Greenry's initiatives?",
+		  a: "You can get involved by volunteering, donating, or partnering with us through our website or outreach programs."
+		},
+		{
+		  q: "Where does Greenry operate?",
+		  a: "Greenry operates across multiple regions, particularly focusing on ecologically degraded areas that need urgent restoration."
+		},
+		{
+		  q: "Why is biodiversity conservation important?",
+		  a: "Biodiversity conservation ensures ecosystem stability, supports life-sustaining services, and helps combat climate change."
+		}
+	  ];
+	  
+	return (
+		<div className="min-h-screen">
+			<div className="h-screen relative mt-20 py-10 border border-amber-200 flex flex-col items-center gap-4">
+				<div className="flex text-center text-5xl font-black">
+					Create a Thriving Environment
+					<br /> With Green Companions
+				</div>
+				<div className="text-center text-gray-500 text-sm">
+					Plants reduce stress and improve your mood, so they are ideal <br />{" "}
+					for use at home and in the workspace.
+				</div>
+				<div className="bg-green-800 px-4 py-1 text-white rounded-full font-bold text-lg my-5">
+					Book a Demo
+				</div>
+				{/* <AutoPlayVideo src={bannerVideoURL} /> */}
+				{/* <div className="w-full h-full absolute top-0 bg-black/40">hello</div> */}
+			</div>
+			<div className="min-h-screen bg-green-800/20 py-20 px-20 flex flex-col gap-10">
+				<div className="flex gap-6">
+					<div className="basis-1/2">
+						<div className="w-[80%] pt-6">
+							Greenry has undertaken numerous impactful projects focused on
+							ecological restoration and biodiversity conservation. Through a
+							combination of scientific expertise, community engagement, and
+							sustainable practices.
+						</div>
+					</div>
+					<div className="flex flex-col gap-6 basis-1/2">
+						<div className="text-5xl font-black">
+							We strive to provide the most calming workspace tailormade for
+							you.
+						</div>
+						<div className="flex gap-4 items-center justify-start font-semibold text-lg">
+							<div className="bg-green-800 text-white rounded-full px-4 py-1">
+								About Us
+							</div>
+							<div className="flex gap-2 items-center">
+								View Projects <MoveRight className="h-4 w-4" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="flex flex-col gap-6">
+					<div className="flex gap-5 items-center justify-between">
+						<div className="text-5xl font-black basis-1/2">
+							Events, Projects and Campaigns for Environment Sustanibility
+						</div>
+						<div className="basis-1/2 flex justify-around">
+							<div className="w-[60%]">
+								Collaborating for a sustainable world through events and
+								impactful campaigns
+							</div>
+						</div>
+					</div>
+					<GalleryCarousel slides={SLIDES} options={OPTIONS} />
+				</div>
+				<div></div>
+			</div>
+			<div className="min-h-screen">
+			</div>
+			<div className="min-h-screen bg-green-800/20 flex justify-center items-center w-full">
+				<FAQs data={faqs} />
+			</div>
+		</div>
+	);
 }

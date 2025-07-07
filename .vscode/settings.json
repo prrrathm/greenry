@@ -1,0 +1,8 @@
+{
+	"editor.formatOnSave": true,
+	"[json]": {
+		"editor.insertSpaces": false,
+		"editor.detectIndentation": false
+	},
+	"prettier.useTabs": true
+}
