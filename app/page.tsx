@@ -8,7 +8,7 @@ import { MoveRight } from "lucide-react";
 // import { useRef } from "react";
 
 export default function Home() {
-	const bannerVideoURL = "videos/home-banner.mp4";
+	// const bannerVideoURL = "videos/home-banner.mp4";
 	// const videoRef = useRef<HTMLVideoElement>(null);
 	// useEffect(() => {
 	// 	videoRef.current.load();
