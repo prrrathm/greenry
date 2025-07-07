@@ -1,10 +1,10 @@
-import SplitText from "@/components/animations/SplitText";
+// import SplitText from "@/components/animations/SplitText";
 import GalleryCarousel from "@/components/carousel/Gallery";
 import FAQs from "@/components/FAQ";
-import AutoPlayVideo from "@/components/VideoPlayer";
+// import AutoPlayVideo from "@/components/VideoPlayer";
 import { EmblaOptionsType } from "embla-carousel";
 import { MoveRight } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
 // import { useRef } from "react";
 
 export default function Home() {
