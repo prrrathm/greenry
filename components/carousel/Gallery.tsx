@@ -33,7 +33,7 @@ const GalleryCarousel: React.FC<PropType> = (props) => {
   const { autoplayIsPlaying, toggleAutoplay, onAutoplayButtonClick } =
     useAutoplay(emblaApi)
 
-  const { showAutoplayProgress } = useAutoplayProgress(emblaApi, progressNode)
+  const { showAutoplayProgress, progressBarStyles } = useAutoplayProgress(emblaApi, progressNode)
 
   return (
     <div className="embla">
@@ -66,7 +66,7 @@ const GalleryCarousel: React.FC<PropType> = (props) => {
             showAutoplayProgress ? '' : ' embla__progress--hidden'
           )}
         >
-          <div className="embla__progress__bar" ref={progressNode} />
+          <div className="embla__progress__bar" ref={progressNode} style={progressBarStyles} />
         </div>
 
         <button className="embla__play" onClick={toggleAutoplay} type="button">

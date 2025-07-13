@@ -4,6 +4,7 @@ import { EmblaCarouselType } from "embla-carousel";
 
 type UseAutoplayProgressType = {
 	showAutoplayProgress: boolean;
+	progressBarStyles: React.CSSProperties;
 };
 
 export const useAutoplayProgress = <ProgressElement extends HTMLElement>(
@@ -11,6 +12,7 @@ export const useAutoplayProgress = <ProgressElement extends HTMLElement>(
 	progressNode: React.RefObject<ProgressElement | null>,
 ): UseAutoplayProgressType => {
 	const [showAutoplayProgress, setShowAutoplayProgress] = useState(false);
+	const [progressBarStyles, setProgressBarStyles] = useState<React.CSSProperties>({});
 	const animationName = useRef("");
 	const timeoutId = useRef(0);
 	const rafId = useRef(0);
@@ -26,17 +28,27 @@ export const useAutoplayProgress = <ProgressElement extends HTMLElement>(
 			animationName.current = style.animationName;
 		}
 
-		node.style.animationName = "none";
-		node.style.transform = "translate3d(0,0,0)";
+		// Use React state instead of direct DOM manipulation
+		setProgressBarStyles({
+			animationName: "none",
+			transform: "translate3d(0,0,0)"
+		});
 
 		rafId.current = window.requestAnimationFrame(() => {
 			timeoutId.current = window.setTimeout(() => {
-				node.style.animationName = animationName.current;
-				node.style.animationDuration = `${timeUntilNext}ms`;
+				setProgressBarStyles({
+					animationName: animationName.current,
+					animationDuration: `${timeUntilNext}ms`
+				});
 			}, 0);
 		});
 
 		setShowAutoplayProgress(true);
+	}, []);
+
+	const stopProgress = useCallback(() => {
+		setShowAutoplayProgress(false);
+		setProgressBarStyles({});
 	}, []);
 
 	useEffect(() => {
@@ -45,8 +57,8 @@ export const useAutoplayProgress = <ProgressElement extends HTMLElement>(
 
 		emblaApi
 			.on("autoplay:timerset", () => startProgress(autoplay.timeUntilNext()))
-			.on("autoplay:timerstopped", () => setShowAutoplayProgress(false));
-	}, [emblaApi]);
+			.on("autoplay:timerstopped", stopProgress);
+	}, [emblaApi, startProgress, stopProgress]);
 
 	useEffect(() => {
 		return () => {
@@ -57,5 +69,6 @@ export const useAutoplayProgress = <ProgressElement extends HTMLElement>(
 
 	return {
 		showAutoplayProgress,
+		progressBarStyles,
 	};
 };
