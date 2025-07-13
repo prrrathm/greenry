@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       // https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com
       {
         protocol: "https",
-        hostname: "v2-statics.s3.ap-south-1.amazonaws.com",
+        hostname: "images.pexels.com",
         pathname: "/**",
       }
       ]
