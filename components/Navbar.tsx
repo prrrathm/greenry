@@ -1,32 +1,41 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const NavBar = () => {
 	const navLinks = [
 		{ label: "Home", link: "/" },
-		{ label: "Our Services", link: "/" },
-		{ label: "About Us", link: "/" },
-		{ label: "Blogs", link: "/'" },
+		{ label: "Services", link: "#services" },
+		{ label: "About", link: "#about" },
+		{ label: "Testimonials", link: "#testimonials" },
 	];
+
+	const scrollToBooking = () => {
+		document.getElementById('book-demo')?.scrollIntoView({ behavior: 'smooth' });
+	};
+
 	return (
-		<div className="fixed top-0 flex items-center justify-between w-full z-50 px-6 py-6 bg-white">
+		<div className="fixed top-0 flex items-center justify-between w-full z-50 px-4 sm:px-6 py-4 bg-white/95 backdrop-blur-sm border-b border-gray-100">
 			{/* Logo */}
-			<div className="font-black text-xl text-green-7800">GREENRY</div>
+			<div className="font-black text-xl text-green-800">GREENRY</div>
 			{/* Menu */}
-			<div className="flex gap-10 items-end justify-center font-bold">
+			<div className="hidden md:flex gap-8 items-center font-medium">
 				{navLinks.map((item, iter) => (
 					<Link
 						key={iter}
 						href={item.link}
-						className="cursor-pointer hover:text-green-800 hover:drop-shadow-lg transition-all duration-200"
+						className="text-gray-700 hover:text-green-600 transition-colors duration-200"
 					>
 						{item.label}
 					</Link>
 				))}
 			</div>
 			{/* CTA */}
-			<div className="border border-green-700 px-4 py-1 rounded-full text-green-800 bg-green-800/20 backdrop-blur font-semibold cursor-pointer">
-				Enquire Now
-			</div>
+			<Button 
+				onClick={scrollToBooking}
+				className="bg-green-600 hover:bg-green-700 text-white px-6 py-2"
+			>
+				Book Demo
+			</Button>
 		</div>
 	);
 };
