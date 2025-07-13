@@ -32,7 +32,7 @@ export default function Hero() {
 								<span className="text-green-800 relative">Thriving</span>{" "}
 								Environment
 							</h1>
-							<p className="text-xl text-gray-600 max-w-2xl">
+							<p className="text-sm md:text-xl text-gray-600 max-w-2xl">
 								Transform your workspace and home with our premium plant
 								solutions. Boost productivity, reduce stress, and create
 								healthier environments with our expert-curated green companions.
@@ -51,7 +51,7 @@ export default function Hero() {
 							<Button
 								variant="outline"
 								size="lg"
-								className="px-3 py-3 text-lg border-green-800 text-green-800 hover:bg-green-50 font-semibold"
+								className="px-3 py-3 text-lg border-2 border-green-700 text-green-900 hover:text-green-800 hover:bg-green-100 font-bold bg-green-100/60 cursor-pointer"
 							>
 								<Play className="h-5 w-5" />
 								Watch Demo

@@ -50,10 +50,10 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
               <CardHeader className="text-center">
                 <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                  <service.icon className="h-8 w-8 text-green-600" />
+                  <service.icon className="h-8 w-8 text-green-800" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-gray-900">
                   {service.title}
@@ -62,7 +62,7 @@ export default function Services() {
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex flex-col justify-between ">
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-600">
@@ -71,9 +71,9 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="font-semibold text-green-600 mb-3">{service.price}</p>
-                  <Button className="w-full bg-green-600 hover:bg-green-700">
+                <div className="pt-4">
+                  <p className="font-semibold text-green-800 mb-3">{service.price}</p>
+                  <Button className="w-full bg-green-800 hover:bg-green-700 cursor-pointer">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>

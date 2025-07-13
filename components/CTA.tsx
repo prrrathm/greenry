@@ -9,7 +9,7 @@ export default function CTA() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-green-900  to-green-800 from-0% to-80%">
+    <section className="py-20 bg-black bg-gradient-to-r from-green-600/20  to-green-800 from-0% to-80%">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center text-white">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">

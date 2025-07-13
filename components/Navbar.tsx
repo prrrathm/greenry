@@ -9,7 +9,7 @@ export const NavBar = () => {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 300);
+			setIsScrolled(window.scrollY > 150);
 		};
 
 		window.addEventListener("scroll", handleScroll);
@@ -29,10 +29,10 @@ export const NavBar = () => {
 	return (
 		<div
 			className={cn({
-				"fixed flex items-center justify-between z-50 px-4 sm:px-6 py-4 bg-white/70 backdrop-blur transition-all duration-500 drop-shadow-xl ":
+				"fixed flex items-center justify-between z-50 px-4 sm:px-6 py-4  backdrop-blur transition-all duration-500":
 					true,
-				"rounded-none inset-x-0 top-0": isScrolled,
-				"rounded-xl inset-x-1/4 top-8": !isScrolled,
+				"bg-white/70 drop-shadow-lg rounded-none inset-x-0 top-0": isScrolled,
+				"rounded-xl inset-x-1/12 md:inset-x-1/5 top-8": !isScrolled,
 			})}
 		>
 			{/* Logo */}
@@ -50,7 +50,7 @@ export const NavBar = () => {
 				))}
 			</div>
 			{/* CTA */}
-			<Button className="bg-green-800 hover:bg-green-700 text-white px-6 py-2">
+			<Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2">
 				Book Demo
 			</Button>
 		</div>

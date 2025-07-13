@@ -55,7 +55,7 @@ export default function Features() {
             <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="text-center">
                 <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                  <feature.icon className="h-8 w-8 text-green-600" />
+                  <feature.icon className="h-8 w-8 text-green-800" />
                 </div>
                 <CardTitle className="text-xl font-semibold text-gray-900">
                   {feature.title}
