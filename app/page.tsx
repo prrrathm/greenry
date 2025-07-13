@@ -38,7 +38,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Hero />
       <Features />
       <Services />
@@ -51,7 +51,7 @@ export default function Home() {
               Our Recent Projects
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover how we've transformed workspaces and homes with our sustainable plant solutions.
+              Discover how we&apos;ve transformed workspaces and homes with our sustainable plant solutions.
             </p>
           </div>
           <GalleryCarousel slides={SLIDES} options={OPTIONS} />

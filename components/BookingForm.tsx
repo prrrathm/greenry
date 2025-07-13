@@ -52,7 +52,7 @@ export default function BookingForm() {
               <CardHeader>
                 <CardTitle className="text-2xl text-gray-900">Schedule Your Visit</CardTitle>
                 <CardDescription>
-                  Fill out the form below and we'll contact you within 24 hours to confirm your appointment.
+                  Fill out the form below and we&apos;ll contact you within 24 hours to confirm your appointment.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -183,7 +183,7 @@ export default function BookingForm() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white py-3">
+                  <Button type="submit" className="w-full bg-green-700 hover:bg-green-600 text-white py-3">
                     Schedule Free Consultation
                   </Button>
                 </form>
@@ -241,7 +241,7 @@ export default function BookingForm() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Free Consultation</h3>
                   <p className="text-gray-700 text-sm">
                     Our initial consultation is completely free with no obligation. 
-                    We'll assess your space and provide expert recommendations tailored to your needs.
+                    We&apos;ll assess your space and provide expert recommendations tailored to your needs.
                   </p>
                 </CardContent>
               </Card>

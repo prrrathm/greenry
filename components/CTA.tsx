@@ -9,7 +9,7 @@ export default function CTA() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-green-600 to-green-700">
+    <section className="py-20 bg-gradient-to-r from-green-900  to-green-800 from-0% to-80%">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center text-white">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -23,7 +23,7 @@ export default function CTA() {
             <Button 
               onClick={scrollToBooking}
               size="lg" 
-              className="bg-white text-green-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
+              className="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
             >
               Book Free Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -32,7 +32,7 @@ export default function CTA() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 text-lg"
+              className="border-white text-black hover:bg-white hover:text-green-600 px-8 py-3 text-lg"
             >
               <Phone className="mr-2 h-5 w-5" />
               Call Now: (555) 123-4567
