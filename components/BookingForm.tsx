@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar, Clock, MapPin, Phone, Mail, User } from "lucide-react";
 
-export default function BookingForm() {
+export default function BookingFormBeta() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

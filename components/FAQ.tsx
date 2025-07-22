@@ -6,7 +6,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import DOMPurify from "isomorphic-dompurify";
-import { Separator } from "./ui/separator";
+// import { Separator } from "./ui/separator";
 export type FAQsType = {
 	q: string;
 	a: string;
@@ -38,7 +38,7 @@ export function FAQs({ data }: FAQsProps) {
 									/>
 								</AccordionContent>
 							</AccordionItem>
-							{index !== data.length - 1 && <Separator />}
+							{/* {index !== data.length - 1 && <Separator />} */}
 						</div>
 					))}
 				</Accordion>

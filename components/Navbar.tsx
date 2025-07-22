@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import BookingForm from "./BookingFormDialog";
 
 export const NavBar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -50,9 +51,10 @@ export const NavBar = () => {
 				))}
 			</div>
 			{/* CTA */}
-			<Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2">
+			<BookingForm hasTrigger={true} triggerText="Book Demo" />
+			{/* <Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2">
 				Book Demo
-			</Button>
+			</Button> */}
 		</div>
 	);
 };
