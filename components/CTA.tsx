@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowUp, Phone } from "lucide-react";
 
 export default function CTA() {
 	const scrollToBooking = () => {
@@ -28,7 +28,7 @@ export default function CTA() {
 						className="bg-white text-green-800 hover:bg-gray-100 py-4 font-bold text-sm md:text-base w-full"
 					>
 						Book Free Consultation
-						<ArrowRight className="h-5 w-5" />
+						<ArrowUp className="h-5 w-5" />
 					</Button>
 					<div className="font-semibold text-sm md:text-xl">or</div>
 					<Button
@@ -36,7 +36,10 @@ export default function CTA() {
 						// size="lg"
 						className="border-white text-black hover:bg-white hover:text-green-600 p-2 md:p-2.5 text-sm md:text-base w-fit rounded-full"
 					>
-						<Phone fill="oklch(62.7% 0.194 149.214)" className="h-5 w-5 text-green-600" />
+						<Phone
+							fill="oklch(62.7% 0.194 149.214)"
+							className="h-5 w-5 text-green-600"
+						/>
 						{/* Call Now : (+91) 123-4567 */}
 					</Button>
 				</div>
@@ -44,11 +47,15 @@ export default function CTA() {
 				<div className="mt-12 grid grid-cols-3 gap-1 md:gap-8 text-center w-full text-xs md:text-base">
 					<div>
 						<div className="text-xl md:text-3xl font-bold mb-1">24-48h</div>
-						<div className="opacity-90 whitespace-nowrap">Quick Installation</div>
+						<div className="opacity-90 whitespace-nowrap">
+							Quick Installation
+						</div>
 					</div>
 					<div>
 						<div className="text-xl md:text-3xl font-bold mb-1">100%</div>
-            <div className="opacity-90 whitespace-nowrap">Satisfaction Guarantee</div>
+						<div className="opacity-90 whitespace-nowrap">
+							Satisfaction Guarantee
+						</div>
 					</div>
 					<div>
 						<div className="text-xl md:text-3xl font-bold mb-1">24/7</div>

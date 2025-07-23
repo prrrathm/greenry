@@ -46,25 +46,37 @@ export default function Hero() {
 
 						{/* CTA Buttons */}
 						<div className="flex gap-2 sm:gap-4 justify-center lg:justify-start text-sm md:text-lg px-8 md:px-0">
-							<Button
-								// size="lg"
-								className="bg-green-800 cursor-pointer hover:bg-green-700 text-white px-3 sm:px-8 py-3 font-semibold  flex gap-2"
-								onClick={scrollToBooking}
-							>
-								Book Free Consultation
-								<ArrowDown className="h-5 w-5" />
-								{/* <ArrowRight className="h-5 w-5" /> */}
-							</Button>
+							<div className="relative flex">
+								<Button
+									// size="lg"
+									className=" bg-green-800 cursor-pointer hover:bg-green-700 text-white px-3 sm:px-8 py-3 font-semibold flex gap-2"
+									onClick={scrollToBooking}
+								>
+									Book Free Consultation
+									<ArrowDown className="h-5 w-5" />
+									{/* <ArrowRight className="h-5 w-5" /> */}
+								</Button>
+								<Button
+									variant="outline"
+									// size="lg"
+									className="md:hidden border-2 border-green-600 text-green-600 hover:text-green-800 hover:bg-green-100 bg-green-100/60 cursor-pointer rounded-full !px-2 !py-1 absolute -right-12 scale-90"
+								>
+									<Play
+										fill="oklch(62.7% 0.194 149.214)"
+										className="h-5 w-5 text-green-600"
+									/>
+								</Button>
+							</div>
 							<Button
 								variant="outline"
 								// size="lg"
-								className="p-2 border-2 border-green-600 text-green-600 hover:text-green-800 hover:bg-green-100 font-bold bg-green-100/60 cursor-pointer rounded-full md:rounded-md"
+								className="hidden md:flex p-2 border-2 border-green-600 text-green-600 hover:text-green-800 hover:bg-green-100 font-bold bg-green-100/60 cursor-pointer rounded-full md:rounded-md"
 							>
 								<Play
 									fill="oklch(62.7% 0.194 149.214)"
 									className="h-5 w-5 text-green-600"
 								/>
-								<span className="hidden md:block">Watch Demo</span>
+								Watch Demo
 							</Button>
 						</div>
 
