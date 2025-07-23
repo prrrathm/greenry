@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sprout, BrickWall, Flower, SprayCan } from "lucide-react";
+import { motion } from "motion/react";
 
 const services = [
 	{
@@ -69,11 +70,11 @@ export default function Services() {
 	return (
 		<section className="py-20 bg-white">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="text-center mb-16">
+				<div className="text-center mb-10 md:mb-16">
 					<h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
 						Our Services
 					</h2>
-					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+					<p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
 						Comprehensive plant solutions tailored to your specific environment
 						and needs.
 					</p>
@@ -81,44 +82,43 @@ export default function Services() {
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
 					{services.map((service, index) => (
-						<Card
+						<motion.div
 							key={index}
-							className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+							initial={{ opacity: 0, y: 30, scale: 0.95 }}
+							whileInView={{ opacity: 1, y: 0, scale: 1 }}
+							viewport={{ once: true, amount: 0.2 }}
+							transition={{
+								duration: 0.5,
+								delay: index * 0.1,
+								ease: "easeOut",
+							}}
+							className="shadow-lg transition-all duration-300 flex flex-col justify-between rounded-md border "
+							// whileHover={{
+							// 	scale: 1.05,
+							// 	rotate: [-0.5, 0.5, 0], // cute wobble
+							// 	transition: { duration: 0.3 },
+							// }}
 						>
-							<CardHeader className="text-center">
-								<div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-									<service.icon className="h-8 w-8 text-green-800" />
-								</div>
-								<CardTitle className="text-xl font-semibold text-gray-900">
-									{service.title}
-								</CardTitle>
-								<CardDescription className="text-gray-600 text-[0.75rem] text-left">
-									{service.description}
-								</CardDescription>
-							</CardHeader>
-							<CardContent className="flex flex-col justify-between ">
-								{/* <ul className="space-y-2">
-									{service.features.map((feature, featureIndex) => (
-										<li
-											key={featureIndex}
-											className="flex items-center text-sm text-gray-600"
-										>
-											<div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-											{feature}
-										</li>
-									))}
-								</ul> */}
-								<div className="pt-4">
-									{/* <p className="font-semibold text-green-800 mb-3">
-										{service.price}
-									</p> */}
-									<Button className="w-full bg-green-800 hover:bg-green-700 cursor-pointer font-semibold">
-										Learn More
-										<ArrowRight className="ml-2 h-4 w-4" />
-									</Button>
-								</div>
-							</CardContent>
-						</Card>
+							<Card className="h-full shadow-none border-0 transition-all duration-300 flex flex-col justify-between">
+								<CardHeader className="text-center flex flex-col gap-2">
+									<CardTitle className="text-2xl flex items-stretch justify-center gap-2 font-semibold text-gray-900 mb-5">
+										<service.icon className="h-7 w-7 text-green-800" />
+										<div className="">{service.title}</div>
+									</CardTitle>
+									<CardDescription className="text-gray-600 text-base md:text-sm text-center">
+										{service.description}
+									</CardDescription>
+								</CardHeader>
+								<CardContent className="flex flex-col justify-between">
+									<div className="pt-2">
+										<Button className="w-full bg-green-800 hover:bg-green-700 cursor-pointer font-semibold">
+											Learn More
+											<ArrowRight className="ml-2 h-4 w-4" />
+										</Button>
+									</div>
+								</CardContent>
+							</Card>
+						</motion.div>
 					))}
 				</div>
 			</div>

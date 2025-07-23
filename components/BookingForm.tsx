@@ -34,19 +34,19 @@ export default function BookingFormBeta() {
   };
 
   return (
-    <section id="book-demo" className="py-20 bg-gradient-to-br from-green-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+    <section id="book-demo" className="py-20 md:py-20 bg-gradient-to-br from-green-50 to-white">
+      <div className="container mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto flex flex-col gap-4 md:gap-10">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl sm:text-4xl font-bold text-gray-900 mb-2 md:mb-4">
               Book Your Free Consultation
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm md:text-xl text-gray-600 max-w-2xl mx-auto">
               Let our experts assess your space and create a customized plant solution that transforms your environment.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 px-4">
             {/* Form */}
             <Card className="shadow-xl border-0">
               <CardHeader>

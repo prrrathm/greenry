@@ -5,7 +5,6 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import BookingForm from "@/components/BookingForm";
 import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
 import FAQs from "@/components/FAQ";
 // import { EmblaOptionsType } from "embla-carousel";
 import ClientsMarquee from "@/components/ClientsMarquee";
@@ -42,9 +41,8 @@ export default function Home() {
 	return (
 		<div className="min-h-screen relative">
 			<Hero />
-			<ClientsMarquee />
-			<Features />
 			<Services />
+			<ClientsMarquee />
 
 			{/* Projects Gallery Section */}
 			{/* <section className="py-20 bg-green-50">
@@ -62,18 +60,17 @@ export default function Home() {
 				</div>
 			</section> */}
 
-			<Testimonials />
 			<BookingForm />
-			<CTA />
+			<Testimonials />
+			<Features />
 
 			{/* FAQ Section */}
 			<section className="py-20 bg-gray-50">
-				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="container mx-auto px-0 sm:px-6 lg:px-8">
 					<FAQs data={faqs} />
 				</div>
 			</section>
-
-			<Footer />
+			<CTA />
 		</div>
 	);
 }

@@ -35,6 +35,9 @@ const BookingForm = ({
 						<Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2 cursor-pointer">
 							{triggerText}
 						</Button>
+						{/* <Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2 cursor-pointer">
+							{triggerText}
+						</Button> */}
 					</DialogTrigger>
 				) : (
 					<></>

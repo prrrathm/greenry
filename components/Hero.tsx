@@ -1,12 +1,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowDown, Play } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
+	const scrollToBooking = () => {
+		document
+			.getElementById("book-demo")
+			?.scrollIntoView({ behavior: "smooth" });
+	};
+
 	return (
-		<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50">
+		<section className="relative pt-32 pb-20 min-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/40">
 			{/* Background Pattern */}
 			<div className="absolute hidden inset-0 opacity-40">
 				<div
@@ -27,10 +33,9 @@ export default function Hero() {
 							<div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
 								🌱 Transform Your Environment
 							</div>
-							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-								Create a{" "}
-								<span className="text-green-800 relative">Thriving</span>{" "}
-								Environment
+							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight letter">
+								Create a <span className="">Thriving</span>{" "}
+								<span className="text-green-800 relative">Environment</span>
 							</h1>
 							<p className="text-sm md:text-xl text-gray-600 max-w-2xl">
 								Transform your workspace and home with our premium plant
@@ -40,41 +45,51 @@ export default function Hero() {
 						</div>
 
 						{/* CTA Buttons */}
-						<div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+						<div className="flex gap-2 sm:gap-4 justify-center lg:justify-start text-sm md:text-lg px-8 md:px-0">
 							<Button
-								size="lg"
-								className="bg-green-800 cursor-pointer hover:bg-green-700 text-white px-8 py-3 text-lg font-semibold"
+								// size="lg"
+								className="bg-green-800 cursor-pointer hover:bg-green-700 text-white px-3 sm:px-8 py-3 font-semibold  flex gap-2"
+								onClick={scrollToBooking}
 							>
 								Book Free Consultation
-								<ArrowRight className="ml-2 h-5 w-5" />
+								<ArrowDown className="h-5 w-5" />
+								{/* <ArrowRight className="h-5 w-5" /> */}
 							</Button>
 							<Button
 								variant="outline"
-								size="lg"
-								className="px-3 py-3 text-lg border-2 border-green-700 text-green-900 hover:text-green-800 hover:bg-green-100 font-bold bg-green-100/60 cursor-pointer"
+								// size="lg"
+								className="p-2 border-2 border-green-600 text-green-600 hover:text-green-800 hover:bg-green-100 font-bold bg-green-100/60 cursor-pointer rounded-full md:rounded-md"
 							>
-								<Play className="h-5 w-5" />
-								Watch Demo
+								<Play
+									fill="oklch(62.7% 0.194 149.214)"
+									className="h-5 w-5 text-green-600"
+								/>
+								<span className="hidden md:block">Watch Demo</span>
 							</Button>
 						</div>
 
 						{/* Stats */}
-						<div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
+						<div className="grid grid-cols-3 gap-8 pt-8 md:border-t border-gray-200">
 							<div className="text-center lg:text-left">
 								<div className="text-2xl font-bold text-green-800">500+</div>
-								<div className="text-sm text-gray-600">Happy Clients</div>
+								<div className="text-sm text-gray-600 whitespace-nowrap">
+									Happy Clients
+								</div>
 							</div>
 							<div className="text-center lg:text-left">
 								<div className="text-2xl font-bold text-green-800">50k+</div>
-								<div className="text-sm text-gray-600">Plants Delivered</div>
+								<div className="text-sm text-gray-600 whitespace-nowrap">
+									Plants Delivered
+								</div>
 							</div>
 							<div className="text-center lg:text-left">
 								<div className="text-2xl font-bold text-green-800">100%</div>
-								<div className="text-sm text-gray-600">Satisfaction Rate</div>
+								<div className="text-sm text-gray-600 whitespace-nowrap">
+									Satisfaction Rate
+								</div>
 							</div>
 						</div>
 					</div>
-
 					{/* Right Content - Hero Image */}
 					<div className="relative hidden">
 						<div className="relative z-10">

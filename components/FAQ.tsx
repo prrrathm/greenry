@@ -19,7 +19,7 @@ type FAQsProps = {
 export function FAQs({ data }: FAQsProps) {
 	return (
 		<div className="px-5 md:px-20 w-full">
-			<div className="bg-zinc-100 w-full px-3 py-6 md:px-10 md:py-10 rounded-3xl flex flex-col gap-6">
+			<div className="bg-zinc-100 w-full px-4 py-6 md:px-10 md:py-10 rounded-3xl flex flex-col gap-6 border ">
 				<div className="text-2xl md:text-3xl font-bold text-green-900">
 					Frequently Asked Questions
 				</div>

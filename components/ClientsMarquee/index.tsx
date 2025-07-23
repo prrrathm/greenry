@@ -11,27 +11,66 @@ type Client = {
 };
 
 const clients: Client[] = [
-	{ name: "Client 1", logo: "/logos/client1.png", url: "https://client1.com" },
-	{ name: "Client 2", logo: "/logos/client2.png", url: "https://client2.com" },
-	{ name: "Client 3", logo: "/logos/client3.png", url: "https://client3.com" },
-	{ name: "Client 4", logo: "/logos/client4.png", url: "https://client4.com" },
-	{ name: "Client 5", logo: "/logos/client5.png", url: "https://client5.com" },
+	{
+		name: "Adidas",
+		logo: "/brand-logos/adidas.svg",
+		url: "https://www.adidas.com",
+	},
+	{
+		name: "Amazon",
+		logo: "/brand-logos/amazon.svg",
+		url: "https://www.amazon.com",
+	},
+	{
+		name: "Asics",
+		logo: "/brand-logos/asics.svg",
+		url: "https://www.asics.com",
+	},
+	{
+		name: "Deloitte",
+		logo: "/brand-logos/deloitte.svg",
+		url: "https://www2.deloitte.com",
+	},
+	{
+		name: "Google",
+		logo: "/brand-logos/google.svg",
+		url: "https://www.google.com",
+	},
+	{ name: "HBO", logo: "/brand-logos/hbo.svg", url: "https://www.hbo.com" },
+	{
+		name: "Netflix",
+		logo: "/brand-logos/netflix.svg",
+		url: "https://www.netflix.com",
+	},
+	{ name: "Nike", logo: "/brand-logos/nike.svg", url: "https://www.nike.com" },
+	{
+		name: "Spotify",
+		logo: "/brand-logos/spotify.svg",
+		url: "https://www.spotify.com",
+	},
+	{ name: "Uber", logo: "/brand-logos/uber.svg", url: "https://www.uber.com" },
 ];
 
 const ClientsMarquee: React.FC = () => {
 	return (
 		<div className="marquee-wrapper py-8 ">
+			<div className="text-center">
+				<h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 drop-shadow-xl">
+					Our Trusted Partners
+				</h2>
+			</div>
+
 			<div className="marquee-track">
-			{[...clients, ...clients].map((client, index) => (
+				{[...clients, ...clients].map((client, index) => (
 					<div
 						key={`${client.name}-${index}`}
-						className="mx-6 flex-shrink-0"
+						className="mx-2 md:mx-6 flex-shrink-0"
 					>
 						<Link href={client.url} target="_blank" rel="noopener noreferrer">
-							<div className="relative w-40 h-20">
+							<div className="relative w-20 h-20 md:w-24 md:h-24">
 								<Image
-									src={"next.svg"}
-									// src={client.logo}
+									// src={"next.svg"}
+									src={client.logo}
 									alt={`${client.name} logo`}
 									fill
 									sizes="160px"
@@ -44,13 +83,13 @@ const ClientsMarquee: React.FC = () => {
 				{[...clients, ...clients].map((client, index) => (
 					<div
 						key={`${client.name}-${index}`}
-						className="mx-6 flex-shrink-0"
+						className="mx-2 md:mx-6 flex-shrink-0"
 					>
 						<Link href={client.url} target="_blank" rel="noopener noreferrer">
-							<div className="relative w-40 h-20">
+							<div className="relative w-20 h-20 md:w-24 md:h-24">
 								<Image
-									src={"next.svg"}
-									// src={client.logo}
+									// src={"next.svg"}
+									src={client.logo}
 									alt={`${client.name} logo`}
 									fill
 									sizes="160px"
