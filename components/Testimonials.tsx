@@ -30,7 +30,7 @@ const defaultTestimonials: Testimonial[] = [
 		image:
 			"https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"Greenry transformed our office environment completely. Our team's productivity has increased significantly, and the air quality is noticeably better. Highly recommended!",
+			"Evergreen transformed our office environment completely. Our team's productivity has increased significantly, and the air quality is noticeably better. Highly recommended!",
 		rating: 5,
 	},
 	{
@@ -48,7 +48,7 @@ const defaultTestimonials: Testimonial[] = [
 		image:
 			"https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"Working with Greenry was seamless. From consultation to installation, everything was handled professionally. The ongoing support has been exceptional.",
+			"Working with Evergreen was seamless. From consultation to installation, everything was handled professionally. The ongoing support has been exceptional.",
 		rating: 5,
 	},
 	{
@@ -131,9 +131,9 @@ export default function TestimonialsCarousel({
 	resumeAfterInteraction = true,
 	showArrows = true,
 	showProgress = true,
-	// backgroundSrc = "/leafs-bg-1.jpg",
-	// fixedBackground = false,
-}: TestimonialsCarouselProps) {
+}: // backgroundSrc = "/leafs-bg-1.jpg",
+// fixedBackground = false,
+TestimonialsCarouselProps) {
 	const [api, setApi] = React.useState<CarouselApi>();
 	const [current, setCurrent] = React.useState(0);
 
@@ -198,7 +198,7 @@ export default function TestimonialsCarousel({
 			const y = window.scrollY * 0.2; // tune factor
 			const docHeight = document.documentElement.scrollHeight;
 			if (bgRef.current) {
-				bgRef.current.style.transform = `translateY(${y - docHeight / 9.6}px)`;
+				bgRef.current.style.transform = `translateY(${y - docHeight / 10}px)`;
 			}
 		};
 
@@ -210,7 +210,7 @@ export default function TestimonialsCarousel({
 	return (
 		<section className="relative py-10 overflow-hidden">
 			{/* Background image */}
-			<div ref={bgRef} className="absolute inset-0 -z-10">
+			{/* <div ref={bgRef} className="absolute inset-0 -z-10">
 				<Image
 					src="/leafs-bg-3.jpg" // adjust path
 					alt=""
@@ -220,7 +220,7 @@ export default function TestimonialsCarousel({
 					className="object-cover object-center opacity-90"
 				/>
 				<div className="absolute inset-0 bg-black/10" />
-			</div>
+			</div> */}
 			{/* Overlay (dark gradient for contrast) */}
 			{/* <span
 				aria-hidden="true"
@@ -233,12 +233,12 @@ export default function TestimonialsCarousel({
 
 			<div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center">
-					<h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 drop-shadow-xl">
+					<h2 className="text-4xl sm:text-6xl font-bebas text-gray-700 text-gray-700 font-bold text-gray-900 mb-4 drop-shadow-xl">
 						What Our Clients Say
 					</h2>
 					<p className="md:text-xl text-gray-600 max-w-4xl mx-auto drop-shadow-xl">
 						Join hundreds of satisfied businesses who have transformed their
-						workspaces with Greenry.
+						workspaces with Evergreen.
 					</p>
 				</div>
 

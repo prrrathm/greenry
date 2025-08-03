@@ -33,7 +33,7 @@ export default function Hero() {
 							<div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
 								🌱 Transform Your Environment
 							</div>
-							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight letter">
+							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight letter ">
 								Create a <span className="">Thriving</span>{" "}
 								<span className="text-green-800 relative">Environment</span>
 							</h1>

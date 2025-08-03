@@ -20,19 +20,27 @@ import {
 } from "@/components/ui/select";
 import { services } from "@/lib/variables";
 import { Textarea } from "../ui/textarea";
+import { cn } from "@/lib/utils";
 const BookingForm = ({
 	hasTrigger,
 	triggerText,
+	isScrolled,
 }: {
 	hasTrigger: boolean;
 	triggerText?: string;
+	isScrolled: boolean;
 }) => {
 	return (
 		<Dialog>
 			<form>
 				{hasTrigger ? (
 					<DialogTrigger asChild>
-						<Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2 cursor-pointer">
+						<Button
+							className={cn(
+								"hidden md:block   px-6 py-2 cursor-pointer",
+								isScrolled ? "bg-white hover:bg-gray-100 text-green-800" : "bg-green-800 hover:bg-green-700 text-white",
+							)}
+						>
 							{triggerText}
 						</Button>
 						{/* <Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2 cursor-pointer">
@@ -63,7 +71,12 @@ const BookingForm = ({
 						</div>
 						<div className="grid gap-3">
 							{/* <Label htmlFor="number">Contact Number</Label> */}
-							<Input id="number" name="number" type="number" placeholder="Phone Number" />
+							<Input
+								id="number"
+								name="number"
+								type="number"
+								placeholder="Phone Number"
+							/>
 						</div>
 						<div className="">
 							<Select>
@@ -81,9 +94,13 @@ const BookingForm = ({
 						</div>
 						<div className="grid gap-3">
 							{/* <Label htmlFor="number">Contact Number</Label> */}
-							<Textarea id="number" name="number" className="resize-none h-20" placeholder="Your Message" />
+							<Textarea
+								id="number"
+								name="number"
+								className="resize-none h-20"
+								placeholder="Your Message"
+							/>
 						</div>
-
 					</div>
 					<DialogFooter>
 						{/* <DialogClose asChild>

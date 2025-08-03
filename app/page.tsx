@@ -8,6 +8,9 @@ import CTA from "@/components/CTA";
 import FAQs from "@/components/FAQ";
 // import { EmblaOptionsType } from "embla-carousel";
 import ClientsMarquee from "@/components/ClientsMarquee";
+// import ProjectsCarousel from "@/components/ProjectsCarousel";
+import ProjectCarouselBeta from "@/components/ProjectsCarousel/ProjectCarousel";
+import AutoPlayVideo from "@/components/VideoPlayer";
 // import { ProjectsCarousel } from "@/components/carousel/ProjectsCarousel";
 
 export default function Home() {
@@ -17,20 +20,20 @@ export default function Home() {
 
 	const faqs = [
 		{
-			q: "What is Greenry?",
-			a: "Greenry is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
+			q: "What is Evergreen?",
+			a: "Evergreen is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
 		},
 		{
-			q: "What types of projects does Greenry undertake?",
+			q: "What types of projects does Evergreen undertake?",
 			a: "We specialize in corporate office installations, home plant solutions, co-working space transformations, and event space arrangements with ongoing maintenance support.",
 		},
 		{
-			q: "How can I get involved with Greenry's initiatives?",
+			q: "How can I get involved with Evergreen's initiatives?",
 			a: "You can book a free consultation through our website, call us directly, or reach out via email. We offer customized solutions for every space and budget.",
 		},
 		{
-			q: "Where does Greenry operate?",
-			a: "Greenry operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
+			q: "Where does Evergreen operate?",
+			a: "Evergreen operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
 		},
 		{
 			q: "Why is biodiversity conservation important?",
@@ -41,9 +44,12 @@ export default function Home() {
 	return (
 		<div className="min-h-screen relative">
 			<Hero />
+			{/* <ProjectsCarousel slides={[1,2,3,4]} /> */}
+			<section className="h-screen px-20 rounded-xl ">
+				<AutoPlayVideo src="/videos/home-banner.mp4" />
+			</section>
 			<Services />
 			<ClientsMarquee />
-
 			{/* Projects Gallery Section */}
 			{/* <section className="py-20 bg-green-50">
 				<div className="">
@@ -60,6 +66,7 @@ export default function Home() {
 				</div>
 			</section> */}
 
+			<ProjectCarouselBeta />
 			<BookingForm />
 			<Testimonials />
 			<Features />

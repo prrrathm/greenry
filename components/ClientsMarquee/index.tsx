@@ -53,14 +53,16 @@ const clients: Client[] = [
 
 const ClientsMarquee: React.FC = () => {
 	return (
-		<div className="marquee-wrapper py-8 ">
+		<div className="marquee-wrapper py-32 relative flex flex-col gap-8">
 			<div className="text-center">
-				<h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 drop-shadow-xl">
+				<h2 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-4 drop-shadow-xl font-bebas text-gray-700 text-gray-700">
 					Our Trusted Partners
 				</h2>
 			</div>
 
-			<div className="marquee-track">
+			<div className="bg-gradient-to-l from-white to-transparent from-20% w-[30vw] absolute bottom-0 h-[60%] right-0 z-40"></div>
+			<div className="bg-gradient-to-r from-white to-transparent from-20% w-[30vw] absolute bottom-0 h-[60%] left-0 z-40"></div>
+			<div className="marquee-track ">
 				{[...clients, ...clients].map((client, index) => (
 					<div
 						key={`${client.name}-${index}`}

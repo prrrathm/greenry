@@ -3,7 +3,7 @@
 import {
 	Card,
 	CardContent,
-	CardDescription,
+	// CardDescription,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
@@ -71,7 +71,7 @@ export default function Services() {
 		<section className="py-20 bg-white">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-10 md:mb-16">
-					<h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+					<h2 className="text-4xl sm:text-6xl font-bold mb-4 font-bebas text-gray-700 text-gray-700">
 						Our Services
 					</h2>
 					<p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -80,7 +80,7 @@ export default function Services() {
 					</p>
 				</div>
 
-				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+				<div className="grid md:grid-cols-2 gap-4">
 					{services.map((service, index) => (
 						<motion.div
 							key={index}
@@ -99,22 +99,23 @@ export default function Services() {
 							// 	transition: { duration: 0.3 },
 							// }}
 						>
-							<Card className="h-full shadow-none border-0 transition-all duration-300 flex flex-col justify-between">
-								<CardHeader className="text-center flex flex-col gap-2">
-									<CardTitle className="text-2xl flex items-stretch justify-center gap-2 font-semibold text-gray-900 mb-5">
-										<service.icon className="h-7 w-7 text-green-800" />
-										<div className="">{service.title}</div>
-									</CardTitle>
-									<CardDescription className="text-gray-600 text-base md:text-sm text-center">
-										{service.description}
-									</CardDescription>
-								</CardHeader>
-								<CardContent className="flex flex-col justify-between">
-									<div className="pt-2">
-										<Button className="w-full bg-green-800 hover:bg-green-700 cursor-pointer font-semibold">
+							<Card className="hover:bg-gray-50 h-full shadow-none border-0 transition-all duration-300 flex flex-col justify-between">
+								<CardHeader className="text-center flex flex-col gap-2 pb-2">
+									<CardTitle className="text-2xl flex items-stretch justify-between gap-2 font-semibold text-gray-900 mb-5">
+										<div className="flex items-stretch justify-start gap-2 ">
+											<service.icon className="h-7 w-7 text-green-800" />
+											<div className="">{service.title}</div>
+										</div>
+
+										<Button className="border bg-green-800 hover:bg-green-700 cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300">
 											Learn More
 											<ArrowRight className="ml-2 h-4 w-4" />
 										</Button>
+									</CardTitle>
+								</CardHeader>
+								<CardContent className="flex flex-col justify-between">
+									<div className="text-gray-600 text-base md:text-sm text-left">
+										{service.description}
 									</div>
 								</CardContent>
 							</Card>
