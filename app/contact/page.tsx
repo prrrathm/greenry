@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
+// import { Card, CardContent } from "@/components/ui/card";
 import {
 	Mail,
 	Phone,
@@ -83,32 +83,32 @@ export default function ContactPage() {
 		},
 	];
 
-	const contactInfo = [
-		{
-			icon: Mail,
-			title: "Email Us",
-			content: "info@evergreen.com",
-			subtitle: "We&apos;ll respond within 24 hours",
-		},
-		{
-			icon: Phone,
-			title: "Call Us",
-			content: "+1 (555) 123-4567",
-			subtitle: "Mon-Fri 9AM-6PM EST",
-		},
-		{
-			icon: MapPin,
-			title: "Visit Us",
-			content: "123 Green Street, Eco City, EC 12345",
-			subtitle: "By appointment only",
-		},
-		{
-			icon: Clock,
-			title: "Business Hours",
-			content: "Monday - Friday: 9AM - 6PM",
-			subtitle: "Saturday: 10AM - 4PM",
-		},
-	];
+	// const contactInfo = [
+	// 	{
+	// 		icon: Mail,
+	// 		title: "Email Us",
+	// 		content: "info@evergreen.com",
+	// 		subtitle: "We&apos;ll respond within 24 hours",
+	// 	},
+	// 	{
+	// 		icon: Phone,
+	// 		title: "Call Us",
+	// 		content: "+1 (555) 123-4567",
+	// 		subtitle: "Mon-Fri 9AM-6PM EST",
+	// 	},
+	// 	{
+	// 		icon: MapPin,
+	// 		title: "Visit Us",
+	// 		content: "123 Green Street, Eco City, EC 12345",
+	// 		subtitle: "By appointment only",
+	// 	},
+	// 	{
+	// 		icon: Clock,
+	// 		title: "Business Hours",
+	// 		content: "Monday - Friday: 9AM - 6PM",
+	// 		subtitle: "Saturday: 10AM - 4PM",
+	// 	},
+	// ];
 
 	const services = [
 		"Office Plant Installation",
