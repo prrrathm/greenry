@@ -22,21 +22,24 @@ import {
 	Linkedin,
 } from "lucide-react";
 import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 export default function NavMobileDrawer({
 	navLinks,
+	isScrolled,
 }: {
 	navLinks: {
 		label: string;
 		link: string;
 	}[];
+	isScrolled: boolean;
 }) {
 	return (
 		<Drawer>
 			<DrawerTrigger>
 				{" "}
 				<div className="hover:bg-white hover:text-green-600 p-2 md:p-2.5 text-sm md:text-base w-fit sm:hidden">
-					<Menu fill="#1e2939" className="h-6 w-6 text-gray-800" />
+					<Menu fill="#1e2939" className={cn("h-6 w-6 ", isScrolled?"text-white":"text-gray-800")} />
 				</div>
 			</DrawerTrigger>
 			<DrawerContent className="bg-white/80 backdrop-blur">
@@ -44,7 +47,7 @@ export default function NavMobileDrawer({
 					<DrawerTitle></DrawerTitle>
 				</DrawerHeader>
 				<div className="flex flex-col justify-center items-start max-h-[50vh] gap-6 pb-4">
-					<div className="flex flex-col justify-center items-start gap-4 w-full">
+					<div className="flex flex-col justify-center items-center gap-2 w-full px-6">
 						{navLinks.map((item, iter) => (
 							<motion.div
 								key={iter}
@@ -56,7 +59,7 @@ export default function NavMobileDrawer({
 									ease: "easeOut",
 								}}
 								whileHover={{ scale: 1.05 }}
-								className="text-gray-800 font-bold hover:text-green-600 transition-colors duration-200 text-3xl text-center w-full"
+								className="text-gray-800 font-bold hover:text-green-600 transition-colors duration-200 text-xl text-center w-full"
 							>
 								<Link href={item.link}>
 									<DrawerClose>{item.label}</DrawerClose>

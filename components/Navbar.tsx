@@ -23,9 +23,10 @@ export const NavBar = () => {
 	const navLinks = [
 		{ label: "Home", link: "/" },
 		{ label: "Services", link: "/services" },
-		{ label: "About", link: "/about" },
 		{ label: "Projects", link: "/projects" },
 		{ label: "Blogs", link: "/blogs" },
+		{ label: "About", link: "/about" },
+		{ label: "Contact", link: "/contact" },
 	];
 
 	// const scrollToBooking = () => {
@@ -68,7 +69,7 @@ export const NavBar = () => {
 				))}
 			</div>
 			<div className="flex flex-row-reverse md:flex-row items-center justify-center gap-2 md:gap-4">
-				<NavMobileDrawer navLinks={navLinks} />
+				<NavMobileDrawer navLinks={navLinks} isScrolled={isScrolled} />
 				{/* <div className="hover:bg-white hover:text-green-600 p-2 md:p-2.5 text-sm md:text-base w-fit sm:hidden">
 					<Menu fill="#016630" className="h-6 w-6 text-green-800" />
 				</div> */}

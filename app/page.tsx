@@ -28,7 +28,7 @@ export default function Home() {
 			a: "We specialize in corporate office installations, home plant solutions, co-working space transformations, and event space arrangements with ongoing maintenance support.",
 		},
 		{
-			q: "How can I get involved with Evergreen's initiatives?",
+			q: "How can I get involved with Evergreen'apos;s initiatives?",
 			a: "You can book a free consultation through our website, call us directly, or reach out via email. We offer customized solutions for every space and budget.",
 		},
 		{
@@ -45,7 +45,7 @@ export default function Home() {
 		<div className="min-h-screen relative">
 			<Hero />
 			{/* <ProjectsCarousel slides={[1,2,3,4]} /> */}
-			<section className="h-screen px-20 rounded-xl ">
+			<section className="min-h-[60vh] h-[80vh] sm:h-[70vh] md:h-screen px-4 sm:px-8 md:px-20 rounded-xl flex items-center">
 				<AutoPlayVideo src="/videos/home-banner.mp4" />
 			</section>
 			<Services />

@@ -1,205 +1,279 @@
-// app/case-studies/octopus-energy/page.tsx
 "use client";
 
 import Image from "next/image";
-// import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, MapPin, Users } from "lucide-react";
 import CTA from "@/components/CTA";
 
-export default function OctopusEnergyCaseStudy() {
+interface Project {
+	id: string;
+	title: string;
+	client: string;
+	location: string;
+	year: string;
+	image: string;
+	description: string;
+	services: string[];
+	results: string[];
+	slug: string;
+}
+
+const projects: Project[] = [
+	{
+		id: "1",
+		title: "Corporate Headquarters Transformation",
+		client: "Google",
+		location: "Mountain View, CA",
+		year: "2024",
+		image: "/projects/office-1.jpg",
+		description:
+			"Complete biophilic redesign of Google&apos;s main campus, featuring over 500 plants across multiple floors, green walls, and innovative air purification systems.",
+		services: [
+			"Office Plants",
+			"Green Walls",
+			"Air Purification",
+			"Maintenance",
+		],
+		results: [
+			"20% increase in employee satisfaction",
+			"15% boost in productivity",
+			"50% reduction in air toxins",
+		],
+		slug: "google-headquarters-transformation",
+	},
+	{
+		id: "2",
+		title: "Innovation Hub Green Makeover",
+		client: "Nike",
+		location: "Portland, OR",
+		year: "2024",
+		image: "/projects/office-2.jpg",
+		description:
+			"Dynamic workspace transformation featuring modular plant systems, living walls, and sustainable design elements that reflect Nike&apos;s commitment to environmental responsibility.",
+		services: ["Modular Systems", "Living Walls", "Sustainable Design"],
+		results: [
+			"25% improvement in air quality",
+			"Enhanced brand image",
+			"Reduced stress levels",
+		],
+		slug: "nike-innovation-hub-makeover",
+	},
+	{
+		id: "3",
+		title: "Wellness-Focused Office Design",
+		client: "Asics",
+		location: "Boston, MA",
+		year: "2023",
+		image: "/projects/office-3.jpg",
+		description:
+			"Health-centered office environment with therapeutic plant selections, meditation gardens, and biophilic design elements promoting employee wellness and mental health.",
+		services: ["Therapeutic Plants", "Meditation Gardens", "Wellness Design"],
+		results: [
+			"30% reduction in sick days",
+			"Improved mental health scores",
+			"Higher retention rates",
+		],
+		slug: "asics-wellness-office-design",
+	},
+	{
+		id: "4",
+		title: "Creative Studio Biophilic Integration",
+		client: "HBO",
+		location: "New York, NY",
+		year: "2023",
+		image: "/projects/office-4.jpg",
+		description:
+			"Artistic integration of plants and nature elements throughout HBO&apos;s creative studios, enhancing creativity and providing inspiration for content creators.",
+		services: ["Creative Design", "Artistic Integration", "Inspiration Spaces"],
+		results: [
+			"Enhanced creativity metrics",
+			"Improved collaboration",
+			"Award-winning design",
+		],
+		slug: "hbo-creative-studio-integration",
+	},
+	{
+		id: "5",
+		title: "Tech Campus Sustainability Project",
+		client: "Spotify",
+		location: "Stockholm, Sweden",
+		year: "2023",
+		image: "/projects/office-5.jpg",
+		description:
+			"Comprehensive sustainability initiative featuring carbon-absorbing plants, energy-efficient systems, and educational green spaces for environmental awareness.",
+		services: [
+			"Sustainability Systems",
+			"Educational Spaces",
+			"Carbon Absorption",
+		],
+		results: [
+			"Carbon neutral workspace",
+			"Employee education program",
+			"Industry recognition",
+		],
+		slug: "spotify-sustainability-project",
+	},
+	{
+		id: "6",
+		title: "Startup Accelerator Green Transformation",
+		client: "Amazon",
+		location: "Seattle, WA",
+		year: "2022",
+		image: "/projects/office-1.jpg",
+		description:
+			"Flexible, scalable plant solutions for Amazon&apos;s startup accelerator program, featuring adaptable green spaces that evolve with growing companies.",
+		services: ["Flexible Systems", "Scalable Solutions", "Growth Adaptation"],
+		results: [
+			"Improved startup success rates",
+			"Enhanced networking",
+			"Flexible workspace model",
+		],
+		slug: "amazon-accelerator-transformation",
+	},
+];
+
+export default function ProjectsPage() {
 	return (
-		<main className="pt-40 ">
-			{/* Hero */}
-			<section className="relative max-h-[60vh] flex items-center justify-center">
-				<div className="relative z-10 text-center px-4">
-					<h1 className="text-4xl md:text-8xl font-bebas text-gray-700 font-bold mb-4">
-						Netflix
+		<div className="pt-32 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50/40">
+			{/* Hero Section */}
+			<section className="py-16 px-4 sm:px-6 lg:px-8">
+				<div className="container mx-auto text-center">
+					<h1 className="text-4xl sm:text-6xl font-bebas text-gray-700 font-bold mb-4">
+						Our Project Portfolio
 					</h1>
-					<p className="text-lg  max-w-2xl mx-auto">
-						Netflix’s Coventry office at Friargate integrates biophilic design
-						across five floors, creating a fun, lively workspace that lives and
-						breathes the company’s brand and culture.
+					<p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+						Discover how we&apos;ve transformed workspaces for leading companies
+						worldwide. From corporate headquarters to creative studios, see the
+						impact of our biophilic design solutions.
 					</p>
+
+					<div className="flex flex-wrap justify-center gap-4 mb-12">
+						<div className="text-center">
+							<div className="text-3xl font-bold text-green-800">50+</div>
+							<div className="text-sm text-gray-600">Projects Completed</div>
+						</div>
+						<div className="text-center">
+							<div className="text-3xl font-bold text-green-800">25+</div>
+							<div className="text-sm text-gray-600">Fortune 500 Clients</div>
+						</div>
+						<div className="text-center">
+							<div className="text-3xl font-bold text-green-800">10k+</div>
+							<div className="text-sm text-gray-600">Plants Installed</div>
+						</div>
+					</div>
 				</div>
 			</section>
-			<div className="flex justify-center py-20">
-				<Image
-					src="/projects/office-1.jpg"
-					alt="Netflix Canteen Planting"
-					width={800}
-					height={200}
-					className="rounded-xl shadow-lg"
-				/>
-			</div>
 
-			<div className="container mx-auto px-4 pb-12 space-y-16">
-				{/* Client Overview & Brief */}
-				<section className="grid  gap-10 items-start">
-					<div className="space-y-6">
-						<h2 className="text-4xl tracking-wide font-bebas text-gray-700 font-semibold">
-							Client Overview
-						</h2>
-						<p>
-							Netflix, the renewable energy folk whose brightly coloured vans
-							you just can&apos;t miss, relocated their office to Friargate,
-							Coventry. They were miserable with their current planting and
-							wanted to have a fresh start for their new offices. Their fun
-							ideas and playful nature meant they matched perfectly with our
-							cheekiest rep.
-						</p>
-
-						<h2 className="text-4xl tracking-wide font-bebas text-gray-700 font-semibold">
-							The Brief
-						</h2>
-						<p>
-							Working closely with the Octopi and fit-out contractors Maris, we
-							worked on a brief that made planting a central element, immersing
-							staff and visitors in greenery. We recommended a mix of live,
-							replica, and preserved planting to balance greenery with
-							maintenance needs.
-						</p>
-
-						<h2 className="text-4xl tracking-wide font-bebas text-gray-700 font-semibold">
-							Challenges
-						</h2>
-						<p>
-							The under-stair planters were a unique addition to the
-							project—something we hadn’t done before—but worked out really
-							well, brightening up what would otherwise be a dull space in a
-							bright pink stairwell!
-						</p>
-					</div>
-				</section>
-
-				{/* What We Did */}
-				<section className="space-y-10">
-					<h2 className="text-6xl font-semibold text-center font-bebas text-gray-700">
-						What We Did
-					</h2>
-					<div className="space-y-8">
-						<article>
-							<h3 className="text-4xl tracking-wide font-bebas text-gray-700 font-medium">
-								Stairwell Planting
-							</h3>
-							<p>
-								The under-stair areas are dark and lack either natural or
-								artificial light. This meant our best bet was high-quality
-								replica planting. As most of the planting is seen through glass,
-								it&apos;s less obvious that it&apos;s not live. We used larger specimens
-								including Strelitzia, Monstera, and Dracaena, along with some
-								Sansevieria.
-							</p>
-						</article>
-
-						<article>
-							<h3 className="text-4xl tracking-wide font-bebas text-gray-700 font-medium">
-								Coffee Bar & Tea Point
-							</h3>
-							<p>
-								There are several large coffee bars throughout the space. For
-								these, we used our Ceiling Raft system with 100% foliage
-								coverage. Again, for these we used replica planting due to
-								loading weights and maintenance. We used trailing plants such as
-								Scindapsus, Pothos, and ferns so the planting cascaded down from
-								the grids. At the tea points, we planted pots of Chamaedorea
-								Elegans and Scindapsus Aureum.
-							</p>
-						</article>
-
-						<article>
-							<h3 className="text-4xl tracking-wide font-bebas text-gray-700 font-medium">
-								Palisade Planting
-							</h3>
-							<p>
-								The palisade planting is one of the first things you almost hit
-								as you walk in. You&apos;re greeted by a giant pink neon floor number
-								on a reindeer moss backing and the shelving is filled with
-								fluffy octopi. On these shelves, we also have troughs of
-								Aglaonema, Asplenium, and Dracaena Lemon Lime softening the
-								vibrant pink with some greenery.
-							</p>
-						</article>
-
-						<article>
-							<h3 className="text-4xl tracking-wide font-bebas text-gray-700 font-medium">
-								Snug Spaces & Relaxation Area
-							</h3>
-							<p>
-								In snug corners we created vertical ceiling rafts to hang on
-								walls and above seating to offer calm, peaceful areas. The
-								relaxation area has views across the city, separated from the
-								main offices by vertical planters and ceiling rafts offering
-								both prospect and refuge.
-							</p>
-						</article>
-
-						<article>
-							<h3 className="text-4xl tracking-wide font-bebas text-gray-700 font-medium">
-								Floorstanding Planters
-							</h3>
-							<p>
-								Dotted around the space, clusters of Kentia Palm, Ficus Lyrata,
-								and Aglaonema Silver Bay soften desk-focussed areas.
-							</p>
-						</article>
-
-						{/* Image Gallery */}
-						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-							{[
-								"snug-planting.jpg",
-								"floor-level-moss-sign.jpg",
-								"coffee-bar-planting.jpg",
-								"relaxation-space.jpg",
-								"understair-planting.jpg",
-								"floorstanding-planting.jpg",
-							].map((file) => (
-								<div key={file} className="overflow-hidden rounded-xl shadow">
+			{/* Projects Grid */}
+			<section className="pb-20 px-4 sm:px-6 lg:px-8">
+				<div className="container mx-auto">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						{projects.map((project) => (
+							<Card
+								key={project.id}
+								className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
+							>
+								<div className="relative h-48 overflow-hidden">
 									<Image
-										src={`/case-studies/octopus-energy/${file}`}
-										alt={file.replace(/[-.]/g, " ")}
-										width={400}
-										height={300}
-										className="object-cover w-full h-48"
+										src={project.image}
+										alt={project.title}
+										fill
+										className="object-cover group-hover:scale-105 transition-transform duration-300"
 									/>
+									<div className="absolute top-4 left-4">
+										<span className="bg-green-800 text-white px-3 py-1 rounded-full text-xs font-medium">
+											{project.year}
+										</span>
+									</div>
 								</div>
-							))}
-						</div>
-					</div>
-				</section>
 
-				{/* Outcome & Testimonial */}
-				<section className="space-y-8">
-					<h2 className="text-4xl tracking-wide font-bebas text-gray-700 font-semibold">
-						Outcome
+								<CardHeader className="pb-2">
+									<CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-green-800 transition-colors">
+										{project.title}
+									</CardTitle>
+									<div className="flex items-center text-sm text-gray-600 space-x-4">
+										<div className="flex items-center">
+											<Users className="h-3 w-3 mr-1" />
+											{project.client}
+										</div>
+										<div className="flex items-center">
+											<MapPin className="h-3 w-3 mr-1" />
+											{project.location}
+										</div>
+									</div>
+								</CardHeader>
+
+								<CardContent className="space-y-4">
+									<p className="text-gray-600 text-sm line-clamp-3">
+										{project.description}
+									</p>
+
+									<div className="space-y-2">
+										<h4 className="font-semibold text-sm text-gray-900">
+											Services Provided:
+										</h4>
+										<div className="flex flex-wrap gap-1">
+											{project.services.slice(0, 3).map((service, index) => (
+												<span
+													key={index}
+													className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs"
+												>
+													{service}
+												</span>
+											))}
+											{project.services.length > 3 && (
+												<span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+													+{project.services.length - 3} more
+												</span>
+											)}
+										</div>
+									</div>
+
+									<Link href={`/projects/${project.slug}`}>
+										<Button className="w-full bg-green-800 hover:bg-green-700 text-white group">
+											View Case Study
+											<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+										</Button>
+									</Link>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Results Section */}
+			<section className="py-16 bg-green-800 text-white">
+				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+					<h2 className="text-3xl font-bold mb-8">
+						Proven Results Across Industries
 					</h2>
-					<p>
-						When you step into Octopus&apos; new offices, you feel like you&apos;ve been
-						enveloped by the octopus&apos; tentacles and pulled right into their
-						culture. The purples, pinks and neon lights give a playful, fun vibe
-						whilst the greenery brings a calming, relaxed feel.
-					</p>
-					<blockquote className="border-l-4 border-green-500 pl-4 italic">
-						“I had the pleasure of working with Plant Plan on a recent project,
-						and I can confidently say they are a standout in the industry… Their
-						attention to detail, exceptional service, and passion for what they
-						do make them an invaluable partner for any business looking to
-						elevate their environment with plants.”
-					</blockquote>
-					<div className="flex items-center space-x-4">
-						<Image
-							src="/case-studies/octopus-energy/sharron-bentley.jpg"
-							alt="Sharron Bentley"
-							width={80}
-							height={80}
-							className="rounded-full"
-						/>
+					<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 						<div>
-							<p className="font-semibold">Sharron Bentley</p>
-							<p className="text-sm text-gray-600">Office Manager, Coventry</p>
+							<div className="text-4xl font-bold mb-2">95%</div>
+							<div className="text-lg opacity-90">Client Satisfaction</div>
+						</div>
+						<div>
+							<div className="text-4xl font-bold mb-2">18%</div>
+							<div className="text-lg opacity-90">
+								Average Productivity Increase
+							</div>
+						</div>
+						<div>
+							<div className="text-4xl font-bold mb-2">40%</div>
+							<div className="text-lg opacity-90">Stress Reduction</div>
+						</div>
+						<div>
+							<div className="text-4xl font-bold mb-2">60%</div>
+							<div className="text-lg opacity-90">Air Quality Improvement</div>
 						</div>
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
+
 			<CTA />
-		</main>
+		</div>
 	);
 }

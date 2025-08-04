@@ -113,7 +113,7 @@ const ProjectCarouselBeta: React.FC = () => {
 				clearInterval(intervalRef.current);
 			}
 		};
-	}, [currentIndex, items.length, isPaused]);
+	}, [currentIndex, items.length, isPaused, progress]);
 
 	// const togglePause = () => {
 	// 	setIsPaused((prev) => !prev);
@@ -127,53 +127,55 @@ const ProjectCarouselBeta: React.FC = () => {
 	// };
 
 	return (
-		<div className="flex-col px-10 py-20 gap-6 hidden md:flex">
-			<div className="text-3xl sm:text-4xl font-semibold flex justify-between items-end-safe">
-				<div className="font-bebas text-gray-700 text-gray-700 text-3xl md:text-5xl ">
-					Some of our Recent Projects
+		<>
+			{/* Desktop View */}
+			<div className="flex-col px-10 py-20 gap-6 hidden md:flex">
+				<div className="text-3xl sm:text-4xl font-semibold flex justify-between items-end-safe">
+					<div className="font-bebas text-gray-700 text-gray-700 text-3xl md:text-5xl ">
+						Some of our Recent Projects
+					</div>
+					<div className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-green-800">
+						See all projects
+					</div>
 				</div>
-				<div className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-green-800">
-					See all projects
-				</div>
-			</div>
-			<div className="flex gap-0.5">
-				{projects.map((item, iter) => (
-					<div
-						key={iter}
-						className={cn(
-							"border rounded-2xl h-full flex flex-col transition-all duration-600 py-4 px-6 relative",
-							iter === currentIndex ? "w-[84%]" : "w-[4%]",
-						)}
-						aria-hidden={iter !== currentIndex} // Basic accessibility
-					>
+				<div className="flex gap-0.5">
+					{projects.map((item, iter) => (
 						<div
+							key={iter}
 							className={cn(
-								"absolute inset-0  z-20 rounded-2xl",
-								iter !== currentIndex ? "bg-black/40" : "bg-black/20",
+								"border rounded-2xl h-full flex flex-col transition-all duration-600 py-4 px-6 relative",
+								iter === currentIndex ? "w-[84%]" : "w-[4%]",
 							)}
-						></div>
-						<Image
-							src={item.imageURL}
-							fill
-							alt={item.title}
-							className="z-10 object-cover rounded-2xl"
-						/>
-						<div className="z-30 w-full h-[65vh] rounded-2xl text-white flex flex-col items-center justify-center">
-							{iter === currentIndex && (
-								<div className="w-full flex flex-col gap-4 justify-end items-center mb-4 h-full">
-									<div className="flex justify-between w-full">
-										<div className="flex items-center justify-center text-2xl font-semibold ">
-											{item.title}
-										</div>
-										<Button
-											size={"sm"}
-											className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300"
-										>
-											Learn More
-											<ArrowRight className="ml-2 h-4 w-4" />
-										</Button>
+							aria-hidden={iter !== currentIndex} // Basic accessibility
+						>
+							<div
+								className={cn(
+									"absolute inset-0  z-20 rounded-2xl",
+									iter !== currentIndex ? "bg-black/40" : "bg-black/20",
+								)}
+							></div>
+							<Image
+								src={item.imageURL}
+								fill
+								alt={item.title}
+								className="z-10 object-cover rounded-2xl"
+							/>
+							<div className="z-30 w-full h-[65vh] rounded-2xl text-white flex flex-col items-center justify-center">
+								{iter === currentIndex && (
+									<div className="w-full flex flex-col gap-4 justify-end items-center mb-4 h-full">
+										<div className="flex justify-between w-full">
+											<div className="flex items-center justify-center text-2xl font-semibold ">
+												{item.title}
+											</div>
+											<Button
+												size={"sm"}
+												className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300"
+											>
+												Learn More
+												<ArrowRight className="ml-2 h-4 w-4" />
+											</Button>
 
-										{/* <button
+											{/* <button
 											onClick={togglePause}
 											className="mb-2 px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
 											aria-label={
@@ -184,19 +186,95 @@ const ProjectCarouselBeta: React.FC = () => {
 										>
 											{isPaused ? <Play /> : <Pause />}
 										</button> */}
+										</div>
+										<Progress
+											value={progress}
+											className={cn("w-full z-30")}
+											color="#6a7282"
+										/>
 									</div>
-									<Progress
-										value={progress}
-										className={cn("w-full z-30")}
-										color="#6a7282"
-									/>
-								</div>
-							)}
+								)}
+							</div>
 						</div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
-		</div>
+
+			{/* Mobile View */}
+			<div className="md:hidden px-4 py-12">
+				<div className="text-center mb-8">
+					<div className="font-bebas text-gray-700 text-2xl sm:text-3xl mb-2">
+						Some of our Recent Projects
+					</div>
+					<div className="text-sm cursor-pointer font-semibold underline text-green-800">
+						See all projects
+					</div>
+				</div>
+
+				<div className="relative overflow-hidden">
+					<div
+						className="flex transition-transform duration-500 ease-in-out"
+						style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+					>
+						{projects.map((item, iter) => (
+							<div key={iter} className="w-full flex-shrink-0 px-2">
+								<div className="relative border rounded-2xl h-64 overflow-hidden">
+									<Image
+										src={item.imageURL}
+										fill
+										alt={item.title}
+										className="object-cover"
+									/>
+									<div className="absolute inset-0 bg-black/30"></div>
+									<div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+										<div className="flex items-center justify-between">
+											<div className="flex items-center gap-3">
+												<Image
+													src={item.logo}
+													width={24}
+													height={24}
+													alt={`${item.title} logo`}
+													className="bg-white rounded p-1 hidden"
+												/>
+												<div className="text-lg font-semibold">
+													{item.title}
+												</div>
+											</div>
+											<Button
+												size="sm"
+												className="bg-transparent hover:bg-transparent text-white border-white hover:bg-white hover:text-green-800"
+											>
+												Learn More
+												<ArrowRight className="ml-1 h-4 w-4" />
+											</Button>
+										</div>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+
+					{/* Progress Bar */}
+					<div className="mt-4">
+						<Progress value={progress} className="w-full" color="#6a7282" />
+					</div>
+
+					{/* Navigation Dots */}
+					<div className="flex justify-center gap-2 mt-4">
+						{projects.map((_, index) => (
+							<button
+								key={index}
+								onClick={() => setCurrentIndex(index)}
+								className={`w-2 h-2 rounded-full transition-all duration-300 ${
+									index === currentIndex ? "bg-green-800 w-6" : "bg-gray-300"
+								}`}
+								aria-label={`Go to slide ${index + 1}`}
+							/>
+						))}
+					</div>
+				</div>
+			</div>
+		</>
 	);
 };
 

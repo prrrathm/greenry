@@ -182,7 +182,6 @@ TestimonialsCarouselProps) {
 		};
 		frame = requestAnimationFrame(tick);
 		return () => cancelAnimationFrame(frame);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [current, delay, hasPerSlideDelay, showProgress, testimonials]);
 
 	/**

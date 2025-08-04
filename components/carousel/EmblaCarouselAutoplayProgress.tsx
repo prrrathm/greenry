@@ -44,7 +44,7 @@ export const useAutoplayProgress = <ProgressElement extends HTMLElement>(
 		});
 
 		setShowAutoplayProgress(true);
-	}, []);
+	}, [progressNode]);
 
 	const stopProgress = useCallback(() => {
 		setShowAutoplayProgress(false);
