@@ -6,10 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 // import { Card, CardContent } from "@/components/ui/card";
 import {
-	Mail,
+	// Mail,
 	Phone,
-	MapPin,
-	Clock,
+	// MapPin,
+	// Clock,
 	MessageSquare,
 	Send,
 	CheckCircle,
