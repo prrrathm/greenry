@@ -53,7 +53,7 @@ const clients: Client[] = [
 
 const ClientsMarquee: React.FC = () => {
 	return (
-		<div className="marquee-wrapper py-32 relative flex flex-col gap-8">
+		<div className="marquee-wrapper py-10 md:py-32 relative flex flex-col gap-8">
 			<div className="text-center">
 				<h2 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-4 drop-shadow-xl font-bebas text-gray-700 text-gray-700">
 					Our Trusted Partners

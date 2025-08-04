@@ -206,17 +206,17 @@ export default function ServicesPage() {
 	return (
 		<div className="pt-32 w-full border bg-gradient-to-br from-green-50 via-white to-green-50/40">
 			{/* Hero Section */}
-			<section className="text-center mb-16 flex flex-col items-center justify-end h-[30vh] gap-6">
+			<section className="text-center mb-16 flex flex-col items-center justify-end h-[40vh] gap-6">
 				<Button
 					size={"sm"}
 					className="bg-green-100/50 hover:bg-green-100/60 text-green-800 border border-green-800 cursor-pointer font-semibold text-xs rounded-full hover:shadow-none transition-all hover:px-2 "
 				>
 					Book Free Consultation
 				</Button>
-				<h1 className="text-4xl sm:text-6xl font-bebas text-gray-700 font-bold  mb-4">
+				<h1 className="text-4xl sm:text-6xl font-bebas text-gray-700 font-bold md:mb-4">
 					Our Plant Services
 				</h1>
-				<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+				<p className="text-sm md:text-xl text-gray-600 w-[80%] md:max-w-3xl mx-auto">
 					At Evergreen, we bring nature indoors with expert solutions that
 					enhance your space, health, and happiness. Explore our offerings
 					below.
@@ -225,7 +225,7 @@ export default function ServicesPage() {
 			{/* <ClientsMarquee /> */}
 
 			{/* Services Grid */}
-			<section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 mx-20">
+			<section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 mx-6 md:mx-20">
 				{services.map((service, index) => (
 					<ServiceCard key={index} service={service} />
 				))}

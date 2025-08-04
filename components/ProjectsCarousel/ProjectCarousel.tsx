@@ -1,10 +1,12 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils"; // Adjust import path based on your setup
 import { Progress } from "@/components/ui/progress";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 type project = {
 	title: string;
@@ -126,12 +128,25 @@ const ProjectCarouselBeta: React.FC = () => {
 	// 	}
 	// };
 
+	const autoplayRef = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplayRef.current]);
+	const onSelect = useCallback(() => {
+		if (!emblaApi) return;
+		setCurrentIndex(emblaApi.selectedScrollSnap());
+	}, [emblaApi]);
+
+	useEffect(() => {
+		if (!emblaApi) return;
+		emblaApi.on("select", onSelect);
+		onSelect(); // set initial index
+	}, [emblaApi, onSelect]);
+
 	return (
 		<>
 			{/* Desktop View */}
 			<div className="flex-col px-10 py-20 gap-6 hidden md:flex">
 				<div className="text-3xl sm:text-4xl font-semibold flex justify-between items-end-safe">
-					<div className="font-bebas text-gray-700 text-gray-700 text-3xl md:text-5xl ">
+					<div className="font-bebas  text-gray-700 text-3xl md:text-5xl ">
 						Some of our Recent Projects
 					</div>
 					<div className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-green-800">
@@ -202,22 +217,23 @@ const ProjectCarouselBeta: React.FC = () => {
 
 			{/* Mobile View */}
 			<div className="md:hidden px-4 py-12">
-				<div className="text-center mb-8">
-					<div className="font-bebas text-gray-700 text-2xl sm:text-3xl mb-2">
-						Some of our Recent Projects
-					</div>
-					<div className="text-sm cursor-pointer font-semibold underline text-green-800">
-						See all projects
-					</div>
+			<div className="text-center mb-8">
+				<div className="font-bebas text-gray-700 text-4xl font-bold sm:text-3xl mb-2">
+					Some of our Recent Projects
 				</div>
+				<div className="text-sm cursor-pointer font-semibold underline text-green-800">
+					See all projects
+				</div>
+			</div>
 
-				<div className="relative overflow-hidden">
-					<div
-						className="flex transition-transform duration-500 ease-in-out"
-						style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-					>
+			<div className="relative overflow-hidden">
+				<div className="overflow-hidden" ref={emblaRef}>
+					<div className="flex">
 						{projects.map((item, iter) => (
-							<div key={iter} className="w-full flex-shrink-0 px-2">
+							<div
+								key={iter}
+								className="min-w-0 flex-shrink-0 w-full px-2"
+							>
 								<div className="relative border rounded-2xl h-64 overflow-hidden">
 									<Image
 										src={item.imageURL}
@@ -242,7 +258,7 @@ const ProjectCarouselBeta: React.FC = () => {
 											</div>
 											<Button
 												size="sm"
-												className="bg-transparent hover:bg-transparent text-white border-white hover:bg-white hover:text-green-800"
+												className="bg-transparent text-white border-white hover:bg-white hover:text-green-800"
 											>
 												Learn More
 												<ArrowRight className="ml-1 h-4 w-4" />
@@ -253,27 +269,23 @@ const ProjectCarouselBeta: React.FC = () => {
 							</div>
 						))}
 					</div>
+				</div>
 
-					{/* Progress Bar */}
-					<div className="mt-4">
-						<Progress value={progress} className="w-full" color="#6a7282" />
-					</div>
-
-					{/* Navigation Dots */}
-					<div className="flex justify-center gap-2 mt-4">
-						{projects.map((_, index) => (
-							<button
-								key={index}
-								onClick={() => setCurrentIndex(index)}
-								className={`w-2 h-2 rounded-full transition-all duration-300 ${
-									index === currentIndex ? "bg-green-800 w-6" : "bg-gray-300"
-								}`}
-								aria-label={`Go to slide ${index + 1}`}
-							/>
-						))}
-					</div>
+				{/* Dots */}
+				<div className="flex justify-center gap-2 mt-4">
+					{projects.map((_, index) => (
+						<button
+							key={index}
+							onClick={() => emblaApi?.scrollTo(index)}
+							className={`w-2 h-2 rounded-full transition-all duration-300 ${
+								index === currentIndex ? "bg-green-800 w-6" : "bg-gray-300"
+							}`}
+							aria-label={`Go to slide ${index + 1}`}
+						/>
+					))}
 				</div>
 			</div>
+		</div>
 		</>
 	);
 };

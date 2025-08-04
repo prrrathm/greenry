@@ -15,6 +15,7 @@ import {
 	CheckCircle,
 } from "lucide-react";
 import { useState } from "react";
+import FAQs from "@/components/FAQ";
 
 export default function ContactPage() {
 	const [formData, setFormData] = useState({
@@ -59,6 +60,29 @@ export default function ContactPage() {
 		}, 3000);
 	};
 
+	const faqs = [
+		{
+			q: "What is Evergreen?",
+			a: "Evergreen is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
+		},
+		{
+			q: "What types of projects does Evergreen undertake?",
+			a: "We specialize in corporate office installations, home plant solutions, co-working space transformations, and event space arrangements with ongoing maintenance support.",
+		},
+		{
+			q: "How can I get involved with Evergreen'apos;s initiatives?",
+			a: "You can book a free consultation through our website, call us directly, or reach out via email. We offer customized solutions for every space and budget.",
+		},
+		{
+			q: "Where does Evergreen operate?",
+			a: "Evergreen operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
+		},
+		{
+			q: "Why is biodiversity conservation important?",
+			a: "Biodiversity conservation ensures ecosystem stability, supports life-sustaining services, helps combat climate change, and creates healthier indoor environments that boost productivity and well-being.",
+		},
+	];
+
 	const contactInfo = [
 		{
 			icon: Mail,
@@ -98,7 +122,7 @@ export default function ContactPage() {
 	return (
 		<div className="min-h-screen">
 			{/* Hero Section */}
-			<section className="relative pt-24 pb-12 min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/40">
+			<section className="relative pt-32 pb-12 min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/40">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 					<div className="text-center space-y-8 max-w-4xl mx-auto">
 						<div className="space-y-4">
@@ -118,44 +142,8 @@ export default function ContactPage() {
 				</div>
 			</section>
 
-			{/* Contact Info Section */}
-			<section className="py-20 bg-white">
-				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<h2 className="text-3xl sm:text-4xl font-bebas text-gray-900 mb-4">
-							Get In Touch
-						</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
-							Choose the best way to reach us. We&apos;re here to help with all
-							your plant needs.
-						</p>
-					</div>
-					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-						{contactInfo.map((info, index) => (
-							<Card
-								key={index}
-								className="text-center hover:shadow-lg transition-shadow"
-							>
-								<CardContent className="p-8">
-									<div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-										<info.icon className="h-8 w-8 text-green-600" />
-									</div>
-									<h3 className="text-xl font-bebas text-gray-900 mb-2">
-										{info.title}
-									</h3>
-									<p className="text-lg text-green-600 font-semibold mb-2">
-										{info.content}
-									</p>
-									<p className="text-sm text-gray-600">{info.subtitle}</p>
-								</CardContent>
-							</Card>
-						))}
-					</div>
-				</div>
-			</section>
-
 			{/* Contact Form Section */}
-			<section className="py-20 bg-gray-50">
+			<section className="pb-20 bg-gray-50">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid lg:grid-cols-2 gap-12">
 						{/* Form */}
@@ -378,7 +366,7 @@ export default function ContactPage() {
 							</div>
 
 							<div className="bg-green-800 p-8 rounded-2xl text-white">
-								<h3 className="text-2xl font-bebas mb-4">
+								<h3 className="text-2xl font-bold mb-4">
 									Need Immediate Assistance?
 								</h3>
 								<p className="text-green-100 mb-6">
@@ -386,7 +374,7 @@ export default function ContactPage() {
 									directly.
 								</p>
 								<Button
-									className="w-full bg-white text-green-800 hover:bg-gray-100 font-semibold"
+									className="w-full md:w-max bg-white text-green-800 hover:bg-gray-100 font-semibold"
 									onClick={() => (window.location.href = "tel:+15551234567")}
 								>
 									<Phone className="h-5 w-5 mr-2" />
@@ -399,79 +387,9 @@ export default function ContactPage() {
 			</section>
 
 			{/* FAQ Section */}
-			<section className="py-20 bg-white">
-				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<h2 className="text-3xl sm:text-4xl font-bebas text-gray-900 mb-4">
-							Frequently Asked Questions
-						</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
-							Quick answers to common questions about our services
-						</p>
-					</div>
-					<div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-						<div className="space-y-6">
-							<div className="bg-gray-50 p-6 rounded-lg">
-								<h3 className="font-bebas text-gray-900 mb-2">
-									How quickly can you respond to inquiries?
-								</h3>
-								<p className="text-gray-600">
-									We typically respond to all inquiries within 24 hours during
-									business days.
-								</p>
-							</div>
-							<div className="bg-gray-50 p-6 rounded-lg">
-								<h3 className="font-bebas text-gray-900 mb-2">
-									Do you offer free consultations?
-								</h3>
-								<p className="text-gray-600">
-									Yes! We offer free initial consultations to understand your
-									needs and provide recommendations.
-								</p>
-							</div>
-							<div className="bg-gray-50 p-6 rounded-lg">
-								<h3 className="font-bebas text-gray-900 mb-2">
-									What areas do you serve?
-								</h3>
-								<p className="text-gray-600">
-									We serve the entire metropolitan area and surrounding regions.
-									Contact us to confirm coverage in your area.
-								</p>
-							</div>
-						</div>
-						<div className="space-y-6">
-							<div className="bg-gray-50 p-6 rounded-lg">
-								<h3 className="font-bebas text-gray-900 mb-2">
-									Can you help with existing plants?
-								</h3>
-								<p className="text-gray-600">
-									Absolutely! We provide maintenance services for existing
-									plants and can help revive struggling ones.
-								</p>
-							</div>
-							<div className="bg-gray-50 p-6 rounded-lg">
-								<h3 className="font-bebas text-gray-900 mb-2">
-									What payment methods do you accept?
-								</h3>
-								<p className="text-gray-600">
-									We accept all major credit cards, bank transfers, and can
-									arrange payment plans for larger projects.
-								</p>
-							</div>
-							<div className="bg-gray-50 p-6 rounded-lg">
-								<h3 className="font-bebas text-gray-900 mb-2">
-									Do you provide warranties?
-								</h3>
-								<p className="text-gray-600">
-									Yes, we provide warranties on all our plants and services to
-									ensure your complete satisfaction.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
+			<section className="pb-20 bg-gray-50">
+				<FAQs data={faqs} />
 			</section>
-
 			{/* CTA Section */}
 			<section className="py-20 bg-green-800">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -480,8 +398,8 @@ export default function ContactPage() {
 							Ready to Get Started?
 						</h2>
 						<p className="text-xl text-green-100">
-							Don&apos;t wait to transform your space. Contact us today and take the
-							first step toward a greener, healthier environment.
+							Don&apos;t wait to transform your space. Contact us today and take
+							the first step toward a greener, healthier environment.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
 							<Button
