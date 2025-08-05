@@ -143,24 +143,36 @@ export default function ProjectsPage() {
 					<h1 className="text-4xl sm:text-6xl font-bebas text-gray-700 font-bold mb-4">
 						Our Project Portfolio
 					</h1>
-					<p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+					<p className="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
 						Discover how we&apos;ve transformed workspaces for leading companies
 						worldwide. From corporate headquarters to creative studios, see the
 						impact of our biophilic design solutions.
 					</p>
 
-					<div className="flex flex-wrap justify-center gap-4 mb-12">
+					<div className="flex flex-nowrap justify-center gap-2 md:gap-4 mb-12">
 						<div className="text-center">
-							<div className="text-3xl font-bold text-green-800">50+</div>
-							<div className="text-sm text-gray-600">Projects Completed</div>
+							<div className="text-xl md:text-3xl font-bold text-green-800">
+								50+
+							</div>
+							<div className="text-xs md:text-sm text-gray-600">
+								Projects Completed
+							</div>
 						</div>
 						<div className="text-center">
-							<div className="text-3xl font-bold text-green-800">25+</div>
-							<div className="text-sm text-gray-600">Fortune 500 Clients</div>
+							<div className="text-xl md:text-3xl font-bold text-green-800">
+								25+
+							</div>
+							<div className="text-xs md:text-sm text-gray-600">
+								Fortune 500 Clients
+							</div>
 						</div>
 						<div className="text-center">
-							<div className="text-3xl font-bold text-green-800">10k+</div>
-							<div className="text-sm text-gray-600">Plants Installed</div>
+							<div className="text-xl md:text-3xl font-bold text-green-800">
+								10k+
+							</div>
+							<div className="text-xs md:text-sm text-gray-600">
+								Plants Installed
+							</div>
 						</div>
 					</div>
 				</div>
@@ -245,12 +257,12 @@ export default function ProjectsPage() {
 			</section>
 
 			{/* Results Section */}
-			<section className="py-16 bg-green-800 text-white">
+			<section className="py-16 text-green-800 ">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<h2 className="text-3xl font-bold mb-8">
 						Proven Results Across Industries
 					</h2>
-					<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+					<div className="grid grid-cols-2 md:grid-cols-4 gap-8">
 						<div>
 							<div className="text-4xl font-bold mb-2">95%</div>
 							<div className="text-lg opacity-90">Client Satisfaction</div>

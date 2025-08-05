@@ -305,7 +305,7 @@ export default function ContactPage() {
 						{/* Additional Info */}
 						<div className="space-y-8">
 							<div className="bg-white p-8 rounded-2xl shadow-sm">
-								<h3 className="text-2xl font-bebas text-gray-900 mb-6">
+								<h3 className="text-4xl sm:text-6xl font-bebas text-gray-900 mb-6">
 									Why Choose Evergreen?
 								</h3>
 								<div className="space-y-4">

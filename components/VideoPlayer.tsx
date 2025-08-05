@@ -28,12 +28,12 @@ const AutoPlayVideo = ({ src }: { src: string }) => {
 				</Button>
 			</div>
 
-			<div className="flex flex-col absolute left-0 sm:left-8 md:left-32 h-full justify-center text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold pl-4 sm:pl-8 md:pl-20 bg-black/40 w-full text-shadow-2xs gap-2 sm:gap-3 scale-100 sm:scale-110 md:scale-125 z-20 uppercase">
-				<span className="bg-clip-text font-bebas tracking-wider flex gap-2 sm:gap- font-bolder">
+			<div className="flex flex-col absolute left-0 sm:left-8 md:left-32 h-full justify-center text-6xl md:text-6xl lg:text-8xl font-bolder pl-4 sm:pl-8 md:pl-20 bg-black/40 w-full text-shadow-2xs gap-2 sm:gap-3 scale-100 sm:scale-110 md:scale-125 z-20 uppercase">
+				<span className="bg-clip-text font-bebas tracking-wider flex flex-col md:flex-row gap-2 font-bolder">
 					<span
 						className="text-green-100/30 drop-shadow-lg"
 						style={{
-							WebkitTextStroke: "0.5px #eee",
+							WebkitTextStroke: "2px #eee",
 							WebkitBackgroundClip: "text",
 						}}
 					>
@@ -42,18 +42,18 @@ const AutoPlayVideo = ({ src }: { src: string }) => {
 					<span
 						className="text-green-600/80 drop-shadow-lg"
 						style={{
-							WebkitTextStroke: "0.5px #016630",
+							WebkitTextStroke: "2px #016630",
 							WebkitBackgroundClip: "text",
 						}}
 					>
 						Green,
 					</span>
 				</span>
-				<span className="font-bebas tracking-wider flex gap-2 sm:gap-4">
+				<span className="font-bebas tracking-wider flex flex-col md:flex-row gap-2 sm:gap-4">
 					<span
 						className="text-green-100/30 drop-shadow-lg"
 						style={{
-							WebkitTextStroke: "0.5px #eee",
+							WebkitTextStroke: "2px #eee",
 							WebkitBackgroundClip: "text",
 						}}
 					>
@@ -62,7 +62,7 @@ const AutoPlayVideo = ({ src }: { src: string }) => {
 					<span
 						className="text-green-600/80 drop-shadow-lg"
 						style={{
-							WebkitTextStroke: "0.5px #016630",
+							WebkitTextStroke: "2px #016630",
 							WebkitBackgroundClip: "text",
 						}}
 					>
