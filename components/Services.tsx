@@ -18,6 +18,7 @@ import {
 	Globe,
 } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const services = [
 	{
@@ -141,10 +142,12 @@ export default function Services() {
 											<div className="text-lg sm:text-xl">{service.title}</div>
 										</div>
 
-										<Button className="border bg-primary hover:bg-primary cursor-pointer font-semibold flex gap-2 px-3 py-2 text-sm sm:text-base transition-all duration-300 w-full sm:w-auto">
-											Learn More
-											<ArrowRight className="h-4 w-4" />
-										</Button>
+										<Link href="/services">
+											<Button className="border bg-primary hover:bg-primary cursor-pointer font-semibold flex gap-2 px-3 py-2 text-sm sm:text-base transition-all duration-300 w-full sm:w-auto">
+												Learn More
+												<ArrowRight className="h-4 w-4" />
+											</Button>
+										</Link>
 									</CardTitle>
 								</CardHeader>
 								<CardContent className="flex flex-col justify-between flex-1">

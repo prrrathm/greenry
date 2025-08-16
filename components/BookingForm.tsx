@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import {
 	Card,
 	CardContent,
@@ -11,38 +13,63 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar, Clock, MapPin, Phone, Mail, User } from "lucide-react";
+import { Calendar, MapPin, Phone, Mail, User } from "lucide-react"; // Removed unused Clock import
+
+// Zod schema for form validation
+const formSchema = z.object({
+	name: z.string().min(1, "Name is required"),
+	email: z.string().email("Invalid email address").min(1, "Email is required"),
+	phone: z.string().min(1, "Phone number is required"),
+	company: z.string().optional(),
+	spaceType: z.string().min(1, "Space type is required"),
+	preferredDate: z.string().optional(),
+	message: z.string().optional(),
+});
+
+// Infer TypeScript type from Zod schema
+type FormData = z.infer<typeof formSchema>;
 
 export default function BookingFormBeta() {
-	const [formData, setFormData] = useState({
-		name: "",
-		email: "",
-		phone: "",
-		company: "",
-		spaceType: "",
-		preferredDate: "",
-		preferredTime: "",
-		message: "",
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting },
+		reset,
+	} = useForm<FormData>({
+		resolver: zodResolver(formSchema),
+		defaultValues: {
+			name: "",
+			email: "",
+			phone: "",
+			company: "",
+			spaceType: "",
+			preferredDate: "",
+			message: "",
+		},
 	});
 
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-		// Handle form submission here
-		console.log("Form submitted:", formData);
-		alert(
-			"Thank you! We'll contact you within 24 hours to schedule your consultation.",
-		);
-	};
+	const onSubmit = async (data: FormData) => {
+		try {
+			const res = await fetch("/api/send-mail", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(data),
+			});
 
-	const handleChange = (
-		e: React.ChangeEvent<
-			HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-		>,
-	) => {
-		setFormData({
-			...formData,
-			[e.target.name]: e.target.value,
-		});
+			const result = await res.json();
+
+			if (result.success) {
+				alert(
+					"Thank you! We'll contact you within 24 hours to schedule your consultation.",
+				);
+				reset();
+			} else {
+				alert("Something went wrong. Please try again.");
+			}
+		} catch (err) {
+			console.error(err);
+			alert("Failed to send message.");
+		}
 	};
 
 	return (
@@ -75,7 +102,7 @@ export default function BookingFormBeta() {
 								</CardDescription>
 							</CardHeader>
 							<CardContent>
-								<form onSubmit={handleSubmit} className="space-y-6">
+								<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 									<div className="grid md:grid-cols-2 gap-4">
 										<div className="space-y-2">
 											<label className="text-sm font-medium text-gray-700">
@@ -84,13 +111,15 @@ export default function BookingFormBeta() {
 											<div className="relative">
 												<User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
 												<Input
-													name="name"
-													value={formData.name}
-													onChange={handleChange}
+													{...register("name")}
 													placeholder="John Doe"
 													className="pl-10"
-													required
 												/>
+												{errors.name && (
+													<p className="text-red-500 text-xs mt-1">
+														{errors.name.message}
+													</p>
+												)}
 											</div>
 										</div>
 										<div className="space-y-2">
@@ -100,14 +129,16 @@ export default function BookingFormBeta() {
 											<div className="relative">
 												<Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
 												<Input
-													name="email"
+													{...register("email")}
 													type="email"
-													value={formData.email}
-													onChange={handleChange}
 													placeholder="john@company.com"
 													className="pl-10"
-													required
 												/>
+												{errors.email && (
+													<p className="text-red-500 text-xs mt-1">
+														{errors.email.message}
+													</p>
+												)}
 											</div>
 										</div>
 									</div>
@@ -120,14 +151,16 @@ export default function BookingFormBeta() {
 											<div className="relative">
 												<Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
 												<Input
-													name="phone"
+													{...register("phone")}
 													type="tel"
-													value={formData.phone}
-													onChange={handleChange}
 													placeholder="+1 (555) 123-4567"
 													className="pl-10"
-													required
 												/>
+												{errors.phone && (
+													<p className="text-red-500 text-xs mt-1">
+														{errors.phone.message}
+													</p>
+												)}
 											</div>
 										</div>
 										<div className="space-y-2">
@@ -135,9 +168,7 @@ export default function BookingFormBeta() {
 												Company
 											</label>
 											<Input
-												name="company"
-												value={formData.company}
-												onChange={handleChange}
+												{...register("company")}
 												placeholder="Your Company"
 											/>
 										</div>
@@ -148,11 +179,8 @@ export default function BookingFormBeta() {
 											Space Type *
 										</label>
 										<select
-											name="spaceType"
-											value={formData.spaceType}
-											onChange={handleChange}
+											{...register("spaceType")}
 											className="w-full h-9 px-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-											required
 										>
 											<option value="">Select space type</option>
 											<option value="office">Corporate Office</option>
@@ -162,6 +190,11 @@ export default function BookingFormBeta() {
 											<option value="event">Event Space</option>
 											<option value="other">Other</option>
 										</select>
+										{errors.spaceType && (
+											<p className="text-red-500 text-xs mt-1">
+												{errors.spaceType.message}
+											</p>
+										)}
 									</div>
 
 									<div className="grid md:grid-cols-2 gap-4">
@@ -172,47 +205,19 @@ export default function BookingFormBeta() {
 											<div className="relative">
 												<Calendar className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
 												<Input
-													name="preferredDate"
+													{...register("preferredDate")}
 													type="date"
-													value={formData.preferredDate}
-													onChange={handleChange}
 													className="pl-10"
 												/>
 											</div>
 										</div>
-										<div className="space-y-2">
-											<label className="text-sm font-medium text-gray-700">
-												Preferred Time
-											</label>
-											<div className="relative">
-												<Clock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-												<select
-													name="preferredTime"
-													value={formData.preferredTime}
-													onChange={handleChange}
-													className="w-full h-9 pl-10 pr-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-												>
-													<option value="">Select time</option>
-													<option value="9:00 AM">9:00 AM</option>
-													<option value="10:00 AM">10:00 AM</option>
-													<option value="11:00 AM">11:00 AM</option>
-													<option value="1:00 PM">1:00 PM</option>
-													<option value="2:00 PM">2:00 PM</option>
-													<option value="3:00 PM">3:00 PM</option>
-													<option value="4:00 PM">4:00 PM</option>
-												</select>
-											</div>
-										</div>
 									</div>
-
 									<div className="space-y-2">
 										<label className="text-sm font-medium text-gray-700">
 											Additional Information
 										</label>
 										<Textarea
-											name="message"
-											value={formData.message}
-											onChange={handleChange}
+											{...register("message")}
 											placeholder="Tell us about your space, specific requirements, or any questions you have..."
 											rows={4}
 										/>
@@ -221,8 +226,11 @@ export default function BookingFormBeta() {
 									<Button
 										type="submit"
 										className="w-full bg-primary hover:bg-primary text-white py-3"
+										disabled={isSubmitting}
 									>
-										Schedule Free Consultation
+										{isSubmitting
+											? "Submitting..."
+											: "Schedule Free Consultation"}
 									</Button>
 								</form>
 							</CardContent>
