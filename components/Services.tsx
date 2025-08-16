@@ -8,7 +8,15 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sprout, BrickWall, Flower, SprayCan } from "lucide-react";
+import {
+	ArrowRight,
+	Sprout,
+	BrickWall,
+	Flower,
+	SprayCan,
+	MountainSnow,
+	Globe,
+} from "lucide-react";
 import { motion } from "motion/react";
 
 const services = [
@@ -64,6 +72,32 @@ const services = [
 		],
 		// price: "Custom pricing",
 	},
+	{
+		icon: MountainSnow, // replace with suitable icon
+		title: "Zen Garden",
+		description:
+			"Create a calming retreat with a custom Zen Garden. Designed to bring balance and serenity, these gardens feature stones, sand, and greenery arranged to promote mindfulness and relaxation. Perfect for homes, offices, or meditation spaces.",
+		features: [
+			"Stress relief",
+			"Minimal maintenance",
+			"Custom design layouts",
+			"Perfect for meditation areas",
+		],
+		// price: "Starting from $249",
+	},
+	{
+		icon: Globe, // replace with suitable icon
+		title: "Design an Indoor Terrarium",
+		description:
+			"Bring nature indoors with a personalized terrarium. These miniature ecosystems combine plants, moss, and decorative elements to create a self-sustaining, low-maintenance piece of living art. Ideal for desks, shelves, or as thoughtful gifts.",
+		features: [
+			"Compact and stylish",
+			"Custom plant selection",
+			"Low upkeep",
+			"Unique decorative piece",
+		],
+		// price: "Starting from $99",
+	},
 ];
 
 export default function Services() {
@@ -99,7 +133,7 @@ export default function Services() {
 							// 	transition: { duration: 0.3 },
 							// }}
 						>
-							<Card className="hover:bg-gray-50 h-full shadow-none border-0 transition-all duration-300 flex flex-col justify-between min-h-[300px] sm:min-h-[350px]">
+							<Card className="bg-secondary/10 hover:bg-secondary/20 h-full shadow-none border-0 transition-all duration-300 flex flex-col justify-between min-h-[300px] sm:min-h-[200px]">
 								<CardHeader className="text-center flex flex-col gap-2 pb-2">
 									<CardTitle className="text-xl sm:text-2xl flex flex-col sm:flex-row items-start sm:items-stretch justify-between gap-3 sm:gap-2 font-semibold text-gray-900 mb-5">
 										<div className="flex items-center justify-start gap-2 flex-shrink-0">
