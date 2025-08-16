@@ -4,6 +4,7 @@ import "./globals.css";
 import { NavBar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 // import Ribbon from "@/components/Ribbon";
+import { Toaster } from "@/components/ui/sonner";
 
 const roboto = Roboto({
 	variable: "--font-roboto",
@@ -51,6 +52,7 @@ export default function RootLayout({
 				{/* <Ribbon /> */}
 				<NavBar />
 				{children}
+				<Toaster />
 				<Footer />
 			</body>
 		</html>

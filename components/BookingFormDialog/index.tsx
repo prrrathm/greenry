@@ -25,6 +25,7 @@ import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const schema = z.object({
 	name: z.string().min(2, "Name is required"),
@@ -79,12 +80,16 @@ const BookingForm = ({
 
 			if (res.ok) {
 				setStatus("success");
+				toast.info(
+					"Thank you for reaching out to us, our team will contact you shortly.",
+				);
 				reset();
 			} else {
 				setStatus("error");
 			}
 		} catch (e) {
 			setStatus("error");
+			toast.error("There was Some issue, please try again later.");
 			console.log("error", e);
 		}
 	};

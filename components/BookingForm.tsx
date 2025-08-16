@@ -14,6 +14,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar, MapPin, Phone, Mail, User } from "lucide-react"; // Removed unused Clock import
+import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 // Zod schema for form validation
 const formSchema = z.object({
@@ -59,18 +61,27 @@ export default function BookingFormBeta() {
 			const result = await res.json();
 
 			if (result.success) {
-				alert(
+				toast.info(
 					"Thank you! We'll contact you within 24 hours to schedule your consultation.",
 				);
 				reset();
 			} else {
-				alert("Something went wrong. Please try again.");
+				toast.error("Something went wrong. Please try again.");
 			}
 		} catch (err) {
+			toast.error("Something went wrong. Please try again.");
 			console.error(err);
-			alert("Failed to send message.");
+			// alert("Failed to send message.");
 		}
 	};
+	const services = [
+		"Office Plants",
+		"Green Walls",
+		"Moss Walls",
+		"Plant Maintenance",
+		"Zen Garden",
+		"Indoor Terrarium",
+	];
 
 	return (
 		<section
@@ -174,30 +185,28 @@ export default function BookingFormBeta() {
 										</div>
 									</div>
 
-									<div className="space-y-2">
-										<label className="text-sm font-medium text-gray-700">
-											Space Type *
-										</label>
-										<select
-											{...register("spaceType")}
-											className="w-full h-9 px-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-										>
-											<option value="">Select space type</option>
-											<option value="office">Corporate Office</option>
-											<option value="home">Home/Residential</option>
-											<option value="coworking">Co-working Space</option>
-											<option value="retail">Retail/Commercial</option>
-											<option value="event">Event Space</option>
-											<option value="other">Other</option>
-										</select>
-										{errors.spaceType && (
-											<p className="text-red-500 text-xs mt-1">
-												{errors.spaceType.message}
-											</p>
-										)}
-									</div>
-
 									<div className="grid md:grid-cols-2 gap-4">
+										<div className="space-y-2">
+											<label className="text-sm font-medium text-gray-700">
+												Space Type *
+											</label>
+											<select
+												{...register("spaceType")}
+												className="w-full h-9 px-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+											>
+												<option value="">Select space type</option>
+												{services.map((item, iter) => (
+													<option key={iter} value="office">
+														{item}
+													</option>
+												))}
+											</select>
+											{errors.spaceType && (
+												<p className="text-red-500 text-xs mt-1">
+													{errors.spaceType.message}
+												</p>
+											)}
+										</div>
 										<div className="space-y-2">
 											<label className="text-sm font-medium text-gray-700">
 												Preferred Date
@@ -225,7 +234,10 @@ export default function BookingFormBeta() {
 
 									<Button
 										type="submit"
-										className="w-full bg-primary hover:bg-primary text-white py-3"
+										className={cn(
+											"w-full bg-primary hover:bg-primary text-white py-3",
+											isSubmitting ? "cursor-progress" : "cursor-pointer",
+										)}
 										disabled={isSubmitting}
 									>
 										{isSubmitting
@@ -237,13 +249,13 @@ export default function BookingFormBeta() {
 						</Card>
 
 						{/* Info Panel */}
-						<div className="space-y-8">
+						<div className="space-y-4">
 							<Card className="border-0 bg-green-50">
-								<CardContent className="p-6">
+								<CardContent className="p-6 text-sm">
 									<h3 className="text-xl font-semibold text-gray-900 mb-4">
 										What to Expect
 									</h3>
-									<ul className="space-y-3">
+									<ul className="space-y-1">
 										<li className="flex items-start">
 											<div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
 											<span className="text-gray-700">
@@ -273,11 +285,11 @@ export default function BookingFormBeta() {
 							</Card>
 
 							<Card className="border-0 bg-blue-50">
-								<CardContent className="p-6">
+								<CardContent className="p-6 text-sm">
 									<h3 className="text-xl font-semibold text-gray-900 mb-4">
 										Contact Information
 									</h3>
-									<div className="space-y-4">
+									<div className="space-y-1">
 										<div className="flex items-center">
 											<Phone className="h-5 w-5 text-blue-600 mr-3" />
 											<span className="text-gray-700">+1 (555) 123-4567</span>
