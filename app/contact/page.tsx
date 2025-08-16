@@ -126,11 +126,11 @@ export default function ContactPage() {
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 					<div className="text-center space-y-8 max-w-4xl mx-auto">
 						<div className="space-y-4">
-							<div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+							<div className="inline-flex items-center px-4 py-2 bg-secondary text-primary rounded-full text-sm font-medium">
 								📞 Get In Touch
 							</div>
-							<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bebas text-gray-900 leading-tight">
-								Let&apos;s <span className="text-green-800">Connect</span>
+							<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-roboto font-extrabold text-gray-900 leading-tight">
+								Let&apos;s <span className="text-primary">Connect</span>
 							</h1>
 							<p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
 								Ready to transform your space? We&apos;re here to help you
@@ -149,7 +149,7 @@ export default function ContactPage() {
 						{/* Form */}
 						<div className="space-y-8 bg-white p-6 sm:p-8 rounded-2xl shadow-sm">
 							<div>
-								<h2 className="text-2xl sm:text-3xl md:text-4xl font-bebas text-gray-900 mb-4">
+								<h2 className="text-2xl sm:text-3xl md:text-4xl font-roboto font-extrabold text-gray-900 mb-4">
 									Send Us a Message
 								</h2>
 								<p className="text-base sm:text-lg text-gray-600">
@@ -159,9 +159,9 @@ export default function ContactPage() {
 							</div>
 
 							{isSubmitted ? (
-								<div className="bg-green-50 border border-green-200 rounded-lg p-6 sm:p-8 text-center">
-									<CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-									<h3 className="text-2xl font-bebas text-green-800 mb-2">
+								<div className="bg-green-50 border border-secondary rounded-lg p-6 sm:p-8 text-center">
+									<CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
+									<h3 className="text-2xl font-roboto font-extrabold text-primary mb-2">
 										Message Sent!
 									</h3>
 									<p className="text-green-700">
@@ -293,7 +293,7 @@ export default function ContactPage() {
 
 									<Button
 										type="submit"
-										className="w-full bg-green-800 hover:bg-green-700 text-white py-3 font-semibold text-lg"
+										className="w-full bg-primary hover:bg-primary text-white py-3 font-semibold text-lg"
 									>
 										Send Message
 										<Send className="h-5 w-5 ml-2" />
@@ -305,13 +305,13 @@ export default function ContactPage() {
 						{/* Additional Info */}
 						<div className="space-y-8">
 							<div className="bg-white p-8 rounded-2xl shadow-sm">
-								<h3 className="text-4xl sm:text-6xl font-bebas text-gray-900 mb-6">
+								<h3 className="text-2xl sm:text-4xl font-roboto font-extrabold text-gray-900 mb-6">
 									Why Choose Evergreen?
 								</h3>
 								<div className="space-y-4">
 									<div className="flex items-start space-x-4">
-										<div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-											<CheckCircle className="h-5 w-5 text-green-600" />
+										<div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+											<CheckCircle className="h-5 w-5 text-primary" />
 										</div>
 										<div>
 											<h4 className="font-semibold text-gray-900">
@@ -323,8 +323,8 @@ export default function ContactPage() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-4">
-										<div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-											<CheckCircle className="h-5 w-5 text-green-600" />
+										<div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+											<CheckCircle className="h-5 w-5 text-primary" />
 										</div>
 										<div>
 											<h4 className="font-semibold text-gray-900">
@@ -336,8 +336,8 @@ export default function ContactPage() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-4">
-										<div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-											<CheckCircle className="h-5 w-5 text-green-600" />
+										<div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+											<CheckCircle className="h-5 w-5 text-primary" />
 										</div>
 										<div>
 											<h4 className="font-semibold text-gray-900">
@@ -350,8 +350,8 @@ export default function ContactPage() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-4">
-										<div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-											<CheckCircle className="h-5 w-5 text-green-600" />
+										<div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+											<CheckCircle className="h-5 w-5 text-primary" />
 										</div>
 										<div>
 											<h4 className="font-semibold text-gray-900">
@@ -365,16 +365,16 @@ export default function ContactPage() {
 								</div>
 							</div>
 
-							<div className="bg-green-800 p-8 rounded-2xl text-white">
+							<div className="bg-primary p-8 rounded-2xl text-white">
 								<h3 className="text-2xl font-bold mb-4">
 									Need Immediate Assistance?
 								</h3>
-								<p className="text-green-100 mb-6">
+								<p className="text-secondary mb-6">
 									For urgent inquiries or emergency plant care, call us
 									directly.
 								</p>
 								<Button
-									className="w-full md:w-max bg-white text-green-800 hover:bg-gray-100 font-semibold"
+									className="w-full md:w-max bg-white text-primary hover:bg-gray-100 font-semibold"
 									onClick={() => (window.location.href = "tel:+15551234567")}
 								>
 									<Phone className="h-5 w-5 mr-2" />
@@ -391,19 +391,19 @@ export default function ContactPage() {
 				<FAQs data={faqs} />
 			</section>
 			{/* CTA Section */}
-			<section className="py-20 bg-green-800">
+			<section className="py-20 bg-primary">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<div className="max-w-3xl mx-auto space-y-8">
-						<h2 className="text-3xl sm:text-4xl font-bebas text-white">
+						<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-white">
 							Ready to Get Started?
 						</h2>
-						<p className="text-xl text-green-100">
+						<p className="text-xl text-secondary">
 							Don&apos;t wait to transform your space. Contact us today and take
 							the first step toward a greener, healthier environment.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
 							<Button
-								className="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 font-semibold text-lg"
+								className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg"
 								onClick={() => document.getElementById("name")?.focus()}
 							>
 								Send Message
@@ -411,7 +411,7 @@ export default function ContactPage() {
 							</Button>
 							<Button
 								variant="outline"
-								className="border-white text-white hover:bg-white hover:text-green-800 px-8 py-3 font-semibold text-lg"
+								className="border-white text-white hover:bg-white hover:text-primary px-8 py-3 font-semibold text-lg"
 								onClick={() => (window.location.href = "tel:+15551234567")}
 							>
 								<Phone className="h-5 w-5 mr-2" />

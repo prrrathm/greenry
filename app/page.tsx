@@ -45,7 +45,7 @@ export default function Home() {
 		<div className="min-h-screen relative">
 			<Hero />
 			{/* <ProjectsCarousel slides={[1,2,3,4]} /> */}
-			<section className="min-h-[60vh] h-[80vh] sm:h-[70vh] md:h-screen px-4 sm:px-8 md:px-20 rounded-xl flex items-center">
+			<section className="min-h-[60vh] h-[50vh] sm:h-[70vh] md:h-screen px-4 sm:px-8 md:px-20 rounded-xl flex items-center">
 				<AutoPlayVideo src="/videos/home-banner.mp4" />
 			</section>
 			<Services />
@@ -62,7 +62,7 @@ export default function Home() {
 							sustainable plant solutions.
 						</p>
 					</div>
-          <ProjectsCarousel />
+			<ProjectsCarousel />
 				</div>
 			</section> */}
 

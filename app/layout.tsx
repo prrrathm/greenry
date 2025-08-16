@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Anton, Bebas_Neue } from "next/font/google";
+import { Geist, Geist_Mono, Anton, Bebas_Neue, Roboto } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 // import Ribbon from "@/components/Ribbon";
+
+const roboto = Roboto({
+	variable: "--font-roboto",
+	subsets: ["latin"],
+});
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -41,7 +46,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${bebas.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${bebas.variable} ${roboto.variable} antialiased bg-gradient-to-br from-green-50 via-white to-green-50/40`}
 			>
 				{/* <Ribbon /> */}
 				<NavBar />

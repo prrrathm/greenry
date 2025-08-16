@@ -19,15 +19,15 @@ export default function BlogPost() {
 			<article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
 				<header className="mb-8">
 					<div className="mb-4">
-						<span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+						<span className="bg-secondary text-primary px-3 py-1 rounded-full text-sm font-medium">
 							Design Trends
 						</span>
 					</div>
-					
+
 					<h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
 						Biophilic Design Trends: The Future of Green Workspaces
 					</h1>
-					
+
 					<div className="flex flex-wrap items-center justify-between text-sm text-gray-600 mb-8">
 						<div className="flex items-center space-x-6">
 							<div className="flex items-center">
@@ -61,90 +61,171 @@ export default function BlogPost() {
 
 				<div className="prose prose-lg max-w-none">
 					<p className="text-xl text-gray-700 mb-6 leading-relaxed">
-						Biophilic design—the practice of incorporating natural elements into built environments—is revolutionizing 
-						modern workspaces. As companies recognize the profound impact of nature on employee well-being and productivity, 
-						innovative design trends are emerging that go far beyond traditional potted plants.
+						Biophilic design—the practice of incorporating natural elements into
+						built environments—is revolutionizing modern workspaces. As
+						companies recognize the profound impact of nature on employee
+						well-being and productivity, innovative design trends are emerging
+						that go far beyond traditional potted plants.
 					</p>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Evolution of Biophilic Design</h2>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						The Evolution of Biophilic Design
+					</h2>
 					<p className="mb-6">
-						Biophilic design has evolved from simple plant placement to sophisticated integration of natural elements 
-						throughout the workspace. Today&apos;s approach considers lighting, materials, spatial layout, and sensory experiences 
-						to create environments that truly connect occupants with nature.
+						Biophilic design has evolved from simple plant placement to
+						sophisticated integration of natural elements throughout the
+						workspace. Today&apos;s approach considers lighting, materials,
+						spatial layout, and sensory experiences to create environments that
+						truly connect occupants with nature.
 					</p>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Emerging Trends in Green Workspaces</h2>
-					
-					<h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">1. Living Architecture Integration</h3>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Emerging Trends in Green Workspaces
+					</h2>
+
+					<h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+						1. Living Architecture Integration
+					</h3>
 					<p className="mb-6">
-						Modern offices are incorporating plants as architectural elements rather than decorative additions. 
-						This includes structural green walls, plant-integrated room dividers, and ceiling-mounted gardens that 
-						serve both functional and aesthetic purposes.
+						Modern offices are incorporating plants as architectural elements
+						rather than decorative additions. This includes structural green
+						walls, plant-integrated room dividers, and ceiling-mounted gardens
+						that serve both functional and aesthetic purposes.
 					</p>
 
-					<h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">2. Smart Plant Systems</h3>
+					<h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+						2. Smart Plant Systems
+					</h3>
 					<p className="mb-6">
-						Technology is revolutionizing plant care with IoT sensors that monitor soil moisture, light levels, 
-						and air quality. Automated irrigation systems and app-controlled lighting ensure optimal plant health 
-						while minimizing maintenance requirements.
+						Technology is revolutionizing plant care with IoT sensors that
+						monitor soil moisture, light levels, and air quality. Automated
+						irrigation systems and app-controlled lighting ensure optimal plant
+						health while minimizing maintenance requirements.
 					</p>
 
-					<h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">3. Multi-Sensory Nature Experiences</h3>
+					<h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">
+						3. Multi-Sensory Nature Experiences
+					</h3>
 					<p className="mb-6">
-						Beyond visual elements, designers are incorporating natural sounds, textures, and even scents. 
-						Water features provide soothing sounds, natural materials offer tactile experiences, and aromatic 
-						plants engage the sense of smell.
+						Beyond visual elements, designers are incorporating natural sounds,
+						textures, and even scents. Water features provide soothing sounds,
+						natural materials offer tactile experiences, and aromatic plants
+						engage the sense of smell.
 					</p>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Innovative Plant Applications</h2>
-					<p className="mb-4">Forward-thinking companies are exploring creative ways to integrate plants:</p>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Innovative Plant Applications
+					</h2>
+					<p className="mb-4">
+						Forward-thinking companies are exploring creative ways to integrate
+						plants:
+					</p>
 					<ul className="list-disc pl-6 mb-6 space-y-2">
-						<li><strong>Modular Green Systems:</strong> Flexible plant installations that can be reconfigured as needs change</li>
-						<li><strong>Edible Office Gardens:</strong> Herb and vegetable gardens that provide fresh ingredients for office kitchens</li>
-						<li><strong>Therapeutic Plant Spaces:</strong> Dedicated quiet zones with specific plants chosen for stress reduction</li>
-						<li><strong>Seasonal Rotation Programs:</strong> Regular plant changes to maintain visual interest and seasonal connection</li>
+						<li>
+							<strong>Modular Green Systems:</strong> Flexible plant
+							installations that can be reconfigured as needs change
+						</li>
+						<li>
+							<strong>Edible Office Gardens:</strong> Herb and vegetable gardens
+							that provide fresh ingredients for office kitchens
+						</li>
+						<li>
+							<strong>Therapeutic Plant Spaces:</strong> Dedicated quiet zones
+							with specific plants chosen for stress reduction
+						</li>
+						<li>
+							<strong>Seasonal Rotation Programs:</strong> Regular plant changes
+							to maintain visual interest and seasonal connection
+						</li>
 					</ul>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Science Behind the Trends</h2>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						The Science Behind the Trends
+					</h2>
 					<p className="mb-6">
-						Research continues to validate biophilic design benefits. Recent studies show that employees in biophilically 
-						designed offices report 15% increase in well-being, 6% increase in productivity, and 15% increase in creativity. 
-						These findings are driving widespread adoption across industries.
+						Research continues to validate biophilic design benefits. Recent
+						studies show that employees in biophilically designed offices report
+						15% increase in well-being, 6% increase in productivity, and 15%
+						increase in creativity. These findings are driving widespread
+						adoption across industries.
 					</p>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Sustainability and Wellness Integration</h2>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Sustainability and Wellness Integration
+					</h2>
 					<p className="mb-6">
-						Modern biophilic design emphasizes sustainability alongside wellness. This includes using locally sourced plants, 
-						implementing water recycling systems, and choosing species that contribute to carbon sequestration and air purification.
+						Modern biophilic design emphasizes sustainability alongside
+						wellness. This includes using locally sourced plants, implementing
+						water recycling systems, and choosing species that contribute to
+						carbon sequestration and air purification.
 					</p>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Future Predictions</h2>
-					<p className="mb-4">Looking ahead, we anticipate several exciting developments:</p>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Future Predictions
+					</h2>
+					<p className="mb-4">
+						Looking ahead, we anticipate several exciting developments:
+					</p>
 					<ul className="list-disc pl-6 mb-6 space-y-2">
-						<li><strong>AI-Powered Plant Care:</strong> Machine learning systems that predict and prevent plant health issues</li>
-						<li><strong>Biophilic Lighting:</strong> LED systems that mimic natural light patterns and support plant growth</li>
-						<li><strong>Integrated Air Systems:</strong> Plants working in conjunction with HVAC systems for optimal air quality</li>
-						<li><strong>Virtual Nature Integration:</strong> Combining live plants with digital nature displays for enhanced experiences</li>
+						<li>
+							<strong>AI-Powered Plant Care:</strong> Machine learning systems
+							that predict and prevent plant health issues
+						</li>
+						<li>
+							<strong>Biophilic Lighting:</strong> LED systems that mimic
+							natural light patterns and support plant growth
+						</li>
+						<li>
+							<strong>Integrated Air Systems:</strong> Plants working in
+							conjunction with HVAC systems for optimal air quality
+						</li>
+						<li>
+							<strong>Virtual Nature Integration:</strong> Combining live plants
+							with digital nature displays for enhanced experiences
+						</li>
 					</ul>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Implementation Strategies</h2>
-					<p className="mb-4">To successfully implement biophilic design trends:</p>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Implementation Strategies
+					</h2>
+					<p className="mb-4">
+						To successfully implement biophilic design trends:
+					</p>
 					<ul className="list-disc pl-6 mb-6 space-y-2">
-						<li>Start with a comprehensive space assessment and employee needs analysis</li>
-						<li>Develop a phased implementation plan that allows for gradual integration</li>
-						<li>Choose plant species and systems that align with maintenance capabilities</li>
-						<li>Monitor and measure the impact on employee satisfaction and productivity</li>
-						<li>Plan for ongoing evolution and adaptation of the biophilic elements</li>
+						<li>
+							Start with a comprehensive space assessment and employee needs
+							analysis
+						</li>
+						<li>
+							Develop a phased implementation plan that allows for gradual
+							integration
+						</li>
+						<li>
+							Choose plant species and systems that align with maintenance
+							capabilities
+						</li>
+						<li>
+							Monitor and measure the impact on employee satisfaction and
+							productivity
+						</li>
+						<li>
+							Plan for ongoing evolution and adaptation of the biophilic
+							elements
+						</li>
 					</ul>
 
 					<div className="bg-green-50 p-6 rounded-lg mt-8">
-						<h3 className="text-lg font-semibold text-green-900 mb-2">Design Your Future Workspace</h3>
-						<p className="text-green-800 mb-4">
-							Ready to embrace the future of biophilic design? Our team stays at the forefront of green workspace trends, 
-							helping companies create innovative, nature-integrated environments that inspire and energize employees.
+						<h3 className="text-lg font-semibold text-green-900 mb-2">
+							Design Your Future Workspace
+						</h3>
+						<p className="text-primary mb-4">
+							Ready to embrace the future of biophilic design? Our team stays at
+							the forefront of green workspace trends, helping companies create
+							innovative, nature-integrated environments that inspire and
+							energize employees.
 						</p>
 						<Link href="/#book-demo">
-							<Button className="bg-green-800 hover:bg-green-700 text-white">
+							<Button className="bg-primary hover:bg-primary text-white">
 								Explore Biophilic Design Solutions
 							</Button>
 						</Link>

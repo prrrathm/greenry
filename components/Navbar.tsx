@@ -38,7 +38,7 @@ export const NavBar = () => {
 			className={cn({
 				"fixed flex items-center justify-between z-50 px-4 sm:px-6 py-4  backdrop-blur transition-all duration-500":
 					true,
-				"bg-green-800/90 drop-shadow-lg rounded-none inset-x-0 top-0 ":
+				"bg-primary/90 drop-shadow-lg rounded-none inset-x-0 top-0 ":
 					isScrolled,
 				"rounded-xl inset-x-1/12 md:inset-x-1/5 top-8": !isScrolled,
 			})}
@@ -48,7 +48,7 @@ export const NavBar = () => {
 				href={"/"}
 				className={cn(
 					"font-black text-xl ",
-					isScrolled ? "text-white" : "text-green-800",
+					isScrolled ? "text-white" : "text-primary",
 				)}
 			>
 				Evergreen
@@ -61,7 +61,7 @@ export const NavBar = () => {
 						href={item.link}
 						className={cn(
 							" transition-colors duration-200",
-							isScrolled ? "text-white" : "text-gray-700 hover:text-green-600",
+							isScrolled ? "text-white" : "text-gray-700 hover:text-primary",
 						)}
 					>
 						{item.label}
@@ -70,15 +70,15 @@ export const NavBar = () => {
 			</div>
 			<div className="flex flex-row-reverse md:flex-row items-center justify-center gap-2 md:gap-4">
 				<NavMobileDrawer navLinks={navLinks} isScrolled={isScrolled} />
-				{/* <div className="hover:bg-white hover:text-green-600 p-2 md:p-2.5 text-sm md:text-base w-fit sm:hidden">
-					<Menu fill="#016630" className="h-6 w-6 text-green-800" />
+				{/* <div className="hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit sm:hidden">
+					<Menu fill="#016630" className="h-6 w-6 text-primary" />
 				</div> */}
 				<PhoneDropDown isScrolled={isScrolled} />
 				<Link
 					href="mailto:info@Evergreen.com"
 					className={cn(
 						"group inline-flex items-center",
-						isScrolled ? "text-white" : "text-green-800",
+						isScrolled ? "text-white" : "text-primary",
 					)}
 				>
 					<Mail className="h-6 w-6  cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90" />
@@ -91,7 +91,7 @@ export const NavBar = () => {
 				/>
 			</div>
 			{/* CTA */}
-			{/* <Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2">
+			{/* <Button className="hidden md:block bg-primary hover:bg-primary text-white px-6 py-2">
 				Book Demo
 			</Button> */}
 		</div>

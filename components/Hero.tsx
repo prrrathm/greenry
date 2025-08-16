@@ -12,14 +12,14 @@ export default function Hero() {
 	};
 
 	return (
-		<section className="relative pt-32 pb-20 min-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/40">
+		<section className="relative pt-32 pb-20 min-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary via-white to-secondary/40">
 			{/* Background Pattern */}
 			<div className="absolute hidden inset-0 opacity-40">
 				<div
-					className="absolute inset-0 bg-green-100 bg-opacity-20"
+					className="absolute inset-0 bg-secondary bg-opacity-20"
 					style={{
 						backgroundImage:
-							"radial-gradient(circle at 1px 1px, rgba(22, 163, 74, 0.15) 1px, transparent 0)",
+							"radial-gradient(circle at 1px 1px, #26420f 1px, transparent 0)",
 						backgroundSize: "20px 20px",
 					}}
 				></div>
@@ -30,12 +30,12 @@ export default function Hero() {
 					{/* Left Content */}
 					<div className="text-center lg:text-left space-y-8">
 						<div className="space-y-4">
-							<div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+							<div className="inline-flex items-center px-4 py-2 bg-secondary text-primary rounded-full text-sm font-medium">
 								🌱 Transform Your Environment
 							</div>
 							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight letter ">
 								Create a <span className="">Thriving</span>{" "}
-								<span className="text-green-800 relative">Environment</span>
+								<span className="text-primary relative">Environment</span>
 							</h1>
 							<p className="text-sm md:text-xl text-gray-600 max-w-2xl">
 								Transform your workspace and home with our premium plant
@@ -49,7 +49,7 @@ export default function Hero() {
 							<div className="relative flex">
 								<Button
 									// size="lg"
-									className=" bg-green-800 cursor-pointer hover:bg-green-700 text-white px-3 sm:px-8 py-3 font-semibold flex gap-2"
+									className=" bg-primary cursor-pointer hover:bg-primary text-white px-3 sm:px-8 py-3 font-semibold flex gap-2"
 									onClick={scrollToBooking}
 								>
 									Book Free Consultation
@@ -59,22 +59,22 @@ export default function Hero() {
 								<Button
 									variant="outline"
 									// size="lg"
-									className="md:hidden border-2 border-green-600 text-green-600 hover:text-green-800 hover:bg-green-100 bg-green-100/60 cursor-pointer rounded-full !px-2 !py-1 absolute -right-12 scale-90"
+									className="md:hidden border-2 border-primary text-primary hover:text-primary hover:bg-secondary bg-secondary/60 cursor-pointer rounded-full !px-2 !py-1 absolute -right-12 scale-90"
 								>
 									<Play
 										fill="oklch(62.7% 0.194 149.214)"
-										className="h-5 w-5 text-green-600"
+										className="h-5 w-5 text-primary"
 									/>
 								</Button>
 							</div>
 							<Button
 								variant="outline"
 								// size="lg"
-								className="hidden md:flex p-2 border-2 border-green-600 text-green-600 hover:text-green-800 hover:bg-green-100 font-bold bg-green-100/60 cursor-pointer rounded-full md:rounded-md"
+								className="hidden md:flex p-2 border-2 border-primary text-primary hover:text-primary hover:bg-secondary font-bold bg-secondary/60 cursor-pointer rounded-full md:rounded-md"
 							>
 								<Play
 									fill="oklch(62.7% 0.194 149.214)"
-									className="h-5 w-5 text-green-600"
+									className="h-5 w-5 text-primary"
 								/>
 								Watch Demo
 							</Button>
@@ -83,19 +83,19 @@ export default function Hero() {
 						{/* Stats */}
 						<div className="grid grid-cols-3 gap-8 pt-8 md:border-t border-gray-200">
 							<div className="text-center lg:text-left">
-								<div className="text-2xl font-bold text-green-800">500+</div>
+								<div className="text-2xl font-bold text-primary">500+</div>
 								<div className="text-sm text-gray-600 whitespace-nowrap">
 									Happy Clients
 								</div>
 							</div>
 							<div className="text-center lg:text-left">
-								<div className="text-2xl font-bold text-green-800">50k+</div>
+								<div className="text-2xl font-bold text-primary">50k+</div>
 								<div className="text-sm text-gray-600 whitespace-nowrap">
 									Plants Delivered
 								</div>
 							</div>
 							<div className="text-center lg:text-left">
-								<div className="text-2xl font-bold text-green-800">100%</div>
+								<div className="text-2xl font-bold text-primary">100%</div>
 								<div className="text-sm text-gray-600 whitespace-nowrap">
 									Satisfaction Rate
 								</div>
@@ -115,8 +115,8 @@ export default function Hero() {
 							/>
 						</div>
 						{/* Floating Elements */}
-						<div className="absolute -top-4 -right-4 w-24 h-24 bg-green-200 rounded-full opacity-60 animate-pulse"></div>
-						<div className="absolute -bottom-4 -left-4 w-32 h-32 bg-green-100 rounded-full opacity-40 animate-pulse delay-1000"></div>
+						<div className="absolute -top-4 -right-4 w-24 h-24 bg-secondary rounded-full opacity-60 animate-pulse"></div>
+						<div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary rounded-full opacity-40 animate-pulse delay-1000"></div>
 					</div>
 				</div>
 			</div>

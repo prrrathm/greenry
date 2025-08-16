@@ -60,15 +60,15 @@ export default function AboutPage() {
 	return (
 		<div className="min-h-screen">
 			{/* Hero Section */}
-			<section className="relative pt-24 pb-12 min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/40">
+			<section className="relative pt-24 pb-12 min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/10">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 					<div className="text-center space-y-8 max-w-4xl mx-auto">
 						<div className="space-y-4">
-							<div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+							<div className="inline-flex items-center px-4 py-2 bg-secondary text-primary rounded-full text-sm font-medium">
 								🌱 About Evergreen
 							</div>
-							<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bebas text-gray-900 leading-tight">
-								Growing a <span className="text-green-800">Greener</span> Future
+							<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-roboto font-extrabold text-gray-900 leading-tight">
+								Growing a <span className="text-primary">Greener</span> Future
 							</h1>
 							<p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
 								We&apos;re passionate about transforming spaces with sustainable
@@ -85,7 +85,7 @@ export default function AboutPage() {
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid lg:grid-cols-2 gap-12 items-center">
 						<div className="space-y-6">
-							<h2 className="text-3xl sm:text-4xl font-bebas text-gray-900">
+							<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-gray-900">
 								Our Mission
 							</h2>
 							<p className="text-lg text-gray-600 leading-relaxed">
@@ -103,7 +103,7 @@ export default function AboutPage() {
 								environmental sustainability.
 							</p>
 							<Button
-								className="bg-green-800 hover:bg-green-700 text-white px-8 py-3 font-semibold"
+								className="bg-primary hover:bg-primary text-white px-8 py-3 font-semibold"
 								onClick={scrollToBooking}
 							>
 								Start Your Journey
@@ -111,8 +111,8 @@ export default function AboutPage() {
 							</Button>
 						</div>
 						<div className="relative">
-							<div className="aspect-square bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center">
-								<Leaf className="h-32 w-32 text-green-600" />
+							<div className="aspect-square bg-gradient-to-br from-secondary to-secondary rounded-2xl flex items-center justify-center">
+								<Leaf className="h-32 w-32 text-primary" />
 							</div>
 						</div>
 					</div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
 			<section className="py-20 bg-gray-50">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-16">
-						<h2 className="text-3xl sm:text-4xl font-bebas text-gray-900 mb-4">
+						<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-gray-900 mb-4">
 							Our Values
 						</h2>
 						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -136,10 +136,10 @@ export default function AboutPage() {
 								key={index}
 								className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
 							>
-								<div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-									<value.icon className="h-8 w-8 text-green-600" />
+								<div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
+									<value.icon className="h-8 w-8 text-primary" />
 								</div>
-								<h3 className="text-xl font-bebas text-gray-900 mb-4">
+								<h3 className="text-xl font-roboto font-extrabold text-gray-900 mb-4">
 									{value.title}
 								</h3>
 								<p className="text-gray-600 leading-relaxed">
@@ -156,12 +156,12 @@ export default function AboutPage() {
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid lg:grid-cols-2 gap-12 items-center">
 						<div className="relative">
-							<div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center">
-								<Globe className="h-24 w-24 text-green-600" />
+							<div className="aspect-[4/3] bg-gradient-to-br from-secondary to-secondary rounded-2xl flex items-center justify-center">
+								<Globe className="h-24 w-24 text-primary" />
 							</div>
 						</div>
 						<div className="space-y-6">
-							<h2 className="text-3xl sm:text-4xl font-bebas text-gray-900">
+							<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-gray-900">
 								Our Story
 							</h2>
 							<p className="text-lg text-gray-600 leading-relaxed">
@@ -179,15 +179,15 @@ export default function AboutPage() {
 							</p>
 							<div className="grid grid-cols-3 gap-8 pt-8">
 								<div className="text-center">
-									<div className="text-3xl font-bold text-green-800">500+</div>
+									<div className="text-3xl font-bold text-primary">500+</div>
 									<div className="text-sm text-gray-600">Happy Clients</div>
 								</div>
 								<div className="text-center">
-									<div className="text-3xl font-bold text-green-800">50k+</div>
+									<div className="text-3xl font-bold text-primary">50k+</div>
 									<div className="text-sm text-gray-600">Plants Delivered</div>
 								</div>
 								<div className="text-center">
-									<div className="text-3xl font-bold text-green-800">100%</div>
+									<div className="text-3xl font-bold text-primary">100%</div>
 									<div className="text-sm text-gray-600">Satisfaction Rate</div>
 								</div>
 							</div>
@@ -200,7 +200,7 @@ export default function AboutPage() {
 			<section className="py-20 bg-gray-50">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-16">
-						<h2 className="text-3xl sm:text-4xl font-bebas text-gray-900 mb-4">
+						<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-gray-900 mb-4">
 							Meet Our Team
 						</h2>
 						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -213,15 +213,13 @@ export default function AboutPage() {
 								key={index}
 								className="bg-white p-8 rounded-2xl shadow-sm text-center"
 							>
-								<div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-									<Users className="h-12 w-12 text-green-600" />
+								<div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+									<Users className="h-12 w-12 text-primary" />
 								</div>
-								<h3 className="text-xl font-bebas text-gray-900 mb-2">
+								<h3 className="text-xl font-roboto font-extrabold text-gray-900 mb-2">
 									{member.name}
 								</h3>
-								<p className="text-green-600 font-semibold mb-4">
-									{member.role}
-								</p>
+								<p className="text-primary font-semibold mb-4">{member.role}</p>
 								<p className="text-gray-600 leading-relaxed">{member.bio}</p>
 							</div>
 						))}
@@ -230,18 +228,18 @@ export default function AboutPage() {
 			</section>
 
 			{/* CTA Section */}
-			<section className="py-20 bg-green-800">
+			<section className="py-20 bg-primary">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<div className="max-w-3xl mx-auto space-y-8">
-						<h2 className="text-3xl sm:text-4xl font-bebas text-white">
+						<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-white">
 							Ready to Transform Your Space?
 						</h2>
-						<p className="text-xl text-green-100">
+						<p className="text-xl text-secondary">
 							Join hundreds of satisfied clients who have already created
 							healthier, more productive environments with Evergreen.
 						</p>
 						<Button
-							className="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 font-semibold text-lg"
+							className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg"
 							onClick={scrollToBooking}
 						>
 							Book Free Consultation

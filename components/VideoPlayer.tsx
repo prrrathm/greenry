@@ -21,50 +21,50 @@ const AutoPlayVideo = ({ src }: { src: string }) => {
 			<div className="font-[geist] absolute bottom-4 sm:bottom-1/5 px-4 sm:px-16 inset-x-0 z-30 flex justify-center sm:justify-start">
 				<Button
 					size={"lg"}
-					className="text-black font-bold bg-[#eee] hover:bg-[#ddd] border border-[#eee] cursor-pointer uppercase px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base flex gap-2 sm:gap-4 hover:gap-3 sm:hover:gap-6 transition-all duration-500 hover:text-green-700 w-full sm:w-auto max-w-xs sm:max-w-none"
+					className="text-white font-bold bg-primary cursor-pointer uppercase px-3 sm:px-4 py-2 sm:py-3 text-sm flex gap-1 sm:gap-2 hover:gap-1 sm:hover:gap-3 transition-all duration-500 hover:text-secondary w-full sm:w-auto max-w-xs sm:max-w-none"
 				>
 					Request a Demo Now
 					<ArrowRight className="h-4 w-4" />
 				</Button>
 			</div>
 
-			<div className="flex flex-col absolute left-0 sm:left-8 md:left-32 h-full justify-center text-6xl md:text-6xl lg:text-8xl font-bolder pl-4 sm:pl-8 md:pl-20 bg-black/40 w-full text-shadow-2xs gap-2 sm:gap-3 scale-100 sm:scale-110 md:scale-125 z-20 uppercase">
-				<span className="bg-clip-text font-bebas tracking-wider flex flex-col md:flex-row gap-2 font-bolder">
+			<div className="flex flex-col absolute left-0 sm:left-8 md:left-32 h-full justify-center text-5xl md:text-8xl font-bolder pl-4 sm:pl-8 md:pl-20 bg-black/40 w-full text-shadow-2xs gap-2 sm:gap-3 scale-100 sm:scale-110 md:scale-125 z-20 uppercase">
+				<span className="bg-clip-text font-roboto font-extrabold tracking-wider flex flex-col md:flex-row gap-2">
 					<span
-						className="text-green-100/30 drop-shadow-lg"
-						style={{
-							WebkitTextStroke: "2px #eee",
-							WebkitBackgroundClip: "text",
-						}}
+						className="text-secondary drop-shadow-lg"
+						// style={{
+						// 	WebkitTextStroke: "0.9px #eee",
+						// 	WebkitBackgroundClip: "text",
+						// }}
 					>
 						Breathe
 					</span>
 					<span
-						className="text-green-600/80 drop-shadow-lg"
-						style={{
-							WebkitTextStroke: "2px #016630",
-							WebkitBackgroundClip: "text",
-						}}
+						className="text-[#66A036] drop-shadow-lg"
+						// style={{
+						// 	WebkitTextStroke: "2px #26420f",
+						// 	WebkitBackgroundClip: "text",
+						// }}
 					>
 						Green,
 					</span>
 				</span>
-				<span className="font-bebas tracking-wider flex flex-col md:flex-row gap-2 sm:gap-4">
+				<span className="font-roboto font-stretch-200% uppercase font-extrabold tracking-wider flex flex-col md:flex-row gap-2 sm:gap-4">
 					<span
-						className="text-green-100/30 drop-shadow-lg"
-						style={{
-							WebkitTextStroke: "2px #eee",
-							WebkitBackgroundClip: "text",
-						}}
+						className="text-secondary md:text-[#66A036] drop-shadow-lg"
+						// style={{
+						// 	WebkitTextStroke: "2px #eee",
+						// 	WebkitBackgroundClip: "text",
+						// }}
 					>
 						Breathe
 					</span>
 					<span
-						className="text-green-600/80 drop-shadow-lg"
-						style={{
-							WebkitTextStroke: "2px #016630",
-							WebkitBackgroundClip: "text",
-						}}
+						className="text-[#66A036] md:text-secondary drop-shadow-lg"
+						// style={{
+						// 	WebkitTextStroke: "0.5px white",
+						// 	WebkitBackgroundClip: "text",
+						// }}
 					>
 						Peace.
 					</span>

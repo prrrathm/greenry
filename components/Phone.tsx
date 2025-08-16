@@ -17,7 +17,7 @@ const PhoneDropDown = ({ isScrolled }: { isScrolled: boolean }) => {
 				<div
 					className={cn(
 						"group inline-flex items-center",
-						isScrolled ? "text-white" : "text-green-800",
+						isScrolled ? "text-white" : "text-primary",
 					)}
 				>
 					<Phone

@@ -160,7 +160,7 @@ function ServiceCard({ service }: { service: OfficePlantsService }) {
 				className="w-full h-64 object-cover"
 			/>
 			<CardHeader>
-				<CardTitle className="text-2xl font-semibold text-green-700">
+				<CardTitle className="text-2xl font-semibold text-primary">
 					{service.title}
 				</CardTitle>
 			</CardHeader>
@@ -174,7 +174,7 @@ function ServiceCard({ service }: { service: OfficePlantsService }) {
 				</ul>
 				{service.testimonial && (
 					<div className="bg-gray-50 p-4 rounded-lg">
-						<Quote className="h-6 w-6 text-green-600 mb-2" />
+						<Quote className="h-6 w-6 text-primary mb-2" />
 						<p className="italic text-gray-800">
 							&quot;{service.testimonial.quote}&quot;
 						</p>
@@ -193,7 +193,7 @@ function ServiceCard({ service }: { service: OfficePlantsService }) {
 				)}
 			</CardContent>
 			<CardFooter>
-				<Button className="mt-4 bg-green-800 hover:bg-green-700 text-white flex items-center">
+				<Button className="mt-4 bg-primary hover:bg-primary text-white flex items-center">
 					Learn More <ChevronRight className="ml-2 h-4 w-4" />
 				</Button>
 			</CardFooter>
@@ -204,16 +204,16 @@ function ServiceCard({ service }: { service: OfficePlantsService }) {
 // Main Services Page component
 export default function ServicesPage() {
 	return (
-		<div className="pt-32 w-full border bg-gradient-to-br from-green-50 via-white to-green-50/40">
+		<div className="pt-32 w-full border bg-gradient-to-br from-secondary via-white to-primary/40">
 			{/* Hero Section */}
 			<section className="text-center mb-16 flex flex-col items-center justify-end h-[40vh] gap-6">
 				<Button
 					size={"sm"}
-					className="bg-green-100/50 hover:bg-green-100/60 text-green-800 border border-green-800 cursor-pointer font-semibold text-xs rounded-full hover:shadow-none transition-all hover:px-2 "
+					className="bg-secondary/50 hover:bg-secondary/60 text-primary border border-primary cursor-pointer font-semibold text-xs rounded-full hover:shadow-none transition-all hover:px-2 "
 				>
 					Book Free Consultation
 				</Button>
-				<h1 className="text-4xl sm:text-6xl font-bebas text-gray-700 font-bold md:mb-4">
+				<h1 className="text-2xl sm:text-4xl font-roboto text-gray-700 font-bold md:mb-4">
 					Our Plant Services
 				</h1>
 				<p className="text-sm md:text-xl text-gray-600 w-[80%] md:max-w-3xl mx-auto">

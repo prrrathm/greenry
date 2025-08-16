@@ -19,15 +19,16 @@ export default function BlogPost() {
 			<article className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
 				<header className="mb-8">
 					<div className="mb-4">
-						<span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+						<span className="bg-secondary text-primary px-3 py-1 rounded-full text-sm font-medium">
 							Design & Installation
 						</span>
 					</div>
-					
+
 					<h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-						Creating Stunning Green Walls: A Complete Design and Installation Guide
+						Creating Stunning Green Walls: A Complete Design and Installation
+						Guide
 					</h1>
-					
+
 					<div className="flex flex-wrap items-center justify-between text-sm text-gray-600 mb-8">
 						<div className="flex items-center space-x-6">
 							<div className="flex items-center">
@@ -39,8 +40,7 @@ export default function BlogPost() {
 								December 10, 2024
 							</div>
 							<div className="flex items-center">
-								<Clock className="h-4 w-4 mr-2" />
-								8 min read
+								<Clock className="h-4 w-4 mr-2" />8 min read
 							</div>
 						</div>
 						<Button variant="outline" size="sm">
@@ -61,38 +61,79 @@ export default function BlogPost() {
 
 				<div className="prose prose-lg max-w-none">
 					<p className="text-xl text-gray-700 mb-6 leading-relaxed">
-						Green walls, also known as living walls or vertical gardens, represent the pinnacle of biophilic design. 
-						These stunning installations not only serve as breathtaking focal points but also provide significant environmental 
-						and wellness benefits. Here&apos;s everything you need to know about creating your own green wall masterpiece.
+						Green walls, also known as living walls or vertical gardens,
+						represent the pinnacle of biophilic design. These stunning
+						installations not only serve as breathtaking focal points but also
+						provide significant environmental and wellness benefits. Here&apos;s
+						everything you need to know about creating your own green wall
+						masterpiece.
 					</p>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Planning Your Green Wall</h2>
-					<p className="mb-4">Before installation begins, several key factors must be considered:</p>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Planning Your Green Wall
+					</h2>
+					<p className="mb-4">
+						Before installation begins, several key factors must be considered:
+					</p>
 					<ul className="list-disc pl-6 mb-6 space-y-2">
-						<li><strong>Location Assessment:</strong> Evaluate lighting, humidity, and temperature conditions</li>
-						<li><strong>Structural Support:</strong> Ensure the wall can support the additional weight</li>
-						<li><strong>Water Access:</strong> Plan for irrigation system installation and drainage</li>
-						<li><strong>Maintenance Access:</strong> Design for easy plant care and system maintenance</li>
+						<li>
+							<strong>Location Assessment:</strong> Evaluate lighting, humidity,
+							and temperature conditions
+						</li>
+						<li>
+							<strong>Structural Support:</strong> Ensure the wall can support
+							the additional weight
+						</li>
+						<li>
+							<strong>Water Access:</strong> Plan for irrigation system
+							installation and drainage
+						</li>
+						<li>
+							<strong>Maintenance Access:</strong> Design for easy plant care
+							and system maintenance
+						</li>
 					</ul>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Design Principles</h2>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Design Principles
+					</h2>
 					<p className="mb-6">
-						Successful green walls follow key design principles that ensure both aesthetic appeal and plant health. 
-						Consider plant size at maturity, growth patterns, and color combinations. Mix textures and forms to create 
-						visual interest while ensuring compatible growing requirements.
+						Successful green walls follow key design principles that ensure both
+						aesthetic appeal and plant health. Consider plant size at maturity,
+						growth patterns, and color combinations. Mix textures and forms to
+						create visual interest while ensuring compatible growing
+						requirements.
 					</p>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Plant Selection Strategies</h2>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Plant Selection Strategies
+					</h2>
 					<p className="mb-4">Choose plants based on these criteria:</p>
 					<ul className="list-disc pl-6 mb-6 space-y-2">
-						<li><strong>Light Requirements:</strong> Match plants to available light conditions</li>
-						<li><strong>Growth Habits:</strong> Consider mature size and spreading patterns</li>
-						<li><strong>Root Systems:</strong> Select plants with compact, non-invasive roots</li>
-						<li><strong>Maintenance Needs:</strong> Balance beauty with practical care requirements</li>
+						<li>
+							<strong>Light Requirements:</strong> Match plants to available
+							light conditions
+						</li>
+						<li>
+							<strong>Growth Habits:</strong> Consider mature size and spreading
+							patterns
+						</li>
+						<li>
+							<strong>Root Systems:</strong> Select plants with compact,
+							non-invasive roots
+						</li>
+						<li>
+							<strong>Maintenance Needs:</strong> Balance beauty with practical
+							care requirements
+						</li>
 					</ul>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Installation Process</h2>
-					<p className="mb-4">Professional installation follows these key steps:</p>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Installation Process
+					</h2>
+					<p className="mb-4">
+						Professional installation follows these key steps:
+					</p>
 					<ol className="list-decimal pl-6 mb-6 space-y-2">
 						<li>Structural assessment and reinforcement if needed</li>
 						<li>Installation of support framework and backing material</li>
@@ -102,14 +143,20 @@ export default function BlogPost() {
 						<li>System testing and initial care establishment</li>
 					</ol>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Maintenance Requirements</h2>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Maintenance Requirements
+					</h2>
 					<p className="mb-6">
-						Green walls require regular maintenance to thrive. This includes monitoring irrigation systems, 
-						pruning and trimming plants, replacing any failed specimens, and adjusting care based on seasonal changes. 
-						Professional maintenance ensures optimal health and appearance.
+						Green walls require regular maintenance to thrive. This includes
+						monitoring irrigation systems, pruning and trimming plants,
+						replacing any failed specimens, and adjusting care based on seasonal
+						changes. Professional maintenance ensures optimal health and
+						appearance.
 					</p>
 
-					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Benefits Beyond Beauty</h2>
+					<h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+						Benefits Beyond Beauty
+					</h2>
 					<p className="mb-4">Green walls provide numerous advantages:</p>
 					<ul className="list-disc pl-6 mb-6 space-y-2">
 						<li>Significant air purification and oxygen production</li>
@@ -120,13 +167,17 @@ export default function BlogPost() {
 					</ul>
 
 					<div className="bg-green-50 p-6 rounded-lg mt-8">
-						<h3 className="text-lg font-semibold text-green-900 mb-2">Professional Green Wall Services</h3>
-						<p className="text-green-800 mb-4">
-							Creating a successful green wall requires expertise in design, installation, and ongoing maintenance. 
-							Our team handles every aspect from concept to completion, ensuring your living wall thrives for years to come.
+						<h3 className="text-lg font-semibold text-green-900 mb-2">
+							Professional Green Wall Services
+						</h3>
+						<p className="text-primary mb-4">
+							Creating a successful green wall requires expertise in design,
+							installation, and ongoing maintenance. Our team handles every
+							aspect from concept to completion, ensuring your living wall
+							thrives for years to come.
 						</p>
 						<Link href="/#book-demo">
-							<Button className="bg-green-800 hover:bg-green-700 text-white">
+							<Button className="bg-primary hover:bg-primary text-white">
 								Discuss Your Green Wall Project
 							</Button>
 						</Link>

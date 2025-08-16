@@ -64,7 +64,7 @@ export default function GoogleProjectPage() {
 							].map((service) => (
 								<span
 									key={service}
-									className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+									className="bg-secondary text-primary px-3 py-1 rounded-full text-sm font-medium"
 								>
 									{service}
 								</span>
@@ -134,7 +134,7 @@ export default function GoogleProjectPage() {
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 						<Card className="shadow-lg">
 							<CardHeader>
-								<CardTitle className="text-green-800">
+								<CardTitle className="text-primary">
 									Living Reception Wall
 								</CardTitle>
 							</CardHeader>
@@ -157,7 +157,7 @@ export default function GoogleProjectPage() {
 
 						<Card className="shadow-lg">
 							<CardHeader>
-								<CardTitle className="text-green-800">
+								<CardTitle className="text-primary">
 									Collaborative Spaces
 								</CardTitle>
 							</CardHeader>
@@ -180,9 +180,7 @@ export default function GoogleProjectPage() {
 
 						<Card className="shadow-lg">
 							<CardHeader>
-								<CardTitle className="text-green-800">
-									Cafeteria Garden
-								</CardTitle>
+								<CardTitle className="text-primary">Cafeteria Garden</CardTitle>
 							</CardHeader>
 							<CardContent>
 								<p className="text-gray-700 mb-4">
@@ -213,28 +211,28 @@ export default function GoogleProjectPage() {
 
 					<div className="grid md:grid-cols-3 gap-8 mb-12">
 						<div className="text-center">
-							<div className="bg-green-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+							<div className="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
 								<TrendingUp className="h-8 w-8" />
 							</div>
-							<div className="text-3xl font-bold text-green-800 mb-2">20%</div>
+							<div className="text-3xl font-bold text-primary mb-2">20%</div>
 							<div className="text-gray-700">
 								Increase in Employee Satisfaction
 							</div>
 						</div>
 
 						<div className="text-center">
-							<div className="bg-green-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+							<div className="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
 								<CheckCircle className="h-8 w-8" />
 							</div>
-							<div className="text-3xl font-bold text-green-800 mb-2">15%</div>
+							<div className="text-3xl font-bold text-primary mb-2">15%</div>
 							<div className="text-gray-700">Boost in Productivity Metrics</div>
 						</div>
 
 						<div className="text-center">
-							<div className="bg-green-800 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+							<div className="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
 								<CheckCircle className="h-8 w-8" />
 							</div>
-							<div className="text-3xl font-bold text-green-800 mb-2">50%</div>
+							<div className="text-3xl font-bold text-primary mb-2">50%</div>
 							<div className="text-gray-700">Reduction in Air Toxins</div>
 						</div>
 					</div>
@@ -280,19 +278,19 @@ export default function GoogleProjectPage() {
 							</p>
 							<ul className="space-y-2">
 								<li className="flex items-center text-gray-700">
-									<CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+									<CheckCircle className="h-5 w-5 text-primary mr-2" />
 									Weekly professional maintenance visits
 								</li>
 								<li className="flex items-center text-gray-700">
-									<CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+									<CheckCircle className="h-5 w-5 text-primary mr-2" />
 									Seasonal plant rotations and updates
 								</li>
 								<li className="flex items-center text-gray-700">
-									<CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+									<CheckCircle className="h-5 w-5 text-primary mr-2" />
 									24/7 monitoring and support system
 								</li>
 								<li className="flex items-center text-gray-700">
-									<CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+									<CheckCircle className="h-5 w-5 text-primary mr-2" />
 									Quarterly environmental impact reports
 								</li>
 							</ul>

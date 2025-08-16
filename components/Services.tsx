@@ -71,7 +71,7 @@ export default function Services() {
 		<section className="py-20 bg-white">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-8 sm:mb-10 md:mb-16">
-					<h2 className="text-4xl sm:text-6xl  font-bold mb-4 font-bebas text-gray-700">
+					<h2 className="text-2xl sm:text-4xl mb-4 font-roboto font-extrabold text-gray-700">
 						Our Services
 					</h2>
 					<p className="text-sm sm:text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
@@ -103,11 +103,11 @@ export default function Services() {
 								<CardHeader className="text-center flex flex-col gap-2 pb-2">
 									<CardTitle className="text-xl sm:text-2xl flex flex-col sm:flex-row items-start sm:items-stretch justify-between gap-3 sm:gap-2 font-semibold text-gray-900 mb-5">
 										<div className="flex items-center justify-start gap-2 flex-shrink-0">
-											<service.icon className="h-6 w-6 sm:h-7 sm:w-7 text-green-800" />
+											<service.icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
 											<div className="text-lg sm:text-xl">{service.title}</div>
 										</div>
 
-										<Button className="border bg-green-800 hover:bg-green-700 cursor-pointer font-semibold flex gap-2 px-3 py-2 text-sm sm:text-base transition-all duration-300 w-full sm:w-auto">
+										<Button className="border bg-primary hover:bg-primary cursor-pointer font-semibold flex gap-2 px-3 py-2 text-sm sm:text-base transition-all duration-300 w-full sm:w-auto">
 											Learn More
 											<ArrowRight className="h-4 w-4" />
 										</Button>

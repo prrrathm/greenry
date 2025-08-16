@@ -22,7 +22,7 @@ export default function Footer() {
 					{/* Company Info */}
 					<div className="space-y-4">
 						<div className="flex items-center space-x-2">
-							<Leaf className="h-8 w-8 text-green-800" />
+							<Leaf className="h-8 w-8 text-primary" />
 							<span className="text-2xl font-bold">Evergreen</span>
 						</div>
 						<p className="text-gray-400 text-sm">
@@ -30,10 +30,10 @@ export default function Footer() {
 							healthier, more productive environments for businesses and homes.
 						</p>
 						<div className="flex space-x-4">
-							<Facebook className="h-5 w-5 text-gray-400 hover:text-green-800 cursor-pointer transition-colors" />
-							<Twitter className="h-5 w-5 text-gray-400 hover:text-green-800 cursor-pointer transition-colors" />
-							<Instagram className="h-5 w-5 text-gray-400 hover:text-green-800 cursor-pointer transition-colors" />
-							<Linkedin className="h-5 w-5 text-gray-400 hover:text-green-800 cursor-pointer transition-colors" />
+							<Facebook className="h-5 w-5 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+							<Twitter className="h-5 w-5 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+							<Instagram className="h-5 w-5 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+							<Linkedin className="h-5 w-5 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
 						</div>
 					</div>
 
@@ -42,42 +42,27 @@ export default function Footer() {
 						<h3 className="text-lg font-semibold text-green-900">Services</h3>
 						<ul className="space-y-2 text-sm text-gray-400">
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Corporate Offices
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Home Spaces
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Co-working Spaces
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Event Installations
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Plant Maintenance
 								</Link>
 							</li>
@@ -89,42 +74,27 @@ export default function Footer() {
 						<h3 className="text-lg font-semibold text-green-900">Company</h3>
 						<ul className="space-y-2 text-sm text-gray-400">
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									About Us
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Our Team
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Careers
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Blog
 								</Link>
 							</li>
 							<li>
-								<Link
-									href="#"
-									className="hover:text-green-800 transition-colors"
-								>
+								<Link href="#" className="hover:text-primary transition-colors">
 									Contact
 								</Link>
 							</li>
@@ -145,7 +115,7 @@ export default function Footer() {
 								placeholder="Enter your email"
 								className="bg-gray-200 border-gray-700 text-gray-800 placeholder-gray-400"
 							/>
-							<Button className="w-full bg-green-800 hover:bg-green-700 font-semibold">
+							<Button className="w-full bg-primary hover:bg-primary font-semibold">
 								Subscribe
 							</Button>
 						</div>
@@ -156,15 +126,15 @@ export default function Footer() {
 				<div className="border-t border-gray-800 mt-12 pt-8">
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
 						<div className="flex items-center space-x-3">
-							<Phone className="h-5 w-5 text-green-800" />
+							<Phone className="h-5 w-5 text-primary" />
 							<span className="text-gray-400">+1 (555) 123-4567</span>
 						</div>
 						<div className="flex items-center space-x-3">
-							<Mail className="h-5 w-5 text-green-800" />
+							<Mail className="h-5 w-5 text-primary" />
 							<span className="text-gray-400">hello@Evergreen.com</span>
 						</div>
 						<div className="flex items-center space-x-3">
-							<MapPin className="h-5 w-5 text-green-800" />
+							<MapPin className="h-5 w-5 text-primary" />
 							<span className="text-gray-400">Available Nationwide</span>
 						</div>
 					</div>
@@ -174,13 +144,13 @@ export default function Footer() {
 				<div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
 					<p>&copy; 2025 Evergreen. All rights reserved.</p>
 					<div className="flex space-x-6 mt-4 md:mt-0">
-						<Link href="#" className="hover:text-green-800 transition-colors">
+						<Link href="#" className="hover:text-primary transition-colors">
 							Privacy Policy
 						</Link>
-						<Link href="#" className="hover:text-green-800 transition-colors">
+						<Link href="#" className="hover:text-primary transition-colors">
 							Terms of Service
 						</Link>
-						<Link href="#" className="hover:text-green-800 transition-colors">
+						<Link href="#" className="hover:text-primary transition-colors">
 							Cookie Policy
 						</Link>
 					</div>

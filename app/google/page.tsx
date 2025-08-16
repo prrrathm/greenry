@@ -115,21 +115,21 @@ export default function GoogleProject() {
 				</h2>
 				<div className="flex flex-col md:flex-row justify-center items-center gap-8">
 					<div className="text-center">
-						<h3 className="text-2xl font-bold text-green-600">20%</h3>
+						<h3 className="text-2xl font-bold text-primary">20%</h3>
 						<p className="mt-2">
 							Increase in employee satisfaction scores, reflecting a more
 							enjoyable work environment.
 						</p>
 					</div>
 					<div className="text-center">
-						<h3 className="text-2xl font-bold text-green-600">15%</h3>
+						<h3 className="text-2xl font-bold text-primary">15%</h3>
 						<p className="mt-2">
 							Boost in productivity, as employees report higher focus and energy
 							levels.
 						</p>
 					</div>
 					<div className="text-center">
-						<h3 className="text-2xl font-bold text-green-600">50%</h3>
+						<h3 className="text-2xl font-bold text-primary">50%</h3>
 						<p className="mt-2">
 							Reduction in harmful toxins, creating a cleaner and healthier
 							workspace.
@@ -187,7 +187,7 @@ export default function GoogleProject() {
 			</section>
 
 			{/* Call to Action */}
-			<section className="py-12 bg-green-600 text-white text-center px-4 md:px-0">
+			<section className="py-12 bg-primary text-white text-center px-4 md:px-0">
 				<h2 className="text-3xl font-bold mb-4">
 					Ready to Transform Your Workspace?
 				</h2>
@@ -196,7 +196,7 @@ export default function GoogleProject() {
 					can bring the power of nature to your office, just like we did for
 					Google.
 				</p>
-				<Button className="bg-white text-green-600 hover:bg-gray-100 text-lg py-2 px-6">
+				<Button className="bg-white text-primary hover:bg-gray-100 text-lg py-2 px-6">
 					Schedule a Consultation
 				</Button>
 			</section>

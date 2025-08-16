@@ -53,7 +53,7 @@ export default function BookingFormBeta() {
 			<div className="container mx-auto px-2 sm:px-6 lg:px-8">
 				<div className="max-w-4xl mx-auto flex flex-col gap-4 md:gap-10">
 					<div className="text-center">
-						<h2 className="text-4xl sm:text-6xl font-bebas text-gray-700 text-gray-700 font-bold text-gray-900 mb-2 md:mb-4">
+						<h2 className="text-2xl sm:text-4xl font-roboto font-extrabold text-gray-700 mb-2 md:mb-4">
 							Book Your Free Consultation
 						</h2>
 						<p className="text-sm md:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -220,7 +220,7 @@ export default function BookingFormBeta() {
 
 									<Button
 										type="submit"
-										className="w-full bg-green-700 hover:bg-green-600 text-white py-3"
+										className="w-full bg-primary hover:bg-primary text-white py-3"
 									>
 										Schedule Free Consultation
 									</Button>

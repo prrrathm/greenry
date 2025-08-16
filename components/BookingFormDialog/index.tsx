@@ -1,16 +1,15 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
 	Dialog,
-	// DialogClose,
 	DialogContent,
-	// DialogDescription,
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-// import { Label } from "@/components/ui/label";
 import {
 	Select,
 	SelectContent,
@@ -21,6 +20,25 @@ import {
 import { services } from "@/lib/variables";
 import { Textarea } from "../ui/textarea";
 import { cn } from "@/lib/utils";
+
+import { useForm, Controller } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+
+const schema = z.object({
+	name: z.string().min(2, "Name is required"),
+	email: z.string().email("Invalid email"),
+	number: z
+		.string()
+		.min(10, "Enter a valid number")
+		.max(15, "Enter a valid number"),
+	service: z.string().min(1, "Please select a service"),
+	message: z.string().min(5, "Message must be at least 5 characters"),
+});
+
+type FormData = z.infer<typeof schema>;
+
 const BookingForm = ({
 	hasTrigger,
 	triggerText,
@@ -30,91 +48,154 @@ const BookingForm = ({
 	triggerText?: string;
 	isScrolled: boolean;
 }) => {
+	const {
+		register,
+		handleSubmit,
+		control,
+		reset,
+		formState: { errors, isSubmitting },
+	} = useForm<FormData>({
+		resolver: zodResolver(schema),
+		defaultValues: {
+			name: "",
+			email: "",
+			number: "",
+			service: "",
+			message: "",
+		},
+	});
+
+	const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+	const onSubmit = async (data: FormData) => {
+		console.log("Form submitted with data:", data);
+		setStatus("idle");
+		try {
+			const res = await fetch("/api/send-mail", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(data),
+			});
+
+			if (res.ok) {
+				setStatus("success");
+				reset();
+			} else {
+				setStatus("error");
+			}
+		} catch (e) {
+			setStatus("error");
+			console.log("error", e);
+		}
+	};
+
 	return (
 		<Dialog>
-			<form>
-				{hasTrigger ? (
-					<DialogTrigger asChild>
-						<Button
-							className={cn(
-								"hidden md:block   px-6 py-2 cursor-pointer",
-								isScrolled ? "bg-white hover:bg-gray-100 text-green-800" : "bg-green-800 hover:bg-green-700 text-white",
-							)}
-						>
-							{triggerText}
-						</Button>
-						{/* <Button className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2 cursor-pointer">
-							{triggerText}
-						</Button> */}
-					</DialogTrigger>
-				) : (
-					<></>
-				)}
-				<DialogContent className="sm:max-w-[425px] bg-slate-100 rounded-4xl py-8">
-					<DialogHeader>
-						<DialogTitle className="text-green-800 text-2xl">
-							Reach out to us
-						</DialogTitle>
-						{/* <DialogDescription>
-							Make changes to your profile here. Click save when you&apos;re
-							done.
-						</DialogDescription> */}
-					</DialogHeader>
-					<div className="grid gap-4">
-						<div className="grid gap-3">
-							{/* <Label htmlFor="name-1">Name</Label> */}
-							<Input id="name-1" name="name" placeholder="Name" />
-						</div>
-						<div className="grid gap-3">
-							{/* <Label htmlFor="email">Email</Label> */}
-							<Input id="email" name="email" placeholder="Email" />
-						</div>
-						<div className="grid gap-3">
-							{/* <Label htmlFor="number">Contact Number</Label> */}
-							<Input
-								id="number"
-								name="number"
-								type="number"
-								placeholder="Phone Number"
-							/>
-						</div>
-						<div className="">
-							<Select>
-								<SelectTrigger className="w-full">
-									<SelectValue placeholder="Select Service" />
-								</SelectTrigger>
-								<SelectContent>
-									{services.map((item, iter) => (
-										<SelectItem value={item} key={iter}>
-											{item}
-										</SelectItem>
-									))}
-								</SelectContent>
-							</Select>
-						</div>
-						<div className="grid gap-3">
-							{/* <Label htmlFor="number">Contact Number</Label> */}
-							<Textarea
-								id="number"
-								name="number"
-								className="resize-none h-20"
-								placeholder="Your Message"
-							/>
-						</div>
+			{hasTrigger && (
+				<DialogTrigger asChild>
+					<Button
+						className={cn(
+							"hidden md:block px-6 py-2 cursor-pointer",
+							isScrolled
+								? "bg-white hover:bg-gray-100 text-primary"
+								: "bg-primary hover:bg-primary text-white",
+						)}
+					>
+						{triggerText}
+					</Button>
+				</DialogTrigger>
+			)}
+
+			<DialogContent className="sm:max-w-[425px] bg-slate-100 rounded-4xl py-8">
+				<DialogHeader>
+					<DialogTitle className="text-primary text-2xl">
+						Reach out to us
+					</DialogTitle>
+				</DialogHeader>
+
+				{/* ✅ FORM IS NOW INSIDE DialogContent */}
+				<form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
+					<div>
+						<Input id="name" placeholder="Name" {...register("name")} />
+						{errors.name && (
+							<p className="text-red-500 text-sm">{errors.name.message}</p>
+						)}
 					</div>
+					<div>
+						<Input id="email" placeholder="Email" {...register("email")} />
+						{errors.email && (
+							<p className="text-red-500 text-sm">{errors.email.message}</p>
+						)}
+					</div>
+					<div>
+						<Input
+							id="number"
+							type="tel"
+							placeholder="Phone Number"
+							{...register("number")}
+						/>
+						{errors.number && (
+							<p className="text-red-500 text-sm">{errors.number.message}</p>
+						)}
+					</div>
+					<div>
+						<Controller
+							name="service"
+							control={control}
+							defaultValue=""
+							render={({ field }) => (
+								<Select onValueChange={field.onChange} value={field.value}>
+									<SelectTrigger className="w-full">
+										<SelectValue placeholder="Select Service" />
+									</SelectTrigger>
+									<SelectContent>
+										{services.map((item, iter) => (
+											<SelectItem value={item} key={iter}>
+												{item}
+											</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
+							)}
+						/>
+						{errors.service && (
+							<p className="text-red-500 text-sm">{errors.service.message}</p>
+						)}
+					</div>
+					<div>
+						<Textarea
+							id="message"
+							placeholder="Your Message"
+							className="resize-none h-20"
+							{...register("message")}
+						/>
+						{errors.message && (
+							<p className="text-red-500 text-sm">{errors.message.message}</p>
+						)}
+					</div>
+
 					<DialogFooter>
-						{/* <DialogClose asChild>
-							<Button variant="outline">Cancel</Button>
-						</DialogClose> */}
 						<Button
 							type="submit"
-							className="hidden md:block bg-green-800 hover:bg-green-700 text-white px-6 py-2 cursor-pointer w-full"
+							className="w-full bg-primary hover:bg-primary text-white px-6 py-2 cursor-pointer"
+							disabled={isSubmitting}
 						>
-							Send Enquiry
+							{isSubmitting ? "Sending..." : "Send Enquiry"}
 						</Button>
 					</DialogFooter>
-				</DialogContent>
-			</form>
+				</form>
+
+				{status === "success" && (
+					<p className="text-green-600 text-center pt-2">
+						Message sent successfully!
+					</p>
+				)}
+				{status === "error" && (
+					<p className="text-red-600 text-center pt-2">
+						Failed to send message. Try again.
+					</p>
+				)}
+			</DialogContent>
 		</Dialog>
 	);
 };

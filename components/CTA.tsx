@@ -11,7 +11,7 @@ export default function CTA() {
 	};
 
 	return (
-		<section className="py-20 bg-gradient-to-r flex items-center from-teal-700  to-green-800 from-0% to-80%">
+		<section className="py-20 flex items-center bg-primary ">
 			<div className="container mx-auto px-2 sm:px-6 lg:px-8 text-white flex flex-col items-center justify-center text-center">
 				<h2 className="text-2xl sm:text-4xl font-bold mb-2 md:mb-4 px-0">
 					Ready to Transform Your Space?
@@ -25,7 +25,7 @@ export default function CTA() {
 					<Button
 						onClick={scrollToBooking}
 						// size="lg"
-						className="bg-white text-green-800 hover:bg-gray-100 py-4 font-bold text-sm md:text-base w-full"
+						className="bg-white text-primary hover:bg-gray-100 py-4 font-bold text-sm md:text-base w-full"
 					>
 						Book Free Consultation
 						<ArrowUp className="h-5 w-5" />
@@ -34,11 +34,11 @@ export default function CTA() {
 					<Button
 						variant="outline"
 						// size="lg"
-						className="border-white text-black hover:bg-white hover:text-green-600 p-2 md:p-2.5 text-sm md:text-base w-fit rounded-full"
+						className="border-white text-black hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit rounded-full"
 					>
 						<Phone
 							fill="oklch(62.7% 0.194 149.214)"
-							className="h-5 w-5 text-green-600"
+							className="h-5 w-5 text-primary"
 						/>
 						{/* Call Now : (+91) 123-4567 */}
 					</Button>

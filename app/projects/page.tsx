@@ -140,7 +140,7 @@ export default function ProjectsPage() {
 			{/* Hero Section */}
 			<section className="py-16 px-4 sm:px-6 lg:px-8">
 				<div className="container mx-auto text-center">
-					<h1 className="text-4xl sm:text-6xl font-bebas text-gray-700 font-bold mb-4">
+					<h1 className="text-2xl sm:text-4xl font-roboto font-extrabold text-gray-700 font-bold mb-4">
 						Our Project Portfolio
 					</h1>
 					<p className="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -151,7 +151,7 @@ export default function ProjectsPage() {
 
 					<div className="flex flex-nowrap justify-center gap-2 md:gap-4 mb-12">
 						<div className="text-center">
-							<div className="text-xl md:text-3xl font-bold text-green-800">
+							<div className="text-xl md:text-3xl font-bold text-primary">
 								50+
 							</div>
 							<div className="text-xs md:text-sm text-gray-600">
@@ -159,7 +159,7 @@ export default function ProjectsPage() {
 							</div>
 						</div>
 						<div className="text-center">
-							<div className="text-xl md:text-3xl font-bold text-green-800">
+							<div className="text-xl md:text-3xl font-bold text-primary">
 								25+
 							</div>
 							<div className="text-xs md:text-sm text-gray-600">
@@ -167,7 +167,7 @@ export default function ProjectsPage() {
 							</div>
 						</div>
 						<div className="text-center">
-							<div className="text-xl md:text-3xl font-bold text-green-800">
+							<div className="text-xl md:text-3xl font-bold text-primary">
 								10k+
 							</div>
 							<div className="text-xs md:text-sm text-gray-600">
@@ -195,14 +195,14 @@ export default function ProjectsPage() {
 										className="object-cover group-hover:scale-105 transition-transform duration-300"
 									/>
 									<div className="absolute top-4 left-4">
-										<span className="bg-green-800 text-white px-3 py-1 rounded-full text-xs font-medium">
+										<span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-medium">
 											{project.year}
 										</span>
 									</div>
 								</div>
 
 								<CardHeader className="pb-2">
-									<CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-green-800 transition-colors">
+									<CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-primary transition-colors">
 										{project.title}
 									</CardTitle>
 									<div className="flex items-center text-sm text-gray-600 space-x-4">
@@ -230,7 +230,7 @@ export default function ProjectsPage() {
 											{project.services.slice(0, 3).map((service, index) => (
 												<span
 													key={index}
-													className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs"
+													className="bg-secondary text-primary px-2 py-1 rounded text-xs"
 												>
 													{service}
 												</span>
@@ -244,7 +244,7 @@ export default function ProjectsPage() {
 									</div>
 
 									<Link href={`/projects/${project.slug}`}>
-										<Button className="w-full bg-green-800 hover:bg-green-700 text-white group">
+										<Button className="w-full bg-primary hover:bg-primary text-white group">
 											View Case Study
 											<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
 										</Button>
@@ -257,7 +257,7 @@ export default function ProjectsPage() {
 			</section>
 
 			{/* Results Section */}
-			<section className="py-16 text-green-800 ">
+			<section className="py-16 text-primary ">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<h2 className="text-3xl font-bold mb-8">
 						Proven Results Across Industries

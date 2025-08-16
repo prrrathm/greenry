@@ -3,7 +3,7 @@ import { Mail, Phone } from "lucide-react";
 
 const Ribbon = () => {
 	return (
-		<div className="h-5 bg-green-800 fixed inset-x-0 top-0 z-999 text-white flex text-sm justify-between px-4">
+		<div className="h-5 bg-primary fixed inset-x-0 top-0 z-999 text-white flex text-sm justify-between px-4">
 			<div>Greens in Every Home, With Us!</div>
 			<div className="flex gap-4">
 				<div className="flex gap-2 items-center">

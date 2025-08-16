@@ -149,11 +149,11 @@ const ProjectCarouselBeta: React.FC = () => {
 		<>
 			{/* Desktop View */}
 			<div className="flex-col px-10 py-20 gap-6 hidden md:flex">
-				<div className="text-3xl sm:text-4xl font-semibold flex justify-between items-end-safe">
-					<div className="font-bebas  text-gray-700 text-3xl md:text-5xl ">
+				<div className="text-2xl sm:text-4xl font-semibold flex justify-between items-end-safe">
+					<div className="font-roboto font-extrabold  text-gray-700 text-lg md:text-4xl ">
 						Some of our Recent Projects
 					</div>
-					<div className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-green-800">
+					<div className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-primary">
 						See all projects
 					</div>
 				</div>
@@ -220,12 +220,12 @@ const ProjectCarouselBeta: React.FC = () => {
 			</div>
 
 			{/* Mobile View */}
-			<div className="md:hidden px-4 py-12">
+			<div className="md:hidden px-2 py-12">
 				<div className="text-center mb-8">
-					<div className="font-bebas text-gray-700 text-4xl font-bold sm:text-3xl mb-2">
-						Some of our Recent Projects
+					<div className="font-roboto  text-gray-700 text-2xl font-extrabold mb-2">
+						Our Recent Projects
 					</div>
-					<div className="text-sm cursor-pointer font-semibold underline text-green-800">
+					<div className="text-sm cursor-pointer font-semibold underline text-primary">
 						See all projects
 					</div>
 				</div>
@@ -259,7 +259,7 @@ const ProjectCarouselBeta: React.FC = () => {
 												</div>
 												<Button
 													size="sm"
-													className="bg-transparent text-white border-white hover:bg-white hover:text-green-800"
+													className="bg-transparent text-white border-white hover:bg-white hover:text-primary"
 												>
 													Learn More
 													<ArrowRight className="ml-1 h-4 w-4" />
@@ -279,7 +279,7 @@ const ProjectCarouselBeta: React.FC = () => {
 								key={index}
 								onClick={() => emblaApi?.scrollTo(index)}
 								className={`w-2 h-2 rounded-full transition-all duration-300 ${
-									index === currentIndex ? "bg-green-800 w-6" : "bg-gray-300"
+									index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
 								}`}
 								aria-label={`Go to slide ${index + 1}`}
 							/>
