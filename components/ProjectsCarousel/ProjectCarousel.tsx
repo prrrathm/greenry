@@ -51,7 +51,7 @@ const projects: project[] = [
 
 const ProjectCarouselBeta: React.FC = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [progress, setProgress] = useState(0);
+	// const [progress, setProgress] = useState(0);
 	const [isPaused] = useState(false);
 
 	// Refs for desktop carousel timing
@@ -80,7 +80,7 @@ const ProjectCarouselBeta: React.FC = () => {
 		if (isPaused) return;
 
 		// Reset progress and start time for new slide
-		setProgress(0);
+		// setProgress(0);
 		startTimeRef.current = Date.now();
 
 		const duration = 4000; // 4 seconds
@@ -89,9 +89,9 @@ const ProjectCarouselBeta: React.FC = () => {
 		// Progress animation
 		progressIntervalRef.current = setInterval(() => {
 			const elapsed = Date.now() - startTimeRef.current;
-			const newProgress = Math.min((elapsed / duration) * 100);
+			// const newProgress = Math.min((elapsed / duration) * 100);
 			// console.log("Carousel Progress", newProgress);
-			setProgress(newProgress);
+			// setProgress(newProgress);
 
 			if (elapsed >= duration) {
 				if (progressIntervalRef.current) {
