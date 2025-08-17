@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Leaf, Users, Award, Globe } from "lucide-react";
-
+import Image from "next/image";
 export default function AboutPage() {
 	const scrollToBooking = () => {
 		document
@@ -60,7 +60,7 @@ export default function AboutPage() {
 	return (
 		<div className="min-h-screen">
 			{/* Hero Section */}
-			<section className="relative pt-24 pb-12 min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/10">
+			<section className="relative pt-32 pb-12 min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/10">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 					<div className="text-center space-y-8 max-w-4xl mx-auto">
 						<div className="space-y-4">
@@ -113,6 +113,13 @@ export default function AboutPage() {
 						<div className="relative">
 							<div className="aspect-square bg-gradient-to-br from-secondary to-secondary rounded-2xl flex items-center justify-center">
 								<Leaf className="h-32 w-32 text-primary" />
+								{/* <Image /> */}
+								<Image
+									src={"/projects/about-1.jpg"}
+									fill
+									alt={"about-1"}
+									className="z-10 object-cover rounded-2xl"
+								/>
 							</div>
 						</div>
 					</div>
@@ -157,7 +164,13 @@ export default function AboutPage() {
 					<div className="grid lg:grid-cols-2 gap-12 items-center">
 						<div className="relative">
 							<div className="aspect-[4/3] bg-gradient-to-br from-secondary to-secondary rounded-2xl flex items-center justify-center">
-								<Globe className="h-24 w-24 text-primary" />
+								{/* <Globe className="h-24 w-24 text-primary" /> */}
+								<Image
+									src={"/projects/about-2.jpg"}
+									fill
+									alt={"about-1"}
+									className="z-10 object-cover rounded-2xl"
+								/>
 							</div>
 						</div>
 						<div className="space-y-6">
@@ -197,7 +210,7 @@ export default function AboutPage() {
 			</section>
 
 			{/* Team Section */}
-			<section className="py-20 bg-gray-50">
+			<section className="py-20 bg-gray-50 hidden">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-16">
 						<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-gray-900 mb-4">
