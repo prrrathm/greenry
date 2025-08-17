@@ -8,6 +8,7 @@ import BookingForm from "./BookingFormDialog";
 import { Mail, MailOpen } from "lucide-react";
 import NavMobileDrawer from "./NavMobileDrawer";
 import PhoneDropDown from "./Phone";
+import Image from "next/image";
 
 export const NavBar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -47,10 +48,17 @@ export const NavBar = () => {
 			<Link
 				href={"/"}
 				className={cn(
-					"font-black text-xl ",
+					"font-black text-xl flex items-center",
 					isScrolled ? "text-white" : "text-primary",
 				)}
 			>
+				<Image
+					src="/logo/logo.png"
+					alt="Snake Plant"
+					width={50}
+					height={50}
+					className="rounded-md"
+				/>
 				Evergreenry
 			</Link>
 			{/* Menu */}

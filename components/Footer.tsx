@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-	Leaf,
 	Mail,
 	Phone,
 	MapPin,
@@ -12,6 +11,7 @@ import {
 	Instagram,
 	Linkedin,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -22,7 +22,14 @@ export default function Footer() {
 					{/* Company Info */}
 					<div className="space-y-4">
 						<div className="flex items-center space-x-2">
-							<Leaf className="h-8 w-8 text-primary" />
+							<Image
+								src="/logo/logo.png"
+								alt="Snake Plant"
+								width={50}
+								height={50}
+								className="rounded-md"
+							/>
+							{/* <Leaf className="h-8 w-8 text-primary" /> */}
 							<span className="text-2xl font-bold">Evergreenry</span>
 						</div>
 						<p className="text-gray-400 text-sm">
