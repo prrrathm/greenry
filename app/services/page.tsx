@@ -2,12 +2,12 @@ import {
 	Card,
 	CardContent,
 	// CardDescription,
-	CardFooter,
+	// CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Quote } from "lucide-react";
+import {Quote } from "lucide-react";
 import Image from "next/image";
 import FAQs from "@/components/FAQ";
 // import BookingForm from "@/components/BookingFormDialog";
