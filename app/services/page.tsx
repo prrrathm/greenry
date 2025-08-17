@@ -130,6 +130,52 @@ const services: OfficePlantsService[] = [
 				"A 50-plant setup at Pinnacle Law was fading due to neglect. After 3 months of our care, 95% of the plants were revived, and we added a monthly plan to keep them flourishing.",
 		},
 	},
+	{
+		title: "Zen Garden",
+		image: "/image-content/zen-1.JPG",
+		description:
+			"Craft your own sanctuary of calm with our custom Zen Garden designs. Using elements like raked sand, smooth stones, and carefully chosen greenery, these gardens embody harmony and mindfulness. Ideal for offices, meditation corners, or outdoor terraces, a Zen Garden creates a tranquil retreat from daily stress. Studies in environmental psychology highlight that exposure to such spaces can reduce anxiety and improve focus, making them perfect for both personal and professional environments.",
+		features: [
+			"Personalized layouts with stones, sand, and greenery",
+			"Low-maintenance setup requiring minimal care",
+			"Designed for mindfulness and stress relief",
+			"Adaptable to indoor or outdoor spaces",
+			"Enhances focus and calm in work environments",
+		],
+		testimonial: {
+			quote:
+				"Our Zen Garden transformed a dull corner of our office into a peaceful escape. Employees now use it daily to recharge.",
+			author: "Sophia Martinez, HR Manager at Mediatech Group",
+		},
+		caseStudy: {
+			title: "A Zen Garden for a Corporate Lounge",
+			description:
+				"We designed a 10x6 ft Zen Garden for a corporate lounge. Post-installation, employee wellness surveys showed a 30% rise in stress reduction ratings.",
+		},
+	},
+	{
+		title: "Design an Indoor Terrarium",
+		image: "/image-content/indoor-terrarium.jpg",
+		description:
+			"Bring a miniature world of nature indoors with our bespoke terrarium design service. Using a mix of succulents, moss, ferns, and decorative elements like pebbles and driftwood, we create self-sustaining, low-maintenance ecosystems. Terrariums add a modern and artistic touch to desks, shelves, and reception areas while boosting indoor air quality. Research shows that small-scale greenery improves concentration and sparks creativity, making terrariums ideal for both homes and offices.",
+		features: [
+			"Custom plant selections tailored to your style",
+			"Compact designs perfect for desks and shelves",
+			"Low-maintenance ecosystems with self-sustaining balance",
+			"Decorative accents for a unique artistic touch",
+			"Great as gifts or office statement pieces",
+		],
+		testimonial: {
+			quote:
+				"Our terrarium workshop was a hit! Everyone left with a unique piece of living art that brightens their workspace.",
+			author: "Nikhil Verma, Co-Founder of CreatiHive",
+		},
+		caseStudy: {
+			title: "Terrarium Design for a Co-Working Space",
+			description:
+				"We created 20 custom terrariums for a co-working hub, placing them across desks and breakout zones. Members reported higher creativity and engagement levels in the following month.",
+		},
+	},
 ];
 
 // FAQ data

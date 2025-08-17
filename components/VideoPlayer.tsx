@@ -2,6 +2,8 @@
 import { useEffect, useRef } from "react";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import BookingForm from "./BookingFormDialog";
 
 const AutoPlayVideo = ({ src }: { src: string }) => {
 	const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -19,13 +21,23 @@ const AutoPlayVideo = ({ src }: { src: string }) => {
 	return (
 		<div className="relative rounded-xl overflow-hidden h-full min-h-[60vh] aspect-[9/16] w-full sm:aspect-auto">
 			<div className="font-[geist] absolute bottom-4 sm:bottom-1/5 px-4 sm:px-16 inset-x-0 z-30 flex justify-center sm:justify-start">
-				<Button
-					size={"lg"}
-					className="text-white font-bold bg-primary cursor-pointer uppercase px-3 sm:px-4 py-2 sm:py-3 text-sm flex gap-1 sm:gap-2 hover:gap-1 sm:hover:gap-3 transition-all duration-500 hover:text-secondary w-full sm:w-auto max-w-xs sm:max-w-none"
-				>
-					Request a Demo Now
-					<ArrowRight className="h-4 w-4" />
-				</Button>
+				<div className="w-full sm:w-auto max-w-xs sm:max-w-none">
+					<BookingForm
+						hasTrigger={true}
+						triggerText="Book Demo"
+						isScrolled={false}
+					/>
+				</div>
+
+				<Link href="/contact" className="hidden">
+					<Button
+						size={"lg"}
+						className="text-white font-bold bg-primary cursor-pointer uppercase px-3 sm:px-4 py-2 sm:py-3 text-sm flex gap-1 sm:gap-2 hover:gap-1 sm:hover:gap-3 transition-all duration-500 hover:text-secondary w-full sm:w-auto max-w-xs sm:max-w-none"
+					>
+						Request a Demo Now
+						<ArrowRight className="h-4 w-4" />
+					</Button>
+				</Link>
 			</div>
 
 			<div className="flex flex-col absolute left-0 sm:left-8 md:left-32 h-full justify-center text-5xl md:text-8xl font-bolder pl-4 sm:pl-8 md:pl-20 bg-black/40 w-full text-shadow-2xs gap-2 sm:gap-3 scale-100 sm:scale-110 md:scale-125 z-20 uppercase">

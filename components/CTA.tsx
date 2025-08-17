@@ -36,10 +36,7 @@ export default function CTA() {
 						// size="lg"
 						className="border-white text-black hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit rounded-full"
 					>
-						<Phone
-							fill="oklch(62.7% 0.194 149.214)"
-							className="h-5 w-5 text-primary"
-						/>
+						<Phone fill="#26420f" className="h-5 w-5 text-primary" />
 						{/* Call Now : (+91) 123-4567 */}
 					</Button>
 				</div>

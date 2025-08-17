@@ -61,10 +61,7 @@ export default function Hero() {
 									// size="lg"
 									className="md:hidden border-2 border-primary text-primary hover:text-primary hover:bg-secondary bg-secondary/60 cursor-pointer rounded-full !px-2 !py-1 absolute -right-12 scale-90"
 								>
-									<Play
-										fill="oklch(62.7% 0.194 149.214)"
-										className="h-5 w-5 text-primary"
-									/>
+									<Play fill="#26420f" className="h-5 w-5 text-primary" />
 								</Button>
 							</div>
 							<Button

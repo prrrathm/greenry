@@ -185,16 +185,16 @@ export default function BookingFormBeta() {
 										</div>
 									</div>
 
-									<div className="grid md:grid-cols-2 gap-4">
+									<div className="grid grid-cols-2 gap-4">
 										<div className="space-y-2">
 											<label className="text-sm font-medium text-gray-700">
-												Space Type *
+												Service Type *
 											</label>
 											<select
 												{...register("spaceType")}
 												className="w-full h-9 px-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 											>
-												<option value="">Select space type</option>
+												<option value="!text-xs">Select Service type</option>
 												{services.map((item, iter) => (
 													<option key={iter} value="office">
 														{item}
