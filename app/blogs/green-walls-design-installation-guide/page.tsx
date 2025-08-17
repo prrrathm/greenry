@@ -166,7 +166,7 @@ export default function BlogPost() {
 						<li>Enhanced property value and brand image</li>
 					</ul>
 
-					<div className="bg-green-50 p-6 rounded-lg mt-8">
+					<div className="bg-secondary p-6 rounded-lg my-8">
 						<h3 className="text-lg font-semibold text-green-900 mb-2">
 							Professional Green Wall Services
 						</h3>

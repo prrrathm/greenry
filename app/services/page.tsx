@@ -40,7 +40,7 @@ interface OfficePlantsService {
 const services: OfficePlantsService[] = [
 	{
 		title: "Office Plants",
-		image: "/projects/office-1.jpg",
+		image: "/projects/office-new-1.jpg",
 		description:
 			"Transform your workplace into a thriving, green environment with our bespoke office plant service. We specialize in curating indoor plants that elevate both aesthetics and functionality. From compact desk succulents to towering floor plants like monstera or dracaena, our selections are tailored to your office’s lighting, space, and vibe. Research from NASA’s Clean Air Study shows plants like peace lilies and snake plants can remove up to 87% of air toxins in 24 hours, while a University of Exeter study found that plants boost productivity by 15%. Our process starts with a free on-site consultation, followed by expert plant selection, delivery, and installation. Pair this with our optional maintenance plans, and your office will stay lush with zero hassle.",
 		features: [
@@ -63,7 +63,7 @@ const services: OfficePlantsService[] = [
 	},
 	{
 		title: "Green Walls",
-		image: "/projects/office-2.jpg",
+		image: "/projects/office-new-2.jpg",
 		description:
 			"Elevate your space with a custom green wall—nature’s masterpiece meets modern design. These living walls blend lush foliage like ferns, ivy, and philodendrons into a vertical garden that’s as functional as it is stunning. Green walls purify air (absorbing CO2 at rates up to 1.7 kg per square meter annually, per EPA studies), reduce ambient noise by up to 10 decibels, and create a biophilic connection that lowers stress by 37%, according to the Journal of Environmental Psychology. We handle every step: design consultation, plant selection, irrigation system integration, and professional installation. Whether it’s a corporate lobby or a cozy café, our green walls are built to impress and endure.",
 		features: [
@@ -86,7 +86,7 @@ const services: OfficePlantsService[] = [
 	},
 	{
 		title: "Moss Walls",
-		image: "/projects/office-3.jpg",
+		image: "/projects/office-new-3.jpg",
 		description:
 			"Introduce effortless elegance with our preserved moss walls—zero-maintenance art that brings nature indoors. Made from real moss, hand-harvested and preserved with eco-friendly techniques, these installations thrive without water, sunlight, or care. Ideal for low-light areas or high-traffic zones, moss walls offer acoustic benefits (absorbing up to 50% of mid-frequency noise, per Acoustical Society data) and subtle air purification. Customize them with vibrant greens, earthy tones, or even your logo in moss. They’re sustainable, durable, and a standout feature for offices, retail spaces, or homes looking for a unique touch.",
 		features: [
@@ -109,7 +109,7 @@ const services: OfficePlantsService[] = [
 	},
 	{
 		title: "Plant Maintenance",
-		image: "/projects/office-4.jpg",
+		image: "/projects/office-new-4.jpg",
 		description:
 			"Keep your indoor jungle thriving with our expert plant maintenance service. Our horticulturists provide tailored care—watering, fertilizing, pruning, pest control, and health assessments—to ensure every plant stays in peak condition. We serve spaces of all sizes, from a single ficus to a full office greenery setup. With flexible schedules (weekly, bi-weekly, or monthly), we adapt to your needs. If a plant falters, we replace it free of charge under our health guarantee. Studies show well-maintained plants can extend their lifespan by 50%, making this a smart investment for your green assets.",
 		features: [
@@ -238,11 +238,11 @@ function ServiceCard({ service }: { service: OfficePlantsService }) {
 					</div>
 				)}
 			</CardContent>
-			<CardFooter>
+			{/* <CardFooter>
 				<Button className="mt-4 bg-primary hover:bg-primary text-white flex items-center">
 					Learn More <ChevronRight className="ml-2 h-4 w-4" />
 				</Button>
-			</CardFooter>
+			</CardFooter> */}
 		</Card>
 	);
 }
@@ -280,7 +280,7 @@ export default function ServicesPage() {
 			{/* Why Choose Evergreen */}
 
 			{/* FAQ Section */}
-			<section className="py-20  w-full">
+			<section className="py-20  w-full bg-white">
 				<Features />
 				<div className="mx-0 px-0 sm:px-6 lg:px-8">
 					<FAQs data={faqs} />

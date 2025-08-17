@@ -111,7 +111,7 @@ export default function BlogsPage() {
 			{/* Hero Section */}
 			<section className="py-16 px-4 sm:px-6 lg:px-8">
 				<div className="container mx-auto text-center">
-					<h1 className="text-2xl sm:text-4xl font-roboto font-extrabold text-gray-700 font-bold mb-4">
+					<h1 className="text-2xl sm:text-4xl font-roboto font-extrabold text-gray-700 mb-4">
 						Plant Care & Wellness Blog
 					</h1>
 					<p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">

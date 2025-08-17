@@ -19,31 +19,31 @@ type project = {
 const projects: project[] = [
 	{
 		title: "Google",
-		imageURL: "/projects/office-1.jpg",
+		imageURL: "/projects/office-new-1.jpg",
 		link: "/projects/google",
 		logo: "/brand-logos/google.svg",
 	},
 	{
 		title: "Nike",
-		imageURL: "/projects/office-2.jpg",
+		imageURL: "/projects/office-new-2.jpg",
 		link: "/projects/google",
 		logo: "/brand-logos/nike.svg",
 	},
 	{
 		title: "Asics",
-		imageURL: "/projects/office-3.jpg",
+		imageURL: "/projects/office-new-3.jpg",
 		link: "/projects/google",
 		logo: "/brand-logos/asics.svg",
 	},
 	{
 		title: "HBO",
-		imageURL: "/projects/office-4.jpg",
+		imageURL: "/projects/office-new-4.jpg",
 		link: "/projects/google",
 		logo: "/brand-logos/hbo.svg",
 	},
 	{
 		title: "Spotify",
-		imageURL: "/projects/office-5.jpg",
+		imageURL: "/projects/office-new-5.jpg",
 		link: "/projects/google",
 		logo: "/brand-logos/spotify.svg",
 	},

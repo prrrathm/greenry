@@ -27,7 +27,7 @@ const projects: Project[] = [
 		client: "Google",
 		location: "Mountain View, CA",
 		year: "2024",
-		image: "/projects/office-1.jpg",
+		image: "/projects/office-new-1.jpg",
 		description:
 			"Complete biophilic redesign of Google&apos;s main campus, featuring over 500 plants across multiple floors, green walls, and innovative air purification systems.",
 		services: [
@@ -49,7 +49,7 @@ const projects: Project[] = [
 		client: "Nike",
 		location: "Portland, OR",
 		year: "2024",
-		image: "/projects/office-2.jpg",
+		image: "/projects/office-new-2.jpg",
 		description:
 			"Dynamic workspace transformation featuring modular plant systems, living walls, and sustainable design elements that reflect Nike&apos;s commitment to environmental responsibility.",
 		services: ["Modular Systems", "Living Walls", "Sustainable Design"],
@@ -66,7 +66,7 @@ const projects: Project[] = [
 		client: "Asics",
 		location: "Boston, MA",
 		year: "2023",
-		image: "/projects/office-3.jpg",
+		image: "/projects/office-new-3.jpg",
 		description:
 			"Health-centered office environment with therapeutic plant selections, meditation gardens, and biophilic design elements promoting employee wellness and mental health.",
 		services: ["Therapeutic Plants", "Meditation Gardens", "Wellness Design"],
@@ -83,7 +83,7 @@ const projects: Project[] = [
 		client: "HBO",
 		location: "New York, NY",
 		year: "2023",
-		image: "/projects/office-4.jpg",
+		image: "/projects/office-new-4.jpg",
 		description:
 			"Artistic integration of plants and nature elements throughout HBO&apos;s creative studios, enhancing creativity and providing inspiration for content creators.",
 		services: ["Creative Design", "Artistic Integration", "Inspiration Spaces"],
@@ -100,7 +100,7 @@ const projects: Project[] = [
 		client: "Spotify",
 		location: "Stockholm, Sweden",
 		year: "2023",
-		image: "/projects/office-5.jpg",
+		image: "/projects/office-new-5.jpg",
 		description:
 			"Comprehensive sustainability initiative featuring carbon-absorbing plants, energy-efficient systems, and educational green spaces for environmental awareness.",
 		services: [
@@ -121,7 +121,7 @@ const projects: Project[] = [
 		client: "Amazon",
 		location: "Seattle, WA",
 		year: "2022",
-		image: "/projects/office-1.jpg",
+		image: "/projects/office-new-1.jpg",
 		description:
 			"Flexible, scalable plant solutions for Amazon&apos;s startup accelerator program, featuring adaptable green spaces that evolve with growing companies.",
 		services: ["Flexible Systems", "Scalable Solutions", "Growth Adaptation"],
