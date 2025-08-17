@@ -90,7 +90,7 @@ const ProjectCarouselBeta: React.FC = () => {
 		progressIntervalRef.current = setInterval(() => {
 			const elapsed = Date.now() - startTimeRef.current;
 			const newProgress = Math.min((elapsed / duration) * 100);
-			console.log("Carousel Progress", newProgress);
+			// console.log("Carousel Progress", newProgress);
 			setProgress(newProgress);
 
 			if (elapsed >= duration) {
@@ -180,11 +180,24 @@ const ProjectCarouselBeta: React.FC = () => {
 												<ArrowRight className="ml-2 h-4 w-4" />
 											</Button>
 										</div>
-										<Progress value={progress} className="w-full z-30" />
+										{/* <Progress value={progress} className="w-full z-30" /> */}
 									</div>
 								)}
 							</div>
 						</div>
+					))}
+					{/* Dots */}
+				</div>
+				<div className="flex justify-start gap-2 mt-4">
+					{projects.map((_, index) => (
+						<button
+							key={index}
+							onClick={() => emblaApi?.scrollTo(index)}
+							className={`w-2 h-2 rounded-full transition-all duration-300 ${
+								index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
+							}`}
+							aria-label={`Go to slide ${index + 1}`}
+						/>
 					))}
 				</div>
 			</div>
