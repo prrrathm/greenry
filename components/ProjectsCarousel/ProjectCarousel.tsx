@@ -1,12 +1,13 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { cn } from "@/lib/utils"; // Adjust import path based on your setup
+import { cn } from "@/lib/utils";
 import { Progress } from "@/components/ui/progress";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
 
 type project = {
 	title: string;
@@ -52,88 +53,70 @@ const ProjectCarouselBeta: React.FC = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [progress, setProgress] = useState(0);
 	const [isPaused] = useState(false);
-	const items = [1, 2, 3, 4, 5]; // Define items array for clarity
-	const animationFrameRef = useRef<number | null>(null);
+
+	// Refs for desktop carousel timing
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);
-	const pauseStartTime = useRef<number>(0);
+	const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
 	const startTimeRef = useRef<number>(Date.now());
 
-	useEffect(() => {
-		// Clear any existing animations/intervals
-		if (animationFrameRef.current) {
-			cancelAnimationFrame(animationFrameRef.current);
-		}
-		if (intervalRef.current) {
-			clearInterval(intervalRef.current);
-		}
-
-		if (isPaused) {
-			// Store elapsed time when pausing
-			pauseStartTime.current = Date.now() - startTimeRef.current;
-			return;
-		}
-
-		// Reset progress to 0 when currentIndex changes (only when not paused)
-		if (!isPaused && progress >= 100) {
-			setProgress(0);
-			startTimeRef.current = Date.now();
-			pauseStartTime.current = 0;
-		}
-
-		// Animate progress from current progress value
-		const duration = 4000; // 4 seconds
-		// const delay = 1;
-		const durationWithDelay = duration;
-
-		const animateProgress = () => {
-			if (isPaused) return; // Stop animation if paused
-
-			const elapsed =
-				Date.now() - startTimeRef.current + pauseStartTime.current;
-			const newProgress = Math.min((elapsed / durationWithDelay) * 100, 100);
-			setProgress(newProgress);
-
-			if (elapsed < durationWithDelay) {
-				animationFrameRef.current = requestAnimationFrame(animateProgress);
-			}
-		};
-
-		animationFrameRef.current = requestAnimationFrame(animateProgress);
-
-		// Update currentIndex after 4 seconds
-		intervalRef.current = setInterval(() => {
-			if (!isPaused) {
-				setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-			}
-		}, 4000);
-
-		return () => {
-			if (animationFrameRef.current) {
-				cancelAnimationFrame(animationFrameRef.current);
-			}
-			if (intervalRef.current) {
-				clearInterval(intervalRef.current);
-			}
-		};
-	}, [currentIndex, items.length, isPaused, progress]);
-
-	// const togglePause = () => {
-	// 	setIsPaused((prev) => !prev);
-	// 	if (!isPaused) {
-	// 		// When pausing, store the current elapsed time
-	// 		pauseStartTime.current = Date.now() - startTimeRef.current;
-	// 	} else {
-	// 		// When resuming, adjust startTime to account for paused duration
-	// 		startTimeRef.current = Date.now() - pauseStartTime.current;
-	// 	}
-	// };
-
+	// Mobile carousel setup
 	const autoplayRef = useRef(
-		Autoplay({ delay: 3000, stopOnInteraction: false }),
+		Autoplay({ delay: 4000, stopOnInteraction: false }),
 	);
 	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
 		autoplayRef.current,
 	]);
+
+	// Desktop carousel logic
+	useEffect(() => {
+		// Clear existing intervals
+		if (intervalRef.current) {
+			clearInterval(intervalRef.current);
+		}
+		if (progressIntervalRef.current) {
+			clearInterval(progressIntervalRef.current);
+		}
+
+		if (isPaused) return;
+
+		// Reset progress and start time for new slide
+		setProgress(0);
+		startTimeRef.current = Date.now();
+
+		const duration = 4000; // 4 seconds
+		const updateInterval = 50; // Update every 50ms for smooth animation
+
+		// Progress animation
+		progressIntervalRef.current = setInterval(() => {
+			const elapsed = Date.now() - startTimeRef.current;
+			const newProgress = Math.min((elapsed / duration) * 100);
+			console.log("Carousel Progress", newProgress);
+			setProgress(newProgress);
+
+			if (elapsed >= duration) {
+				if (progressIntervalRef.current) {
+					clearInterval(progressIntervalRef.current);
+				}
+			}
+		}, updateInterval);
+
+		// Slide transition
+		intervalRef.current = setTimeout(() => {
+			setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+		}, duration);
+
+		// Cleanup function
+		return () => {
+			if (intervalRef.current) {
+				clearTimeout(intervalRef.current);
+			}
+			if (progressIntervalRef.current) {
+				clearInterval(progressIntervalRef.current);
+			}
+		};
+	}, [currentIndex, isPaused]);
+
+	// Mobile carousel index sync
 	const onSelect = useCallback(() => {
 		if (!emblaApi) return;
 		setCurrentIndex(emblaApi.selectedScrollSnap());
@@ -142,20 +125,23 @@ const ProjectCarouselBeta: React.FC = () => {
 	useEffect(() => {
 		if (!emblaApi) return;
 		emblaApi.on("select", onSelect);
-		onSelect(); // set initial index
+		onSelect(); // Set initial index
 	}, [emblaApi, onSelect]);
 
 	return (
 		<>
 			{/* Desktop View */}
 			<div className="flex-col px-10 py-20 gap-6 hidden md:flex">
-				<div className="text-2xl sm:text-4xl font-semibold flex justify-between items-end-safe">
-					<div className="font-roboto font-extrabold  text-gray-700 text-lg md:text-4xl ">
+				<div className="text-2xl sm:text-4xl font-semibold flex justify-between items-end">
+					<div className="font-roboto font-extrabold text-gray-700 text-lg md:text-4xl">
 						Some of our Recent Projects
 					</div>
-					<div className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-primary">
+					<Link
+						href={"/projects"}
+						className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-primary"
+					>
 						See all projects
-					</div>
+					</Link>
 				</div>
 				<div className="flex gap-0.5">
 					{projects.map((item, iter) => (
@@ -165,11 +151,11 @@ const ProjectCarouselBeta: React.FC = () => {
 								"border rounded-2xl h-full flex flex-col transition-all duration-600 py-4 px-6 relative",
 								iter === currentIndex ? "w-[84%]" : "w-[4%]",
 							)}
-							aria-hidden={iter !== currentIndex} // Basic accessibility
+							aria-hidden={iter !== currentIndex}
 						>
 							<div
 								className={cn(
-									"absolute inset-0  z-20 rounded-2xl",
+									"absolute inset-0 z-20 rounded-2xl",
 									iter !== currentIndex ? "bg-black/40" : "bg-black/20",
 								)}
 							></div>
@@ -183,34 +169,18 @@ const ProjectCarouselBeta: React.FC = () => {
 								{iter === currentIndex && (
 									<div className="w-full flex flex-col gap-4 justify-end items-center mb-4 h-full">
 										<div className="flex justify-between w-full">
-											<div className="flex items-center justify-center text-2xl font-semibold ">
+											<div className="flex items-center justify-center text-2xl font-semibold">
 												{item.title}
 											</div>
 											<Button
-												size={"sm"}
+												size="sm"
 												className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300"
 											>
 												Learn More
 												<ArrowRight className="ml-2 h-4 w-4" />
 											</Button>
-
-											{/* <button
-											onClick={togglePause}
-											className="mb-2 px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
-											aria-label={
-												isPaused
-													? "Resume carousel animation"
-													: "Pause carousel animation"
-											}
-										>
-											{isPaused ? <Play /> : <Pause />}
-										</button> */}
 										</div>
-										<Progress
-											value={progress}
-											className={cn("w-full z-30")}
-											color="#6a7282"
-										/>
+										<Progress value={progress} className="w-full z-30" />
 									</div>
 								)}
 							</div>
@@ -222,7 +192,7 @@ const ProjectCarouselBeta: React.FC = () => {
 			{/* Mobile View */}
 			<div className="md:hidden px-2 py-12">
 				<div className="text-center mb-8">
-					<div className="font-roboto  text-gray-700 text-2xl font-extrabold mb-2">
+					<div className="font-roboto text-gray-700 text-2xl font-extrabold mb-2">
 						Our Recent Projects
 					</div>
 					<div className="text-sm cursor-pointer font-semibold underline text-primary">
