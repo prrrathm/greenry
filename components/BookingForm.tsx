@@ -86,7 +86,7 @@ export default function BookingFormBeta() {
 	return (
 		<section
 			id="book-demo"
-			className="py-20 md:py-20 bg-gradient-to-br from-green-50 to-white"
+			className="py-20 md:py-20 bg-gradient-to-br from-lime-50 to-white"
 		>
 			<div className="container mx-auto px-2 sm:px-6 lg:px-8">
 				<div className="max-w-4xl mx-auto flex flex-col gap-4 md:gap-10">
@@ -194,7 +194,7 @@ export default function BookingFormBeta() {
 												{...register("spaceType")}
 												className="w-full h-9 px-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 											>
-												<option value="!text-xs">Select Service type</option>
+												<option	 disabled>Select Service type</option>
 												{services.map((item, iter) => (
 													<option key={iter} value="office">
 														{item}
