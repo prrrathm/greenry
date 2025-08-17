@@ -7,7 +7,7 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import Image from "next/image";
 import FAQs from "@/components/FAQ";
 // import BookingForm from "@/components/BookingFormDialog";
@@ -52,7 +52,7 @@ const services: OfficePlantsService[] = [
 		],
 		testimonial: {
 			quote:
-				"Evergreen turned our dull office into a vibrant space. Clients comment on the plants all the time, and our team feels more energized—it’s a win-win!",
+				"Evergreenry turned our dull office into a vibrant space. Clients comment on the plants all the time, and our team feels more energized—it’s a win-win!",
 			author: "Mark Thompson, CEO of BrightWave Solutions",
 		},
 		caseStudy: {
@@ -121,7 +121,7 @@ const services: OfficePlantsService[] = [
 		],
 		testimonial: {
 			quote:
-				"Evergreen’s maintenance team saved our plants and our sanity. They’re reliable, professional, and truly care about the greenery.",
+				"Evergreenry’s maintenance team saved our plants and our sanity. They’re reliable, professional, and truly care about the greenery.",
 			author: "David Kim, Operations Lead at LegalEdge",
 		},
 		caseStudy: {
@@ -263,7 +263,7 @@ export default function ServicesPage() {
 					Our Plant Services
 				</h1>
 				<p className="text-sm md:text-xl text-gray-600 w-[80%] md:max-w-3xl mx-auto">
-					At Evergreen, we bring nature indoors with expert solutions that
+					At Evergreenry, we bring nature indoors with expert solutions that
 					enhance your space, health, and happiness. Explore our offerings
 					below.
 				</p>
@@ -277,7 +277,7 @@ export default function ServicesPage() {
 				))}
 			</section>
 
-			{/* Why Choose Evergreen */}
+			{/* Why Choose Evergreenry */}
 
 			{/* FAQ Section */}
 			<section className="py-20  w-full bg-white">

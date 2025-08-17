@@ -194,7 +194,7 @@ export default function BookingFormBeta() {
 												{...register("spaceType")}
 												className="w-full h-9 px-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 											>
-												<option	 disabled>Select Service type</option>
+												<option disabled>Select Service type</option>
 												{services.map((item, iter) => (
 													<option key={iter} value="office">
 														{item}
@@ -242,7 +242,7 @@ export default function BookingFormBeta() {
 									>
 										{isSubmitting
 											? "Submitting..."
-											: "Schedule Free Consultation"}
+											: "Schedule a Free Consultation"}
 									</Button>
 								</form>
 							</CardContent>
@@ -296,7 +296,9 @@ export default function BookingFormBeta() {
 										</div>
 										<div className="flex items-center">
 											<Mail className="h-5 w-5 text-blue-600 mr-3" />
-											<span className="text-gray-700">hello@Evergreen.com</span>
+											<span className="text-gray-700">
+												hello@Evergreenry.com
+											</span>
 										</div>
 										<div className="flex items-center">
 											<MapPin className="h-5 w-5 text-blue-600 mr-3" />

@@ -51,7 +51,7 @@ export const NavBar = () => {
 					isScrolled ? "text-white" : "text-primary",
 				)}
 			>
-				Evergreen
+				Evergreenry
 			</Link>
 			{/* Menu */}
 			<div className="hidden md:flex gap-8 items-center font-semibold w-full justify-center pl-20">
@@ -75,7 +75,7 @@ export const NavBar = () => {
 				</div> */}
 				<PhoneDropDown isScrolled={isScrolled} />
 				<Link
-					href="mailto:info@Evergreen.com"
+					href="mailto:info@Evergreenry.com"
 					className={cn(
 						"group inline-flex items-center",
 						isScrolled ? "text-white" : "text-primary",

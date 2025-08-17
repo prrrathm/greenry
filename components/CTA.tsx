@@ -18,7 +18,7 @@ export default function CTA() {
 				</h2>
 				<p className="text-sm md:text-lg mb-8 max-w-2xl mx-auto opacity-90">
 					Join hundreds of satisfied clients who have created healthier, more
-					productive environments with Evergreen.
+					productive environments with Evergreenry.
 				</p>
 
 				<div className="flex px-2 gap-4 md:gap-4 justify-center items-center md:w-max w-full">

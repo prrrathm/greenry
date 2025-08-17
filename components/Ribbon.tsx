@@ -16,7 +16,7 @@ const Ribbon = () => {
 				</div>
 				<div className="flex gap-2 items-center">
 					<Mail className="h-4 w-4 text-white" />
-					<span>info@Evergreen.com</span>
+					<span>info@Evergreenry.com</span>
 				</div>
 			</div>
 		</div>

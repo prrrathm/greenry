@@ -13,7 +13,7 @@ export default function GoogleProject() {
 				<div className="absolute inset-0 bg-black opacity-50"></div>
 				<div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
 					<h1 className="text-4xl md:text-5xl font-bold text-center">
-						Transforming Google&apos;s Workspace with Evergreen
+						Transforming Google&apos;s Workspace with Evergreenry
 					</h1>
 					<p className="text-xl md:text-2xl mt-2 text-center">
 						Creating a healthier, more productive environment for Google&apos;s
@@ -28,7 +28,7 @@ export default function GoogleProject() {
 					Project Overview
 				</h2>
 				<p className="text-lg text-center max-w-3xl mx-auto">
-					Evergreen partnered with Google to integrate nature into their
+					Evergreenry partnered with Google to integrate nature into their
 					innovative workspace at their headquarters. Our team installed over
 					500 carefully selected plants across key areas, including
 					workstations, meeting rooms, and communal spaces. The goal was to
@@ -159,7 +159,7 @@ export default function GoogleProject() {
 					<Card>
 						<CardContent className="pt-6">
 							<p className="italic text-gray-700">
-								&quot;Evergreen’s professionalism and attention to detail were
+								&quot;Evergreenry’s professionalism and attention to detail were
 								outstanding. Their ongoing support keeps our plants thriving,
 								enhancing our office every day.&quot;
 							</p>
@@ -177,7 +177,7 @@ export default function GoogleProject() {
 					Ongoing Maintenance Services
 				</h2>
 				<p className="text-lg text-center max-w-3xl mx-auto">
-					Evergreen ensures the longevity of Google’s green workspace with our
+					Evergreenry ensures the longevity of Google’s green workspace with our
 					comprehensive maintenance services. Our team conducts regular visits
 					to water, prune, and care for the plants, keeping them healthy and
 					vibrant. We also provide plant replacement guarantees and expert
@@ -192,12 +192,12 @@ export default function GoogleProject() {
 					Ready to Transform Your Workspace?
 				</h2>
 				<p className="text-lg mb-6 max-w-2xl mx-auto">
-					Contact Evergreen today for a free consultation and discover how we
+					Contact Evergreenry today for a free consultation and discover how we
 					can bring the power of nature to your office, just like we did for
 					Google.
 				</p>
 				<Button className="bg-white text-primary hover:bg-gray-100 text-lg py-2 px-6">
-					Schedule a Consultation
+					Schedule a Free Consultation
 				</Button>
 			</section>
 		</div>

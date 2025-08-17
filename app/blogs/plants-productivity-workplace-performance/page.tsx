@@ -159,12 +159,12 @@ export default function BlogPost() {
 							Ready to Transform Your Workspace?
 						</h3>
 						<p className="text-primary mb-4">
-							Discover how Evergreen can help you create a more productive,
+							Discover how Evergreenry can help you create a more productive,
 							healthier work environment with our expert plant solutions.
 						</p>
 						<Link href="/#book-demo">
 							<Button className="bg-primary hover:bg-primary text-white">
-								Schedule Free Consultation
+								Schedule a Free Consultation
 							</Button>
 						</Link>
 					</div>

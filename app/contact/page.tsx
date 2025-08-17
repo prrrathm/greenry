@@ -37,20 +37,20 @@ type FormData = z.infer<typeof schema>;
 export default function ContactPage() {
 	const faqs = [
 		{
-			q: "What is Evergreen?",
-			a: "Evergreen is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
+			q: "What is Evergreenry?",
+			a: "Evergreenry is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
 		},
 		{
-			q: "What types of projects does Evergreen undertake?",
+			q: "What types of projects does Evergreenry undertake?",
 			a: "We specialize in corporate office installations, home plant solutions, co-working space transformations, and event space arrangements with ongoing maintenance support.",
 		},
 		{
-			q: "How can I get involved with Evergreen'apos;s initiatives?",
+			q: "How can I get involved with Evergreenry'apos;s initiatives?",
 			a: "You can book a free consultation through our website, call us directly, or reach out via email. We offer customized solutions for every space and budget.",
 		},
 		{
-			q: "Where does Evergreen operate?",
-			a: "Evergreen operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
+			q: "Where does Evergreenry operate?",
+			a: "Evergreenry operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
 		},
 		{
 			q: "Why is biodiversity conservation important?",
@@ -303,7 +303,7 @@ export default function ContactPage() {
 						<div className="space-y-8">
 							<div className="bg-white p-8 rounded-2xl shadow-sm">
 								<h3 className="text-2xl sm:text-4xl font-roboto font-extrabold text-gray-900 mb-6">
-									Why Choose Evergreen?
+									Why Choose Evergreenry?
 								</h3>
 								<div className="space-y-4">
 									<div className="flex items-start space-x-4">

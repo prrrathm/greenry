@@ -23,7 +23,7 @@ export default function Footer() {
 					<div className="space-y-4">
 						<div className="flex items-center space-x-2">
 							<Leaf className="h-8 w-8 text-primary" />
-							<span className="text-2xl font-bold">Evergreen</span>
+							<span className="text-2xl font-bold">Evergreenry</span>
 						</div>
 						<p className="text-gray-400 text-sm">
 							Transforming spaces with premium plant solutions. Creating
@@ -131,7 +131,7 @@ export default function Footer() {
 						</div>
 						<div className="flex items-center space-x-3">
 							<Mail className="h-5 w-5 text-primary" />
-							<span className="text-gray-400">hello@Evergreen.com</span>
+							<span className="text-gray-400">hello@Evergreenry.com</span>
 						</div>
 						<div className="flex items-center space-x-3">
 							<MapPin className="h-5 w-5 text-primary" />
@@ -142,7 +142,7 @@ export default function Footer() {
 
 				{/* Bottom Bar */}
 				<div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-					<p>&copy; 2025 Evergreen. All rights reserved.</p>
+					<p>&copy; 2025 Evergreenry. All rights reserved.</p>
 					<div className="flex space-x-6 mt-4 md:mt-0">
 						<Link href="#" className="hover:text-primary transition-colors">
 							Privacy Policy

@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 			preferredDate,
 			preferredTime,
 			message,
-	} = await req.json();
+		} = await req.json();
 
 		// Configure transporter
 		const transporter = nodemailer.createTransport({
@@ -84,7 +84,7 @@ export async function POST(req: Request) {
 					<div style="padding:20px;">
 						<p>Hi ${name},</p>
 						<p>Thank you for booking a free consultation with us. Our team will reach out to you soon to confirm the details.</p>
-						<p style="margin-top:20px;">Best regards,<br/>Evergreen Team 🌿</p>
+						<p style="margin-top:20px;">Best regards,<br/>Evergreenry Team 🌿</p>
 					</div>
 				</div>
 			</div>
@@ -100,7 +100,7 @@ export async function POST(req: Request) {
 
 		// Send confirmation to user
 		await transporter.sendMail({
-			from: `"Evergreen" <${process.env.SMTP_USER}>`,
+			from: `"Evergreenry" <${process.env.SMTP_USER}>`,
 			to: email,
 			subject: "Thank you for booking your consultation",
 			html: userHtml,

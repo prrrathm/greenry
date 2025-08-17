@@ -30,7 +30,7 @@ const defaultTestimonials: Testimonial[] = [
 		image:
 			"https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"Evergreen transformed our office environment completely. Our team's productivity has increased significantly, and the air quality is noticeably better. Highly recommended!",
+			"Evergreenry transformed our office environment completely. Our team's productivity has increased significantly, and the air quality is noticeably better. Highly recommended!",
 		rating: 5,
 	},
 	{
@@ -48,7 +48,7 @@ const defaultTestimonials: Testimonial[] = [
 		image:
 			"https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"Working with Evergreen was seamless. From consultation to installation, everything was handled professionally. The ongoing support has been exceptional.",
+			"Working with Evergreenry was seamless. From consultation to installation, everything was handled professionally. The ongoing support has been exceptional.",
 		rating: 5,
 	},
 	{
@@ -237,7 +237,7 @@ TestimonialsCarouselProps) {
 					</h2>
 					<p className="md:text-xl text-gray-600 max-w-4xl mx-auto drop-shadow-xl">
 						Join hundreds of satisfied businesses who have transformed their
-						workspaces with Evergreen.
+						workspaces with Evergreenry.
 					</p>
 				</div>
 

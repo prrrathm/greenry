@@ -65,7 +65,7 @@ export default function AboutPage() {
 					<div className="text-center space-y-8 max-w-4xl mx-auto">
 						<div className="space-y-4">
 							<div className="inline-flex items-center px-4 py-2 bg-secondary text-primary rounded-full text-sm font-medium">
-								🌱 About Evergreen
+								🌱 About Evergreenry
 							</div>
 							<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-roboto font-extrabold text-gray-900 leading-tight">
 								Growing a <span className="text-primary">Greener</span> Future
@@ -89,7 +89,7 @@ export default function AboutPage() {
 								Our Mission
 							</h2>
 							<p className="text-lg text-gray-600 leading-relaxed">
-								At Evergreen, we&apos;re dedicated to creating healthier, more
+								At Evergreenry, we&apos;re dedicated to creating healthier, more
 								productive environments through sustainable plant solutions. Our
 								mission is to bridge the gap between urban living and nature,
 								bringing the benefits of green spaces to every workspace and
@@ -134,7 +134,7 @@ export default function AboutPage() {
 							Our Values
 						</h2>
 						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
-							The principles that guide everything we do at Evergreen
+							The principles that guide everything we do at Evergreenry
 						</p>
 					</div>
 					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -178,7 +178,7 @@ export default function AboutPage() {
 								Our Story
 							</h2>
 							<p className="text-lg text-gray-600 leading-relaxed">
-								Founded in 2020, Evergreen began with a simple vision: to make
+								Founded in 2020, Evergreenry began with a simple vision: to make
 								the benefits of nature accessible to everyone, regardless of
 								where they live or work. What started as a small team of
 								environmental enthusiasts has grown into a comprehensive plant
@@ -217,7 +217,7 @@ export default function AboutPage() {
 							Meet Our Team
 						</h2>
 						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
-							The passionate experts behind Evergreen&apos;s success
+							The passionate experts behind Evergreenry&apos;s success
 						</p>
 					</div>
 					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -249,7 +249,7 @@ export default function AboutPage() {
 						</h2>
 						<p className="text-xl text-secondary">
 							Join hundreds of satisfied clients who have already created
-							healthier, more productive environments with Evergreen.
+							healthier, more productive environments with Evergreenry.
 						</p>
 						<Button
 							className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg"

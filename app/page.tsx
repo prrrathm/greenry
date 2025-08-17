@@ -20,20 +20,20 @@ export default function Home() {
 
 	const faqs = [
 		{
-			q: "What is Evergreen?",
-			a: "Evergreen is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
+			q: "What is Evergreenry?",
+			a: "Evergreenry is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
 		},
 		{
-			q: "What types of projects does Evergreen undertake?",
+			q: "What types of projects does Evergreenry undertake?",
 			a: "We specialize in corporate office installations, home plant solutions, co-working space transformations, and event space arrangements with ongoing maintenance support.",
 		},
 		{
-			q: "How can I get involved with Evergreen'apos;s initiatives?",
+			q: "How can I get involved with Evergreenry'apos;s initiatives?",
 			a: "You can book a free consultation through our website, call us directly, or reach out via email. We offer customized solutions for every space and budget.",
 		},
 		{
-			q: "Where does Evergreen operate?",
-			a: "Evergreen operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
+			q: "Where does Evergreenry operate?",
+			a: "Evergreenry operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
 		},
 		{
 			q: "Why is biodiversity conservation important?",

@@ -54,7 +54,7 @@ export default function Features() {
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-8 md:mb-16">
 					<h2 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 font-roboto font-extrabold text-gray-700">
-						Why Choose Evergreen?
+						Why Choose Evergreenry?
 					</h2>
 					<p className="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto">
 						We provide comprehensive plant solutions that transform your space

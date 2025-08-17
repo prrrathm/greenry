@@ -72,7 +72,7 @@ export async function POST(req: Request) {
 					<div style="padding:20px;">
 						<p>Hi ${name},</p>
 						<p>Thank you for booking a free consultation with us. Our team will contact you within 24 hours to confirm your appointment.</p>
-						<p style="margin-top:20px;">Best regards,<br/>Evergreen Team 🌿</p>
+						<p style="margin-top:20px;">Best regards,<br/>Evergreenry Team 🌿</p>
 					</div>
 				</div>
 			</div>
@@ -88,7 +88,7 @@ export async function POST(req: Request) {
 
 		// Send email to user
 		await transporter.sendMail({
-			from: `"Evergreen" <${process.env.SMTP_USER}>`,
+			from: `"Evergreenry" <${process.env.SMTP_USER}>`,
 			to: email,
 			subject: "Your Consultation Booking",
 			html: userHtml,
