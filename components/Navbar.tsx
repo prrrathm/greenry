@@ -37,18 +37,18 @@ export const NavBar = () => {
 	return (
 		<div
 			className={cn({
-				"fixed flex items-center justify-between z-50 px-4 sm:px-6 py-4  backdrop-blur transition-all duration-500":
+				"fixed flex items-center justify-between z-50 px-4 sm:px-8 py-4 backdrop-blur transition-all duration-500":
 					true,
 				"bg-primary/90 drop-shadow-lg rounded-none inset-x-0 top-0 ":
 					isScrolled,
-				"rounded-xl inset-x-1/12 md:inset-x-1/5 top-8": !isScrolled,
+				"rounded-xl inset-x-[5%] md:inset-x-1/6 top-8": !isScrolled,
 			})}
 		>
 			{/* Logo */}
 			<Link
 				href={"/"}
 				className={cn(
-					"font-black text-xl flex items-center",
+					"font-black text-lg md:text-xl flex items-center",
 					isScrolled ? "text-white" : "text-primary",
 				)}
 			>
@@ -59,7 +59,7 @@ export const NavBar = () => {
 					height={50}
 					className="rounded-md"
 				/>
-				Evergreenry
+				<div className="w-full">Evergreenry</div>
 			</Link>
 			{/* Menu */}
 			<div className="hidden md:flex gap-8 items-center font-semibold w-full justify-center pl-20">
@@ -76,10 +76,10 @@ export const NavBar = () => {
 					</Link>
 				))}
 			</div>
-			<div className="flex flex-row-reverse md:flex-row items-center justify-center gap-2 md:gap-4">
+			<div className="flex flex-row-reverse md:flex-row items-center justify-center gap-3 md:gap-4">
 				<NavMobileDrawer navLinks={navLinks} isScrolled={isScrolled} />
 				{/* <div className="hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit sm:hidden">
-					<Menu fill="#016630" className="h-6 w-6 text-primary" />
+					<Menu fill="#26420f" className="h-6 w-6 text-primary" />
 				</div> */}
 				<PhoneDropDown isScrolled={isScrolled} />
 				<Link
@@ -89,8 +89,8 @@ export const NavBar = () => {
 						isScrolled ? "text-white" : "text-primary",
 					)}
 				>
-					<Mail className="h-6 w-6  cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90" />
-					<MailOpen className="h-6 w-6  cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute" />
+					<Mail className="h-5 w-5 md:h-6 md:w-6 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90" />
+					<MailOpen className="h-5 w-5 md:h-6 md:w-6 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute" />
 				</Link>
 				<BookingForm
 					hasTrigger={true}

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
 	const scrollToBooking = () => {
@@ -64,14 +65,16 @@ export default function Hero() {
 									<Play fill="#26420f" className="h-5 w-5 text-primary" />
 								</Button>
 							</div>
-							<Button
-								variant="outline"
-								// size="lg"
-								className="hidden md:flex p-2 border-2 border-primary text-primary hover:text-primary hover:bg-secondary font-bold bg-secondary/60 cursor-pointer rounded-full md:rounded-md"
-							>
-								<Play fill="#26420f" className="h-5 w-5 text-primary" />
-								Watch Demo
-							</Button>
+							<Link href={"https://www.youtube.com/watch?v=0zEfCODX-TE&t=3s"} target="_blank">
+								<Button
+									variant="outline"
+									// size="lg"
+									className="hidden md:flex p-2 border-2 border-primary text-primary hover:text-primary hover:bg-secondary font-bold bg-secondary/60 cursor-pointer rounded-full md:rounded-md"
+								>
+									<Play fill="#26420f" className="h-5 w-5 text-primary" />
+									Watch Demo
+								</Button>
+							</Link>
 						</div>
 
 						{/* Stats */}

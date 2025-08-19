@@ -16,17 +16,17 @@ const PhoneDropDown = ({ isScrolled }: { isScrolled: boolean }) => {
 			<DropdownMenuTrigger className="flex items-center justify-center">
 				<div
 					className={cn(
-						"group inline-flex items-center",
+						"group inline-flex items-center cursor-pointer",
 						isScrolled ? "text-white" : "text-primary",
 					)}
 				>
 					<Phone
-						fill="#016630"
-						className="h-5 w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
+						fill={isScrolled ? "#fff" : "#26420f"}
+						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
 					/>
 					<PhoneCall
-						fill="#016630"
-						className="h-5 w-5cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
+						fill={isScrolled ? "#fff" : "#26420f"}
+						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
 					/>
 				</div>
 			</DropdownMenuTrigger>
