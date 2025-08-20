@@ -57,15 +57,23 @@ export default function Hero() {
 									<ArrowDown className="h-5 w-5" />
 									{/* <ArrowRight className="h-5 w-5" /> */}
 								</Button>
-								<Button
-									variant="outline"
-									// size="lg"
-									className="md:hidden border-2 border-primary text-primary hover:text-primary hover:bg-secondary bg-secondary/60 cursor-pointer rounded-full !px-2 !py-1 absolute -right-12 scale-90"
+								<Link
+									href={"https://www.youtube.com/watch?v=0zEfCODX-TE&t=3s"}
+									target="_blank"
 								>
-									<Play fill="#26420f" className="h-5 w-5 text-primary" />
-								</Button>
+									<Button
+										variant="outline"
+										// size="lg"
+										className="md:hidden border-2 border-primary text-primary hover:text-primary hover:bg-secondary bg-secondary/60 cursor-pointer rounded-full !px-2 !py-1 absolute -right-12 scale-90"
+									>
+										<Play fill="#26420f" className="h-5 w-5 text-primary" />
+									</Button>
+								</Link>
 							</div>
-							<Link href={"https://www.youtube.com/watch?v=0zEfCODX-TE&t=3s"} target="_blank">
+							<Link
+								href={"https://www.youtube.com/watch?v=0zEfCODX-TE&t=3s"}
+								target="_blank"
+							>
 								<Button
 									variant="outline"
 									// size="lg"
