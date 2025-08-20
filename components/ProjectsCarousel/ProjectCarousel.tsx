@@ -103,7 +103,7 @@ const ProjectCarouselBeta: React.FC = () => {
 
 		// Slide transition
 		intervalRef.current = setTimeout(() => {
-			setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+			setCurrentIndex((prevIndex) => (prevIndex + 1) % 5);
 		}, duration);
 
 		// Cleanup function
@@ -225,59 +225,65 @@ const ProjectCarouselBeta: React.FC = () => {
 				<div className="relative overflow-hidden">
 					<div className="overflow-hidden" ref={emblaRef}>
 						<div className="flex">
-							{projects.map((item, iter) => (
-								<div key={iter} className="min-w-0 flex-shrink-0 w-full px-2">
-									<div className="relative border rounded-2xl h-64 overflow-hidden">
-										<Image
-											src={item.image}
-											fill
-											alt={item.title}
-											className="object-cover"
-										/>
-										<div className="absolute inset-0 bg-black/30"></div>
-										<div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-											<div className="flex items-center justify-between">
-												<div className="flex items-center gap-3">
-													{/* <Image
+							{projects
+								.sort((a, b) => Number(b.year) - Number(a.year))
+								.slice(0, 5)
+								.map((item, iter) => (
+									<div key={iter} className="min-w-0 flex-shrink-0 w-full px-2">
+										<div className="relative border rounded-2xl h-64 overflow-hidden">
+											<Image
+												src={item.image}
+												fill
+												alt={item.title}
+												className="object-cover"
+											/>
+											<div className="absolute inset-0 bg-black/30"></div>
+											<div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+												<div className="flex items-center justify-between">
+													<div className="flex items-center gap-3">
+														{/* <Image
 														src={item.logo}
 														width={24}
 														height={24}
 														alt={`${item.title} logo`}
 														className="bg-white rounded p-1 hidden"
 													/> */}
-													<div className="text-lg font-semibold">
-														{item.title}
+														<div className="text-lg font-semibold">
+															{item.title}
+														</div>
 													</div>
+													<Link href={`/projects/${item.id}`}>
+														<Button
+															size="sm"
+															className="bg-transparent text-white border-white hover:bg-white hover:text-primary"
+														>
+															Learn More
+															<ArrowRight className="ml-1 h-4 w-4" />
+														</Button>
+													</Link>
 												</div>
-												<Link href={`/projects/${item.id}`}>
-													<Button
-														size="sm"
-														className="bg-transparent text-white border-white hover:bg-white hover:text-primary"
-													>
-														Learn More
-														<ArrowRight className="ml-1 h-4 w-4" />
-													</Button>
-												</Link>
 											</div>
 										</div>
 									</div>
-								</div>
-							))}
+								))}
 						</div>
 					</div>
 
 					{/* Dots */}
 					<div className="flex justify-center gap-2 mt-4">
-						{projects.map((_, index) => (
-							<button
-								key={index}
-								onClick={() => emblaApi?.scrollTo(index)}
-								className={`w-2 h-2 rounded-full transition-all duration-300 ${
-									index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
-								}`}
-								aria-label={`Go to slide ${index + 1}`}
-							/>
-						))}
+						{projects
+							.sort((a, b) => Number(b.year) - Number(a.year))
+							.slice(0, 5)
+							.map((_, index) => (
+								<button
+									key={index}
+									onClick={() => emblaApi?.scrollTo(index)}
+									className={`w-2 h-2 rounded-full transition-all duration-300 ${
+										index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
+									}`}
+									aria-label={`Go to slide ${index + 1}`}
+								/>
+							))}
 					</div>
 				</div>
 			</div>
