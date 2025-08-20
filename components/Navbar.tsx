@@ -41,15 +41,16 @@ export const NavBar = () => {
 					true,
 				"bg-primary/90 drop-shadow-lg rounded-none inset-x-0 top-0 ":
 					isScrolled,
-				"rounded-xl inset-x-[5%] md:inset-x-1/6 top-8": !isScrolled,
+				"rounded-xl bg-primary/90 inset-x-[5%] md:inset-x-1/6 top-8":
+					!isScrolled,
 			})}
 		>
 			{/* Logo */}
 			<Link
 				href={"/"}
 				className={cn(
-					"font-black text-lg md:text-xl flex items-center gap-2",
-					isScrolled ? "text-white" : "text-primary",
+					"font-black text-lg md:text-xl flex items-center",
+					isScrolled ? "text-white" : "text-white",
 				)}
 			>
 				<Image
@@ -69,7 +70,7 @@ export const NavBar = () => {
 						href={item.link}
 						className={cn(
 							" transition-colors duration-200",
-							isScrolled ? "text-white" : "text-gray-700 hover:text-primary",
+							isScrolled ? "text-white" : "text-secondary hover:text-primary",
 						)}
 					>
 						{item.label}
@@ -77,32 +78,33 @@ export const NavBar = () => {
 				))}
 			</div>
 			<div className="flex flex-row-reverse md:flex-row items-center justify-center gap-3 md:gap-4">
-				<NavMobileDrawer navLinks={navLinks} isScrolled={isScrolled} />
+				<NavMobileDrawer navLinks={navLinks} isScrolled={true} />
 				{/* <div className="hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit sm:hidden">
 					<Menu fill="#26420f" className="h-6 w-6 text-primary" />
 				</div> */}
-				<Link href="tel:+919891347119">
-					<div
-						className={cn(
-							"group inline-flex items-center cursor-pointer",
-							isScrolled ? "text-white" : "text-primary",
-						)}
-					>
-						<Phone
-							fill={isScrolled ? "#fff" : "#26420f"}
-							className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
-						/>
-						<PhoneCall
-							fill={isScrolled ? "#fff" : "#26420f"}
-							className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
-						/>
-					</div>
+				<Link
+					href="tel:+919891347119"
+					className={cn(
+						"group inline-flex items-center justify-center cursor-pointer text-white",
+						// isScrolled ? "text-white" : "text-primary",
+					)}
+				>
+					<Phone
+						// fill={isScrolled ? "#fff" : "#26420f"}
+						fill={"#fff"}
+						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
+					/>
+					<PhoneCall
+						fill={"#fff"}
+						// fill={isScrolled ? "#fff" : "#26420f"}
+						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
+					/>
 				</Link>
 				<Link
 					href="mailto:green@evergreenry.com"
 					className={cn(
-						"group inline-flex items-center",
-						isScrolled ? "text-white" : "text-primary",
+						"group inline-flex items-center text-white",
+						// isScrolled ? "text-white" : "text-primary",
 					)}
 				>
 					<Mail className="h-5 w-5 md:h-6 md:w-6 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90" />
@@ -111,7 +113,7 @@ export const NavBar = () => {
 				<BookingForm
 					hasTrigger={true}
 					triggerText="Book Demo"
-					isScrolled={isScrolled}
+					isScrolled={true}
 				/>
 			</div>
 			{/* CTA */}
