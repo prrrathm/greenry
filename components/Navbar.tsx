@@ -48,15 +48,15 @@ export const NavBar = () => {
 			<Link
 				href={"/"}
 				className={cn(
-					"font-black text-lg md:text-xl flex items-center",
+					"font-black text-lg md:text-xl flex items-center gap-2",
 					isScrolled ? "text-white" : "text-primary",
 				)}
 			>
 				<Image
-					src="/logo/logo.png"
+					src="/logo/logo-bold.png"
 					alt="Snake Plant"
-					width={50}
-					height={50}
+					width={30}
+					height={30}
 					className="rounded-md"
 				/>
 				<div className="w-full">Evergreenry</div>

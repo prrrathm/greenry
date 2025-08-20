@@ -23,7 +23,7 @@ export default function Footer() {
 					<div className="space-y-4">
 						<div className="flex items-center space-x-2">
 							<Image
-								src="/logo/logo.png"
+								src="/logo/logo-bold.png"
 								alt="Snake Plant"
 								width={50}
 								height={50}

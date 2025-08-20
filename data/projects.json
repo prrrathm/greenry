@@ -1,0 +1,317 @@
+[
+	{
+		"id": "1",
+		"title": "Corporate Green Interior",
+		"client": "Arrow Electronics",
+		"location": "Bangalore, Karnataka",
+		"year": "2023",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/HE_04623-2.jpg?w=1280&ssl=1",
+		"description": "Designed a biophilic green interior for Arrow Electronics' Bangalore office, incorporating indoor plants and vertical gardens to enhance workspace aesthetics and air quality.",
+		"services": [
+			"Indoor Plantscaping",
+			"Vertical Gardens",
+			"Air Purification",
+			"Maintenance"
+		],
+		"results": [
+			"25% increase in employee well-being",
+			"Improved office ambiance",
+			"Reduced indoor pollutants"
+		],
+		"slug": "arrow-electronics-green-interior"
+	},
+	{
+		"id": "2",
+		"title": "Corporate Terrace Garden",
+		"client": "Absolute Foods",
+		"location": "Gurgaon, Haryana",
+		"year": "2024",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/entrance-4-4-1.jpg?w=1280&ssl=1",
+		"description": "Created a sustainable terrace garden for Absolute Foods' Gurgaon facility, featuring custom planters and irrigation systems to promote a green corporate environment.",
+		"services": [
+			"Terrace Garden Design",
+			"Custom Planters",
+			"Irrigation Systems",
+			"Maintenance"
+		],
+		"results": [
+			"Enhanced outdoor workspace",
+			"10% increase in employee engagement",
+			"Sustainable green solution"
+		],
+		"slug": "absolute-foods-terrace-garden"
+	},
+	{
+		"id": "3",
+		"title": "Terrace Garden and Backyard",
+		"client": "Mr. Mohit",
+		"location": "Delhi",
+		"year": "2023",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/IMG_20230215_154607-3-1.jpg?w=1280&ssl=1",
+		"description": "Transformed Mr. Mohit's residential space with a combined terrace garden and backyard design, featuring artificial grass, outdoor seating, and vibrant plant varieties.",
+		"services": [
+			"Terrace Garden Design",
+			"Backyard Landscaping",
+			"Artificial Grass",
+			"Outdoor Furniture"
+		],
+		"results": [
+			"Improved outdoor living space",
+			"Enhanced aesthetic appeal",
+			"Increased property value"
+		],
+		"slug": "mohit-terrace-backyard"
+	},
+	{
+		"id": "4",
+		"title": "Backyard Redesign",
+		"client": "Mrs. Madhu",
+		"location": "Noida, Uttar Pradesh",
+		"year": "2022",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/105A0083-1.jpg?w=1280&ssl=1",
+		"description": "Redesigned Mrs. Madhu's backyard in Noida with lush greenery, custom planters, and a cozy seating area for family relaxation.",
+		"services": [
+			"Backyard Landscaping",
+			"Custom Planters",
+			"Outdoor Seating",
+			"Plant Styling"
+		],
+		"results": [
+			"Created a relaxing outdoor retreat",
+			"Improved garden aesthetics",
+			"Low-maintenance design"
+		],
+		"slug": "madhu-backyard"
+	},
+	{
+		"id": "5",
+		"title": "Terrace Garden",
+		"client": "Mrs. Sushmita",
+		"location": "Gurgaon, Haryana",
+		"year": "2024",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/DSC_7293-scaled.jpg?w=1280&ssl=1",
+		"description": "Developed a modern terrace garden for Mrs. Sushmita in Gurgaon, incorporating sustainable irrigation and designer planters for a vibrant rooftop experience.",
+		"services": [
+			"Terrace Garden Design",
+			"Irrigation Systems",
+			"Designer Planters",
+			"Maintenance"
+		],
+		"results": [
+			"Enhanced rooftop aesthetics",
+			"Sustainable plant care",
+			"Increased outdoor usability"
+		],
+		"slug": "sushmita-terrace-garden"
+	},
+	{
+		"id": "6",
+		"title": "Terrace Garden",
+		"client": "Mr. Hitesh",
+		"location": "Gurgaon, Haryana",
+		"year": "2023",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/DSC_6666-1-2.jpg?fit=%2C&ssl=1",
+		"description": "Designed a luxurious terrace garden for Mr. Hitesh in Gurgaon, featuring custom outdoor furniture and lush greenery for an elevated outdoor space.",
+		"services": [
+			"Terrace Garden Design",
+			"Outdoor Furniture",
+			"Plant Styling",
+			"Maintenance"
+		],
+		"results": [
+			"Premium outdoor living space",
+			"Enhanced property appeal",
+			"Low-maintenance greenery"
+		],
+		"slug": "hitesh-terrace-garden"
+	},
+	{
+		"id": "7",
+		"title": "Landscaping",
+		"client": "Mrs. Srivastava",
+		"location": "Gurgaon, Haryana",
+		"year": "2023",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide7-1.jpg?w=950&ssl=1",
+		"description": "Provided comprehensive landscaping for Mrs. Srivastava's Gurgaon residence, including garden beds, pathways, and sustainable plant selections.",
+		"services": [
+			"Landscaping",
+			"Garden Beds",
+			"Pathway Design",
+			"Plant Selection"
+		],
+		"results": [
+			"Transformed outdoor aesthetics",
+			"Sustainable garden design",
+			"Increased curb appeal"
+		],
+		"slug": "srivastava-landscaping"
+	},
+	{
+		"id": "8",
+		"title": "Feature Wall",
+		"client": "Mr. Agarwal",
+		"location": "Gurgaon, Haryana",
+		"year": "2024",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide4-2.jpg?w=950&ssl=1",
+		"description": "Installed a preserved moss feature wall for Mr. Agarwal in Gurgaon, using Icelandic moss to enhance indoor ambiance and air quality.",
+		"services": [
+			"Preserved Moss Wall",
+			"Air Purification",
+			"Interior Design",
+			"Maintenance-Free"
+		],
+		"results": [
+			"Improved indoor air quality",
+			"Reduced ambient noise",
+			"Enhanced aesthetic appeal"
+		],
+		"slug": "agarwal-feature-wall"
+	},
+	{
+		"id": "9",
+		"title": "Terrace Garden",
+		"client": "Mr. Akshay",
+		"location": "Faridabad, Haryana",
+		"year": "2023",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/3d-.jpg?w=950&ssl=1",
+		"description": "Created a vibrant terrace garden for Mr. Akshay in Faridabad, featuring custom planters and an efficient irrigation system.",
+		"services": [
+			"Terrace Garden Design",
+			"Custom Planters",
+			"Irrigation Systems",
+			"Maintenance"
+		],
+		"results": [
+			"Enhanced rooftop usability",
+			"Sustainable plant care",
+			"Improved outdoor aesthetics"
+		],
+		"slug": "akshay-terrace-garden"
+	},
+	{
+		"id": "10",
+		"title": "Green Interior",
+		"client": "Mr. Hemant",
+		"location": "Noida, Uttar Pradesh",
+		"year": "2024",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide11-1.jpg?w=950&ssl=1",
+		"description": "Designed a green interior for Mr. Hemant's MNC office in Noida, incorporating indoor plants and vertical gardens for a biophilic workspace.",
+		"services": [
+			"Indoor Plantscaping",
+			"Vertical Gardens",
+			"Air Purification",
+			"Maintenance"
+		],
+		"results": [
+			"25% increase in employee productivity",
+			"Enhanced office ambiance",
+			"Reduced indoor pollutants"
+		],
+		"slug": "hemant-green-interior"
+	},
+	{
+		"id": "11",
+		"title": "Terrace Garden",
+		"client": "Mr. Singh",
+		"location": "Faridabad, Haryana",
+		"year": "2023",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide15-2.jpg?w=950&ssl=1",
+		"description": "Developed a modern terrace garden for Mr. Singh in Faridabad, with custom outdoor seating and lush greenery for a relaxing rooftop space.",
+		"services": [
+			"Terrace Garden Design",
+			"Outdoor Seating",
+			"Plant Styling",
+			"Maintenance"
+		],
+		"results": [
+			"Improved outdoor living space",
+			"Enhanced aesthetic appeal",
+			"Low-maintenance design"
+		],
+		"slug": "singh-terrace-garden"
+	},
+	{
+		"id": "12",
+		"title": "Terrace Garden",
+		"client": "Mrs. Shweta",
+		"location": "Ghaziabad, Uttar Pradesh",
+		"year": "2024",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide2-2.jpg?w=950&ssl=1",
+		"description": "Transformed Mrs. Shweta's rooftop in Ghaziabad into a vibrant terrace garden with sustainable irrigation and designer planters.",
+		"services": [
+			"Terrace Garden Design",
+			"Irrigation Systems",
+			"Custom Planters",
+			"Maintenance"
+		],
+		"results": [
+			"Enhanced rooftop aesthetics",
+			"Sustainable plant care",
+			"Increased outdoor usability"
+		],
+		"slug": "shweta-terrace-garden"
+	},
+	{
+		"id": "13",
+		"title": "Terrace Garden",
+		"client": "Ms. Smiti",
+		"location": "Agra, Uttar Pradesh",
+		"year": "2023",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide24-2.jpg?w=950&ssl=1",
+		"description": "Designed a cozy terrace garden for Ms. Smiti in Agra, featuring artificial grass and custom planters for a low-maintenance green space.",
+		"services": [
+			"Terrace Garden Design",
+			"Artificial Grass",
+			"Custom Planters",
+			"Maintenance"
+		],
+		"results": [
+			"Low-maintenance green space",
+			"Enhanced rooftop appeal",
+			"Improved outdoor functionality"
+		],
+		"slug": "smiti-terrace-garden"
+	},
+	{
+		"id": "14",
+		"title": "Terrace Garden",
+		"client": "Mrs. Jain",
+		"location": "Hauz Khas, Delhi",
+		"year": "2024",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide3-4.jpg?w=950&ssl=1",
+		"description": "Created a luxurious terrace garden for Mrs. Jain in Hauz Khas, with premium outdoor furniture and vibrant plant styling.",
+		"services": [
+			"Terrace Garden Design",
+			"Outdoor Furniture",
+			"Plant Styling",
+			"Maintenance"
+		],
+		"results": [
+			"Premium outdoor living space",
+			"Enhanced property appeal",
+			"Low-maintenance greenery"
+		],
+		"slug": "jain-terrace-garden"
+	},
+	{
+		"id": "15",
+		"title": "Terrace Garden",
+		"client": "Ms. Pratibha",
+		"location": "Rajouri Garden, Delhi",
+		"year": "2023",
+		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Banner-urban-Plant-1600x600-1.jpg?w=950&ssl=1",
+		"description": "Developed a modern terrace garden for Ms. Pratibha in Rajouri Garden, featuring sustainable irrigation and custom planters for a vibrant rooftop.",
+		"services": [
+			"Terrace Garden Design",
+			"Irrigation Systems",
+			"Custom Planters",
+			"Maintenance"
+		],
+		"results": [
+			"Enhanced rooftop aesthetics",
+			"Sustainable plant care",
+			"Increased outdoor usability"
+		],
+		"slug": "pratibha-terrace-garden"
+	}
+]

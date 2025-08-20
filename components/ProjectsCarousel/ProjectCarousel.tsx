@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
+import projects from "@/data/projects.json";
 
 type project = {
 	title: string;
@@ -16,7 +17,7 @@ type project = {
 	logo: string;
 };
 
-const projects: project[] = [
+export const projectsOld: project[] = [
 	{
 		title: "Google",
 		imageURL: "/projects/office-new-1.jpg",
@@ -149,7 +150,7 @@ const ProjectCarouselBeta: React.FC = () => {
 							key={iter}
 							className={cn(
 								"border rounded-2xl h-full flex flex-col transition-all duration-600 py-4 px-6 relative",
-								iter === currentIndex ? "w-[84%]" : "w-[4%]",
+								iter === currentIndex ? "w-[85%]" : "w-[1%]",
 							)}
 							aria-hidden={iter !== currentIndex}
 						>
@@ -160,7 +161,7 @@ const ProjectCarouselBeta: React.FC = () => {
 								)}
 							></div>
 							<Image
-								src={item.imageURL}
+								src={item.image}
 								fill
 								alt={item.title}
 								className="z-10 object-cover rounded-2xl"
@@ -188,7 +189,7 @@ const ProjectCarouselBeta: React.FC = () => {
 					))}
 					{/* Dots */}
 				</div>
-				<div className="flex justify-start gap-2 mt-4">
+				<div className="flex justify-center gap-2 mt-4">
 					{projects.map((_, index) => (
 						<button
 							key={index}
@@ -220,7 +221,7 @@ const ProjectCarouselBeta: React.FC = () => {
 								<div key={iter} className="min-w-0 flex-shrink-0 w-full px-2">
 									<div className="relative border rounded-2xl h-64 overflow-hidden">
 										<Image
-											src={item.imageURL}
+											src={item.image}
 											fill
 											alt={item.title}
 											className="object-cover"
@@ -229,13 +230,13 @@ const ProjectCarouselBeta: React.FC = () => {
 										<div className="absolute bottom-0 left-0 right-0 p-4 text-white">
 											<div className="flex items-center justify-between">
 												<div className="flex items-center gap-3">
-													<Image
+													{/* <Image
 														src={item.logo}
 														width={24}
 														height={24}
 														alt={`${item.title} logo`}
 														className="bg-white rounded p-1 hidden"
-													/>
+													/> */}
 													<div className="text-lg font-semibold">
 														{item.title}
 													</div>

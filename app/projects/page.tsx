@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Users } from "lucide-react";
 import CTA from "@/components/CTA";
-
+import projects from "@/data/projects.json";
 interface Project {
 	id: string;
 	title: string;
@@ -20,7 +20,7 @@ interface Project {
 	slug: string;
 }
 
-const projects: Project[] = [
+export const projectsold: Project[] = [
 	{
 		id: "1",
 		title: "Corporate Headquarters Transformation",
