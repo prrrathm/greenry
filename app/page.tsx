@@ -10,7 +10,7 @@ import FAQs from "@/components/FAQ";
 import ClientsMarquee from "@/components/ClientsMarquee";
 // import ProjectsCarousel from "@/components/ProjectsCarousel";
 import ProjectCarouselBeta from "@/components/ProjectsCarousel/ProjectCarousel";
-import AutoPlayVideo from "@/components/VideoPlayer";
+// import AutoPlayVideo from "@/components/VideoPlayer";
 // import { ProjectsCarousel } from "@/components/carousel/ProjectsCarousel";
 
 export default function Home() {
