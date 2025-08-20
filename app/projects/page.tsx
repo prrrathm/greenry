@@ -117,7 +117,7 @@ export default function ProjectsPage() {
 										</div>
 									</div>
 
-									<Link href={`/projects/${project.slug}`}>
+									<Link href={`/projects/${project.id}`}>
 										<Button className="w-full bg-primary hover:bg-primary text-white group">
 											View Case Study
 											<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
