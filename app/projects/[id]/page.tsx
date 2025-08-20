@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 	}
 
 	return (
-		<div className="min-h-screen mt-32 bg-gradient-to-br from-gray-50 to-gray-100">
+		<div className="min-h-screen mt-32">
 			{/* Navigation */}
 			<div className="container mx-auto px-4 py-6">
 				{/* Hero Section */}
