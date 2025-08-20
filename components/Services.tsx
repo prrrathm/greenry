@@ -146,7 +146,7 @@ export default function Services() {
 									<Image src={service.image} alt={service.title} fill className="rounded-t-md" />
 								</div>
 								<CardHeader className="text-center flex flex-col gap-2 pb-2 relative">
-									<CardTitle className="text-xl sm:text-2xl flex flex-col sm:flex-row items-start sm:items-stretch justify-between gap-3 sm:gap-2 font-semibold text-gray-900 mb-5">
+									<CardTitle className="text-xl sm:text-2xl flex items-start sm:items-stretch justify-between gap-3 sm:gap-2 font-semibold text-gray-900 mb-5">
 										<div className="flex items-center justify-start gap-2 flex-shrink-0">
 											<service.icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
 											<div className="text-lg sm:text-xl">{service.title}</div>

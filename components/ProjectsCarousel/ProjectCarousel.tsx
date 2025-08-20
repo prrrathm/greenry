@@ -145,63 +145,69 @@ const ProjectCarouselBeta: React.FC = () => {
 					</Link>
 				</div>
 				<div className="flex gap-0.5">
-					{projects.map((item, iter) => (
-						<div
-							key={iter}
-							className={cn(
-								"border rounded-2xl h-full flex flex-col transition-all duration-600 py-4 px-6 relative",
-								iter === currentIndex ? "w-[85%]" : "w-[1%]",
-							)}
-							aria-hidden={iter !== currentIndex}
-						>
+					{projects
+						.sort((a, b) => Number(b.year) - Number(a.year))
+						.slice(0, 5)
+						.map((item, iter) => (
 							<div
+								key={iter}
 								className={cn(
-									"absolute inset-0 z-20 rounded-2xl",
-									iter !== currentIndex ? "bg-black/40" : "bg-black/20",
+									"border rounded-2xl h-full flex flex-col transition-all duration-600 py-4 px-6 relative",
+									iter === currentIndex ? "w-[85%]" : "w-[1%]",
 								)}
-							></div>
-							<Image
-								src={item.image}
-								fill
-								alt={item.title}
-								className="z-10 object-cover rounded-2xl"
-							/>
-							<div className="z-30 w-full h-[65vh] rounded-2xl text-white flex flex-col items-center justify-center">
-								{iter === currentIndex && (
-									<div className="w-full flex flex-col gap-4 justify-end items-center mb-4 h-full">
-										<div className="flex justify-between w-full">
-											<div className="flex items-center justify-center text-2xl font-semibold">
-												{item.title}
+								aria-hidden={iter !== currentIndex}
+							>
+								<div
+									className={cn(
+										"absolute inset-0 z-20 rounded-2xl",
+										iter !== currentIndex ? "bg-black/40" : "bg-black/20",
+									)}
+								></div>
+								<Image
+									src={item.image}
+									fill
+									alt={item.title}
+									className="z-10 object-cover rounded-2xl"
+								/>
+								<div className="z-30 w-full h-[65vh] rounded-2xl text-white flex flex-col items-center justify-center">
+									{iter === currentIndex && (
+										<div className="w-full flex flex-col gap-4 justify-end items-center mb-4 h-full">
+											<div className="flex justify-between w-full">
+												<div className="flex items-center justify-center text-2xl font-semibold">
+													{item.title}
+												</div>
+												<Link href={`/projects/${item.id}`}>
+													<Button
+														size="sm"
+														className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300 shadow-none"
+													>
+														Learn More
+														<ArrowRight className="ml-2 h-4 w-4" />
+													</Button>
+												</Link>
 											</div>
-											<Link href={`/projects/${item.id}`}>
-												<Button
-													size="sm"
-													className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300"
-												>
-													Learn More
-													<ArrowRight className="ml-2 h-4 w-4" />
-												</Button>
-											</Link>
+											{/* <Progress value={progress} className="w-full z-30" /> */}
 										</div>
-										{/* <Progress value={progress} className="w-full z-30" /> */}
-									</div>
-								)}
+									)}
+								</div>
 							</div>
-						</div>
-					))}
+						))}
 					{/* Dots */}
 				</div>
 				<div className="flex justify-center gap-2 mt-4">
-					{projects.map((_, index) => (
-						<button
-							key={index}
-							onClick={() => emblaApi?.scrollTo(index)}
-							className={`w-2 h-2 rounded-full transition-all duration-300 ${
-								index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
-							}`}
-							aria-label={`Go to slide ${index + 1}`}
-						/>
-					))}
+					{projects
+						.sort((a, b) => Number(b.year) - Number(a.year))
+						.slice(0, 5)
+						.map((_, index) => (
+							<button
+								key={index}
+								onClick={() => emblaApi?.scrollTo(index)}
+								className={`w-2 h-2 rounded-full transition-all duration-300 ${
+									index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
+								}`}
+								aria-label={`Go to slide ${index + 1}`}
+							/>
+						))}
 				</div>
 			</div>
 
@@ -243,13 +249,15 @@ const ProjectCarouselBeta: React.FC = () => {
 														{item.title}
 													</div>
 												</div>
-												<Button
-													size="sm"
-													className="bg-transparent text-white border-white hover:bg-white hover:text-primary"
-												>
-													Learn More
-													<ArrowRight className="ml-1 h-4 w-4" />
-												</Button>
+												<Link href={`/projects/${item.id}`}>
+													<Button
+														size="sm"
+														className="bg-transparent text-white border-white hover:bg-white hover:text-primary"
+													>
+														Learn More
+														<ArrowRight className="ml-1 h-4 w-4" />
+													</Button>
+												</Link>
 											</div>
 										</div>
 									</div>

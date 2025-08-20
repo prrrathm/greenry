@@ -67,10 +67,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 							>
 								{project.year}
 							</Badge>
-							<h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+							<h1 className="text-2xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
 								{project.title}
 							</h1>
-							<p className="text-xl text-gray-600 leading-relaxed">
+							<p className="text-base md:text-xl text-gray-600 leading-relaxed">
 								{project.description}
 							</p>
 						</div>
@@ -190,7 +190,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 								Let&apos;s discuss how we can transform your space with our expertise
 								in sustainable interior design.
 							</p>
-							<div className="space-x-4">
+							<div className="space-x-4 flex flex-col md:flex-row items-center justify-center gap-4">
 								<Link href="/projects">
 									<Button
 										size="lg"
