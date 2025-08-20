@@ -138,7 +138,7 @@ export default function Footer() {
 							className="flex items-center space-x-3"
 						>
 							<Phone className="h-5 w-5 text-primary" />
-							<span className="text-gray-400">+91 9891347119"</span>
+							<span className="text-gray-400">+91 9891347119</span>
 						</Link>
 						<Link
 							href="mailto:green@evergreenry.com"
