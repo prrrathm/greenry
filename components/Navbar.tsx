@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import BookingForm from "./BookingFormDialog";
 // import { Button } from "./ui/button";
-import { Mail, MailOpen } from "lucide-react";
+import { Mail, MailOpen, Phone, PhoneCall } from "lucide-react";
 import NavMobileDrawer from "./NavMobileDrawer";
-import PhoneDropDown from "./Phone";
+// import PhoneDropDown from "./Phone";
 import Image from "next/image";
 
 export const NavBar = () => {
@@ -81,9 +81,25 @@ export const NavBar = () => {
 				{/* <div className="hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit sm:hidden">
 					<Menu fill="#26420f" className="h-6 w-6 text-primary" />
 				</div> */}
-				<PhoneDropDown isScrolled={isScrolled} />
+				<Link href="tel:+919891347119">
+					<div
+						className={cn(
+							"group inline-flex items-center cursor-pointer",
+							isScrolled ? "text-white" : "text-primary",
+						)}
+					>
+						<Phone
+							fill={isScrolled ? "#fff" : "#26420f"}
+							className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
+						/>
+						<PhoneCall
+							fill={isScrolled ? "#fff" : "#26420f"}
+							className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
+						/>
+					</div>
+				</Link>
 				<Link
-					href="mailto:info@Evergreenry.com"
+					href="mailto:green@evergreenry.com"
 					className={cn(
 						"group inline-flex items-center",
 						isScrolled ? "text-white" : "text-primary",

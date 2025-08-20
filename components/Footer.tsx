@@ -10,6 +10,7 @@ import {
 	Twitter,
 	Instagram,
 	Linkedin,
+	UserRound,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -131,19 +132,37 @@ export default function Footer() {
 
 				{/* Contact Info */}
 				<div className="border-t border-gray-800 mt-12 pt-8">
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-						<div className="flex items-center space-x-3">
+					<div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
+						<Link
+							href="tel:+919891347119"
+							className="flex items-center space-x-3"
+						>
 							<Phone className="h-5 w-5 text-primary" />
-							<span className="text-gray-400">+1 (555) 123-4567</span>
-						</div>
-						<div className="flex items-center space-x-3">
+							<span className="text-gray-400">+91 9891347119"</span>
+						</Link>
+						<Link
+							href="mailto:green@evergreenry.com"
+							className="flex items-center space-x-3"
+						>
 							<Mail className="h-5 w-5 text-primary" />
-							<span className="text-gray-400">hello@Evergreenry.com</span>
-						</div>
-						<div className="flex items-center space-x-3">
+							<span className="text-gray-400">green@evergreenry.com</span>
+						</Link>
+						<Link
+							href="mailto:green@evergreenry.com"
+							className="flex items-center space-x-3"
+						>
+							<UserRound className="h-5 w-5 text-primary" />
+							<span className="text-gray-400">ruchika@evergreenry.com</span>
+						</Link>
+						<Link
+							href={"https://maps.app.goo.gl/Lb4JHmWvehsLkrAm9"}
+							className="flex items-center space-x-3"
+						>
 							<MapPin className="h-5 w-5 text-primary" />
-							<span className="text-gray-400">Available Nationwide</span>
-						</div>
+							<span className="text-gray-400">
+								376, Udyog Vihar - 2, Gurgaon 122016
+							</span>
+						</Link>
 					</div>
 				</div>
 
@@ -157,9 +176,9 @@ export default function Footer() {
 						<Link href="#" className="hover:text-primary transition-colors">
 							Terms of Service
 						</Link>
-						<Link href="#" className="hover:text-primary transition-colors">
+						{/* <Link href="#" className="hover:text-primary transition-colors">
 							Cookie Policy
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 			</div>
