@@ -173,13 +173,15 @@ const ProjectCarouselBeta: React.FC = () => {
 											<div className="flex items-center justify-center text-2xl font-semibold">
 												{item.title}
 											</div>
-											<Button
-												size="sm"
-												className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300"
-											>
-												Learn More
-												<ArrowRight className="ml-2 h-4 w-4" />
-											</Button>
+											<Link href={`/projects/${item.id}`}>
+												<Button
+													size="sm"
+													className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300"
+												>
+													Learn More
+													<ArrowRight className="ml-2 h-4 w-4" />
+												</Button>
+											</Link>
 										</div>
 										{/* <Progress value={progress} className="w-full z-30" /> */}
 									</div>
