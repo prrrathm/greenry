@@ -197,7 +197,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 										variant="secondary"
 										className="bg-white text-primary hover:bg-gray-50 cursor-pointer"
 									>
-										Get Quote
+										Get a Quote
 									</Button>
 								</Link>
 								<Link href="/projects">
