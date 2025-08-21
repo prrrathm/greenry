@@ -40,7 +40,7 @@ interface OfficePlantsService {
 const services: OfficePlantsService[] = [
 	{
 		title: "Office Plants",
-		image: "/projects/office-new-1.jpg",
+		image: "/projects/office-plants.jpg",
 		description:
 			"Transform your workplace into a thriving, green environment with our bespoke office plant service. We specialize in curating indoor plants that elevate both aesthetics and functionality. From compact desk succulents to towering floor plants like monstera or dracaena, our selections are tailored to your office’s lighting, space, and vibe. Research from NASA’s Clean Air Study shows plants like peace lilies and snake plants can remove up to 87% of air toxins in 24 hours, while a University of Exeter study found that plants boost productivity by 15%. Our process starts with a free on-site consultation, followed by expert plant selection, delivery, and installation. Pair this with our optional maintenance plans, and your office will stay lush with zero hassle.",
 		features: [
@@ -63,7 +63,7 @@ const services: OfficePlantsService[] = [
 	},
 	{
 		title: "Green Walls",
-		image: "/projects/office-new-2.jpg",
+		image: "/projects/green-walls.jpeg",
 		description:
 			"Elevate your space with a custom green wall—nature’s masterpiece meets modern design. These living walls blend lush foliage like ferns, ivy, and philodendrons into a vertical garden that’s as functional as it is stunning. Green walls purify air (absorbing CO2 at rates up to 1.7 kg per square meter annually, per EPA studies), reduce ambient noise by up to 10 decibels, and create a biophilic connection that lowers stress by 37%, according to the Journal of Environmental Psychology. We handle every step: design consultation, plant selection, irrigation system integration, and professional installation. Whether it’s a corporate lobby or a cozy café, our green walls are built to impress and endure.",
 		features: [
@@ -86,7 +86,7 @@ const services: OfficePlantsService[] = [
 	},
 	{
 		title: "Moss Walls",
-		image: "/projects/office-new-3.jpg",
+		image: "/projects/moss-wall.jpeg",
 		description:
 			"Introduce effortless elegance with our preserved moss walls—zero-maintenance art that brings nature indoors. Made from real moss, hand-harvested and preserved with eco-friendly techniques, these installations thrive without water, sunlight, or care. Ideal for low-light areas or high-traffic zones, moss walls offer acoustic benefits (absorbing up to 50% of mid-frequency noise, per Acoustical Society data) and subtle air purification. Customize them with vibrant greens, earthy tones, or even your logo in moss. They’re sustainable, durable, and a standout feature for offices, retail spaces, or homes looking for a unique touch.",
 		features: [
@@ -109,7 +109,7 @@ const services: OfficePlantsService[] = [
 	},
 	{
 		title: "Plant Maintenance",
-		image: "/projects/office-new-4.jpg",
+		image: "/projects/plant-maintenance.jpeg",
 		description:
 			"Keep your indoor jungle thriving with our expert plant maintenance service. Our horticulturists provide tailored care—watering, fertilizing, pruning, pest control, and health assessments—to ensure every plant stays in peak condition. We serve spaces of all sizes, from a single ficus to a full office greenery setup. With flexible schedules (weekly, bi-weekly, or monthly), we adapt to your needs. If a plant falters, we replace it free of charge under our health guarantee. Studies show well-maintained plants can extend their lifespan by 50%, making this a smart investment for your green assets.",
 		features: [
@@ -132,7 +132,7 @@ const services: OfficePlantsService[] = [
 	},
 	{
 		title: "Zen Garden",
-		image: "/image-content/zen-1.JPG",
+		image: "/projects/zen-garden.jpeg",
 		description:
 			"Craft your own sanctuary of calm with our custom Zen Garden designs. Using elements like raked sand, smooth stones, and carefully chosen greenery, these gardens embody harmony and mindfulness. Ideal for offices, meditation corners, or outdoor terraces, a Zen Garden creates a tranquil retreat from daily stress. Studies in environmental psychology highlight that exposure to such spaces can reduce anxiety and improve focus, making them perfect for both personal and professional environments.",
 		features: [
@@ -155,7 +155,7 @@ const services: OfficePlantsService[] = [
 	},
 	{
 		title: "Design an Indoor Terrarium",
-		image: "/image-content/indoor-terrarium.jpg",
+		image: "/projects/terrarium.jpeg",
 		description:
 			"Bring a miniature world of nature indoors with our bespoke terrarium design service. Using a mix of succulents, moss, ferns, and decorative elements like pebbles and driftwood, we create self-sustaining, low-maintenance ecosystems. Terrariums add a modern and artistic touch to desks, shelves, and reception areas while boosting indoor air quality. Research shows that small-scale greenery improves concentration and sparks creativity, making terrariums ideal for both homes and offices.",
 		features: [

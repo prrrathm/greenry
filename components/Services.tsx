@@ -25,7 +25,7 @@ const services = [
 	{
 		icon: Sprout,
 		title: "Office Plants",
-		image: "/projects/office-new-1.jpg",
+		image: "/projects/office-plants.jpg",
 		description:
 			"Office plants boost aesthetics and improve productivity. Their presence enhances mood, reduces stress, and purifies the air, creating a healthier, more focused environment. Add greenery to your workspace for a refreshing and productive atmosphere.",
 		features: [
@@ -39,7 +39,7 @@ const services = [
 	{
 		icon: BrickWall,
 		title: "Green Walls",
-		image: "/projects/office-new-2.jpg",
+		image: "/projects/green-walls.jpeg",
 		description:
 			"Enhance your space with stunning green walls and vertical gardens that bring nature indoors. These living walls purify the air, reduce noise, and create a refreshing, stylish ambiance. Perfect for homes and offices, they require minimal maintenance. Ready to transform your space? Contact us below!",
 		features: [
@@ -53,7 +53,7 @@ const services = [
 	{
 		icon: Flower,
 		title: "Moss Walls",
-		image: "/projects/office-new-3.jpg",
+		image: "/projects/moss-wall.jpeg",
 		description:
 			"Add elegance and tranquility to your space with premium moss walls. These maintenance-free, air-purifying installations enhance aesthetics while reducing stress and noise. A perfect blend of style and nature, they fit seamlessly into any setting. Want to bring this lush beauty to your space? Contact us below!",
 		features: [
@@ -67,7 +67,7 @@ const services = [
 	{
 		icon: SprayCan,
 		title: "Plant Maintenance",
-		image: "/projects/office-new-4.jpg",
+		image: "/projects/plant-maintenance.jpeg",
 		description:
 			"Plant maintenance keeps your office plants thriving. Regular watering, proper light, and pruning ensure they stay healthy, improve air quality, and create a positive work environment. Keep your plants in top shape for better focus and productivity.",
 		features: [
@@ -81,7 +81,7 @@ const services = [
 	{
 		icon: MountainSnow, // replace with suitable icon
 		title: "Zen Garden",
-		image: "/image-content/zen-1.JPG",
+		image: "/projects/zen-garden.jpeg",
 		description:
 			"Create a calming retreat with a custom Zen Garden. Designed to bring balance and serenity, these gardens feature stones, sand, and greenery arranged to promote mindfulness and relaxation. Perfect for homes, offices, or meditation spaces.",
 		features: [
@@ -95,7 +95,7 @@ const services = [
 	{
 		icon: Globe, // replace with suitable icon
 		title: "Indoor Terrarium",
-		image: "/image-content/indoor-terrarium.jpg",
+		image: "/projects/terrarium.jpeg",
 		description:
 			"Bring nature indoors with a personalized terrarium. These miniature ecosystems combine plants, moss, and decorative elements to create a self-sustaining, low-maintenance piece of living art. Ideal for desks, shelves, or as thoughtful gifts.",
 		features: [
@@ -143,7 +143,7 @@ export default function Services() {
 						>
 							<Card className="bg-secondary/10 hover:bg-secondary/20 h-full shadow-none border-0 transition-all duration-300 flex flex-col justify-between min-h-[300px] sm:min-h-[200px] rounded-2xl">
 								<div className="relative aspect-video rounded-t-2xl">
-									<Image src={service.image} alt={service.title} fill className="rounded-t-md" />
+									<Image src={service.image} alt={service.title} fill className="rounded-t-md object-cover" />
 								</div>
 								<CardHeader className="text-center flex flex-col gap-2 pb-2 relative">
 									<CardTitle className="text-xl sm:text-2xl flex items-start sm:items-stretch justify-between gap-3 sm:gap-2 font-semibold text-gray-900 mb-5">

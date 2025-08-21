@@ -8,12 +8,12 @@ import { useState, useEffect } from "react";
 
 // Background images array
 const backgroundImages = [
-	"/carousel-images/carousel-1.jpg",
+	"/carousel-images/carousel-new-1.jpg",
+	"/carousel-images/carousel-new-7.jpg",
+	"/carousel-images/carousel-new-10.jpg",
+	"/carousel-images/carousel-new-4.jpg",
 	"/carousel-images/carousel-2.jpg",
-	"/carousel-images/carousel-3.jpg",
-	"/carousel-images/carousel-4.jpg",
-	"/carousel-images/carousel-5.jpg",
-	"/carousel-images/carousel-6.jpg",
+	"/carousel-images/carousel-new-11.jpg",
 ];
 
 export default function Hero() {
