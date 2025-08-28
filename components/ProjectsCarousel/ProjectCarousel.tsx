@@ -10,45 +10,45 @@ import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import projects from "@/data/projects.json";
 
-type project = {
-	title: string;
-	imageURL: string;
-	link: string;
-	logo: string;
-};
+// type project = {
+// 	title: string;
+// 	imageURL: string;
+// 	link: string;
+// 	logo: string;
+// };
 
-export const projectsOld: project[] = [
-	{
-		title: "Google",
-		imageURL: "/projects/office-new-1.jpg",
-		link: "/projects/google",
-		logo: "/brand-logos/google.svg",
-	},
-	{
-		title: "Nike",
-		imageURL: "/projects/office-new-2.jpg",
-		link: "/projects/google",
-		logo: "/brand-logos/nike.svg",
-	},
-	{
-		title: "Asics",
-		imageURL: "/projects/office-new-3.jpg",
-		link: "/projects/google",
-		logo: "/brand-logos/asics.svg",
-	},
-	{
-		title: "HBO",
-		imageURL: "/projects/office-new-4.jpg",
-		link: "/projects/google",
-		logo: "/brand-logos/hbo.svg",
-	},
-	{
-		title: "Spotify",
-		imageURL: "/projects/office-new-5.jpg",
-		link: "/projects/google",
-		logo: "/brand-logos/spotify.svg",
-	},
-];
+// export const projectsOld: project[] = [
+// 	{
+// 		title: "Google",
+// 		imageURL: "/projects/office-new-1.jpg",
+// 		link: "/projects/google",
+// 		logo: "/brand-logos/google.svg",
+// 	},
+// 	{
+// 		title: "Nike",
+// 		imageURL: "/projects/office-new-2.jpg",
+// 		link: "/projects/google",
+// 		logo: "/brand-logos/nike.svg",
+// 	},
+// 	{
+// 		title: "Asics",
+// 		imageURL: "/projects/office-new-3.jpg",
+// 		link: "/projects/google",
+// 		logo: "/brand-logos/asics.svg",
+// 	},
+// 	{
+// 		title: "HBO",
+// 		imageURL: "/projects/office-new-4.jpg",
+// 		link: "/projects/google",
+// 		logo: "/brand-logos/hbo.svg",
+// 	},
+// 	{
+// 		title: "Spotify",
+// 		imageURL: "/projects/office-new-5.jpg",
+// 		link: "/projects/google",
+// 		logo: "/brand-logos/spotify.svg",
+// 	},
+// ];
 
 const ProjectCarouselBeta: React.FC = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -147,7 +147,7 @@ const ProjectCarouselBeta: React.FC = () => {
 				<div className="flex gap-0.5">
 					{projects
 						.sort((a, b) => Number(b.year) - Number(a.year))
-						.slice(0, 5)
+						.slice(7, 13)
 						.map((item, iter) => (
 							<div
 								key={iter}

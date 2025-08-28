@@ -1,12 +1,180 @@
 [
 	{
 		"id": "1",
+		"title": "ATIT Engineering Industries",
+		"client": "ATIT Engineering Industries Pvt. Ltd.",
+		"location": "Vasai, Maharashtra",
+		"year": "1982",
+		"image": "/projects/Corporate-ATIT/image-1.jpg",
+		"description": "Atit Engineering Industries Pvt. Ltd. stands as one of India's leading manufacturers of Fluid Transmission Pipes (FTPs), with a legacy of over 42 years in the original equipment manufacturing (OEM) industry, serving the tractor and locomotive sectors.",
+		"services": [
+			"Fluid Transmission Pipes Manufacturing",
+			"Metal Tubes Production",
+			"Fabricated Components",
+			"Automotive Parts Supply",
+			"Locomotive Components",
+			"Furniture Pipes Supply"
+		],
+		"results": [
+			"Serves renowned clients like Mahindra & Mahindra Ltd, TMTL (Eicher), Alstom",
+			"Exports furniture goods to Tanzania, East Africa",
+			"Expanded to six additional factories",
+			"Plans to achieve Public Limited status by 2028"
+		],
+		"slug": "atit-engineering-industries"
+	},
+	{
+		"id": "2",
+		"title": "Axis Electrical Components",
+		"client": "Axis Electrical Components",
+		"location": "Mumbai, Maharashtra",
+		"year": "1994",
+		"image": "/projects/Corporate-Axis/image-1.jpg",
+		"description": "Axis is a leading Indian manufacturer and exporter of high-quality electrical components, focusing on innovation in Lightning Protection, IoT solutions, and products complying with international standards.",
+		"services": [
+			"Electrical Hardware",
+			"Lightning Protection",
+			"IoT Solutions for Distribution Networks",
+			"Earthing & Grounding Equipment",
+			"Copper Cable Lugs",
+			"AB Cable Accessories",
+			"Rural Electrification Products"
+		],
+		"results": [
+			"First in India to get UL 467 certified for Earthing & Grounding Equipment",
+			"Executed $10 million order for Rural Electrification in East Africa",
+			"CRISIL SE 1A rating for High Financial Strength",
+			"75% growth in 2019",
+			"Moved to SAP platform for quality management"
+		],
+		"slug": "axis-electrical-components"
+	},
+	{
+		"id": "3",
+		"title": "Beacon Diagnostics Group",
+		"client": "Beacon Group",
+		"location": "Navsari, Gujarat",
+		"year": "1990",
+		"image": "/projects/Corporate-Beacon/image-1.png",
+		"description": "The Beacon Group is India's best IVD manufacturer, ISO-certified and trusted in 90+ countries for biochemistry, hematology, immunology, electrolyte analyzer, and serology reagents.",
+		"services": [
+			"Biochemistry Reagents",
+			"Hematology Products",
+			"Immunology Solutions",
+			"Electrolyte Analyzers",
+			"Serology Reagents",
+			"IVD Laboratory Automation",
+			"Molecular Products",
+			"Nutraceutical Products"
+		],
+		"results": [
+			"Served 90+ countries",
+			"802 employees",
+			"220 products",
+			"18,212 installations",
+			"502 distributors",
+			"ISO 9001:2015, ISO 13485:2016, ZED Gold certified"
+		],
+		"slug": "beacon-diagnostics-group"
+	},
+	{
+		"id": "4",
+		"title": "Gamma Tech India",
+		"client": "Gamma Tech (India) Private Limited",
+		"location": "Nagercoil, Tamil Nadu",
+		"year": "1986",
+		"image": "/projects/Corporate-Gamma/image-1.jpg",
+		"description": "Gamma Tech (India) Private Limited, a subsidiary of Kanam Latex Industries Pvt Ltd, focuses on innovation in radiation processing and Gamma irradiation for sterilization of medical and agro products.",
+		"services": [
+			"Gamma Irradiation",
+			"Sterilization Services",
+			"Surgical Gloves Manufacturing",
+			"Examination Gloves Production",
+			"Specialty Gloves"
+		],
+		"results": [
+			"Market leader in India for high-quality gloves",
+			"Exports to U.S.A., South America, Germany, and others",
+			"Government recognition for export contributions",
+			"Production capacity of over 360 million pairs per year"
+		],
+		"slug": "gamma-tech-india"
+	},
+	{
+		"id": "5",
+		"title": "Market Xcel Research",
+		"client": "Market Xcel",
+		"location": "New Delhi, Delhi",
+		"year": "2000",
+		"image": "/projects/Corporate-Xcel/image-1.jpeg",
+		"description": "Market Xcel is India’s largest integrated Market Research company, delivering actionable insights through research, data, and brand analysis.",
+		"services": [
+			"Market Research & Insights",
+			"Consumer Communities",
+			"Technology-Based Solutions",
+			"AI-Backed Analytics",
+			"Brand Xcel Reports"
+		],
+		"results": [
+			"Over 11,000+ projects delivered for top brands",
+			"More than 22,000 newsletter subscribers",
+			"Access to 5 million panellists",
+			"Offices in USA, Singapore, and India"
+		],
+		"slug": "market-xcel-research"
+	},
+	{
+		"id": "6",
+		"title": "YCool",
+		"client": "YCool",
+		"location": "Mumbai, Maharashtra",
+		"year": "2020",
+		"image": "/projects/Corporate-Ycool/image-1.jpeg",
+		"description": "Cool India Brewing Company pays homage to rich Indian culture and traditions through its distinctive flavoured beers, celebrating legacy and heritage.",
+		"services": [
+			"Craft Beer Brewing",
+			"Beer Distribution",
+			"Cultural Themed Beverages"
+		],
+		"results": [
+			"Unique flavours inspired by Indian traditions",
+			"Growing presence in the Indian craft beer market",
+			"Focus on cultural heritage in branding"
+		],
+		"slug": "cool-india-brewing"
+	},
+	{
+		"id": "7",
+		"title": "The Game Palacio Gaming Arcade",
+		"client": "The Game Palacio",
+		"location": "Mumbai, Maharashtra",
+		"year": "2020",
+		"image": "/projects/Game-of-Palacio-Gaming-Arcade/image-1.jpeg",
+		"description": "The Game Palacio is the ultimate entertainment hub offering indoor games like boutique bowling, arcade games, VR, trampoline park, and fine dining, ideal for events.",
+		"services": [
+			"Boutique Bowling",
+			"Arcade Games",
+			"Virtual Reality Zones",
+			"Trampoline Park",
+			"Fine Dining & Bar",
+			"Event Hosting"
+		],
+		"results": [
+			"Opened 10 venues across India",
+			"Targets 50 venues",
+			"Flagship ultra-luxury arcade in Phoenix Palladium, Mumbai",
+			"Over 80 state-of-the-art games"
+		],
+		"slug": "game-palacio-gaming-arcade"
+	},
+	{
+		"id": "8",
 		"title": "Corporate Green Interior",
-		"client": "Arrow Electronics",
-		"location": "Bangalore, Karnataka",
-		"year": "2023",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/HE_04623-2.jpg?w=1280&ssl=1",
-		"description": "Designed a biophilic green interior for Arrow Electronics' Bangalore office, incorporating indoor plants and vertical gardens to enhance workspace aesthetics and air quality.",
+		"client": "ATIT Engineering Industries Pvt. Ltd.",
+		"location": "Vasai, Maharashtra",
+		"year": "2024",
+		"image": "/projects/Corporate-ATIT/image-1.jpg",
+		"description": "Designed a biophilic green interior for ATIT Engineering Industries' Vasai office, incorporating indoor plants and vertical gardens to enhance workspace aesthetics and air quality.",
 		"services": [
 			"Indoor Plantscaping",
 			"Vertical Gardens",
@@ -18,16 +186,16 @@
 			"Improved office ambiance",
 			"Reduced indoor pollutants"
 		],
-		"slug": "arrow-electronics-green-interior"
+		"slug": "atit-green-interior"
 	},
 	{
-		"id": "2",
+		"id": "9",
 		"title": "Corporate Terrace Garden",
-		"client": "Absolute Foods",
-		"location": "Gurgaon, Haryana",
-		"year": "2024",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/entrance-4-4-1.jpg?w=1280&ssl=1",
-		"description": "Created a sustainable terrace garden for Absolute Foods' Gurgaon facility, featuring custom planters and irrigation systems to promote a green corporate environment.",
+		"client": "Axis Electrical Components",
+		"location": "Mumbai, Maharashtra",
+		"year": "2023",
+		"image": "/projects/Corporate-Axis/image-1.jpg",
+		"description": "Created a sustainable terrace garden for Axis Electrical Components' Mumbai facility, featuring custom planters and irrigation systems to promote a green corporate environment.",
 		"services": [
 			"Terrace Garden Design",
 			"Custom Planters",
@@ -39,121 +207,37 @@
 			"10% increase in employee engagement",
 			"Sustainable green solution"
 		],
-		"slug": "absolute-foods-terrace-garden"
+		"slug": "axis-terrace-garden"
 	},
 	{
-		"id": "3",
-		"title": "Terrace Garden and Backyard",
-		"client": "Mr. Mohit",
-		"location": "Delhi",
-		"year": "2023",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/IMG_20230215_154607-3-1.jpg?w=1280&ssl=1",
-		"description": "Transformed Mr. Mohit's residential space with a combined terrace garden and backyard design, featuring artificial grass, outdoor seating, and vibrant plant varieties.",
+		"id": "10",
+		"title": "Corporate Green Interior",
+		"client": "Beacon Group",
+		"location": "Navsari, Gujarat",
+		"year": "2025",
+		"image": "/projects/Corporate-Beacon/image-1.png",
+		"description": "Transformed Beacon Group's Navsari office with a biophilic design, incorporating preserved moss walls and indoor plants to improve air quality and employee productivity.",
 		"services": [
-			"Terrace Garden Design",
-			"Backyard Landscaping",
-			"Artificial Grass",
-			"Outdoor Furniture"
-		],
-		"results": [
-			"Improved outdoor living space",
-			"Enhanced aesthetic appeal",
-			"Increased property value"
-		],
-		"slug": "mohit-terrace-backyard"
-	},
-	{
-		"id": "4",
-		"title": "Backyard Redesign",
-		"client": "Mrs. Madhu",
-		"location": "Noida, Uttar Pradesh",
-		"year": "2022",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/105A0083-1.jpg?w=1280&ssl=1",
-		"description": "Redesigned Mrs. Madhu's backyard in Noida with lush greenery, custom planters, and a cozy seating area for family relaxation.",
-		"services": [
-			"Backyard Landscaping",
-			"Custom Planters",
-			"Outdoor Seating",
-			"Plant Styling"
-		],
-		"results": [
-			"Created a relaxing outdoor retreat",
-			"Improved garden aesthetics",
-			"Low-maintenance design"
-		],
-		"slug": "madhu-backyard"
-	},
-	{
-		"id": "5",
-		"title": "Terrace Garden",
-		"client": "Mrs. Sushmita",
-		"location": "Gurgaon, Haryana",
-		"year": "2024",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/DSC_7293-scaled.jpg?w=1280&ssl=1",
-		"description": "Developed a modern terrace garden for Mrs. Sushmita in Gurgaon, incorporating sustainable irrigation and designer planters for a vibrant rooftop experience.",
-		"services": [
-			"Terrace Garden Design",
-			"Irrigation Systems",
-			"Designer Planters",
+			"Indoor Plantscaping",
+			"Preserved Moss Walls",
+			"Air Purification",
 			"Maintenance"
 		],
 		"results": [
-			"Enhanced rooftop aesthetics",
-			"Sustainable plant care",
-			"Increased outdoor usability"
+			"20% boost in staff productivity",
+			"Enhanced office aesthetics",
+			"Lowered stress levels"
 		],
-		"slug": "sushmita-terrace-garden"
+		"slug": "beacon-green-interior"
 	},
 	{
-		"id": "6",
-		"title": "Terrace Garden",
-		"client": "Mr. Hitesh",
-		"location": "Gurgaon, Haryana",
-		"year": "2023",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2023/04/DSC_6666-1-2.jpg?fit=%2C&ssl=1",
-		"description": "Designed a luxurious terrace garden for Mr. Hitesh in Gurgaon, featuring custom outdoor furniture and lush greenery for an elevated outdoor space.",
-		"services": [
-			"Terrace Garden Design",
-			"Outdoor Furniture",
-			"Plant Styling",
-			"Maintenance"
-		],
-		"results": [
-			"Premium outdoor living space",
-			"Enhanced property appeal",
-			"Low-maintenance greenery"
-		],
-		"slug": "hitesh-terrace-garden"
-	},
-	{
-		"id": "7",
-		"title": "Landscaping",
-		"client": "Mrs. Srivastava",
-		"location": "Gurgaon, Haryana",
-		"year": "2023",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide7-1.jpg?w=950&ssl=1",
-		"description": "Provided comprehensive landscaping for Mrs. Srivastava's Gurgaon residence, including garden beds, pathways, and sustainable plant selections.",
-		"services": [
-			"Landscaping",
-			"Garden Beds",
-			"Pathway Design",
-			"Plant Selection"
-		],
-		"results": [
-			"Transformed outdoor aesthetics",
-			"Sustainable garden design",
-			"Increased curb appeal"
-		],
-		"slug": "srivastava-landscaping"
-	},
-	{
-		"id": "8",
-		"title": "Feature Wall",
-		"client": "Mr. Agarwal",
-		"location": "Gurgaon, Haryana",
+		"id": "11",
+		"title": "Corporate Feature Wall",
+		"client": "Gamma Tech (India) Private Limited",
+		"location": "Nagercoil, Tamil Nadu",
 		"year": "2024",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide4-2.jpg?w=950&ssl=1",
-		"description": "Installed a preserved moss feature wall for Mr. Agarwal in Gurgaon, using Icelandic moss to enhance indoor ambiance and air quality.",
+		"image": "/projects/Corporate-Gamma/image-1.jpg",
+		"description": "Installed a preserved moss feature wall for Gamma Tech's Nagercoil facility, using natural elements to enhance indoor ambiance and reduce noise pollution.",
 		"services": [
 			"Preserved Moss Wall",
 			"Air Purification",
@@ -165,153 +249,64 @@
 			"Reduced ambient noise",
 			"Enhanced aesthetic appeal"
 		],
-		"slug": "agarwal-feature-wall"
-	},
-	{
-		"id": "9",
-		"title": "Terrace Garden",
-		"client": "Mr. Akshay",
-		"location": "Faridabad, Haryana",
-		"year": "2023",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/3d-.jpg?w=950&ssl=1",
-		"description": "Created a vibrant terrace garden for Mr. Akshay in Faridabad, featuring custom planters and an efficient irrigation system.",
-		"services": [
-			"Terrace Garden Design",
-			"Custom Planters",
-			"Irrigation Systems",
-			"Maintenance"
-		],
-		"results": [
-			"Enhanced rooftop usability",
-			"Sustainable plant care",
-			"Improved outdoor aesthetics"
-		],
-		"slug": "akshay-terrace-garden"
-	},
-	{
-		"id": "10",
-		"title": "Green Interior",
-		"client": "Mr. Hemant",
-		"location": "Noida, Uttar Pradesh",
-		"year": "2024",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide11-1.jpg?w=950&ssl=1",
-		"description": "Designed a green interior for Mr. Hemant's MNC office in Noida, incorporating indoor plants and vertical gardens for a biophilic workspace.",
-		"services": [
-			"Indoor Plantscaping",
-			"Vertical Gardens",
-			"Air Purification",
-			"Maintenance"
-		],
-		"results": [
-			"25% increase in employee productivity",
-			"Enhanced office ambiance",
-			"Reduced indoor pollutants"
-		],
-		"slug": "hemant-green-interior"
-	},
-	{
-		"id": "11",
-		"title": "Terrace Garden",
-		"client": "Mr. Singh",
-		"location": "Faridabad, Haryana",
-		"year": "2023",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide15-2.jpg?w=950&ssl=1",
-		"description": "Developed a modern terrace garden for Mr. Singh in Faridabad, with custom outdoor seating and lush greenery for a relaxing rooftop space.",
-		"services": [
-			"Terrace Garden Design",
-			"Outdoor Seating",
-			"Plant Styling",
-			"Maintenance"
-		],
-		"results": [
-			"Improved outdoor living space",
-			"Enhanced aesthetic appeal",
-			"Low-maintenance design"
-		],
-		"slug": "singh-terrace-garden"
+		"slug": "gamma-feature-wall"
 	},
 	{
 		"id": "12",
-		"title": "Terrace Garden",
-		"client": "Mrs. Shweta",
-		"location": "Ghaziabad, Uttar Pradesh",
-		"year": "2024",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide2-2.jpg?w=950&ssl=1",
-		"description": "Transformed Mrs. Shweta's rooftop in Ghaziabad into a vibrant terrace garden with sustainable irrigation and designer planters.",
+		"title": "Corporate Green Interior",
+		"client": "Market Xcel",
+		"location": "New Delhi, Delhi",
+		"year": "2023",
+		"image": "/projects/Corporate-Xcel/image-1.jpeg",
+		"description": "Designed a modern green interior for Market Xcel's New Delhi office, featuring vertical gardens and custom planters to foster a creative and healthy work environment.",
 		"services": [
-			"Terrace Garden Design",
-			"Irrigation Systems",
+			"Vertical Gardens",
 			"Custom Planters",
+			"Indoor Plantscaping",
 			"Maintenance"
 		],
 		"results": [
-			"Enhanced rooftop aesthetics",
-			"Sustainable plant care",
-			"Increased outdoor usability"
+			"15% increase in team creativity",
+			"Better air quality",
+			"Improved employee satisfaction"
 		],
-		"slug": "shweta-terrace-garden"
+		"slug": "market-xcel-green-interior"
 	},
 	{
 		"id": "13",
-		"title": "Terrace Garden",
-		"client": "Ms. Smiti",
-		"location": "Agra, Uttar Pradesh",
-		"year": "2023",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide24-2.jpg?w=950&ssl=1",
-		"description": "Designed a cozy terrace garden for Ms. Smiti in Agra, featuring artificial grass and custom planters for a low-maintenance green space.",
-		"services": [
-			"Terrace Garden Design",
-			"Artificial Grass",
-			"Custom Planters",
-			"Maintenance"
-		],
-		"results": [
-			"Low-maintenance green space",
-			"Enhanced rooftop appeal",
-			"Improved outdoor functionality"
-		],
-		"slug": "smiti-terrace-garden"
-	},
-	{
-		"id": "14",
-		"title": "Terrace Garden",
-		"client": "Mrs. Jain",
-		"location": "Hauz Khas, Delhi",
+		"title": "Corporate Terrace Garden",
+		"client": "Cool India Brewing Company",
+		"location": "Mumbai, Maharashtra",
 		"year": "2024",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Slide3-4.jpg?w=950&ssl=1",
-		"description": "Created a luxurious terrace garden for Mrs. Jain in Hauz Khas, with premium outdoor furniture and vibrant plant styling.",
-		"services": [
-			"Terrace Garden Design",
-			"Outdoor Furniture",
-			"Plant Styling",
-			"Maintenance"
-		],
-		"results": [
-			"Premium outdoor living space",
-			"Enhanced property appeal",
-			"Low-maintenance greenery"
-		],
-		"slug": "jain-terrace-garden"
-	},
-	{
-		"id": "15",
-		"title": "Terrace Garden",
-		"client": "Ms. Pratibha",
-		"location": "Rajouri Garden, Delhi",
-		"year": "2023",
-		"image": "https://i0.wp.com/www.wedecor8.com/wp-content/uploads/2021/07/Banner-urban-Plant-1600x600-1.jpg?w=950&ssl=1",
-		"description": "Developed a modern terrace garden for Ms. Pratibha in Rajouri Garden, featuring sustainable irrigation and custom planters for a vibrant rooftop.",
+		"image": "/projects/Corporate-Ycool/image-1.jpeg",
+		"description": "Developed a vibrant terrace garden for Cool India Brewing Company's Mumbai headquarters, incorporating sustainable irrigation and outdoor seating for relaxation and events.",
 		"services": [
 			"Terrace Garden Design",
 			"Irrigation Systems",
-			"Custom Planters",
+			"Outdoor Seating",
 			"Maintenance"
 		],
 		"results": [
-			"Enhanced rooftop aesthetics",
-			"Sustainable plant care",
-			"Increased outdoor usability"
+			"Enhanced outdoor event space",
+			"20% rise in employee morale",
+			"Sustainable green area"
 		],
-		"slug": "pratibha-terrace-garden"
+		"slug": "cool-india-terrace-garden"
+	},
+	{
+		"id": "14",
+		"title": "Corporate Landscaping",
+		"client": "The Game Palacio",
+		"location": "Mumbai, Maharashtra",
+		"year": "2025",
+		"image": "/projects/Game-of-Palacio-Gaming-Arcade/image-1.jpeg",
+		"description": "Provided comprehensive landscaping for The Game Palacio's Mumbai venue, including garden beds and plant styling to complement the entertainment hub's aesthetics.",
+		"services": ["Landscaping", "Garden Beds", "Plant Styling", "Maintenance"],
+		"results": [
+			"Transformed venue aesthetics",
+			"Increased visitor appeal",
+			"Low-maintenance design"
+		],
+		"slug": "game-palacio-landscaping"
 	}
 ]
