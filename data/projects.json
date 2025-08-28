@@ -25,11 +25,11 @@
 	},
 	{
 		"id": "2",
-		"title": "Axis Electrical Components",
-		"client": "Axis Electrical Components",
+		"title": "Axis",
+		"client": "Axis",
 		"location": "Mumbai, Maharashtra",
 		"year": "1994",
-		"image": "/projects/Corporate-Axis/image-1.jpg",
+		"image": "/projects/Corporate-Axis/image-1.jpeg",
 		"description": "Axis is a leading Indian manufacturer and exporter of high-quality electrical components, focusing on innovation in Lightning Protection, IoT solutions, and products complying with international standards.",
 		"services": [
 			"Electrical Hardware",
@@ -102,7 +102,7 @@
 	},
 	{
 		"id": "5",
-		"title": "Market Xcel Research",
+		"title": "Xcel",
 		"client": "Market Xcel",
 		"location": "New Delhi, Delhi",
 		"year": "2000",
