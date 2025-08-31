@@ -70,7 +70,7 @@ export const NavBar = () => {
 						href={item.link}
 						className={cn(
 							" transition-colors duration-200",
-							isScrolled ? "text-white" : "text-secondary hover:text-primary",
+							isScrolled ? "text-white hover:text-secondary" : "text-secondary hover:text-white",
 						)}
 					>
 						{item.label}

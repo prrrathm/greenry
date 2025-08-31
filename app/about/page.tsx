@@ -115,7 +115,7 @@ export default function AboutPage() {
 								<Leaf className="h-32 w-32 text-primary" />
 								{/* <Image /> */}
 								<Image
-									src={"/projects/about-1.jpg"}
+									src={"/image-content/indoor-terrarium.jpg"}
 									fill
 									alt={"about-1"}
 									className="z-10 object-cover rounded-2xl"
