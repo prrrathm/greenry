@@ -17,6 +17,34 @@ import CTA from "@/components/CTA";
 // import TestimonialsCarousel from "@/components/Testimonials";
 import Features from "@/components/Features";
 // import { ChevronRight, Quote } from "@/components/icons"; // Assuming icons for visuals
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Our Plant Services - Office Plants, Green Walls & More",
+	description: "Discover Evergreenry's comprehensive plant services: office plants installation, green walls, moss walls, plant maintenance, zen gardens, and terrarium design. Expert biophilic design solutions for businesses.",
+	keywords: [
+		"office plants service",
+		"green wall installation", 
+		"moss wall design",
+		"plant maintenance service",
+		"zen garden design",
+		"terrarium design service",
+		"biophilic design consultation",
+		"corporate plant installation"
+	],
+	openGraph: {
+		title: "Our Plant Services - Office Plants, Green Walls & More | Evergreenry",
+		description: "Comprehensive plant services: office plants, green walls, moss walls, maintenance, zen gardens & terrarium design. Expert biophilic solutions for businesses.",
+		images: ["/og-services.jpg"],
+		url: "https://evergreenry.com/services",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Our Plant Services - Office Plants, Green Walls & More | Evergreenry", 
+		description: "Comprehensive plant services: office plants, green walls, moss walls, maintenance, zen gardens & terrarium design.",
+		images: ["/og-services.jpg"],
+	},
+};
 
 // Services data with expanded content
 interface Testimonial {
@@ -249,8 +277,62 @@ function ServiceCard({ service }: { service: OfficePlantsService }) {
 
 // Main Services Page component
 export default function ServicesPage() {
+	const servicesJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "ItemList",
+		"name": "Evergreenry Plant Services",
+		"description": "Comprehensive plant services including office plants, green walls, moss walls, plant maintenance, zen gardens, and terrarium design.",
+		"itemListElement": services.map((service, index) => ({
+			"@type": "Service",
+			"position": index + 1,
+			"name": service.title,
+			"description": service.description.substring(0, 200) + "...",
+			"provider": {
+				"@type": "Organization",
+				"name": "Evergreenry"
+			},
+			"areaServed": "India",
+			"serviceType": "Plant Installation and Maintenance",
+			"image": `https://evergreenry.com${service.image}`,
+			"review": {
+				"@type": "Review",
+				"author": {
+					"@type": "Person",
+					"name": service.testimonial.author
+				},
+				"reviewBody": service.testimonial.quote,
+				"reviewRating": {
+					"@type": "Rating",
+					"ratingValue": "5",
+					"bestRating": "5"
+				}
+			}
+		}))
+	};
+
+	const faqJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": faqs.map(faq => ({
+			"@type": "Question",
+			"name": faq.q,
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": faq.a
+			}
+		}))
+	};
+
 	return (
 		<div className="pt-32 w-full border bg-gradient-to-br from-secondary via-white to-primary/40">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+			/>
 			{/* Hero Section */}
 			<section className="text-center mb-16 flex flex-col items-center justify-end h-[40vh] gap-6">
 				<Button

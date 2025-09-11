@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,10 +5,92 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Users } from "lucide-react";
 import CTA from "@/components/CTA";
 import projects from "@/data/projects.json";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Our Project Portfolio - Corporate Plant Installations & Green Spaces",
+	description: "Explore Evergreenry's successful corporate plant installations and green space transformations. 50+ completed projects, 25+ Fortune 500 clients, 10k+ plants installed. View case studies and results.",
+	keywords: [
+		"corporate plant installations",
+		"office green space projects", 
+		"biophilic design case studies",
+		"plant installation portfolio",
+		"green wall projects",
+		"office transformation projects",
+		"corporate landscaping portfolio"
+	],
+	openGraph: {
+		title: "Our Project Portfolio - Corporate Plant Installations & Green Spaces | Evergreenry",
+		description: "50+ completed projects, 25+ Fortune 500 clients, 10k+ plants installed. View our corporate plant installation case studies and transformations.",
+		images: ["/og-projects.jpg"],
+		url: "https://evergreenry.com/projects",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Our Project Portfolio - Corporate Plant Installations | Evergreenry",
+		description: "50+ completed projects, 25+ Fortune 500 clients, 10k+ plants installed. View our transformation case studies.",
+		images: ["/og-projects.jpg"],
+	},
+};
 
 export default function ProjectsPage() {
+	const projectsJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "ItemList",
+		"name": "Evergreenry Project Portfolio",
+		"description": "Corporate plant installations and green space transformations by Evergreenry",
+		"itemListElement": projects.map((project, index) => ({
+			"@type": "CreativeWork",
+			"position": index + 1,
+			"name": project.title,
+			"description": project.description,
+			"image": `https://evergreenry.com${project.image}`,
+			"creator": {
+				"@type": "Organization",
+				"name": "Evergreenry"
+			},
+			"client": {
+				"@type": "Organization",
+				"name": project.client
+			},
+			"locationCreated": {
+				"@type": "Place",
+				"name": project.location
+			},
+			"dateCreated": project.year,
+			"url": `https://evergreenry.com/projects/${project.id}`,
+			"additionalType": "Case Study"
+		}))
+	};
+
+	const organizationJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "ProfessionalService",
+		"name": "Evergreenry",
+		"description": "Corporate plant installation and biophilic design services",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.9",
+			"reviewCount": "150",
+			"bestRating": "5"
+		},
+		"numberOfProjects": projects.length,
+		"serviceArea": {
+			"@type": "Country",
+			"name": "India"
+		}
+	};
+
 	return (
 		<div className="pt-32 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50/40">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+			/>
 			{/* Hero Section */}
 			<section className="py-16 px-4 sm:px-6 lg:px-8">
 				<div className="container mx-auto text-center">
@@ -117,7 +197,11 @@ export default function ProjectsPage() {
 										</div>
 									</div>
 
-									<Link href={`/projects/${project.id}`}>
+									<Link 
+										href={`/projects/${project.id}`}
+										aria-label={`View ${project.title} project case study - ${project.description.substring(0, 100)}...`}
+										title={`Explore the ${project.title} project case study with client ${project.client} in ${project.location}`}
+									>
 										<Button className="w-full bg-primary hover:bg-primary text-white group">
 											View Case Study
 											<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

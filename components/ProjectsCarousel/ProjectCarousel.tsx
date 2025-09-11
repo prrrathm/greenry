@@ -139,6 +139,8 @@ const ProjectCarouselBeta: React.FC = () => {
 					</div>
 					<Link
 						href={"/projects"}
+						aria-label="View all Evergreenry projects - Complete portfolio of office and home plant transformations"
+						title="Browse our complete portfolio of plant transformation projects"
 						className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-primary"
 					>
 						See all projects
@@ -176,7 +178,11 @@ const ProjectCarouselBeta: React.FC = () => {
 												<div className="flex items-center justify-center text-2xl font-semibold">
 													{item.title}
 												</div>
-												<Link href={`/projects/${item.id}`}>
+												<Link 
+													href={`/projects/${item.id}`}
+													aria-label={`View ${item.title} project case study - Plant transformation details and results`}
+													title={`Explore the ${item.title} project case study and transformation details`}
+												>
 													<Button
 														size="sm"
 														className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300 shadow-none"
@@ -252,7 +258,11 @@ const ProjectCarouselBeta: React.FC = () => {
 															{item.title}
 														</div>
 													</div>
-													<Link href={`/projects/${item.id}`}>
+													<Link 
+													href={`/projects/${item.id}`}
+													aria-label={`View ${item.title} project case study - Plant transformation details and results`}
+													title={`Explore the ${item.title} project case study and transformation details`}
+												>
 														<Button
 															size="sm"
 															className="bg-transparent text-white border-white hover:bg-white hover:text-primary"

@@ -12,6 +12,24 @@ import ClientsMarquee from "@/components/ClientsMarquee";
 import ProjectCarouselBeta from "@/components/ProjectsCarousel/ProjectCarousel";
 // import AutoPlayVideo from "@/components/VideoPlayer";
 // import { ProjectsCarousel } from "@/components/carousel/ProjectsCarousel";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Premium Office Plants & Biophilic Design Solutions",
+	description: "Transform your workspace with Evergreenry's premium office plants, green walls, moss walls, and biophilic design solutions. Expert installation and maintenance services nationwide. Boost productivity by 15% and improve air quality naturally.",
+	openGraph: {
+		title: "Premium Office Plants & Biophilic Design Solutions | Evergreenry",
+		description: "Transform your workspace with premium office plants, green walls & biophilic design. NASA-approved air purifying plants that boost productivity by 15%.",
+		images: ["/og-home.jpg"],
+		url: "https://evergreenry.com",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Premium Office Plants & Biophilic Design Solutions | Evergreenry",
+		description: "Transform your workspace with premium office plants, green walls & biophilic design. NASA-approved air purifying plants that boost productivity by 15%.",
+		images: ["/og-home.jpg"],
+	},
+};
 
 export default function Home() {
 	// const OPTIONS: EmblaOptionsType = { loop: true, };
@@ -41,8 +59,77 @@ export default function Home() {
 		},
 	];
 
+	const websiteJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Evergreenry",
+		"url": "https://evergreenry.com",
+		"description": "Premium office plants, biophilic design solutions, green walls, and plant maintenance services for businesses nationwide.",
+		"potentialAction": {
+			"@type": "SearchAction",
+			"target": "https://evergreenry.com/search?q={search_term_string}",
+			"query-input": "required name=search_term_string"
+		}
+	};
+
+	const faqJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": faqs.map(faq => ({
+			"@type": "Question",
+			"name": faq.q,
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": faq.a
+			}
+		}))
+	};
+
+	const serviceJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"name": "Office Plants & Biophilic Design Services",
+		"description": "Premium office plants, green walls, moss walls, zen gardens, and biophilic design solutions for businesses.",
+		"provider": {
+			"@type": "Organization",
+			"name": "Evergreenry",
+			"url": "https://evergreenry.com"
+		},
+		"areaServed": "India",
+		"serviceType": "Landscaping and Plant Installation",
+		"offers": [
+			{
+				"@type": "Offer",
+				"name": "Office Plants Installation",
+				"description": "Custom plant selection and installation for office environments"
+			},
+			{
+				"@type": "Offer", 
+				"name": "Green Wall Design",
+				"description": "Living wall installation with irrigation systems"
+			},
+			{
+				"@type": "Offer",
+				"name": "Plant Maintenance",
+				"description": "Regular care and maintenance services for office plants"
+			}
+		]
+	};
+
 	return (
 		<div className="min-h-screen relative">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+			/>
 			<Hero />
 			{/* <ProjectsCarousel slides={[1,2,3,4]} /> */}
 			{/* <section className="min-h-[60vh] h-[50vh] sm:h-[70vh] md:h-screen px-4 sm:px-8 md:px-20 rounded-xl flex items-center">

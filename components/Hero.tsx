@@ -114,6 +114,9 @@ export default function Hero() {
 								<Link
 									href={"https://www.youtube.com/watch?v=0zEfCODX-TE&t=3s"}
 									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Watch Evergreenry plant transformation demo video on YouTube - Opens in new tab"
+									title="Watch our 3-minute demo video showing office plant transformations"
 								>
 									<Button
 										variant="outline"
@@ -126,6 +129,9 @@ export default function Hero() {
 							<Link
 								href={"https://www.youtube.com/watch?v=0zEfCODX-TE&t=3s"}
 								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Watch Evergreenry plant transformation demo video on YouTube - Opens in new tab"
+								title="Watch our comprehensive demo video showing office plant transformations"
 							>
 								<Button
 									variant="outline"

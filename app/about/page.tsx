@@ -1,79 +1,102 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Leaf, Users, Award, Globe } from "lucide-react";
 import Image from "next/image";
-export default function AboutPage() {
-	const scrollToBooking = () => {
-		document
-			.getElementById("book-demo")
-			?.scrollIntoView({ behavior: "smooth" });
-	};
+import Link from "next/link";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+	title: "About Us - Growing a Greener Future",
+	description:
+		"Learn about Evergreenry's mission to transform spaces with sustainable plant solutions. Founded in 2020, we've helped 500+ businesses create healthier, more productive environments with biophilic design.",
+	openGraph: {
+		title: "About Evergreenry - Growing a Greener Future",
+		description:
+			"Learn about our mission to transform spaces with sustainable plant solutions. 500+ happy clients, 50k+ plants delivered, 100% satisfaction rate.",
+		images: ["/og-about.jpg"],
+		url: "https://evergreenry.com/about",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "About Evergreenry - Growing a Greener Future",
+		description:
+			"Learn about our mission to transform spaces with sustainable plant solutions. 500+ happy clients, 50k+ plants delivered.",
+		images: ["/og-about.jpg"],
+	},
+};
+export default function AboutPage() {
 	const values = [
 		{
 			icon: Leaf,
-			title: "Sustainability First",
+			title: "Plant Companionship",
 			description:
-				"We believe in creating green solutions that benefit both people and the planet, ensuring every project contributes to environmental conservation.",
+				"We believe in fostering meaningful relationships between people and plants, creating opportunities for mindfulness and well-being in every workspace.",
 		},
 		{
 			icon: Users,
-			title: "Community Focused",
+			title: "Corporate Wellness",
 			description:
-				"Building healthier communities through accessible plant solutions that improve air quality and mental well-being for everyone.",
+				"Transforming corporate environments by integrating nature into every workspace, lobby, breakout zone, and boardroom to enhance employee well-being.",
 		},
 		{
 			icon: Award,
-			title: "Excellence in Service",
+			title: "Design Excellence",
 			description:
-				"Delivering premium quality plants and exceptional service with ongoing support to ensure your green spaces thrive.",
+				"From live installations to low-maintenance and faux options, we deliver stylish, calming environments that inspire creativity and productivity.",
 		},
 		{
 			icon: Globe,
-			title: "Environmental Impact",
+			title: "Sustainable Solutions",
 			description:
-				"Committed to biodiversity conservation and creating sustainable ecosystems that support local wildlife and plant diversity.",
+				"Creating vibrant, peaceful spaces through sustainable green decor solutions that bring the natural world into everyday corporate environments.",
 		},
 	];
 
-	const team = [
-		{
-			name: "Sarah Johnson",
-			role: "Founder & CEO",
-			image: "/team/sarah.jpg",
-			bio: "Environmental scientist with 15+ years experience in sustainable design and plant ecology.",
+	const aboutPageJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "AboutPage",
+		name: "About Evergreenry",
+		description:
+			"Learn about Evergreenry's mission to transform spaces with sustainable plant solutions. Founded in 2020, serving 500+ businesses nationwide.",
+		url: "https://evergreenry.com/about",
+		mainEntity: {
+			"@type": "Organization",
+			name: "Evergreenry",
+			foundingDate: "2020",
+			description:
+				"Environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions.",
+			mission:
+				"To bridge the gap between urban living and nature, bringing the benefits of green spaces to every workspace and home.",
+			numberOfEmployees: "25-50",
+			foundingLocation: {
+				"@type": "Place",
+				name: "Mumbai, Maharashtra, India",
+			},
 		},
-		{
-			name: "Michael Chen",
-			role: "Head of Operations",
-			image: "/team/michael.jpg",
-			bio: "Expert in urban agriculture and sustainable business practices with a passion for community development.",
-		},
-		{
-			name: "Emily Rodriguez",
-			role: "Lead Horticulturist",
-			image: "/team/emily.jpg",
-			bio: "Certified plant specialist with expertise in indoor plant care and environmental optimization.",
-		},
-	];
+	};
 
 	return (
 		<div className="min-h-screen">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+			/>
 			{/* Hero Section */}
 			<section className="relative pt-32 pb-12 min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/10">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 					<div className="text-center space-y-8 max-w-4xl mx-auto">
 						<div className="space-y-4">
 							<div className="inline-flex items-center px-4 py-2 bg-secondary text-primary rounded-full text-sm font-medium">
-								🌱 About Evergreenry
+								🌿 Formerly We Decor8 (2018–2025)
 							</div>
 							<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-roboto font-extrabold text-gray-900 leading-tight">
-								Growing a <span className="text-primary">Greener</span> Future
+								Creating <span className="text-primary">Corporate</span>{" "}
+								Wellness Through Nature
 							</h1>
 							<p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-								We&apos;re passionate about transforming spaces with sustainable
-								plant solutions that enhance well-being, boost productivity, and
-								contribute to environmental conservation.
+								Founded by Ruchika Wadhwa Bhalla, Evergreenry transforms
+								corporate environments across India with indoor plants, green
+								walls, and sustainable green decor solutions that foster calm,
+								boost creativity, and promote well-being.
 							</p>
 						</div>
 					</div>
@@ -89,26 +112,37 @@ export default function AboutPage() {
 								Our Mission
 							</h2>
 							<p className="text-lg text-gray-600 leading-relaxed">
-								At Evergreenry, we&apos;re dedicated to creating healthier, more
-								productive environments through sustainable plant solutions. Our
-								mission is to bridge the gap between urban living and nature,
-								bringing the benefits of green spaces to every workspace and
-								home.
+								At Evergreenry, we envision a world where every workspace,
+								lobby, breakout zone, and boardroom is enriched with nature —
+								starting with something as simple as one plant on every desk.
 							</p>
 							<p className="text-lg text-gray-600 leading-relaxed">
-								We believe that access to nature shouldn&apos;t be limited by
-								location or circumstance. Through our expert-curated plant
-								solutions, we help businesses and individuals create thriving
-								environments that support both human well-being and
-								environmental sustainability.
+								We believe plants are more than just aesthetic additions.
+								They&apos;re living elements that foster calm, boost creativity,
+								and promote overall well-being. In today&apos;s fast-paced
+								corporate environments, a plant offers a small yet powerful
+								pause — a moment to breathe, refocus, and reconnect with the
+								natural world.
 							</p>
-							<Button
-								className="bg-primary hover:bg-primary text-white px-8 py-3 font-semibold"
-								onClick={scrollToBooking}
-							>
-								Start Your Journey
-								<ArrowRight className="h-5 w-5 ml-2" />
-							</Button>
+							<p className="text-lg text-gray-600 leading-relaxed">
+								Our mission is rooted in the idea of plant companionship. When
+								employees care for a plant — even something as small as watering
+								or adjusting its position — they engage in a quiet act of
+								mindfulness. Over time, this relationship cultivates a more
+								positive, present, and stress-resilient mindset.
+							</p>
+							<div className="bg-secondary/20 p-6 rounded-lg border-l-4 border-primary">
+								<p className="text-lg text-primary font-medium italic">
+									&ldquo;Because when you take care of a plant, it quietly takes
+									care of you.&rdquo;
+								</p>
+							</div>
+							<Link href="/contact">
+								<Button className="bg-primary hover:bg-primary text-white px-8 py-3 font-semibold">
+									Start Your Journey
+									<ArrowRight className="h-5 w-5 ml-2" />
+								</Button>
+							</Link>
 						</div>
 						<div className="relative">
 							<div className="aspect-square bg-gradient-to-br from-secondary to-secondary rounded-2xl flex items-center justify-center">
@@ -131,10 +165,11 @@ export default function AboutPage() {
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-16">
 						<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-gray-900 mb-4">
-							Our Values
+							Our Core Principles
 						</h2>
 						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
-							The principles that guide everything we do at Evergreenry
+							The foundational beliefs that drive our corporate wellness
+							solutions
 						</p>
 					</div>
 					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -178,30 +213,47 @@ export default function AboutPage() {
 								Our Story
 							</h2>
 							<p className="text-lg text-gray-600 leading-relaxed">
-								Founded in 2020, Evergreenry began with a simple vision: to make
-								the benefits of nature accessible to everyone, regardless of
-								where they live or work. What started as a small team of
-								environmental enthusiasts has grown into a comprehensive plant
-								solutions company.
+								Formerly known as We Decor8 (2018–2025), Evergreenry was founded
+								by
+								<span className="font-semibold text-gray-800">
+									{" "}
+									Ruchika Wadhwa Bhalla
+								</span>
+								, who left behind corporate life to follow her passion for
+								plants and design.
 							</p>
 							<p className="text-lg text-gray-600 leading-relaxed">
-								Today, we&apos;ve helped over 500 businesses and thousands of
-								individuals create healthier, more productive environments. Our
-								commitment to sustainability, quality, and customer satisfaction
-								remains at the heart of everything we do.
+								What began with styling balconies soon grew into full-scale
+								green decor projects for offices, commercial spaces, and
+								hospitality clients across India. This organic evolution
+								reflected our deep understanding of how nature can transform
+								professional environments.
+							</p>
+							<p className="text-lg text-gray-600 leading-relaxed">
+								Today, Evergreenry creates calming, stylish environments through
+								indoor plants, green walls, and sustainable green decor
+								solutions. From live installations to low-maintenance and faux
+								options, we bring nature into everyday spaces, making them more
+								vibrant, peaceful, and inspiring.
 							</p>
 							<div className="grid grid-cols-3 gap-8 pt-8">
 								<div className="text-center">
-									<div className="text-3xl font-bold text-primary">500+</div>
-									<div className="text-sm text-gray-600">Happy Clients</div>
+									<div className="text-3xl font-bold text-primary">7+</div>
+									<div className="text-sm text-gray-600">
+										Years of Excellence
+									</div>
 								</div>
 								<div className="text-center">
-									<div className="text-3xl font-bold text-primary">50k+</div>
-									<div className="text-sm text-gray-600">Plants Delivered</div>
+									<div className="text-3xl font-bold text-primary">200+</div>
+									<div className="text-sm text-gray-600">
+										Corporate Projects
+									</div>
 								</div>
 								<div className="text-center">
 									<div className="text-3xl font-bold text-primary">100%</div>
-									<div className="text-sm text-gray-600">Satisfaction Rate</div>
+									<div className="text-sm text-gray-600">
+										Client Satisfaction
+									</div>
 								</div>
 							</div>
 						</div>
@@ -209,33 +261,53 @@ export default function AboutPage() {
 				</div>
 			</section>
 
-			{/* Team Section */}
-			<section className="py-20 bg-gray-50 hidden">
+			{/* Founder Section */}
+			<section className="py-20 bg-white">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-16">
-						<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-gray-900 mb-4">
-							Meet Our Team
-						</h2>
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
-							The passionate experts behind Evergreenry&apos;s success
-						</p>
-					</div>
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{team.map((member, index) => (
-							<div
-								key={index}
-								className="bg-white p-8 rounded-2xl shadow-sm text-center"
-							>
-								<div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-									<Users className="h-12 w-12 text-primary" />
+					<div className="max-w-4xl mx-auto">
+						<div className="text-center mb-16">
+							<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-gray-900 mb-4">
+								Leadership
+							</h2>
+							<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+								Meet the visionary behind Evergreenry&apos;s corporate wellness
+								revolution
+							</p>
+						</div>
+						<div className="bg-gradient-to-r from-secondary/10 to-primary/10 p-8 md:p-12 rounded-2xl">
+							<div className="grid md:grid-cols-3 gap-8 items-center">
+								<div className="md:col-span-1 text-center">
+									<div className="w-32 h-32 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+										<Users className="h-16 w-16 text-white" />
+									</div>
+									<h3 className="text-2xl font-roboto font-extrabold text-gray-900 mb-2">
+										Ruchika Wadhwa Bhalla
+									</h3>
+									<p className="text-primary font-semibold mb-4">
+										Founder & CEO
+									</p>
 								</div>
-								<h3 className="text-xl font-roboto font-extrabold text-gray-900 mb-2">
-									{member.name}
-								</h3>
-								<p className="text-primary font-semibold mb-4">{member.role}</p>
-								<p className="text-gray-600 leading-relaxed">{member.bio}</p>
+								<div className="md:col-span-2 space-y-4">
+									<p className="text-lg text-gray-700 leading-relaxed">
+										A corporate professional turned green entrepreneur, Ruchika
+										founded Evergreenry with a vision to transform how
+										businesses integrate nature into their work environments.
+									</p>
+									<p className="text-gray-600 leading-relaxed">
+										Her journey from styling residential balconies to designing
+										comprehensive green solutions for corporate India reflects
+										her deep understanding of the therapeutic relationship
+										between people and plants in professional settings.
+									</p>
+									<p className="text-gray-600 leading-relaxed">
+										Under her leadership, Evergreenry has become a trusted
+										partner for businesses seeking to enhance employee
+										well-being through biophilic design and plant companionship
+										programs.
+									</p>
+								</div>
 							</div>
-						))}
+						</div>
 					</div>
 				</div>
 			</section>
@@ -245,19 +317,19 @@ export default function AboutPage() {
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 					<div className="max-w-3xl mx-auto space-y-8">
 						<h2 className="text-3xl sm:text-4xl font-roboto font-extrabold text-white">
-							Ready to Transform Your Space?
+							Ready to Enhance Your Corporate Wellness?
 						</h2>
 						<p className="text-xl text-secondary">
-							Join hundreds of satisfied clients who have already created
-							healthier, more productive environments with Evergreenry.
+							Join leading businesses across India who have transformed their
+							workspaces with Evergreenry&apos;s plant companionship programs
+							and biophilic design solutions.
 						</p>
-						<Button
-							className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg"
-							onClick={scrollToBooking}
-						>
-							Book Free Consultation
-							<ArrowRight className="h-5 w-5 ml-2" />
-						</Button>
+						<Link href="/contact">
+							<Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg">
+								Schedule Corporate Consultation
+								<ArrowRight className="h-5 w-5 ml-2" />
+							</Button>
+						</Link>
 					</div>
 				</div>
 			</section>

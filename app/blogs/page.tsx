@@ -3,6 +3,34 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, User } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Plant Care & Wellness Blog - Expert Tips & Guides",
+	description: "Expert insights on office plants, biophilic design trends, plant care tips, and workplace wellness. Discover how to create healthier, more productive environments with our comprehensive plant guides.",
+	keywords: [
+		"plant care blog",
+		"office plants guide",
+		"biophilic design trends",
+		"workplace wellness",
+		"air purifying plants",
+		"plant maintenance tips",
+		"green walls guide",
+		"seasonal plant care"
+	],
+	openGraph: {
+		title: "Plant Care & Wellness Blog - Expert Tips & Guides | Evergreenry",
+		description: "Expert insights on office plants, biophilic design, plant care tips & workplace wellness. Learn how plants boost productivity and air quality.",
+		images: ["/og-blog.jpg"],
+		url: "https://evergreenry.com/blogs",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Plant Care & Wellness Blog - Expert Tips & Guides | Evergreenry",
+		description: "Expert insights on office plants, biophilic design, plant care tips & workplace wellness.",
+		images: ["/og-blog.jpg"],
+	},
+};
 
 interface BlogPost {
 	id: string;
@@ -106,8 +134,50 @@ const categories = [
 ];
 
 export default function BlogsPage() {
+	const blogJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "Blog",
+		"name": "Evergreenry Plant Care & Wellness Blog",
+		"description": "Expert insights on office plants, biophilic design trends, plant care tips, and workplace wellness",
+		"url": "https://evergreenry.com/blogs",
+		"publisher": {
+			"@type": "Organization", 
+			"name": "Evergreenry",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "https://evergreenry.com/logo.png"
+			}
+		},
+		"blogPost": blogPosts.map(post => ({
+			"@type": "BlogPosting",
+			"headline": post.title,
+			"description": post.excerpt,
+			"image": `https://evergreenry.com${post.image}`,
+			"datePublished": new Date(post.date).toISOString(),
+			"author": {
+				"@type": "Person",
+				"name": post.author
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Evergreenry"
+			},
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": `https://evergreenry.com/blogs/${post.slug}`
+			},
+			"articleSection": post.category,
+			"keywords": post.category.toLowerCase().replace(/\s+/g, ', '),
+			"url": `https://evergreenry.com/blogs/${post.slug}`
+		}))
+	};
+
 	return (
 		<div className="pt-32 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50/40">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+			/>
 			{/* Hero Section */}
 			<section className="py-16 px-4 sm:px-6 lg:px-8">
 				<div className="container mx-auto text-center">
@@ -191,7 +261,11 @@ export default function BlogsPage() {
 										</div>
 									</div>
 
-									<Link href={`/blogs/${post.slug}`}>
+									<Link 
+										href={`/blogs/${post.slug}`}
+										aria-label={`Read "${post.title}" - ${post.excerpt.substring(0, 80)}...`}
+										title={`Read full article: ${post.title} by ${post.author} - ${post.readTime}`}
+									>
 										<Button className="w-full bg-primary hover:bg-primary text-white group">
 											Read More
 											<ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

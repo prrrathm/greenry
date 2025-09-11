@@ -25,57 +25,48 @@ export interface Testimonial {
 
 const defaultTestimonials: Testimonial[] = [
 	{
-		name: "Sarah Johnson",
-		role: "CEO, TechCorp",
+		name: "Karunesh",
+		role: "Studio Head, Gurgaon",
 		image:
-			"https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
+			"https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"Evergreenry transformed our office environment completely. Our team's productivity has increased significantly, and the air quality is noticeably better. Highly recommended!",
+			"I involve Evergreenry in all my office projects, they are so quick to respond with their products and services.",
 		rating: 5,
 	},
 	{
-		name: "Michael Chen",
-		role: "Operations Manager, StartupHub",
+		name: "Raghavan",
+		role: "Head Architect, Delhi",
 		image:
-			"https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
+			"https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"The consultation was thorough and professional. They understood our space perfectly and delivered exactly what we needed. Our employees love the new green environment.",
+			"Five stars to their design assistance available on drop of a hat. Always ready to go an extra mile.",
 		rating: 5,
 	},
 	{
-		name: "Emily Rodriguez",
-		role: "HR Director, InnovateCo",
+		name: "Yashbir",
+		role: "Head Architect, Delhi",
 		image:
-			"https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150",
+			"https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"Working with Evergreenry was seamless. From consultation to installation, everything was handled professionally. The ongoing support has been exceptional.",
+			"Evergreenry has the right mix of team members ready to offer a last minute solution right before a site handover.",
 		rating: 5,
 	},
 	{
-		name: "David Thompson",
-		role: "Facility Manager, CorpCenter",
+		name: "Devang",
+		role: "Project Lead, Bangalore",
 		image:
-			"https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150",
+			"https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"The low-maintenance aspect was exactly what we needed. Beautiful plants that thrive with minimal care, and the team provides excellent ongoing support.",
+			"You want a moss wall in a day, they have it. You want biophilia added to your project over the weekend, they do it.",
 		rating: 5,
 	},
 	{
-		name: "Lisa Park",
-		role: "Creative Director, DesignStudio",
+		name: "Gundappa",
+		role: "Procurement Head, Bhuvaneshwar",
 		image:
-			"https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150",
+			"https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=150",
 		content:
-			"Our creative space has been completely revitalized. The plants add such positive energy, and our clients always comment on the beautiful environment.",
-		rating: 5,
-	},
-	{
-		name: "Robert Kim",
-		role: "Office Manager, LegalFirm",
-		image:
-			"https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150",
-		content:
-			"Professional service from start to finish. The team understood our corporate environment needs and delivered a solution that exceeded expectations.",
+			"Planters in any shape and size for my projects, always from Evergreenry.",
 		rating: 5,
 	},
 ];

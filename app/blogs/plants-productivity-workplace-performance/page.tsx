@@ -3,10 +3,131 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, User, ArrowLeft, Share2 } from "lucide-react";
 import CTA from "@/components/CTA";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "The Science Behind Plants and Productivity: How Greenery Boosts Workplace Performance",
+	description: "Discover how office plants boost productivity by 15% according to University of Exeter research. Learn about NASA's Clean Air Study and practical strategies to implement plants in your workspace for better performance.",
+	keywords: [
+		"plants boost productivity",
+		"office plants productivity research",
+		"workplace performance plants",
+		"NASA clean air study plants",
+		"biophilic design productivity",
+		"plants reduce stress workplace",
+		"office plants air quality",
+		"green office benefits"
+	],
+	authors: [{ name: "Dr. Sarah Green" }],
+	openGraph: {
+		title: "Plants Boost Workplace Productivity by 15% - Scientific Research | Evergreenry Blog",
+		description: "University of Exeter research shows office plants increase productivity by 15%. Discover NASA's air-purifying plants and practical implementation strategies.",
+		images: [
+			{
+				url: "https://evergreenry.com/projects/office-1.jpg",
+				width: 1200,
+				height: 630,
+				alt: "Office with plants boosting productivity - Evergreenry",
+			}
+		],
+		url: "https://evergreenry.com/blogs/plants-productivity-workplace-performance",
+		type: "article",
+		publishedTime: "2024-12-15T00:00:00Z",
+		authors: ["Dr. Sarah Green"],
+		section: "Workplace Wellness",
+		tags: ["office plants", "productivity", "workplace wellness", "biophilic design"],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Plants Boost Workplace Productivity by 15% - Scientific Research",
+		description: "University of Exeter research shows office plants increase productivity by 15%. Discover NASA's air-purifying plants.",
+		images: ["https://evergreenry.com/projects/office-1.jpg"],
+	},
+};
 
 export default function BlogPost() {
+	const articleJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "BlogPosting",
+		"headline": "The Science Behind Plants and Productivity: How Greenery Boosts Workplace Performance",
+		"description": "Discover how office plants boost productivity by 15% according to University of Exeter research. Learn about NASA's Clean Air Study and practical strategies to implement plants in your workspace.",
+		"image": "https://evergreenry.com/projects/office-1.jpg",
+		"datePublished": "2024-12-15T00:00:00Z",
+		"dateModified": "2024-12-15T00:00:00Z",
+		"author": {
+			"@type": "Person",
+			"name": "Dr. Sarah Green",
+			"jobTitle": "Plant Scientist",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Evergreenry"
+			}
+		},
+		"publisher": {
+			"@type": "Organization",
+			"name": "Evergreenry",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "https://evergreenry.com/logo.png"
+			}
+		},
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "https://evergreenry.com/blogs/plants-productivity-workplace-performance"
+		},
+		"articleSection": "Workplace Wellness",
+		"keywords": ["office plants", "productivity", "workplace wellness", "biophilic design", "NASA clean air study"],
+		"wordCount": 750,
+		"timeRequired": "PT5M",
+		"about": [
+			{
+				"@type": "Thing",
+				"name": "Office Plants",
+				"description": "Plants used in workplace environments to improve air quality and productivity"
+			},
+			{
+				"@type": "Thing", 
+				"name": "Workplace Productivity",
+				"description": "Measures of employee performance and efficiency in office environments"
+			}
+		]
+	};
+
+	const breadcrumbJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Home",
+				"item": "https://evergreenry.com"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Blog",
+				"item": "https://evergreenry.com/blogs"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": "Plants and Productivity",
+				"item": "https://evergreenry.com/blogs/plants-productivity-workplace-performance"
+			}
+		]
+	};
+
 	return (
 		<div className="pt-32 min-h-screen bg-white">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+			/>
 			{/* Back Button */}
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
 				<Link href="/blogs">

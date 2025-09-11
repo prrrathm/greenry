@@ -1,115 +1,107 @@
-"use client";
-
+import { CheckCircle, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-// import { Card, CardContent } from "@/components/ui/card";
-import {
-	// Mail,
-	Phone,
-	// MapPin,
-	// Clock,
-	MessageSquare,
-	Send,
-	CheckCircle,
-} from "lucide-react";
-import { useState } from "react";
 import FAQs from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import ContactForm from "@/components/ContactForm";
+import Link from "next/link";
+import { Metadata } from "next";
 
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
-
-const schema = z.object({
-	name: z.string().min(2, "Full name is required"),
-	email: z.string().email("Invalid email address"),
-	phone: z.string().optional(),
-	company: z.string().optional(),
-	service: z.string().optional(),
-	message: z.string().min(5, "Message must be at least 5 characters"),
-});
-
-type FormData = z.infer<typeof schema>;
+export const metadata: Metadata = {
+	title: "Contact Us - Get Your Free Plant Consultation",
+	description: "Contact Evergreenry for your free plant consultation. Transform your workspace with our expert biophilic design solutions. Call +91-9891347119 or fill out our contact form for 24-hour response.",
+	keywords: [
+		"contact evergreenry",
+		"free plant consultation",
+		"office plants quote",
+		"biophilic design consultation",
+		"plant installation contact",
+		"green wall consultation"
+	],
+	openGraph: {
+		title: "Contact Us - Get Your Free Plant Consultation | Evergreenry",
+		description: "Contact Evergreenry for your free plant consultation. Expert biophilic design solutions. Call +91-9891347119 or get 24-hour response via contact form.",
+		images: ["/og-contact.jpg"],
+		url: "https://evergreenry.com/contact",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Contact Us - Get Your Free Plant Consultation | Evergreenry",
+		description: "Contact Evergreenry for your free plant consultation. Expert biophilic design solutions.",
+		images: ["/og-contact.jpg"],
+	},
+};
 
 export default function ContactPage() {
 	const faqs = [
 		{
 			q: "What is Evergreenry?",
-			a: "Evergreenry is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
+			a: "We add biophilia! Evergreenry, established in 2018 with the former name We Decor8, has been greening up corporates in India with the help of plants, planters, green walls, moss walls, gardens and other landscape design elements.",
 		},
 		{
-			q: "What types of projects does Evergreenry undertake?",
-			a: "We specialize in corporate office installations, home plant solutions, co-working space transformations, and event space arrangements with ongoing maintenance support.",
-		},
-		{
-			q: "How can I get involved with Evergreenry'apos;s initiatives?",
-			a: "You can book a free consultation through our website, call us directly, or reach out via email. We offer customized solutions for every space and budget.",
+			q: "What type of projects does Evergreenry undertake?",
+			a: "Evergreenry greens up corporates, commercial buildings, hospitality spaces in India with the help of plants, planters, green walls, moss walls, gardens and other landscape design elements. We provide landscape design and execution services for both indoor & outdoor work to Architects, Designers, end clients, commercial and hospitality clients and farm houses.",
 		},
 		{
 			q: "Where does Evergreenry operate?",
-			a: "Evergreenry operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
+			a: "Evergreenry has full fledged design as well as execution offices in Delhi NCR and Bangalore from where we serve North as well as South India clients respectively.",
 		},
 		{
-			q: "Why is biodiversity conservation important?",
-			a: "Biodiversity conservation ensures ecosystem stability, supports life-sustaining services, helps combat climate change, and creates healthier indoor environments that boost productivity and well-being.",
+			q: "What is Biophilia?",
+			a: "Biophilia means connection to nature. Biophilic design in architecture is based on the belief that humans have an innate connection to nature, and that by bringing elements of the natural world into our built environment, we can improve our health, happiness, and overall quality of life. Evergreenry does this with the help of plants, green walls, moss walls and other plant elements in office spaces.",
+		},
+		{
+			q: "Would you have a quick planting solution for my office?",
+			a: "Yes, Evergreenry has set packages of quick planting service in planters, where you place an order and relax. We deliver to you in stipulated time period based on the quantity of plants & planters required.",
+		},
+		{
+			q: "Does Evergreenry add only natural greenery or even faux plants are an option?",
+			a: "Greenery in any form is good. We add biophilia in natural, artificial (faux) as well as preserved form. You get plants, green walls, moss walls – in all natural, artificial and preserved way.",
 		},
 	];
 
-	const services = [
-		"Office Plants",
-		"Green Walls",
-		"Moss Walls",
-		"Plant Maintenance",
-		"Zen Garden",
-		"Indoor Terrarium",
-	];
-
-	const [loading, setLoading] = useState(false);
-	const [submitted, setSubmitted] = useState(false);
-
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-		reset,
-	} = useForm<FormData>({
-		resolver: zodResolver(schema),
-	});
-
-	const onSubmit = async (data: FormData) => {
-		try {
-			setLoading(true);
-			const res = await fetch("/api/send-mail", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(data),
-			});
-
-			const result = await res.json();
-
-			if (result.success) {
-				setSubmitted(true);
-				toast.info(
-					"Thank you! We'll contact you within 24 hours to schedule your consultation.",
-				);
-				reset();
-			} else {
-				toast.error("Something went wrong. Please try again.");
+	const contactJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "ContactPage",
+		"name": "Contact Evergreenry",
+		"description": "Contact Evergreenry for your free plant consultation and transform your workspace with expert biophilic design solutions.",
+		"url": "https://evergreenry.com/contact",
+		"mainEntity": {
+			"@type": "Organization",
+			"name": "Evergreenry",
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+91-9891347119",
+				"contactType": "customer service",
+				"areaServed": "IN",
+				"availableLanguage": ["English", "Hindi"],
+				"contactOption": "TollFree"
 			}
-		} catch (error) {
-			console.error(error);
-			toast.error("Something went wrong. Please try again.");
-			// alert("Error submitting form");
-		} finally {
-			setLoading(false);
 		}
+	};
+
+	const faqJsonLd = {
+		"@context": "https://schema.org", 
+		"@type": "FAQPage",
+		"mainEntity": faqs.map(faq => ({
+			"@type": "Question",
+			"name": faq.q,
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": faq.a
+			}
+		}))
 	};
 
 	return (
 		<div className="min-h-screen">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+			/>
 			{/* Hero Section */}
 			<section className="relative pt-32 pb-12 min-h-[40vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50/40">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -136,168 +128,7 @@ export default function ContactPage() {
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="grid lg:grid-cols-2 gap-12">
 						{/* Form */}
-						<div className="space-y-8 bg-white p-6 sm:p-8 rounded-2xl shadow-sm">
-							<div>
-								<h2 className="text-2xl sm:text-3xl md:text-4xl font-roboto font-extrabold text-gray-900 mb-4">
-									Send Us a Message
-								</h2>
-								<p className="text-base sm:text-lg text-gray-600">
-									Fill out the form below and we&apos;ll get back to you within
-									24 hours.
-								</p>
-							</div>
-
-							{submitted ? (
-								<div className="bg-green-50 border border-secondary rounded-lg p-6 sm:p-8 text-center">
-									<CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
-									<h3 className="text-2xl font-roboto font-extrabold text-primary mb-2">
-										Message Sent!
-									</h3>
-									<p className="text-green-700">
-										Thank you for reaching out. We&apos;ll get back to you
-										within 24 hours.
-									</p>
-								</div>
-							) : (
-								<form
-									onSubmit={handleSubmit(onSubmit)}
-									className="space-y-4 sm:space-y-6"
-								>
-									<div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-										<div className="space-y-2">
-											<Label
-												htmlFor="name"
-												className="text-gray-700 font-semibold"
-											>
-												Full Name *
-											</Label>
-											<Input
-												id="name"
-												placeholder="Your full name"
-												className="border-gray-300 focus:border-green-500 focus:ring-green-500"
-												{...register("name")}
-											/>
-											{errors.name && (
-												<p className="text-red-500 text-sm">
-													{errors.name.message}
-												</p>
-											)}
-										</div>
-
-										<div className="space-y-2">
-											<Label
-												htmlFor="email"
-												className="text-gray-700 font-semibold"
-											>
-												Email Address *
-											</Label>
-											<Input
-												id="email"
-												type="email"
-												placeholder="your.email@example.com"
-												className="border-gray-300 focus:border-green-500 focus:ring-green-500"
-												{...register("email")}
-											/>
-											{errors.email && (
-												<p className="text-red-500 text-sm">
-													{errors.email.message}
-												</p>
-											)}
-										</div>
-									</div>
-
-									<div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-										<div className="space-y-2">
-											<Label
-												htmlFor="phone"
-												className="text-gray-700 font-semibold"
-											>
-												Phone Number
-											</Label>
-											<Input
-												id="phone"
-												type="tel"
-												placeholder="(555) 123-4567"
-												className="border-gray-300 focus:border-green-500 focus:ring-green-500"
-												{...register("phone")}
-											/>
-										</div>
-
-										<div className="space-y-2">
-											<Label
-												htmlFor="company"
-												className="text-gray-700 font-semibold"
-											>
-												Company
-											</Label>
-											<Input
-												id="company"
-												type="text"
-												placeholder="Your company name"
-												className="border-gray-300 focus:border-green-500 focus:ring-green-500"
-												{...register("company")}
-											/>
-										</div>
-									</div>
-
-									<div className="space-y-2">
-										<Label
-											htmlFor="service"
-											className="text-gray-700 font-semibold"
-										>
-											Service Interest
-										</Label>
-										<select
-											id="service"
-											className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-											{...register("service")}
-										>
-											<option value="">Select a service</option>
-											{services.map((service, index) => (
-												<option key={index} value={service}>
-													{service}
-												</option>
-											))}
-										</select>
-									</div>
-
-									<div className="space-y-2">
-										<Label
-											htmlFor="message"
-											className="text-gray-700 font-semibold"
-										>
-											Message *
-										</Label>
-										<Textarea
-											id="message"
-											placeholder="Tell us about your project and how we can help..."
-											className="border-gray-300 focus:border-green-500 focus:ring-green-500 min-h-[120px]"
-											{...register("message")}
-										/>
-										{errors.message && (
-											<p className="text-red-500 text-sm">
-												{errors.message.message}
-											</p>
-										)}
-									</div>
-
-									<Button
-										type="submit"
-										disabled={loading}
-										className="w-full bg-primary hover:bg-primary text-white py-3 font-semibold text-lg flex justify-center items-center"
-									>
-										{loading ? "Sending..." : "Send Message"}
-										{!loading && <Send className="h-5 w-5 ml-2" />}
-									</Button>
-
-									{submitted && (
-										<p className="text-green-600 font-semibold mt-4 text-center">
-											✅ Your message has been sent!
-										</p>
-									)}
-								</form>
-							)}
-						</div>
+						<ContactForm />
 
 						{/* Additional Info */}
 						<div className="space-y-8">
@@ -370,13 +201,16 @@ export default function ContactPage() {
 									For urgent inquiries or emergency plant care, call us
 									directly.
 								</p>
-								<Button
-									className="w-full md:w-max bg-white text-primary hover:bg-gray-100 font-semibold"
-									onClick={() => (window.location.href = "tel:+15551234567")}
-								>
-									<Phone className="h-5 w-5 mr-2" />
-									Call Now: (555) 123-4567
-								</Button>
+								<Link 
+								href="tel:+919891347119"
+								aria-label="Call Evergreenry at +91 9891347119 for immediate plant consultation"
+								title="Call us now for immediate assistance and plant consultation"
+							>
+									<Button className="w-full md:w-max bg-white text-primary hover:bg-gray-100 font-semibold">
+										<Phone className="h-5 w-5 mr-2" />
+										Call Now: +91 9891347119
+									</Button>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -401,20 +235,26 @@ export default function ContactPage() {
 							the first step toward a greener, healthier environment.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
-							<Button
-								className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg"
-								onClick={() => document.getElementById("name")?.focus()}
+							<Link 
+							href="#contact-form"
+							aria-label="Scroll to contact form - Send us a detailed message about your plant needs"
+							title="Fill out our contact form for detailed plant consultation inquiries"
+						>
+								<Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg">
+									Send Message
+									<MessageSquare className="h-5 w-5 ml-2" />
+								</Button>
+							</Link>
+							<Link 
+								href="tel:+919891347119"
+								aria-label="Call Evergreenry at +91 9891347119 for immediate plant consultation"
+								title="Call us now for immediate assistance and plant consultation"
 							>
-								Send Message
-								<MessageSquare className="h-5 w-5 ml-2" />
-							</Button>
-							<Button
-								className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg"
-								onClick={() => (window.location.href = "tel:+15551234567")}
-							>
-								<Phone className="h-5 w-5 mr-2" />
-								Call Now
-							</Button>
+								<Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 font-semibold text-lg">
+									<Phone className="h-5 w-5 mr-2" />
+									Call Now
+								</Button>
+							</Link>
 						</div>
 					</div>
 				</div>

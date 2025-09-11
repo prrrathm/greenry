@@ -33,14 +33,14 @@ const PhoneDropDown = ({ isScrolled }: { isScrolled: boolean }) => {
 			<DropdownMenuContent>
 				<DropdownMenuItem>
 					{" "}
-					<Link href="tel:+919999373473" className="flex">
-						+91 99993 73473
+					<Link href="tel:+919891347119" className="flex">
+						North: +91 98913 47119
 					</Link>
 				</DropdownMenuItem>
 				<DropdownMenuItem>
 					{" "}
-					<Link href="tel:+919891347119" className="flex">
-						+91 98913 47119
+					<Link href="tel:+919606130700" className="flex">
+						South: +91 96061 30700
 					</Link>
 				</DropdownMenuItem>
 			</DropdownMenuContent>

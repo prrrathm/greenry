@@ -12,43 +12,105 @@ type Client = {
 
 const clients: Client[] = [
 	{
+		name: "Nestle",
+		logo: "/brand-logos/nestle-4.svg",
+		url: "https://www.nestle.com",
+	},
+	{
+		name: "IBM",
+		logo: "/brand-logos/ibm.svg",
+		url: "https://www.ibm.com",
+	},
+	{
+		name: "Accenture",
+		logo: "/brand-logos/accenture-2.svg",
+		url: "https://www.accenture.com",
+	},
+	{
+		name: "Mastercard",
+		logo: "/brand-logos/mastercard-6.svg",
+		url: "https://www.mastercard.com",
+	},
+	{
+		name: "SBI",
+		logo: "/brand-logos/sbi.svg",
+		url: "https://www.sbi.co.in",
+	},
+	{
+		name: "IDFC",
+		logo: "/brand-logos/idfc.svg.png",
+		url: "https://www.idfcfirstbank.com",
+	},
+	{
+		name: "Bank of America",
+		logo: "/brand-logos/bank-of-america.svg",
+		url: "https://www.bankofamerica.com",
+	},
+	{
+		name: "Simpliworks",
+		logo: "/brand-logos/simpliworks.svg",
+		url: "https://www.simpliworks.com",
+	},
+	{
+		name: "AWFIS",
+		logo: "/brand-logos/awfix.png",
+		url: "https://www.awfis.com",
+	},
+	{
+		name: "Brookfield Properties",
+		logo: "/brand-logos/brookfield.svg",
+		url: "https://www.brookfieldproperties.com",
+	},
+	{
+		name: "Optum",
+		logo: "/brand-logos/optum.svg",
+		url: "https://www.optum.com",
+	},
+	{
+		name: "NURA",
+		logo: "/brand-logos/nura.svg",
+		url: "https://www.nura.com",
+	},
+	{
+		name: "Khaitan",
+		logo: "/brand-logos/khaitan.png",
+		url: "https://www.khaitan.com",
+	},
+	{
+		name: "Air France",
+		logo: "/brand-logos/air-france-11.svg",
+		url: "https://www.airfrance.com",
+	},
+	{
+		name: "Cushman & Wakefield",
+		logo: "/brand-logos/cushman-wakefield-1.svg",
+		url: "https://www.cushmanwakefield.com",
+	},
+	{
+		name: "Office Banao",
+		logo: "/brand-logos/office-banao.svg",
+		url: "https://www.officebanao.com",
+	},
+	{
 		name: "Adidas",
-		logo: "/brand-logos/adidas.svg",
+		logo: "/brand-logos/adidas-2.svg",
 		url: "https://www.adidas.com",
 	},
 	{
-		name: "Amazon",
-		logo: "/brand-logos/amazon.svg",
-		url: "https://www.amazon.com",
+		name: "DLF",
+		logo: "/brand-logos/DLF_logo.svg",
+		url: "https://www.dlf.in",
 	},
 	{
-		name: "Asics",
-		logo: "/brand-logos/asics.svg",
-		url: "https://www.asics.com",
+		name: "Capgemini",
+		logo: "/brand-logos/capgemini.svg",
+		url: "https://www.capgemini.com",
 	},
 	{
-		name: "Deloitte",
-		logo: "/brand-logos/deloitte.svg",
-		url: "https://www2.deloitte.com",
+		name: "Concentrix",
+		logo: "/brand-logos/concentrix.svg",
+		url: "https://www.concentrix.com",
 	},
-	{
-		name: "Google",
-		logo: "/brand-logos/google.svg",
-		url: "https://www.google.com",
-	},
-	{ name: "HBO", logo: "/brand-logos/hbo.svg", url: "https://www.hbo.com" },
-	{
-		name: "Netflix",
-		logo: "/brand-logos/netflix.svg",
-		url: "https://www.netflix.com",
-	},
-	{ name: "Nike", logo: "/brand-logos/nike.svg", url: "https://www.nike.com" },
-	{
-		name: "Spotify",
-		logo: "/brand-logos/spotify.svg",
-		url: "https://www.spotify.com",
-	},
-	{ name: "Uber", logo: "/brand-logos/uber.svg", url: "https://www.uber.com" },
 ];
 
 const ClientsMarquee: React.FC = () => {
@@ -66,41 +128,43 @@ const ClientsMarquee: React.FC = () => {
 				{[...clients, ...clients].map((client, index) => (
 					<div
 						key={`${client.name}-${index}`}
-						className="mx-2 md:mx-6 flex-shrink-0"
+						className="mx-1 md:mx-10  flex-shrink-0 "
 					>
 						<Link href={client.url} target="_blank" rel="noopener noreferrer">
-							<div className="relative w-20 h-20 md:w-24 md:h-24">
+							<div className="relative w-48 h-32 md:w-64 md:h-40 bg-white rounded-lg  border-gray-100 p-4 flex items-center justify-center">
 								<Image
-									// src={"next.svg"}
 									src={client.logo}
 									alt={`${client.name} logo`}
 									fill
 									sizes="160px"
-									className="object-contain"
+									className="object-contain p-2"
+									style={{
+										maxWidth: "90%",
+										maxHeight: "90%",
+									}}
 								/>
 							</div>
 						</Link>
 					</div>
 				))}
-				{[...clients, ...clients].map((client, index) => (
+				{/* {[...clients, ...clients].map((client, index) => (
 					<div
 						key={`${client.name}-${index}`}
-						className="mx-2 md:mx-6 flex-shrink-0"
+						className="mx-1 md:mx-2 flex-shrink-0"
 					>
 						<Link href={client.url} target="_blank" rel="noopener noreferrer">
-							<div className="relative w-20 h-20 md:w-24 md:h-24">
+							<div className="relative w-52 h-32 md:w-64 md:h-40">
 								<Image
-									// src={"next.svg"}
 									src={client.logo}
 									alt={`${client.name} logo`}
 									fill
-									sizes="160px"
+									sizes="200px"
 									className="object-contain"
 								/>
 							</div>
 						</Link>
 					</div>
-				))}
+				))} */}
 			</div>
 		</div>
 	);

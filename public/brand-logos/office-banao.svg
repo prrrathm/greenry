@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" fill="none">
+  <rect width="300" height="100" fill="white"/>
+  <rect x="50" y="30" width="30" height="40" fill="#ff6b35" rx="5"/>
+  <rect x="55" y="35" width="20" height="5" fill="white"/>
+  <rect x="55" y="42" width="20" height="5" fill="white"/>
+  <rect x="55" y="49" width="20" height="5" fill="white"/>
+  <rect x="55" y="56" width="20" height="5" fill="white"/>
+  <text x="150" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ff6b35">Office</text>
+  <text x="150" y="60" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#ff6b35">Banao</text>
+</svg>

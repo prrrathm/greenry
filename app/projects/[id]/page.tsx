@@ -36,8 +36,71 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 		notFound();
 	}
 
+	const projectJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "CreativeWork",
+		"name": project.title,
+		"description": project.description,
+		"image": `https://evergreenry.com${project.image}`,
+		"dateCreated": project.year,
+		"creator": {
+			"@type": "Organization",
+			"name": "Evergreenry",
+			"url": "https://evergreenry.com"
+		},
+		"client": {
+			"@type": "Organization", 
+			"name": project.client
+		},
+		"locationCreated": {
+			"@type": "Place",
+			"name": project.location
+		},
+		"about": project.services,
+		"result": project.results,
+		"additionalType": "Case Study",
+		"url": `https://evergreenry.com/projects/${project.id}`,
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": `https://evergreenry.com/projects/${project.id}`
+		}
+	};
+
+	const breadcrumbJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Home",
+				"item": "https://evergreenry.com"
+			},
+			{
+				"@type": "ListItem", 
+				"position": 2,
+				"name": "Projects",
+				"item": "https://evergreenry.com/projects"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": project.title,
+				"item": `https://evergreenry.com/projects/${project.id}`
+			}
+		]
+	};
+
 	return (
 		<div className="min-h-screen mt-32">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+			/>
 			{/* Navigation */}
 			<div className="container mx-auto px-4 py-6">
 				{/* Hero Section */}
@@ -237,12 +300,35 @@ export async function generateMetadata({ params }: ProjectPageProps) {
 	}
 
 	return {
-		title: `${project.title} - ${project.client}`,
-		description: project.description,
+		title: `${project.title} - ${project.client} | Evergreenry Case Study`,
+		description: `${project.description} See how Evergreenry transformed ${project.client}'s ${project.location} workspace with our biophilic design solutions in ${project.year}.`,
+		keywords: [
+			`${project.client} project`,
+			`${project.location} office plants`,
+			`${project.title.toLowerCase()}`,
+			...project.services.map(service => service.toLowerCase()),
+			"corporate plant installation case study",
+			"biophilic design transformation"
+		],
 		openGraph: {
-			title: project.title,
-			description: project.description,
-			images: [project.image],
+			title: `${project.title} - ${project.client} Case Study | Evergreenry`,
+			description: `See how Evergreenry transformed ${project.client}'s workspace with biophilic design solutions in ${project.location}.`,
+			images: [
+				{
+					url: `https://evergreenry.com${project.image}`,
+					width: 1200,
+					height: 630,
+					alt: `${project.title} - ${project.client} transformation by Evergreenry`,
+				}
+			],
+			url: `https://evergreenry.com/projects/${project.id}`,
+			type: "article",
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: `${project.title} - ${project.client} Case Study | Evergreenry`,
+			description: `See how Evergreenry transformed ${project.client}'s workspace with biophilic design solutions.`,
+			images: [`https://evergreenry.com${project.image}`],
 		},
 	};
 }

@@ -152,7 +152,11 @@ export default function Services() {
 											<div className="text-lg sm:text-xl">{service.title}</div>
 										</div>
 
-										<Link href="/services">
+										<Link 
+											href="/services"
+											aria-label={`Learn more about ${service.title} services - Professional plant installation and maintenance`}
+											title={`Discover our ${service.title.toLowerCase()} services and how we can transform your space`}
+										>
 											<Button size={"sm"} className="border bg-primary hover:bg-primary cursor-pointer font-semibold flex gap-2 px-3 py-2 text-sm sm:text-xs transition-all duration-300 w-full sm:w-auto">
 												Learn More
 												<ArrowRight className="h-2 w-2" />

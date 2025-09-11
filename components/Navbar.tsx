@@ -10,6 +10,18 @@ import NavMobileDrawer from "./NavMobileDrawer";
 // import PhoneDropDown from "./Phone";
 import Image from "next/image";
 
+const getNavDescription = (label: string): string => {
+	const descriptions: Record<string, string> = {
+		"Home": "Discover premium plant solutions for your office and home spaces",
+		"Services": "Professional plant installation, maintenance, and consulting services",
+		"Projects": "View our portfolio of office and home plant transformations",
+		"Blogs": "Plant care tips, workspace design ideas, and green living insights",
+		"About": "Learn about Evergreenry's mission and plant expertise",
+		"Contact": "Get in touch for plant consultation and service inquiries"
+	};
+	return descriptions[label] || `Navigate to ${label} section`;
+};
+
 export const NavBar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 
@@ -48,6 +60,8 @@ export const NavBar = () => {
 			{/* Logo */}
 			<Link
 				href={"/"}
+				aria-label="Evergreenry home page - Premium plant solutions for offices and homes"
+				title="Return to Evergreenry homepage"
 				className={cn(
 					"font-black text-lg md:text-xl flex items-center",
 					isScrolled ? "text-white" : "text-white",
@@ -68,6 +82,8 @@ export const NavBar = () => {
 					<Link
 						key={iter}
 						href={item.link}
+						aria-label={`Navigate to ${item.label} page - ${getNavDescription(item.label)}`}
+						title={getNavDescription(item.label)}
 						className={cn(
 							" transition-colors duration-200",
 							isScrolled ? "text-white hover:text-secondary" : "text-secondary hover:text-white",
@@ -84,6 +100,8 @@ export const NavBar = () => {
 				</div> */}
 				<Link
 					href="tel:+919891347119"
+					aria-label="Call Evergreenry North Office at +91 9891347119 for plant consultation and services"
+					title="Call us for immediate plant consultation"
 					className={cn(
 						"group inline-flex items-center justify-center cursor-pointer text-white",
 						// isScrolled ? "text-white" : "text-primary",
@@ -102,6 +120,8 @@ export const NavBar = () => {
 				</Link>
 				<Link
 					href="mailto:green@evergreenry.com"
+					aria-label="Email Evergreenry at green@evergreenry.com for general inquiries and plant services"
+					title="Send us an email for detailed plant consultation"
 					className={cn(
 						"group inline-flex items-center text-white",
 						// isScrolled ? "text-white" : "text-primary",

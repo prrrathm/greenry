@@ -24,6 +24,18 @@ import {
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+const getNavDescription = (label: string): string => {
+	const descriptions: Record<string, string> = {
+		"Home": "Discover premium plant solutions for your office and home spaces",
+		"Services": "Professional plant installation, maintenance, and consulting services",
+		"Projects": "View our portfolio of office and home plant transformations",
+		"Blogs": "Plant care tips, workspace design ideas, and green living insights",
+		"About": "Learn about Evergreenry's mission and plant expertise",
+		"Contact": "Get in touch for plant consultation and service inquiries"
+	};
+	return descriptions[label] || `Navigate to ${label} section`;
+};
+
 export default function NavMobileDrawer({
 	navLinks,
 	isScrolled,
@@ -67,29 +79,41 @@ export default function NavMobileDrawer({
 								whileHover={{ scale: 1.05 }}
 								className="text-gray-800 font-bold hover:text-primary transition-colors duration-200 text-xl text-center w-full"
 							>
-								<Link href={item.link}>
+								<Link 
+									href={item.link}
+									aria-label={`Navigate to ${item.label} page - ${getNavDescription(item.label)}`}
+									title={getNavDescription(item.label)}
+								>
 									<DrawerClose>{item.label}</DrawerClose>
 								</Link>
 							</motion.div>
 						))}
 					</div>
 					<div className="mt-6 flex justify-center items-center gap-4 w-full">
-						<Facebook
-							fill="#1e2939"
-							className="h-6 w-6 text-gray-800 cursor-pointer transition-colors"
-						/>
-						<Twitter
-							fill="#1e2939"
-							className="h-6 w-6 text-gray-800 cursor-pointer transition-colors"
-						/>
-						<Instagram
-							fill="#1e2939"
-							className="h-6 w-6 text-gray-200 hover:text-gray-800 cursor-pointer transition-colors"
-						/>
-						<Linkedin
-							fill="#1e2939"
-							className="h-6 w-6 text-gray-800 cursor-pointer transition-colors"
-						/>
+						<Link href="https://facebook.com/evergreenry" aria-label="Follow Evergreenry on Facebook for plant tips and updates" title="Visit our Facebook page">
+							<Facebook
+								fill="#1e2939"
+								className="h-6 w-6 text-gray-800 cursor-pointer transition-colors"
+							/>
+						</Link>
+						<Link href="https://twitter.com/evergreenry" aria-label="Follow Evergreenry on Twitter for latest plant news" title="Visit our Twitter profile">
+							<Twitter
+								fill="#1e2939"
+								className="h-6 w-6 text-gray-800 cursor-pointer transition-colors"
+							/>
+						</Link>
+						<Link href="https://instagram.com/evergreenry" aria-label="Follow Evergreenry on Instagram for plant inspiration and project photos" title="Visit our Instagram profile">
+							<Instagram
+								fill="#1e2939"
+								className="h-6 w-6 text-gray-200 hover:text-gray-800 cursor-pointer transition-colors"
+							/>
+						</Link>
+						<Link href="https://linkedin.com/company/evergreenry" aria-label="Connect with Evergreenry on LinkedIn for business updates" title="Visit our LinkedIn company page">
+							<Linkedin
+								fill="#1e2939"
+								className="h-6 w-6 text-gray-800 cursor-pointer transition-colors"
+							/>
+						</Link>
 					</div>
 				</div>
 			</DrawerContent>
