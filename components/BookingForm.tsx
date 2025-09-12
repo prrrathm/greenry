@@ -116,37 +116,41 @@ export default function BookingFormBeta() {
 								<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 									<div className="grid md:grid-cols-2 gap-4">
 										<div className="space-y-2">
-											<label className="text-sm font-medium text-gray-700">
+											<label htmlFor="booking-name" className="text-sm font-medium text-gray-700">
 												Full Name *
 											</label>
 											<div className="relative">
-												<User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+												<User className="absolute left-3 top-3 h-4 w-4 text-gray-400" aria-hidden="true" />
 												<Input
+													id="booking-name"
 													{...register("name")}
 													placeholder="John Doe"
 													className="pl-10"
+													aria-describedby={errors.name ? "booking-name-error" : undefined}
 												/>
 												{errors.name && (
-													<p className="text-red-500 text-xs mt-1">
+													<p id="booking-name-error" className="text-red-500 text-xs mt-1" role="alert">
 														{errors.name.message}
 													</p>
 												)}
 											</div>
 										</div>
 										<div className="space-y-2">
-											<label className="text-sm font-medium text-gray-700">
+											<label htmlFor="booking-email" className="text-sm font-medium text-gray-700">
 												Email *
 											</label>
 											<div className="relative">
-												<Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+												<Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" aria-hidden="true" />
 												<Input
+													id="booking-email"
 													{...register("email")}
 													type="email"
 													placeholder="john@company.com"
 													className="pl-10"
+													aria-describedby={errors.email ? "booking-email-error" : undefined}
 												/>
 												{errors.email && (
-													<p className="text-red-500 text-xs mt-1">
+													<p id="booking-email-error" className="text-red-500 text-xs mt-1" role="alert">
 														{errors.email.message}
 													</p>
 												)}
@@ -156,29 +160,32 @@ export default function BookingFormBeta() {
 
 									<div className="grid md:grid-cols-2 gap-4">
 										<div className="space-y-2">
-											<label className="text-sm font-medium text-gray-700">
+											<label htmlFor="booking-phone" className="text-sm font-medium text-gray-700">
 												Phone *
 											</label>
 											<div className="relative">
-												<Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+												<Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" aria-hidden="true" />
 												<Input
+													id="booking-phone"
 													{...register("phone")}
 													type="tel"
 													placeholder="+91 9891347119"
 													className="pl-10"
+													aria-describedby={errors.phone ? "booking-phone-error" : undefined}
 												/>
 												{errors.phone && (
-													<p className="text-red-500 text-xs mt-1">
+													<p id="booking-phone-error" className="text-red-500 text-xs mt-1" role="alert">
 														{errors.phone.message}
 													</p>
 												)}
 											</div>
 										</div>
 										<div className="space-y-2">
-											<label className="text-sm font-medium text-gray-700">
+											<label htmlFor="booking-company" className="text-sm font-medium text-gray-700">
 												Company
 											</label>
 											<Input
+												id="booking-company"
 												{...register("company")}
 												placeholder="Your Company"
 											/>
@@ -187,33 +194,36 @@ export default function BookingFormBeta() {
 
 									<div className="grid grid-cols-2 gap-4">
 										<div className="space-y-2">
-											<label className="text-sm font-medium text-gray-700">
+											<label htmlFor="booking-service-type" className="text-sm font-medium text-gray-700">
 												Service Type *
 											</label>
 											<select
+												id="booking-service-type"
 												{...register("spaceType")}
 												className="w-full h-9 px-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+												aria-describedby={errors.spaceType ? "booking-service-type-error" : undefined}
 											>
-												<option disabled>Select Service type</option>
+												<option value="" disabled>Select Service type</option>
 												{services.map((item, iter) => (
-													<option key={iter} value="office">
+													<option key={iter} value={item.toLowerCase().replace(/\s+/g, '-')}>
 														{item}
 													</option>
 												))}
 											</select>
 											{errors.spaceType && (
-												<p className="text-red-500 text-xs mt-1">
+												<p id="booking-service-type-error" className="text-red-500 text-xs mt-1" role="alert">
 													{errors.spaceType.message}
 												</p>
 											)}
 										</div>
 										<div className="space-y-2">
-											<label className="text-sm font-medium text-gray-700">
+											<label htmlFor="booking-preferred-date" className="text-sm font-medium text-gray-700">
 												Preferred Date
 											</label>
 											<div className="relative">
-												<Calendar className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+												<Calendar className="absolute left-3 top-3 h-4 w-4 text-gray-400" aria-hidden="true" />
 												<Input
+													id="booking-preferred-date"
 													{...register("preferredDate")}
 													type="date"
 													className="pl-10"
@@ -222,10 +232,11 @@ export default function BookingFormBeta() {
 										</div>
 									</div>
 									<div className="space-y-2">
-										<label className="text-sm font-medium text-gray-700">
+										<label htmlFor="booking-message" className="text-sm font-medium text-gray-700">
 											Additional Information
 										</label>
 										<Textarea
+											id="booking-message"
 											{...register("message")}
 											placeholder="Tell us about your space, specific requirements, or any questions you have..."
 											rows={4}
@@ -234,8 +245,9 @@ export default function BookingFormBeta() {
 
 									<Button
 										type="submit"
+										aria-label={isSubmitting ? "Submitting consultation request, please wait" : "Submit consultation request form"}
 										className={cn(
-											"w-full bg-primary hover:bg-primary text-white py-3",
+											"w-full bg-primary hover:bg-primary text-white py-3 min-h-[44px] min-w-[44px]",
 											isSubmitting ? "cursor-progress" : "cursor-pointer",
 										)}
 										disabled={isSubmitting}

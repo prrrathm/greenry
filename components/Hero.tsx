@@ -71,14 +71,21 @@ export default function Hero() {
 				{backgroundImages.map((_, index) => (
 					<button
 						key={index}
-						className={`w-3 h-3 rounded-full transition-all duration-300 ${
+						className={`w-3 h-3 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
 							index === currentImageIndex 
 								? 'bg-secondary scale-110' 
 								: 'bg-white/50 hover:bg-white/70'
 						}`}
 						onClick={() => setCurrentImageIndex(index)}
 						aria-label={`Go to slide ${index + 1}`}
-					/>
+						title={`Go to slide ${index + 1}`}
+					>
+						<span className={`w-3 h-3 rounded-full ${
+							index === currentImageIndex 
+								? 'bg-white' 
+								: 'bg-current'
+						}`} />
+					</button>
 				))}
 			</div>
 
@@ -90,11 +97,11 @@ export default function Hero() {
 							<div className="inline-flex items-center px-4 py-2 bg-secondary text-primary rounded-full text-sm font-medium">
 								🌱 Transform Your Environment
 							</div>
-							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-200 leading-tight letter ">
+							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
 								Create a <span className="">Thriving</span>{" "}
 								<span className="text-secondary relative">Environment</span>
 							</h1>
-							<p className="text-sm md:text-xl text-gray-100 max-w-2xl">
+							<p className="text-sm md:text-xl text-white max-w-2xl">
 								Transform your workspace and home with our premium plant
 								solutions. Boost productivity, reduce stress, and create
 								healthier environments with our expert-curated green companions.
@@ -147,19 +154,19 @@ export default function Hero() {
 						<div className="grid grid-cols-3 gap-8 pt-8 md:border-t border-gray-200">
 							<div className="text-center lg:text-left">
 								<div className="text-2xl font-bold text-secondary">500+</div>
-								<div className="text-sm text-gray-200 whitespace-nowrap">
+								<div className="text-sm text-white whitespace-nowrap">
 									Happy Clients
 								</div>
 							</div>
 							<div className="text-center lg:text-left">
 								<div className="text-2xl font-bold text-secondary">50k+</div>
-								<div className="text-sm text-gray-200 whitespace-nowrap">
+								<div className="text-sm text-white whitespace-nowrap">
 									Plants Delivered
 								</div>
 							</div>
 							<div className="text-center lg:text-left">
 								<div className="text-2xl font-bold text-secondary">100%</div>
-								<div className="text-sm text-gray-200 whitespace-nowrap">
+								<div className="text-sm text-white whitespace-nowrap">
 									Satisfaction Rate
 								</div>
 							</div>

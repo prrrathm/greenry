@@ -134,9 +134,9 @@ const ProjectCarouselBeta: React.FC = () => {
 			{/* Desktop View */}
 			<div className="flex-col px-10 py-20 gap-6 hidden md:flex">
 				<div className="text-2xl sm:text-4xl font-semibold flex justify-between items-end">
-					<div className="font-roboto font-extrabold text-gray-700 text-lg md:text-4xl">
+					<h2 className="font-roboto font-extrabold text-gray-700 text-lg md:text-4xl">
 						Some of our Recent Projects
-					</div>
+					</h2>
 					<Link
 						href={"/projects"}
 						aria-label="View all Evergreenry projects - Complete portfolio of office and home plant transformations"
@@ -208,11 +208,16 @@ const ProjectCarouselBeta: React.FC = () => {
 							<button
 								key={index}
 								onClick={() => emblaApi?.scrollTo(index)}
-								className={`w-2 h-2 rounded-full transition-all duration-300 ${
+								className={`w-2 h-2 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
 									index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
 								}`}
 								aria-label={`Go to slide ${index + 1}`}
-							/>
+								title={`Go to slide ${index + 1}`}
+							>
+								<span className={`w-2 h-2 rounded-full ${
+									index === currentIndex ? "bg-white" : "bg-current"
+								}`} />
+							</button>
 						))}
 				</div>
 			</div>
@@ -220,9 +225,9 @@ const ProjectCarouselBeta: React.FC = () => {
 			{/* Mobile View */}
 			<div className="md:hidden px-2 py-12">
 				<div className="text-center mb-8">
-					<div className="font-roboto text-gray-700 text-2xl font-extrabold mb-2">
+					<h2 className="font-roboto text-gray-700 text-2xl font-extrabold mb-2">
 						Our Recent Projects
-					</div>
+					</h2>
 					<div className="text-sm cursor-pointer font-semibold underline text-primary">
 						See all projects
 					</div>
@@ -288,11 +293,16 @@ const ProjectCarouselBeta: React.FC = () => {
 								<button
 									key={index}
 									onClick={() => emblaApi?.scrollTo(index)}
-									className={`w-2 h-2 rounded-full transition-all duration-300 ${
+									className={`w-2 h-2 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
 										index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
 									}`}
 									aria-label={`Go to slide ${index + 1}`}
-								/>
+									title={`Go to slide ${index + 1}`}
+								>
+									<span className={`w-2 h-2 rounded-full ${
+										index === currentIndex ? "bg-white" : "bg-current"
+									}`} />
+								</button>
 							))}
 					</div>
 				</div>

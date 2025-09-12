@@ -24,20 +24,21 @@ export default function CTA() {
 				<div className="flex px-2 gap-4 md:gap-4 justify-center items-center md:w-max w-full">
 					<Button
 						onClick={scrollToBooking}
-						// size="lg"
-						className="bg-white text-primary hover:bg-gray-100 py-4 font-bold text-sm md:text-base w-full"
+						aria-label="Book free consultation - Schedule your plant transformation visit"
+						title="Click to book your free consultation and transform your space with plants"
+						className="bg-white text-primary hover:bg-gray-100 py-4 font-bold text-sm md:text-base w-full min-h-[44px]"
 					>
 						Book Free Consultation
-						<ArrowUp className="h-5 w-5" />
+						<ArrowUp className="h-5 w-5" aria-hidden="true" />
 					</Button>
 					<div className="font-semibold text-sm md:text-xl">or</div>
 					<Button
 						variant="outline"
-						// size="lg"
-						className="border-white text-black hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit rounded-full"
+						aria-label="Call us at +91 9891347119 for immediate assistance"
+						title="Click to call our plant experts at +91 9891347119"
+						className="border-white text-black hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit rounded-full min-w-[44px] min-h-[44px]"
 					>
-						<Phone fill="#26420f" className="h-5 w-5 text-primary" />
-						{/* Call Now : (+91) 123-4567 */}
+						<Phone fill="#26420f" className="h-5 w-5 text-primary" aria-hidden="true" />
 					</Button>
 				</div>
 
