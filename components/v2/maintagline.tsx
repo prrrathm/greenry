@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const MainTagline = () => {
 	return (
-		<section className="main-tagline-section bg-[var(--color-background-primary)] py-24 md:py-28">
+		<section className="main-tagline-section bg-[var(--color-background-primary)] pt-48 pb-24">
 			<div className="flex w-full items-center justify-center">
 				<div className="mx-auto w-full text-center lg:w-10/12 xl:w-8/12">
 					<motion.h3

@@ -21,9 +21,62 @@ interface Service {
 	description: string;
 	image: string;
 	features: string[];
-	bgColor: string;
 	link: string;
 }
+
+// Function to generate progressively lighter shades from the primary color
+const generateCardColors = (primaryColor: string, totalCards: number) => {
+	const colors = [];
+	for (let i = 0; i < totalCards; i++) {
+		// Convert hex to RGB
+		const hex = primaryColor.replace("#", "");
+		const r = parseInt(hex.substr(0, 2), 16);
+		const g = parseInt(hex.substr(2, 2), 16);
+		const b = parseInt(hex.substr(4, 2), 16);
+
+		// Calculate lightness factor (0 for first card, increasing for subsequent cards)
+		const lightenFactor = i * 0.15; // Adjust this value to control how much lighter each card gets
+
+		// Lighten the color
+		const newR = Math.min(255, Math.round(r + (255 - r) * lightenFactor));
+		const newG = Math.min(255, Math.round(g + (255 - g) * lightenFactor));
+		const newB = Math.min(255, Math.round(b + (255 - b) * lightenFactor));
+
+		colors.push(`rgb(${newR}, ${newG}, ${newB})`);
+	}
+	return colors;
+};
+
+// Function to determine if text should be light or dark based on background
+const getTextColor = (index: number) => {
+	// For darker cards (index 0-2), use white text
+	// For lighter cards (index 3-5), use dark text
+	return index < 3 ? "#ffffff" : "#1a1a1a";
+};
+
+// Function to get icon and button colors
+const getAccentColors = (index: number) => {
+	if (index < 3) {
+		return {
+			iconColor: "#ffffff",
+			buttonBg: "#ffffff",
+			buttonText: "#1a1a1a",
+			buttonHover: "rgba(255, 255, 255, 0.9)",
+			hrColor: "rgba(255, 255, 255, 0.3)",
+		};
+	} else {
+		return {
+			iconColor: "#1a1a1a",
+			buttonBg: "#1a1a1a",
+			buttonText: "#ffffff",
+			buttonHover: "rgba(26, 26, 26, 0.8)",
+			hrColor: "rgba(26, 26, 26, 0.2)",
+		};
+	}
+};
+
+const primaryColor = "#26420f";
+const cardColors = generateCardColors(primaryColor, 6);
 
 const services: Service[] = [
 	{
@@ -38,7 +91,6 @@ const services: Service[] = [
 			"Professional aesthetics",
 			"Ongoing maintenance",
 		],
-		bgColor: "bg-[#1e3a5f]",
 		link: "/services",
 	},
 	{
@@ -53,7 +105,6 @@ const services: Service[] = [
 			"Seasonal updates",
 			"Health benefits",
 		],
-		bgColor: "bg-[#2d8659]",
 		link: "/services",
 	},
 	{
@@ -68,7 +119,6 @@ const services: Service[] = [
 			"Brand enhancement",
 			"Member satisfaction",
 		],
-		bgColor: "bg-[#ec8857]",
 		link: "/services",
 	},
 	{
@@ -83,7 +133,6 @@ const services: Service[] = [
 			"Custom arrangements",
 			"Professional service",
 		],
-		bgColor: "bg-[#8b5a3c]",
 		link: "/services",
 	},
 	{
@@ -98,7 +147,6 @@ const services: Service[] = [
 			"Custom design layouts",
 			"Perfect for meditation areas",
 		],
-		bgColor: "bg-[#4a6741]",
 		link: "/services",
 	},
 	{
@@ -113,7 +161,6 @@ const services: Service[] = [
 			"Low upkeep",
 			"Unique decorative piece",
 		],
-		bgColor: "bg-[#6366f1]",
 		link: "/services",
 	},
 ];
@@ -126,29 +173,42 @@ const ServiceCard = ({
 	index: number;
 }) => {
 	// top offset for sticky stacking
-	const topBase = 200;
-	const step = 40;
+	const topBase = 120;
+	const step = 20;
 	const topOffset = topBase + index * step;
+
+	const textColor = getTextColor(index);
+	const accentColors = getAccentColors(index);
 
 	const CardContent = (
 		<motion.div
-			className={`w-full grid grid-cols-1 md:grid-cols-2 ${service.bgColor} border border-[#303133] rounded-3xl min-h-[27.5rem] md:sticky md:overflow-hidden mt-5 relative`}
-			style={{ top: `${topOffset}px`, zIndex: 100 + index }}
+			className="w-full grid grid-cols-1 md:grid-cols-2 border border-[#303133] rounded-3xl min-h-[27.5rem] md:sticky md:overflow-hidden mt-5 relative"
+			style={{
+				backgroundColor: cardColors[index],
+				top: `${topOffset}px`,
+				zIndex: 100 + index,
+			}}
 			initial={{ opacity: 0, y: 24 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.3 }}
-			transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.08 }}
+			transition={{ duration: 0.55, ease: "easeOut" }}
 		>
 			{/* TEXT */}
-			<div className="p-8 md:p-12 text-white flex flex-col">
+			<div className="p-8 md:p-12 flex flex-col" style={{ color: textColor }}>
 				<div className="flex items-center gap-3 mb-3">
-					<service.icon className="h-8 w-8 text-white" />
+					<service.icon
+						className="h-8 w-8"
+						style={{ color: accentColors.iconColor }}
+					/>
 					<h3 className="text-2xl lg:text-3xl font-semibold">
 						{service.title}
 					</h3>
 				</div>
-				<hr className="border-t border-white/30 my-4" />
-				<p className="text-base text-white/90 leading-relaxed mb-6">
+				<hr
+					className="border-t my-4"
+					style={{ borderColor: accentColors.hrColor }}
+				/>
+				<p className="text-base leading-relaxed mb-6" style={{ opacity: 0.9 }}>
 					{service.description}
 				</p>
 				<div className="mt-auto">
@@ -156,7 +216,20 @@ const ServiceCard = ({
 						href={service.link}
 						aria-label={`Learn more about ${service.title} services`}
 					>
-						<Button className="bg-white text-gray-900 hover:bg-white/90 font-semibold flex gap-2 px-6 py-3">
+						<Button
+							className="font-semibold flex gap-2 px-6 py-3 transition-colors duration-200"
+							style={{
+								backgroundColor: accentColors.buttonBg,
+								color: accentColors.buttonText,
+							}}
+							onMouseEnter={(e) => {
+								e.currentTarget.style.backgroundColor =
+									accentColors.buttonHover;
+							}}
+							onMouseLeave={(e) => {
+								e.currentTarget.style.backgroundColor = accentColors.buttonBg;
+							}}
+						>
 							Learn More
 							<ArrowRight className="h-4 w-4" />
 						</Button>
@@ -256,7 +329,7 @@ const Services = () => {
 				}
 			`}</style>
 			<div className="bg-[var(--color-background-primary)] text-amber-100 text-center py-[20vh] px-5 md:px-20">
-				<div className="max-w-6xl mx-auto text-center sticky top-20">
+				<div className="max-w-6xl mx-auto text-center">
 					<h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
 						Our Services
 					</h2>

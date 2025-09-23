@@ -100,10 +100,10 @@ const BookingForm = ({
 				<DialogTrigger asChild>
 					<Button
 						className={cn(
-							"hidden md:block px-6 py-2 cursor-pointer border border-black ",
+							"hidden md:block px-6 py-2 cursor-pointer ",
 							isScrolled
-								? "bg-yellow-400 hover:bg-gray-100 text-black"
-								: "bg-primary hover:bg-primary text-white",
+								? "bg-amber-400 hover:bg-amber-600 text-black"
+								: "bg-amber-600 hover:bg-amber-700 text-white",
 						)}
 					>
 						{triggerText}
@@ -182,7 +182,7 @@ const BookingForm = ({
 					<DialogFooter>
 						<Button
 							type="submit"
-							className="w-full bg-primary hover:bg-primary text-white px-6 py-2 cursor-pointer"
+							className="w-full bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 cursor-pointer"
 							disabled={isSubmitting}
 						>
 							{isSubmitting ? "Sending..." : "Send Enquiry"}

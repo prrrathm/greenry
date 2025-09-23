@@ -40,37 +40,26 @@ export default function Hero() {
 	const [isMainTaglineVisible, setIsMainTaglineVisible] = useState(false);
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.target.classList.contains("main-tagline-section")) {
-						setIsMainTaglineVisible(entry.isIntersecting);
-					}
-				});
-			},
-			{
-				threshold: 0.3, // Trigger when 30% of MainTagline is visible
-				rootMargin: "0px 0px -50px 0px", // Trigger slightly before fully visible
-			},
-		);
+		const handleScroll = () => {
+			const scrollTop = window.scrollY || document.documentElement.scrollTop;
+			setIsMainTaglineVisible(scrollTop >= 150);
+		};
 
-		// Find and observe the MainTagline component
-		const mainTaglineElement = document.querySelector(".main-tagline-section");
-		if (mainTaglineElement) {
-			observer.observe(mainTaglineElement);
-		}
+		// Set initial state
+		handleScroll();
+
+		// Add scroll event listener
+		window.addEventListener('scroll', handleScroll);
 
 		return () => {
-			if (mainTaglineElement) {
-				observer.unobserve(mainTaglineElement);
-			}
+			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 
 	return (
 		<section
 			className={cn(
-				`relative pt-32 pb-20 min-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary via-white to-secondary/40 duration-400 ${
+				`pt-32 pb-20 min-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary via-white to-secondary/40 duration-400 sticky top-0 ${
 					isMainTaglineVisible ? "opacity-0" : "opacity-100"
 				}`,
 			)}

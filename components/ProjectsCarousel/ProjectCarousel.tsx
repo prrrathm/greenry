@@ -18,29 +18,69 @@ interface Project {
 	description: string;
 	services: string[];
 	results: string[];
-	bgColor: string;
 	link: string;
 }
 
-// Add background colors to featured projects
+// Function to generate progressively lighter shades from the primary color
+const generateCardColors = (primaryColor: string, totalCards: number) => {
+	const colors = [];
+	for (let i = 0; i < totalCards; i++) {
+		// Convert hex to RGB
+		const hex = primaryColor.replace("#", "");
+		const r = parseInt(hex.substr(0, 2), 16);
+		const g = parseInt(hex.substr(2, 2), 16);
+		const b = parseInt(hex.substr(4, 2), 16);
+
+		// Calculate lightness factor (0 for first card, increasing for subsequent cards)
+		const lightenFactor = i * 0.15; // Adjust this value to control how much lighter each card gets
+
+		// Lighten the color
+		const newR = Math.min(255, Math.round(r + (255 - r) * lightenFactor));
+		const newG = Math.min(255, Math.round(g + (255 - g) * lightenFactor));
+		const newB = Math.min(255, Math.round(b + (255 - b) * lightenFactor));
+
+		colors.push(`rgb(${newR}, ${newG}, ${newB})`);
+	}
+	return colors;
+};
+
+// Function to determine if text should be light or dark based on background
+const getTextColor = (index: number) => {
+	// For darker cards (index 0-2), use white text
+	// For lighter cards (index 3-5), use dark text
+	return index < 3 ? "#ffffff" : "#1a1a1a";
+};
+
+// Function to get icon and button colors
+const getAccentColors = (index: number) => {
+	if (index < 3) {
+		return {
+			buttonBg: "#ffffff",
+			buttonText: "#1a1a1a",
+			buttonHover: "rgba(255, 255, 255, 0.9)",
+			hrColor: "rgba(255, 255, 255, 0.3)",
+		};
+	} else {
+		return {
+			buttonBg: "#1a1a1a",
+			buttonText: "#ffffff",
+			buttonHover: "rgba(26, 26, 26, 0.8)",
+			hrColor: "rgba(26, 26, 26, 0.2)",
+		};
+	}
+};
+
+const primaryColor = "#26420f";
+const cardColors = generateCardColors(primaryColor, 6);
+
+// Get featured projects
 const featuredProjects: Project[] = projects
 	.sort((a, b) => Number(b.year) - Number(a.year))
 	.slice(0, 6)
-	.map((project, index) => {
-		const colors = [
-			"bg-[#1e3a5f]", // Navy Blue
-			"bg-[#2d8659]", // Forest Green
-			"bg-[#ec8857]", // Warm Orange
-			"bg-[#8b5a3c]", // Earthy Brown
-			"bg-[#4a6741]", // Sage Green
-			"bg-[#6366f1]", // Indigo Purple
-		];
-		return {
-			...project,
-			bgColor: colors[index % colors.length],
-			link: `/projects/${project.id}`,
-		};
-	});
+	.map((project) => ({
+		...project,
+		link: `/projects/${project.id}`,
+	}));
 
 const ProjectCard = ({
 	project,
@@ -50,29 +90,39 @@ const ProjectCard = ({
 	index: number;
 }) => {
 	// top offset for sticky stacking
-	const topBase = 200;
-	const step = 40;
+	const topBase = 120;
+	const step = 20;
 	const topOffset = topBase + index * step;
+
+	const textColor = getTextColor(index);
+	const accentColors = getAccentColors(index);
 
 	const CardContent = (
 		<motion.div
-			className={`w-full grid grid-cols-1 md:grid-cols-2 ${project.bgColor} border border-[#303133] rounded-3xl min-h-[27.5rem] md:sticky md:overflow-hidden mt-5 relative`}
-			style={{ top: `${topOffset}px`, zIndex: 100 + index }}
+			className="w-full grid grid-cols-1 md:grid-cols-2 border border-[#303133] rounded-3xl min-h-[27.5rem] md:sticky md:overflow-hidden mt-5 relative"
+			style={{
+				backgroundColor: cardColors[index],
+				top: `${topOffset}px`,
+				zIndex: 100 + index,
+			}}
 			initial={{ opacity: 0, y: 24 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.3 }}
-			transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.08 }}
+			transition={{ duration: 0.55, ease: "easeOut" }}
 		>
 			{/* TEXT */}
-			<div className="p-8 md:p-12 text-white flex flex-col">
+			<div className="p-8 md:p-12 flex flex-col" style={{ color: textColor }}>
 				<h3 className="text-2xl lg:text-3xl font-semibold mb-3">
 					{project.title}
 				</h3>
-				<div className="text-sm text-white/80 mb-2">
+				<div className="text-sm mb-2" style={{ opacity: 0.8 }}>
 					{project.client} • {project.location}
 				</div>
-				<hr className="border-t border-white/30 my-4" />
-				<p className="text-base text-white/90 leading-relaxed mb-6">
+				<hr
+					className="border-t my-4"
+					style={{ borderColor: accentColors.hrColor }}
+				/>
+				<p className="text-base leading-relaxed mb-6" style={{ opacity: 0.9 }}>
 					{project.description}
 				</p>
 				<div className="mt-auto">
@@ -80,7 +130,20 @@ const ProjectCard = ({
 						href={project.link}
 						aria-label={`View ${project.title} project case study`}
 					>
-						<Button className="bg-white text-gray-900 hover:bg-white/90 font-semibold flex gap-2 px-6 py-3">
+						<Button
+							className="font-semibold flex gap-2 px-6 py-3 transition-colors duration-200"
+							style={{
+								backgroundColor: accentColors.buttonBg,
+								color: accentColors.buttonText,
+							}}
+							onMouseEnter={(e) => {
+								e.currentTarget.style.backgroundColor =
+									accentColors.buttonHover;
+							}}
+							onMouseLeave={(e) => {
+								e.currentTarget.style.backgroundColor = accentColors.buttonBg;
+							}}
+						>
 							View Project
 							<ArrowRight className="h-4 w-4" />
 						</Button>
@@ -165,8 +228,7 @@ const ProjectCarouselBeta: React.FC = () => {
 						transform-origin: 50% 0%;
 						will-change: transform;
 
-						--duration: calc(var(--reverse-index0) * 1s);
-						--delay: calc(var(--index0) * 1s);
+				--duration: calc(var(--reverse-index0) * 1s);
 
 						animation: var(--duration) linear scale var(--delay) forwards;
 						animation-timeline: cards-element-scrolls-in-body;
@@ -180,7 +242,7 @@ const ProjectCarouselBeta: React.FC = () => {
 				}
 			`}</style>
 			<div className="bg-[var(--color-background-primary)] text-amber-100 text-center py-[20vh] px-5 md:px-20">
-				<div className="max-w-7xl mx-auto text-center sticky top-20">
+				<div className="max-w-7xl mx-auto text-center">
 					<h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
 						Recent Projects
 					</h2>
