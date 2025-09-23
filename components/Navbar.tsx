@@ -12,18 +12,19 @@ import Image from "next/image";
 
 const getNavDescription = (label: string): string => {
 	const descriptions: Record<string, string> = {
-		"Home": "Discover premium plant solutions for your office and home spaces",
-		"Services": "Professional plant installation, maintenance, and consulting services",
-		"Projects": "View our portfolio of office and home plant transformations",
-		"Blogs": "Plant care tips, workspace design ideas, and green living insights",
-		"About": "Learn about Evergreenry's mission and plant expertise",
-		"Contact": "Get in touch for plant consultation and service inquiries"
+		Home: "Discover premium plant solutions for your office and home spaces",
+		Services:
+			"Professional plant installation, maintenance, and consulting services",
+		Projects: "View our portfolio of office and home plant transformations",
+		Blogs: "Plant care tips, workspace design ideas, and green living insights",
+		About: "Learn about Evergreenry's mission and plant expertise",
+		Contact: "Get in touch for plant consultation and service inquiries",
 	};
 	return descriptions[label] || `Navigate to ${label} section`;
 };
 
 export const NavBar = () => {
-	const [isScrolled, setIsScrolled] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(true);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -49,12 +50,10 @@ export const NavBar = () => {
 	return (
 		<div
 			className={cn({
-				"fixed flex items-center justify-between z-50 px-4 sm:px-8 py-4 backdrop-blur transition-all duration-500":
+				"fixed flex items-center justify-between z-50 px-4 sm:px-8 py-4 backdrop-blur transition-all duration-500 inset-x-0 top-0":
 					true,
-				"bg-primary/90 drop-shadow-lg rounded-none inset-x-0 top-0 ":
-					isScrolled,
-				"rounded-xl bg-primary/90 inset-x-[5%] md:inset-x-1/6 top-8":
-					!isScrolled,
+				"bg-[var(--color-background-primary)]": isScrolled,
+				"bg-primary/10": !isScrolled,
 			})}
 		>
 			{/* Logo */}
@@ -64,7 +63,7 @@ export const NavBar = () => {
 				title="Return to Evergreenry homepage"
 				className={cn(
 					"font-black text-lg md:text-xl flex items-center",
-					isScrolled ? "text-white" : "text-white",
+					isScrolled ? "text-primary" : "text-white",
 				)}
 			>
 				<Image
@@ -82,11 +81,15 @@ export const NavBar = () => {
 					<Link
 						key={iter}
 						href={item.link}
-						aria-label={`Navigate to ${item.label} page - ${getNavDescription(item.label)}`}
+						aria-label={`Navigate to ${item.label} page - ${getNavDescription(
+							item.label,
+						)}`}
 						title={getNavDescription(item.label)}
 						className={cn(
 							" transition-colors duration-200",
-							isScrolled ? "text-white hover:text-secondary" : "text-secondary hover:text-white",
+							isScrolled
+								? "text-black hover:text-secondary"
+								: "text-secondary hover:text-white",
 						)}
 					>
 						{item.label}
@@ -104,17 +107,17 @@ export const NavBar = () => {
 					title="Call us for immediate plant consultation"
 					className={cn(
 						"group inline-flex items-center justify-center cursor-pointer text-white",
-						// isScrolled ? "text-white" : "text-primary",
+						isScrolled ? "text-primary" : "text-white",
 					)}
 				>
 					<Phone
-						// fill={isScrolled ? "#fff" : "#26420f"}
-						fill={"#fff"}
+						fill={isScrolled ? "#26420f" : "#fff"}
+						// fill={"#fff"}
 						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
 					/>
 					<PhoneCall
-						fill={"#fff"}
-						// fill={isScrolled ? "#fff" : "#26420f"}
+						// fill={"#fff"}
+						fill={isScrolled ? "#26420f" : "#fff"}
 						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
 					/>
 				</Link>
@@ -123,8 +126,8 @@ export const NavBar = () => {
 					aria-label="Email Evergreenry at green@evergreenry.com for general inquiries and plant services"
 					title="Send us an email for detailed plant consultation"
 					className={cn(
-						"group inline-flex items-center text-white",
-						// isScrolled ? "text-white" : "text-primary",
+						"group inline-flex items-center ",
+						isScrolled ? "text-primary" : "text-white",
 					)}
 				>
 					<Mail className="h-5 w-5 md:h-6 md:w-6 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90" />

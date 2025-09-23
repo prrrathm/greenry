@@ -1,12 +1,9 @@
 "use client";
 
-import {
-	Card,
-	CardContent,
-	// CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
 	ArrowRight,
@@ -17,11 +14,18 @@ import {
 	MountainSnow,
 	Globe,
 } from "lucide-react";
-import { motion } from "motion/react";
-import Link from "next/link";
-import Image from "next/image";
 
-const services = [
+interface Service {
+	icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+	title: string;
+	description: string;
+	image: string;
+	features: string[];
+	bgColor: string;
+	link: string;
+}
+
+const services: Service[] = [
 	{
 		icon: Sprout,
 		title: "Office Plants",
@@ -34,35 +38,38 @@ const services = [
 			"Professional aesthetics",
 			"Ongoing maintenance",
 		],
-		// price: "Starting from $299/month",
+		bgColor: "bg-[#1e3a5f]",
+		link: "/services",
 	},
 	{
 		icon: BrickWall,
 		title: "Green Walls",
 		image: "/projects/green-walls.jpeg",
 		description:
-			"Enhance your space with stunning green walls and vertical gardens that bring nature indoors. These living walls purify the air, reduce noise, and create a refreshing, stylish ambiance. Perfect for homes and offices, they require minimal maintenance. Ready to transform your space? Contact us below!",
+			"Enhance your space with stunning green walls and vertical gardens that bring nature indoors. These living walls purify the air, reduce noise, and create a refreshing, stylish ambiance. Perfect for homes and offices, they require minimal maintenance.",
 		features: [
 			"Personalized selection",
 			"Easy care guidance",
 			"Seasonal updates",
 			"Health benefits",
 		],
-		// price: "Starting from $149/month",
+		bgColor: "bg-[#2d8659]",
+		link: "/services",
 	},
 	{
 		icon: Flower,
 		title: "Moss Walls",
 		image: "/projects/moss-wall.jpeg",
 		description:
-			"Add elegance and tranquility to your space with premium moss walls. These maintenance-free, air-purifying installations enhance aesthetics while reducing stress and noise. A perfect blend of style and nature, they fit seamlessly into any setting. Want to bring this lush beauty to your space? Contact us below!",
+			"Add elegance and tranquility to your space with premium moss walls. These maintenance-free, air-purifying installations enhance aesthetics while reducing stress and noise. A perfect blend of style and nature, they fit seamlessly into any setting.",
 		features: [
 			"Flexible arrangements",
 			"Community benefits",
 			"Brand enhancement",
 			"Member satisfaction",
 		],
-		// price: "Starting from $199/month",
+		bgColor: "bg-[#ec8857]",
+		link: "/services",
 	},
 	{
 		icon: SprayCan,
@@ -76,10 +83,11 @@ const services = [
 			"Custom arrangements",
 			"Professional service",
 		],
-		// price: "Custom pricing",
+		bgColor: "bg-[#8b5a3c]",
+		link: "/services",
 	},
 	{
-		icon: MountainSnow, // replace with suitable icon
+		icon: MountainSnow,
 		title: "Zen Garden",
 		image: "/projects/zen-garden.jpeg",
 		description:
@@ -90,10 +98,11 @@ const services = [
 			"Custom design layouts",
 			"Perfect for meditation areas",
 		],
-		// price: "Starting from $249",
+		bgColor: "bg-[#4a6741]",
+		link: "/services",
 	},
 	{
-		icon: Globe, // replace with suitable icon
+		icon: Globe,
 		title: "Indoor Terrarium",
 		image: "/projects/terrarium.jpeg",
 		description:
@@ -104,76 +113,174 @@ const services = [
 			"Low upkeep",
 			"Unique decorative piece",
 		],
-		// price: "Starting from $99",
+		bgColor: "bg-[#6366f1]",
+		link: "/services",
 	},
 ];
 
-export default function Services() {
+const ServiceCard = ({
+	service,
+	index,
+}: {
+	service: Service;
+	index: number;
+}) => {
+	// top offset for sticky stacking
+	const topBase = 200;
+	const step = 40;
+	const topOffset = topBase + index * step;
+
+	const CardContent = (
+		<motion.div
+			className={`w-full grid grid-cols-1 md:grid-cols-2 ${service.bgColor} border border-[#303133] rounded-3xl min-h-[27.5rem] md:sticky md:overflow-hidden mt-5 relative`}
+			style={{ top: `${topOffset}px`, zIndex: 100 + index }}
+			initial={{ opacity: 0, y: 24 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, amount: 0.3 }}
+			transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.08 }}
+		>
+			{/* TEXT */}
+			<div className="p-8 md:p-12 text-white flex flex-col">
+				<div className="flex items-center gap-3 mb-3">
+					<service.icon className="h-8 w-8 text-white" />
+					<h3 className="text-2xl lg:text-3xl font-semibold">
+						{service.title}
+					</h3>
+				</div>
+				<hr className="border-t border-white/30 my-4" />
+				<p className="text-base text-white/90 leading-relaxed mb-6">
+					{service.description}
+				</p>
+				<div className="mt-auto">
+					<Link
+						href={service.link}
+						aria-label={`Learn more about ${service.title} services`}
+					>
+						<Button className="bg-white text-gray-900 hover:bg-white/90 font-semibold flex gap-2 px-6 py-3">
+							Learn More
+							<ArrowRight className="h-4 w-4" />
+						</Button>
+					</Link>
+				</div>
+			</div>
+
+			{/* IMAGE */}
+			<div className="p-8 md:p-12 flex items-center justify-center">
+				<div className="w-full h-full max-h-[420px] flex items-center justify-center">
+					<Image
+						src={service.image}
+						alt={service.title}
+						width={520}
+						height={320}
+						className="object-cover rounded-xl"
+					/>
+				</div>
+			</div>
+		</motion.div>
+	);
+
+	return CardContent;
+};
+
+const Services = () => {
 	return (
-		<section className="py-20 bg-white">
-			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="text-center mb-8 sm:mb-10 md:mb-16">
-					<h2 className="text-2xl sm:text-4xl mb-4 font-roboto font-extrabold text-gray-700">
+		<>
+			<style jsx>{`
+				:root {
+					--card-height: 40vw;
+					--card-margin: 4vw;
+					--card-top-offset: 3em;
+					--numcards: 6;
+				}
+
+				#card-1 {
+					--index: 1;
+				}
+
+				#card-2 {
+					--index: 2;
+				}
+
+				#card-3 {
+					--index: 3;
+				}
+
+				#card-4 {
+					--index: 4;
+				}
+
+				#card-5 {
+					--index: 5;
+				}
+
+				#card-6 {
+					--index: 6;
+				}
+
+				.card {
+					padding-top: calc(var(--index) * var(--card-top-offset));
+				}
+
+				/* Animation */
+				@supports (animation-timeline: works) {
+					@scroll-timeline cards-element-scrolls-in-body {
+						source: selector(body);
+						scroll-offsets: selector(#cards) start 1, selector(#cards) start 0;
+						start: selector(#cards) start 1;
+						end: selector(#cards) start 0;
+						time-range: 4s;
+					}
+
+					.card {
+						--index0: calc(var(--index) - 1);
+						--reverse-index: calc(var(--numcards) - var(--index0));
+						--reverse-index0: calc(var(--reverse-index) - 1);
+					}
+
+					.card__content {
+						transform-origin: 50% 0%;
+						will-change: transform;
+
+						--duration: calc(var(--reverse-index0) * 1s);
+						--delay: calc(var(--index0) * 1s);
+
+						animation: var(--duration) linear scale var(--delay) forwards;
+						animation-timeline: cards-element-scrolls-in-body;
+					}
+
+					@keyframes scale {
+						to {
+							transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+						}
+					}
+				}
+			`}</style>
+			<div className="bg-[var(--color-background-primary)] text-amber-100 text-center py-[20vh] px-5 md:px-20">
+				<div className="max-w-6xl mx-auto text-center sticky top-20">
+					<h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
 						Our Services
 					</h2>
-					<p className="text-sm sm:text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+					<p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
 						Comprehensive plant solutions tailored to your specific environment
 						and needs.
 					</p>
 				</div>
-
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-					{services.map((service, index) => (
-						<motion.div
-							key={index}
-							initial={{ opacity: 0, y: 30, scale: 0.95 }}
-							whileInView={{ opacity: 1, y: 0, scale: 1 }}
-							viewport={{ once: true, amount: 0.2 }}
-							transition={{
-								duration: 0.5,
-								delay: index * 0.1,
-								ease: "easeOut",
-							}}
-							className="shadow-lg transition-all duration-300 flex flex-col justify-between rounded-md border border-primary/20"
-							// whileHover={{
-							// 	scale: 1.05,
-							// 	rotate: [-0.5, 0.5, 0], // cute wobble
-							// 	transition: { duration: 0.3 },
-							// }}
-						>
-							<Card className="bg-secondary/10 hover:bg-secondary/20 h-full shadow-none border-0 transition-all duration-300 flex flex-col justify-between min-h-[300px] sm:min-h-[200px] rounded-2xl">
-								<div className="relative aspect-video rounded-t-2xl">
-									<Image src={service.image} alt={service.title} fill className="rounded-t-md object-cover" />
-								</div>
-								<CardHeader className="text-center flex flex-col gap-2 pb-2 relative">
-									<CardTitle className="text-xl sm:text-2xl flex items-start sm:items-stretch justify-between gap-3 sm:gap-2 font-semibold text-gray-900 mb-5">
-										<div className="flex items-center justify-start gap-2 flex-shrink-0">
-											<service.icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
-											<div className="text-lg sm:text-xl">{service.title}</div>
-										</div>
-
-										<Link 
-											href="/services"
-											aria-label={`Learn more about ${service.title} services - Professional plant installation and maintenance`}
-											title={`Discover our ${service.title.toLowerCase()} services and how we can transform your space`}
-										>
-											<Button size={"sm"} className="border bg-primary hover:bg-primary cursor-pointer font-semibold flex gap-2 px-3 py-2 text-sm sm:text-xs transition-all duration-300 w-full sm:w-auto">
-												Learn More
-												<ArrowRight className="h-2 w-2" />
-											</Button>
-										</Link>
-									</CardTitle>
-								</CardHeader>
-								<CardContent className="flex flex-col justify-between flex-1">
-									<div className="text-gray-600 text-sm sm:text-base text-left leading-relaxed">
-										{service.description}
-									</div>
-								</CardContent>
-							</Card>
-						</motion.div>
-					))}
-				</div>
+				<ul
+					id="cards"
+					className="list-none grid grid-cols-1 gap-[4vw] pb-[calc(6*1em)] mb-[4vw]"
+					style={{
+						gridTemplateRows: "repeat(var(--numcards), var(--card-height))",
+					}}
+				>
+					<li className="card sticky top-60" id="card-services">
+						{services.map((service, index) => (
+							<ServiceCard key={index} service={service} index={index} />
+						))}
+					</li>
+				</ul>
 			</div>
-		</section>
+		</>
 	);
-}
+};
+
+export default Services;

@@ -1,311 +1,216 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
-import { cn } from "@/lib/utils";
-// import { Progress } from "@/components/ui/progress";
+
+import React from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { Button } from "../ui/button";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 import projects from "@/data/projects.json";
 
-// type project = {
-// 	title: string;
-// 	imageURL: string;
-// 	link: string;
-// 	logo: string;
-// };
+interface Project {
+	id: string;
+	title: string;
+	client: string;
+	location: string;
+	year: string;
+	image: string;
+	description: string;
+	services: string[];
+	results: string[];
+	bgColor: string;
+	link: string;
+}
 
-// export const projectsOld: project[] = [
-// 	{
-// 		title: "Google",
-// 		imageURL: "/projects/office-new-1.jpg",
-// 		link: "/projects/google",
-// 		logo: "/brand-logos/google.svg",
-// 	},
-// 	{
-// 		title: "Nike",
-// 		imageURL: "/projects/office-new-2.jpg",
-// 		link: "/projects/google",
-// 		logo: "/brand-logos/nike.svg",
-// 	},
-// 	{
-// 		title: "Asics",
-// 		imageURL: "/projects/office-new-3.jpg",
-// 		link: "/projects/google",
-// 		logo: "/brand-logos/asics.svg",
-// 	},
-// 	{
-// 		title: "HBO",
-// 		imageURL: "/projects/office-new-4.jpg",
-// 		link: "/projects/google",
-// 		logo: "/brand-logos/hbo.svg",
-// 	},
-// 	{
-// 		title: "Spotify",
-// 		imageURL: "/projects/office-new-5.jpg",
-// 		link: "/projects/google",
-// 		logo: "/brand-logos/spotify.svg",
-// 	},
-// ];
-
-const ProjectCarouselBeta: React.FC = () => {
-	const [currentIndex, setCurrentIndex] = useState(0);
-	// const [progress, setProgress] = useState(0);
-	const [isPaused] = useState(false);
-
-	// Refs for desktop carousel timing
-	const intervalRef = useRef<NodeJS.Timeout | null>(null);
-	const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
-	const startTimeRef = useRef<number>(Date.now());
-
-	// Mobile carousel setup
-	const autoplayRef = useRef(
-		Autoplay({ delay: 4000, stopOnInteraction: false }),
-	);
-	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-		autoplayRef.current,
-	]);
-
-	// Desktop carousel logic
-	useEffect(() => {
-		// Clear existing intervals
-		if (intervalRef.current) {
-			clearInterval(intervalRef.current);
-		}
-		if (progressIntervalRef.current) {
-			clearInterval(progressIntervalRef.current);
-		}
-
-		if (isPaused) return;
-
-		// Reset progress and start time for new slide
-		// setProgress(0);
-		startTimeRef.current = Date.now();
-
-		const duration = 4000; // 4 seconds
-		const updateInterval = 50; // Update every 50ms for smooth animation
-
-		// Progress animation
-		progressIntervalRef.current = setInterval(() => {
-			const elapsed = Date.now() - startTimeRef.current;
-			// const newProgress = Math.min((elapsed / duration) * 100);
-			// console.log("Carousel Progress", newProgress);
-			// setProgress(newProgress);
-
-			if (elapsed >= duration) {
-				if (progressIntervalRef.current) {
-					clearInterval(progressIntervalRef.current);
-				}
-			}
-		}, updateInterval);
-
-		// Slide transition
-		intervalRef.current = setTimeout(() => {
-			setCurrentIndex((prevIndex) => (prevIndex + 1) % 5);
-		}, duration);
-
-		// Cleanup function
-		return () => {
-			if (intervalRef.current) {
-				clearTimeout(intervalRef.current);
-			}
-			if (progressIntervalRef.current) {
-				clearInterval(progressIntervalRef.current);
-			}
+// Add background colors to featured projects
+const featuredProjects: Project[] = projects
+	.sort((a, b) => Number(b.year) - Number(a.year))
+	.slice(0, 6)
+	.map((project, index) => {
+		const colors = [
+			"bg-[#1e3a5f]", // Navy Blue
+			"bg-[#2d8659]", // Forest Green
+			"bg-[#ec8857]", // Warm Orange
+			"bg-[#8b5a3c]", // Earthy Brown
+			"bg-[#4a6741]", // Sage Green
+			"bg-[#6366f1]", // Indigo Purple
+		];
+		return {
+			...project,
+			bgColor: colors[index % colors.length],
+			link: `/projects/${project.id}`,
 		};
-	}, [currentIndex, isPaused]);
+	});
 
-	// Mobile carousel index sync
-	const onSelect = useCallback(() => {
-		if (!emblaApi) return;
-		setCurrentIndex(emblaApi.selectedScrollSnap());
-	}, [emblaApi]);
+const ProjectCard = ({
+	project,
+	index,
+}: {
+	project: Project;
+	index: number;
+}) => {
+	// top offset for sticky stacking
+	const topBase = 200;
+	const step = 40;
+	const topOffset = topBase + index * step;
 
-	useEffect(() => {
-		if (!emblaApi) return;
-		emblaApi.on("select", onSelect);
-		onSelect(); // Set initial index
-	}, [emblaApi, onSelect]);
-
-	return (
-		<>
-			{/* Desktop View */}
-			<div className="flex-col px-10 py-20 gap-6 hidden md:flex">
-				<div className="text-2xl sm:text-4xl font-semibold flex justify-between items-end">
-					<h2 className="font-roboto font-extrabold text-gray-700 text-lg md:text-4xl">
-						Some of our Recent Projects
-					</h2>
+	const CardContent = (
+		<motion.div
+			className={`w-full grid grid-cols-1 md:grid-cols-2 ${project.bgColor} border border-[#303133] rounded-3xl min-h-[27.5rem] md:sticky md:overflow-hidden mt-5 relative`}
+			style={{ top: `${topOffset}px`, zIndex: 100 + index }}
+			initial={{ opacity: 0, y: 24 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, amount: 0.3 }}
+			transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.08 }}
+		>
+			{/* TEXT */}
+			<div className="p-8 md:p-12 text-white flex flex-col">
+				<h3 className="text-2xl lg:text-3xl font-semibold mb-3">
+					{project.title}
+				</h3>
+				<div className="text-sm text-white/80 mb-2">
+					{project.client} • {project.location}
+				</div>
+				<hr className="border-t border-white/30 my-4" />
+				<p className="text-base text-white/90 leading-relaxed mb-6">
+					{project.description}
+				</p>
+				<div className="mt-auto">
 					<Link
-						href={"/projects"}
-						aria-label="View all Evergreenry projects - Complete portfolio of office and home plant transformations"
-						title="Browse our complete portfolio of plant transformation projects"
-						className="text-sm cursor-pointer font-semibold flex transition-all duration-300 items-center justify-center underline text-primary"
+						href={project.link}
+						aria-label={`View ${project.title} project case study`}
 					>
-						See all projects
+						<Button className="bg-white text-gray-900 hover:bg-white/90 font-semibold flex gap-2 px-6 py-3">
+							View Project
+							<ArrowRight className="h-4 w-4" />
+						</Button>
 					</Link>
-				</div>
-				<div className="flex gap-0.5">
-					{projects
-						.sort((a, b) => Number(b.year) - Number(a.year))
-						.slice(7, 13)
-						.map((item, iter) => (
-							<div
-								key={iter}
-								className={cn(
-									"border rounded-2xl h-full flex flex-col transition-all duration-600 py-4 px-6 relative",
-									iter === currentIndex ? "w-[85%]" : "w-[1%]",
-								)}
-								aria-hidden={iter !== currentIndex}
-							>
-								<div
-									className={cn(
-										"absolute inset-0 z-20 rounded-2xl",
-										iter !== currentIndex ? "bg-black/40" : "bg-black/20",
-									)}
-								></div>
-								<Image
-									src={item.image}
-									fill
-									alt={item.title}
-									className="z-10 object-cover rounded-2xl"
-								/>
-								<div className="z-30 w-full h-[65vh] rounded-2xl text-white flex flex-col items-center justify-center">
-									{iter === currentIndex && (
-										<div className="w-full flex flex-col gap-4 justify-end items-center mb-4 h-full">
-											<div className="flex justify-between w-full">
-												<div className="flex items-center justify-center text-2xl font-semibold">
-													{item.title}
-												</div>
-												<Link 
-													href={`/projects/${item.id}`}
-													aria-label={`View ${item.title} project case study - Plant transformation details and results`}
-													title={`Explore the ${item.title} project case study and transformation details`}
-												>
-													<Button
-														size="sm"
-														className="bg-transparent hover:bg-transparent cursor-pointer font-semibold flex gap-2 mr-1 hover:mr-0 hover:gap-3 transition-all duration-300 shadow-none"
-													>
-														Learn More
-														<ArrowRight className="ml-2 h-4 w-4" />
-													</Button>
-												</Link>
-											</div>
-											{/* <Progress value={progress} className="w-full z-30" /> */}
-										</div>
-									)}
-								</div>
-							</div>
-						))}
-					{/* Dots */}
-				</div>
-				<div className="flex justify-center gap-2 mt-4">
-					{projects
-						.sort((a, b) => Number(b.year) - Number(a.year))
-						.slice(0, 5)
-						.map((_, index) => (
-							<button
-								key={index}
-								onClick={() => emblaApi?.scrollTo(index)}
-								className={`w-2 h-2 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
-									index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
-								}`}
-								aria-label={`Go to slide ${index + 1}`}
-								title={`Go to slide ${index + 1}`}
-							>
-								<span className={`w-2 h-2 rounded-full ${
-									index === currentIndex ? "bg-white" : "bg-current"
-								}`} />
-							</button>
-						))}
 				</div>
 			</div>
 
-			{/* Mobile View */}
-			<div className="md:hidden px-2 py-12">
-				<div className="text-center mb-8">
-					<h2 className="font-roboto text-gray-700 text-2xl font-extrabold mb-2">
-						Our Recent Projects
+			{/* IMAGE */}
+			<div className="p-8 md:p-12 flex items-center justify-center">
+				<div className="w-full h-full max-h-[420px] flex items-center justify-center">
+					<Image
+						src={project.image}
+						alt={project.title}
+						width={520}
+						height={320}
+						className="object-cover rounded-xl"
+					/>
+				</div>
+			</div>
+		</motion.div>
+	);
+
+	return CardContent;
+};
+
+const ProjectCarouselBeta: React.FC = () => {
+	return (
+		<>
+			<style jsx>{`
+				:root {
+					--card-height: 40vw;
+					--card-margin: 4vw;
+					--card-top-offset: 3em;
+					--numcards: 6;
+				}
+
+				#card-1 {
+					--index: 1;
+				}
+
+				#card-2 {
+					--index: 2;
+				}
+
+				#card-3 {
+					--index: 3;
+				}
+
+				#card-4 {
+					--index: 4;
+				}
+
+				#card-5 {
+					--index: 5;
+				}
+
+				#card-6 {
+					--index: 6;
+				}
+
+				.card {
+					padding-top: calc(var(--index) * var(--card-top-offset));
+				}
+
+				/* Animation */
+				@supports (animation-timeline: works) {
+					@scroll-timeline cards-element-scrolls-in-body {
+						source: selector(body);
+						scroll-offsets: selector(#cards) start 1, selector(#cards) start 0;
+						start: selector(#cards) start 1;
+						end: selector(#cards) start 0;
+						time-range: 4s;
+					}
+
+					.card {
+						--index0: calc(var(--index) - 1);
+						--reverse-index: calc(var(--numcards) - var(--index0));
+						--reverse-index0: calc(var(--reverse-index) - 1);
+					}
+
+					.card__content {
+						transform-origin: 50% 0%;
+						will-change: transform;
+
+						--duration: calc(var(--reverse-index0) * 1s);
+						--delay: calc(var(--index0) * 1s);
+
+						animation: var(--duration) linear scale var(--delay) forwards;
+						animation-timeline: cards-element-scrolls-in-body;
+					}
+
+					@keyframes scale {
+						to {
+							transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+						}
+					}
+				}
+			`}</style>
+			<div className="bg-[var(--color-background-primary)] text-amber-100 text-center py-[20vh] px-5 md:px-20">
+				<div className="max-w-7xl mx-auto text-center sticky top-20">
+					<h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
+						Recent Projects
 					</h2>
-					<div className="text-sm cursor-pointer font-semibold underline text-primary">
-						See all projects
+					<div className="flex items-center justify-center w-full mx-auto gap-6">
+						<p className="text-xl text-gray-600">
+							Discover how we&apos;ve transformed workspaces and homes with our
+							sustainable plant solutions.
+						</p>
+						<Link
+							href="/projects"
+							className="inline-flex items-center gap-2 text-primary font-semibold underline hover:no-underline transition-all duration-300"
+						>
+							View All Projects
+							<ArrowRight className="h-4 w-4" />
+						</Link>
 					</div>
 				</div>
-
-				<div className="relative overflow-hidden">
-					<div className="overflow-hidden" ref={emblaRef}>
-						<div className="flex">
-							{projects
-								.sort((a, b) => Number(b.year) - Number(a.year))
-								.slice(0, 5)
-								.map((item, iter) => (
-									<div key={iter} className="min-w-0 flex-shrink-0 w-full px-2">
-										<div className="relative border rounded-2xl h-64 overflow-hidden">
-											<Image
-												src={item.image}
-												fill
-												alt={item.title}
-												className="object-cover"
-											/>
-											<div className="absolute inset-0 bg-black/30"></div>
-											<div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-												<div className="flex items-center justify-between">
-													<div className="flex items-center gap-3">
-														{/* <Image
-														src={item.logo}
-														width={24}
-														height={24}
-														alt={`${item.title} logo`}
-														className="bg-white rounded p-1 hidden"
-													/> */}
-														<div className="text-lg font-semibold">
-															{item.title}
-														</div>
-													</div>
-													<Link 
-													href={`/projects/${item.id}`}
-													aria-label={`View ${item.title} project case study - Plant transformation details and results`}
-													title={`Explore the ${item.title} project case study and transformation details`}
-												>
-														<Button
-															size="sm"
-															className="bg-transparent text-white border-white hover:bg-white hover:text-primary"
-														>
-															Learn More
-															<ArrowRight className="ml-1 h-4 w-4" />
-														</Button>
-													</Link>
-												</div>
-											</div>
-										</div>
-									</div>
-								))}
-						</div>
-					</div>
-
-					{/* Dots */}
-					<div className="flex justify-center gap-2 mt-4">
-						{projects
-							.sort((a, b) => Number(b.year) - Number(a.year))
-							.slice(0, 5)
-							.map((_, index) => (
-								<button
-									key={index}
-									onClick={() => emblaApi?.scrollTo(index)}
-									className={`w-2 h-2 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
-										index === currentIndex ? "bg-primary w-6" : "bg-gray-300"
-									}`}
-									aria-label={`Go to slide ${index + 1}`}
-									title={`Go to slide ${index + 1}`}
-								>
-									<span className={`w-2 h-2 rounded-full ${
-										index === currentIndex ? "bg-white" : "bg-current"
-									}`} />
-								</button>
-							))}
-					</div>
-				</div>
+				<ul
+					id="cards"
+					className="list-none grid grid-cols-1 gap-[4vw] pb-[calc(6*1em)] mb-[4vw]"
+					style={{
+						gridTemplateRows: "repeat(var(--numcards), var(--card-height))",
+					}}
+				>
+					<li className="card sticky top-60" id="card-projects">
+						{featuredProjects.map((project, index) => (
+							<ProjectCard key={project.id} project={project} index={index} />
+						))}
+					</li>
+				</ul>
 			</div>
 		</>
 	);

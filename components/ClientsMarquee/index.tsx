@@ -115,10 +115,10 @@ const clients: Client[] = [
 
 const ClientsMarquee: React.FC = () => {
 	return (
-		<div className="marquee-wrapper py-10 md:py-32 relative flex flex-col gap-8">
+		<div className="marquee-wrapper py-10 md:py-32 relative flex flex-col gap-8 bg-[var(--color-background-primary)]">
 			<div className="text-center">
 				<h2 className="text-2xl sm:text-4xl font-bold mb-4 drop-shadow-xl font-roboto text-gray-700">
-					Our Trusted Partners
+					Delivering our promise to our esteemed clients
 				</h2>
 			</div>
 
@@ -131,7 +131,7 @@ const ClientsMarquee: React.FC = () => {
 						className="mx-1 md:mx-10  flex-shrink-0 "
 					>
 						<Link href={client.url} target="_blank" rel="noopener noreferrer">
-							<div className="relative w-48 h-32 md:w-64 md:h-40 bg-white rounded-lg  border-gray-100 p-4 flex items-center justify-center">
+							<div className="relative w-48 h-32 md:w-64 md:h-40 bg-[var(--color-background-primary)] rounded-lg  border-gray-100 p-4 flex items-center justify-center">
 								<Image
 									src={client.logo}
 									alt={`${client.name} logo`}

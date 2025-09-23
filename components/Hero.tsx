@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ArrowDown, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,22 +29,58 @@ export default function Hero() {
 	// Auto-rotate background images
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setCurrentImageIndex((prevIndex) => 
-				(prevIndex + 1) % backgroundImages.length
+			setCurrentImageIndex(
+				(prevIndex) => (prevIndex + 1) % backgroundImages.length,
 			);
 		}, 5000); // Change image every 5 seconds
 
 		return () => clearInterval(interval);
 	}, []);
 
+	const [isMainTaglineVisible, setIsMainTaglineVisible] = useState(false);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.target.classList.contains("main-tagline-section")) {
+						setIsMainTaglineVisible(entry.isIntersecting);
+					}
+				});
+			},
+			{
+				threshold: 0.3, // Trigger when 30% of MainTagline is visible
+				rootMargin: "0px 0px -50px 0px", // Trigger slightly before fully visible
+			},
+		);
+
+		// Find and observe the MainTagline component
+		const mainTaglineElement = document.querySelector(".main-tagline-section");
+		if (mainTaglineElement) {
+			observer.observe(mainTaglineElement);
+		}
+
+		return () => {
+			if (mainTaglineElement) {
+				observer.unobserve(mainTaglineElement);
+			}
+		};
+	}, []);
+
 	return (
-		<section className="relative pt-32 pb-20 min-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary via-white to-secondary/40">
+		<section
+			className={cn(
+				`relative pt-32 pb-20 min-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-secondary via-white to-secondary/40 duration-400 ${
+					isMainTaglineVisible ? "opacity-0" : "opacity-100"
+				}`,
+			)}
+		>
 			{/* Background Image Carousel */}
 			{backgroundImages.map((image, index) => (
 				<div
 					key={image}
 					className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-						index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+						index === currentImageIndex ? "opacity-100" : "opacity-0"
 					}`}
 					style={{
 						backgroundImage: `url(${image})`,
@@ -72,19 +109,19 @@ export default function Hero() {
 					<button
 						key={index}
 						className={`w-3 h-3 rounded-full transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
-							index === currentImageIndex 
-								? 'bg-secondary scale-110' 
-								: 'bg-white/50 hover:bg-white/70'
+							index === currentImageIndex
+								? "bg-secondary scale-110"
+								: "bg-white/50 hover:bg-white/70"
 						}`}
 						onClick={() => setCurrentImageIndex(index)}
 						aria-label={`Go to slide ${index + 1}`}
 						title={`Go to slide ${index + 1}`}
 					>
-						<span className={`w-3 h-3 rounded-full ${
-							index === currentImageIndex 
-								? 'bg-white' 
-								: 'bg-current'
-						}`} />
+						<span
+							className={`w-3 h-3 rounded-full ${
+								index === currentImageIndex ? "bg-white" : "bg-current"
+							}`}
+						/>
 					</button>
 				))}
 			</div>

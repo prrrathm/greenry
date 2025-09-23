@@ -77,7 +77,7 @@ const renderStars = (rating: number) => (
 		aria-label={`Rating: ${rating} out of 5 stars`}
 	>
 		{Array.from({ length: rating }).map((_, i) => (
-			<Star key={i} fill="yellow" className="h-5 w-5 text-black" />
+			<Star key={i} fill="var(--color-yellow-300)" className="h-5 w-5 text-yellow-300" />
 		))}
 	</div>
 );
