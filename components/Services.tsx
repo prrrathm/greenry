@@ -181,17 +181,13 @@ const ServiceCard = ({
 	const accentColors = getAccentColors(index);
 
 	const CardContent = (
-		<motion.div
+		<div
 			className="w-full grid grid-cols-1 md:grid-cols-2 border border-[#303133] rounded-3xl min-h-[27.5rem] md:sticky md:overflow-hidden mt-5 relative"
 			style={{
 				backgroundColor: cardColors[index],
 				top: `${topOffset}px`,
 				zIndex: 100 + index,
 			}}
-			initial={{ opacity: 0, y: 24 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, amount: 0.3 }}
-			transition={{ duration: 0.55, ease: "easeOut" }}
 		>
 			{/* TEXT */}
 			<div className="p-8 md:p-12 flex flex-col" style={{ color: textColor }}>
@@ -249,7 +245,7 @@ const ServiceCard = ({
 					/>
 				</div>
 			</div>
-		</motion.div>
+		</div>
 	);
 
 	return CardContent;

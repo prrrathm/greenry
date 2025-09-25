@@ -69,8 +69,8 @@ export const NavBar = () => {
 				<Image
 					src="/logo/logo-gold.png"
 					alt="Snake Plant"
-					width={30}
-					height={30}
+					width={50}
+					height={50}
 					className="rounded-md"
 				/>
 				<div className="w-full">Evergreenry</div>
