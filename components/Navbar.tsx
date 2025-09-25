@@ -67,7 +67,7 @@ export const NavBar = () => {
 				)}
 			>
 				<Image
-					src="/logo/logo-bold.png"
+					src="/logo/logo-gold.png"
 					alt="Snake Plant"
 					width={30}
 					height={30}
