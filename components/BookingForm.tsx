@@ -23,7 +23,8 @@ const formSchema = z.object({
 	email: z.string().email("Invalid email address").min(1, "Email is required"),
 	phone: z.string().min(1, "Phone number is required"),
 	company: z.string().optional(),
-	spaceType: z.string().min(1, "Space type is required"),
+	// spaceType: z.string().min(1, "Space type is required"),
+	spaceType: z.string().optional(),
 	preferredDate: z.string().optional(),
 	message: z.string().optional(),
 });
@@ -62,7 +63,7 @@ export default function BookingFormBeta() {
 
 			if (result.success) {
 				toast.info(
-					"Thank you! We'll contact you within 24 hours to schedule your consultation.",
+					"Thank you! We'll contact you within 24 hours to schedule your consultation."
 				);
 				reset();
 			} else {
@@ -105,7 +106,7 @@ export default function BookingFormBeta() {
 						<Card className="shadow-xl border-0">
 							<CardHeader>
 								<CardTitle className="text-2xl text-gray-900">
-									Schedule Your Visit
+									Get in Touch
 								</CardTitle>
 								<CardDescription>
 									Fill out the form below and we&apos;ll contact you within 24
@@ -116,42 +117,66 @@ export default function BookingFormBeta() {
 								<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 									<div className="grid md:grid-cols-2 gap-4">
 										<div className="space-y-2">
-											<label htmlFor="booking-name" className="text-sm font-medium text-gray-700">
-												Full Name *
+											<label
+												htmlFor="booking-name"
+												className="text-sm font-medium text-gray-700"
+											>
+												Name *
 											</label>
 											<div className="relative">
-												<User className="absolute left-3 top-3 h-4 w-4 text-gray-400" aria-hidden="true" />
+												<User
+													className="absolute left-3 top-3 h-4 w-4 text-gray-400"
+													aria-hidden="true"
+												/>
 												<Input
 													id="booking-name"
 													{...register("name")}
 													placeholder="John Doe"
 													className="pl-10"
-													aria-describedby={errors.name ? "booking-name-error" : undefined}
+													aria-describedby={
+														errors.name ? "booking-name-error" : undefined
+													}
 												/>
 												{errors.name && (
-													<p id="booking-name-error" className="text-red-500 text-xs mt-1" role="alert">
+													<p
+														id="booking-name-error"
+														className="text-red-500 text-xs mt-1"
+														role="alert"
+													>
 														{errors.name.message}
 													</p>
 												)}
 											</div>
 										</div>
 										<div className="space-y-2">
-											<label htmlFor="booking-email" className="text-sm font-medium text-gray-700">
-												Email *
+											<label
+												htmlFor="booking-phone"
+												className="text-sm font-medium text-gray-700"
+											>
+												Phone *
 											</label>
 											<div className="relative">
-												<Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" aria-hidden="true" />
-												<Input
-													id="booking-email"
-													{...register("email")}
-													type="email"
-													placeholder="john@company.com"
-													className="pl-10"
-													aria-describedby={errors.email ? "booking-email-error" : undefined}
+												<Phone
+													className="absolute left-3 top-3 h-4 w-4 text-gray-400"
+													aria-hidden="true"
 												/>
-												{errors.email && (
-													<p id="booking-email-error" className="text-red-500 text-xs mt-1" role="alert">
-														{errors.email.message}
+												<Input
+													id="booking-phone"
+													{...register("phone")}
+													type="tel"
+													placeholder="+91 9891347119"
+													className="pl-10"
+													aria-describedby={
+														errors.phone ? "booking-phone-error" : undefined
+													}
+												/>
+												{errors.phone && (
+													<p
+														id="booking-phone-error"
+														className="text-red-500 text-xs mt-1"
+														role="alert"
+													>
+														{errors.phone.message}
 													</p>
 												)}
 											</div>
@@ -160,29 +185,44 @@ export default function BookingFormBeta() {
 
 									<div className="grid md:grid-cols-2 gap-4">
 										<div className="space-y-2">
-											<label htmlFor="booking-phone" className="text-sm font-medium text-gray-700">
-												Phone *
+											<label
+												htmlFor="booking-email"
+												className="text-sm font-medium text-gray-700"
+											>
+												Email *
 											</label>
 											<div className="relative">
-												<Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" aria-hidden="true" />
-												<Input
-													id="booking-phone"
-													{...register("phone")}
-													type="tel"
-													placeholder="+91 9891347119"
-													className="pl-10"
-													aria-describedby={errors.phone ? "booking-phone-error" : undefined}
+												<Mail
+													className="absolute left-3 top-3 h-4 w-4 text-gray-400"
+													aria-hidden="true"
 												/>
-												{errors.phone && (
-													<p id="booking-phone-error" className="text-red-500 text-xs mt-1" role="alert">
-														{errors.phone.message}
+												<Input
+													id="booking-email"
+													{...register("email")}
+													type="email"
+													placeholder="john@company.com"
+													className="pl-10"
+													aria-describedby={
+														errors.email ? "booking-email-error" : undefined
+													}
+												/>
+												{errors.email && (
+													<p
+														id="booking-email-error"
+														className="text-red-500 text-xs mt-1"
+														role="alert"
+													>
+														{errors.email.message}
 													</p>
 												)}
 											</div>
 										</div>
 										<div className="space-y-2">
-											<label htmlFor="booking-company" className="text-sm font-medium text-gray-700">
-												Company
+											<label
+												htmlFor="booking-company"
+												className="text-sm font-medium text-gray-700"
+											>
+												Company Name
 											</label>
 											<Input
 												id="booking-company"
@@ -192,36 +232,58 @@ export default function BookingFormBeta() {
 										</div>
 									</div>
 
-									<div className="grid grid-cols-2 gap-4">
+									{/* <div className="grid grid-cols-2 gap-4">
 										<div className="space-y-2">
-											<label htmlFor="booking-service-type" className="text-sm font-medium text-gray-700">
+											<label
+												htmlFor="booking-service-type"
+												className="text-sm font-medium text-gray-700"
+											>
 												Service Type *
 											</label>
 											<select
 												id="booking-service-type"
 												{...register("spaceType")}
 												className="w-full h-9 px-3 py-1 text-sm border border-input bg-transparent rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-												aria-describedby={errors.spaceType ? "booking-service-type-error" : undefined}
+												aria-describedby={
+													errors.spaceType
+														? "booking-service-type-error"
+														: undefined
+												}
 											>
-												<option value="" disabled>Select Service type</option>
+												<option value="" disabled>
+													Select Service type
+												</option>
 												{services.map((item, iter) => (
-													<option key={iter} value={item.toLowerCase().replace(/\s+/g, '-')}>
+													<option
+														key={iter}
+														value={item.toLowerCase().replace(/\s+/g, "-")}
+													>
 														{item}
 													</option>
 												))}
 											</select>
 											{errors.spaceType && (
-												<p id="booking-service-type-error" className="text-red-500 text-xs mt-1" role="alert">
+												<p
+													id="booking-service-type-error"
+													className="text-red-500 text-xs mt-1"
+													role="alert"
+												>
 													{errors.spaceType.message}
 												</p>
 											)}
 										</div>
 										<div className="space-y-2">
-											<label htmlFor="booking-preferred-date" className="text-sm font-medium text-gray-700">
+											<label
+												htmlFor="booking-preferred-date"
+												className="text-sm font-medium text-gray-700"
+											>
 												Preferred Date
 											</label>
 											<div className="relative">
-												<Calendar className="absolute left-3 top-3 h-4 w-4 text-gray-400" aria-hidden="true" />
+												<Calendar
+													className="absolute left-3 top-3 h-4 w-4 text-gray-400"
+													aria-hidden="true"
+												/>
 												<Input
 													id="booking-preferred-date"
 													{...register("preferredDate")}
@@ -230,10 +292,13 @@ export default function BookingFormBeta() {
 												/>
 											</div>
 										</div>
-									</div>
+									</div> */}
 									<div className="space-y-2">
-										<label htmlFor="booking-message" className="text-sm font-medium text-gray-700">
-											Additional Information
+										<label
+											htmlFor="booking-message"
+											className="text-sm font-medium text-gray-700"
+										>
+											Your message here
 										</label>
 										<Textarea
 											id="booking-message"
@@ -245,10 +310,14 @@ export default function BookingFormBeta() {
 
 									<Button
 										type="submit"
-										aria-label={isSubmitting ? "Submitting consultation request, please wait" : "Submit consultation request form"}
+										aria-label={
+											isSubmitting
+												? "Submitting consultation request, please wait"
+												: "Submit consultation request form"
+										}
 										className={cn(
 											"w-full bg-primary hover:bg-primary text-white py-3 min-h-[44px] min-w-[44px]",
-											isSubmitting ? "cursor-progress" : "cursor-pointer",
+											isSubmitting ? "cursor-progress" : "cursor-pointer"
 										)}
 										disabled={isSubmitting}
 									>
