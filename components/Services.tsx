@@ -75,7 +75,7 @@ const getAccentColors = (index: number) => {
 	}
 };
 
-const primaryColor = "#26420f";
+const primaryColor = "#418833";
 const cardColors = generateCardColors(primaryColor, 6);
 
 const services: Service[] = [

@@ -30,7 +30,7 @@ export async function POST(req: Request) {
 			<div style="font-family: Arial, sans-serif; padding:20px; background:#f9f9f9;">
 				<div style="max-width:700px;margin:auto;border-radius:12px;overflow:hidden;
 					border:1px solid #eee;background:#fff;">
-					<div style="background:#26420f;color:#fff;padding:20px;font-size:20px;font-weight:bold;">
+					<div style="background:#418833;color:#fff;padding:20px;font-size:20px;font-weight:bold;">
 						New Consultation Booking
 					</div>
 					<div style="padding:20px;">
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
 			<div style="font-family: Arial, sans-serif; padding:20px; background:#f9f9f9;">
 				<div style="max-width:600px;margin:auto;border-radius:12px;overflow:hidden;
 					border:1px solid #eee;background:#fff;">
-					<div style="background:#26420f;color:#fff;padding:20px;font-size:20px;font-weight:bold;">
+					<div style="background:#418833;color:#fff;padding:20px;font-size:20px;font-weight:bold;">
 						Thank You for Reaching Out!
 					</div>
 					<div style="padding:20px;">

@@ -38,7 +38,11 @@ export default function CTA() {
 						title="Click to call our plant experts at +91 9891347119"
 						className="border-white text-black hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit rounded-full min-w-[44px] min-h-[44px]"
 					>
-						<Phone fill="#26420f" className="h-5 w-5 text-primary" aria-hidden="true" />
+						<Phone
+							fill="#418833"
+							className="h-5 w-5 text-primary"
+							aria-hidden="true"
+						/>
 					</Button>
 				</div>
 

@@ -54,7 +54,7 @@ const AutoPlayVideo = ({ src }: { src: string }) => {
 					<span
 						className="text-[#66A036] drop-shadow-lg"
 						// style={{
-						// 	WebkitTextStroke: "2px #26420f",
+						// 	WebkitTextStroke: "2px #418833",
 						// 	WebkitBackgroundClip: "text",
 						// }}
 					>

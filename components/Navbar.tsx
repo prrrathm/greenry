@@ -99,7 +99,7 @@ export const NavBar = () => {
 			<div className="flex flex-row-reverse md:flex-row items-center justify-center gap-3 md:gap-4">
 				<NavMobileDrawer navLinks={navLinks} isScrolled={true} />
 				{/* <div className="hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit sm:hidden">
-					<Menu fill="#26420f" className="h-6 w-6 text-primary" />
+					<Menu fill="#418833" className="h-6 w-6 text-primary" />
 				</div> */}
 				<Link
 					href="tel:+919891347119"
@@ -111,13 +111,13 @@ export const NavBar = () => {
 					)}
 				>
 					<Phone
-						fill={isScrolled ? "#26420f" : "#fff"}
+						fill={isScrolled ? "#418833" : "#fff"}
 						// fill={"#fff"}
 						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
 					/>
 					<PhoneCall
 						// fill={"#fff"}
-						fill={isScrolled ? "#26420f" : "#fff"}
+						fill={isScrolled ? "#418833" : "#fff"}
 						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
 					/>
 				</Link>

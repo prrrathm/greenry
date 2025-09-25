@@ -21,11 +21,11 @@ const PhoneDropDown = ({ isScrolled }: { isScrolled: boolean }) => {
 					)}
 				>
 					<Phone
-						fill={isScrolled ? "#fff" : "#26420f"}
+						fill={isScrolled ? "#fff" : "#418833"}
 						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
 					/>
 					<PhoneCall
-						fill={isScrolled ? "#fff" : "#26420f"}
+						fill={isScrolled ? "#fff" : "#418833"}
 						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
 					/>
 				</div>

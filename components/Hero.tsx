@@ -49,10 +49,10 @@ export default function Hero() {
 		handleScroll();
 
 		// Add scroll event listener
-		window.addEventListener('scroll', handleScroll);
+		window.addEventListener("scroll", handleScroll);
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
 
@@ -86,7 +86,7 @@ export default function Hero() {
 					className="absolute inset-0 bg-secondary bg-opacity-20"
 					style={{
 						backgroundImage:
-							"radial-gradient(circle at 1px 1px, #26420f 1px, transparent 0)",
+							"radial-gradient(circle at 1px 1px, #418833 1px, transparent 0)",
 						backgroundSize: "20px 20px",
 					}}
 				></div>
@@ -155,7 +155,7 @@ export default function Hero() {
 										variant="outline"
 										className="md:hidden border-2 border-primary text-primary hover:text-primary hover:bg-secondary bg-secondary/60 cursor-pointer rounded-full !px-2 !py-1 absolute -right-12 scale-90"
 									>
-										<Play fill="#26420f" className="h-5 w-5 text-primary" />
+										<Play fill="#418833" className="h-5 w-5 text-primary" />
 									</Button>
 								</Link>
 							</div>
@@ -170,7 +170,7 @@ export default function Hero() {
 									variant="outline"
 									className="hidden md:flex p-2  text-primary hover:text-primary hover:bg-secondary font-bold bg-secondary cursor-pointer rounded-full md:rounded-md"
 								>
-									<Play fill="#26420f" className="h-5 w-5 text-primary" />
+									<Play fill="#418833" className="h-5 w-5 text-primary" />
 									Watch Demo
 								</Button>
 							</Link>
