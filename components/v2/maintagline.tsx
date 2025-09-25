@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -14,9 +14,9 @@ const MainTagline = () => {
 						viewport={{ once: true, amount: 0.6 }}
 						transition={{ duration: 0.6, ease: "easeOut" }}
 					>
-						We&apos;re a tech-led design and build venture creating future ready
-						spaces for our partners. We deliver integrated services across
-						interior design, product supply and project management globally.
+						At Evergreenry, we add greenery to corporate offices to luxury
+						hotels to commercial environments. We design green solutions that
+						elevate both aesthetics and well-being.
 					</motion.h3>
 				</div>
 			</div>
