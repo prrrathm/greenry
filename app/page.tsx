@@ -44,23 +44,35 @@ export default function Home() {
 	const faqs = [
 		{
 			q: "What is Evergreenry?",
-			a: "Evergreenry is an environmental organization focused on biodiversity conservation and ecological restoration through premium plant solutions for businesses and homes.",
+			a: `We add biophilia !
+			Evergreenry , established in 2018 with the former name We Decor, has been greening up corporates in India with the help of plants, planters, green walls, moss walls, gardens and other landscape design elements.`,
 		},
 		{
 			q: "What types of projects does Evergreenry undertake?",
-			a: "We specialize in corporate office installations, home plant solutions, co-working space transformations, and event space arrangements with ongoing maintenance support.",
+			a: `Evergreenry greens up corporates, commercial buildings, hospitality spaces in India with the help of plants, planters, green walls, moss walls, gardens and other landscape design elements.
+			We provide landscape design and execution services for both indoor &amp; outdoor work to Architects, Designers, end clients, commercial and hospitality clients and farm houses.`,
 		},
 		{
-			q: "How can I get involved with Evergreenry'apos;s initiatives?",
-			a: "You can book a free consultation through our website, call us directly, or reach out via email. We offer customized solutions for every space and budget.",
+			q: `What’s the process of adding plants to my office?`,
+			a: "Contact Us through email / call ---- We do a site visit and understand your design through drawings ---- We send you a proposal to choose options from ---- You choose and we deliver",
 		},
 		{
 			q: "Where does Evergreenry operate?",
-			a: "Evergreenry operates nationwide, providing professional plant installation and maintenance services across multiple regions with local expert support.",
+			a: "Evergreenry has full fledged design as well as execution offices in Delhi NCR and Bangalore from where we serve North as well as South India clients respectively.",
 		},
 		{
-			q: "Why is biodiversity conservation important?",
-			a: "Biodiversity conservation ensures ecosystem stability, supports life-sustaining services, helps combat climate change, and creates healthier indoor environments that boost productivity and well-being.",
+			q: "What is Biophilia?",
+			a: `Biophilia mean connection to nature.
+				Biophilic design in architecture is based on the belief that humans have an innate connection to nature, and that by bringing elements of the natural world in to our built environment, we can improve our health, happiness, and overall quality of life.
+				Evergreenry does this with the help of plants, green walls, moss walls and other plants elements in office spaces.`,
+		},
+		{
+			q: "Would you have a quick planting solution for my office?",
+			a: "Yes, Evergreenry has set packages of quick planting service in planters, where you place an order and relax. We deliver to you in stipulated time period basis the quantity of plants &amp; planters required.",
+		},
+		{
+			q: "Does Evergreenry add only natural greenery or even faux plants are an option?",
+			a: "Greenery in any form is good. We add biophilia in natural , artificial (faux) as well as preserved form. You get plants, green walls, moss walls – in all natural, artificial and preserved way.",
 		},
 	];
 
