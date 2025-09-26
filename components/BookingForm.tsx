@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Calendar, MapPin, Phone, Mail, User } from "lucide-react"; // Removed unused Clock import
+import { MapPin, Phone, Mail, User } from "lucide-react"; // Removed unused Clock import
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -63,7 +63,7 @@ export default function BookingFormBeta() {
 
 			if (result.success) {
 				toast.info(
-					"Thank you! We'll contact you within 24 hours to schedule your consultation."
+					"Thank you! We'll contact you within 24 hours to schedule your consultation.",
 				);
 				reset();
 			} else {
@@ -75,14 +75,14 @@ export default function BookingFormBeta() {
 			// alert("Failed to send message.");
 		}
 	};
-	const services = [
-		"Office Plants",
-		"Green Walls",
-		"Moss Walls",
-		"Plant Maintenance",
-		"Zen Garden",
-		"Indoor Terrarium",
-	];
+	// const services = [
+	// 	"Office Plants",
+	// 	"Green Walls",
+	// 	"Moss Walls",
+	// 	"Plant Maintenance",
+	// 	"Zen Garden",
+	// 	"Indoor Terrarium",
+	// ];
 
 	return (
 		<section
@@ -317,7 +317,7 @@ export default function BookingFormBeta() {
 										}
 										className={cn(
 											"w-full bg-primary hover:bg-primary text-white py-3 min-h-[44px] min-w-[44px]",
-											isSubmitting ? "cursor-progress" : "cursor-pointer"
+											isSubmitting ? "cursor-progress" : "cursor-pointer",
 										)}
 										disabled={isSubmitting}
 									>
