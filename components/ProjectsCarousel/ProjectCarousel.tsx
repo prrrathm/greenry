@@ -20,62 +20,50 @@ interface Project {
 	link: string;
 }
 
-// Function to generate progressively lighter shades from the primary color
-const generateCardColors = (primaryColor: string, totalCards: number) => {
-	const colors = [];
-	for (let i = 0; i < totalCards; i++) {
-		// Convert hex to RGB
-		const hex = primaryColor.replace("#", "");
-		const r = parseInt(hex.substr(0, 2), 16);
-		const g = parseInt(hex.substr(2, 2), 16);
-		const b = parseInt(hex.substr(4, 2), 16);
-
-		// Calculate lightness factor (0 for first card, increasing for subsequent cards)
-		const lightenFactor = i * 0.15; // Adjust this value to control how much lighter each card gets
-
-		// Lighten the color
-		const newR = Math.min(255, Math.round(r + (255 - r) * lightenFactor));
-		const newG = Math.min(255, Math.round(g + (255 - g) * lightenFactor));
-		const newB = Math.min(255, Math.round(b + (255 - b) * lightenFactor));
-
-		colors.push(`rgb(${newR}, ${newG}, ${newB})`);
-	}
-	return colors;
-};
+// Define the specific color palette for cards
+const cardColors = [
+	"#418833", // Project 1 - Green
+	"#D4E0C5", // Project 2 - Light Green
+	"#27918B", // Project 3 - Teal
+	"#4C88B8", // Project 4 - Blue
+	"#A05459", // Project 5 - Mauve/Rose
+	"#42758F", // Project 6 - Blue-Gray
+];
 
 // Function to determine if text should be light or dark based on background
 const getTextColor = (index: number) => {
-	// For darker cards (index 0-2), use white text
-	// For lighter cards (index 3-5), use dark text
-	return index < 3 ? "#ffffff" : "#1a1a1a";
+	// Light text for darker backgrounds, dark text for lighter backgrounds
+	const lightBackgrounds = [1]; // #D4E0C5 is light
+	return lightBackgrounds.includes(index) ? "#1a1a1a" : "#ffffff";
 };
 
 // Function to get icon and button colors
 const getAccentColors = (index: number) => {
-	if (index < 3) {
-		return {
-			buttonBg: "#ffffff",
-			buttonText: "#1a1a1a",
-			buttonHover: "rgba(255, 255, 255, 0.9)",
-			hrColor: "rgba(255, 255, 255, 0.3)",
-		};
-	} else {
+	const lightBackgrounds = [1]; // #D4E0C5 is light
+	const isLightBackground = lightBackgrounds.includes(index);
+
+	if (isLightBackground) {
 		return {
 			buttonBg: "#1a1a1a",
 			buttonText: "#ffffff",
 			buttonHover: "rgba(26, 26, 26, 0.8)",
 			hrColor: "rgba(26, 26, 26, 0.2)",
 		};
+	} else {
+		return {
+			buttonBg: "#ffffff",
+			buttonText: "#1a1a1a",
+			buttonHover: "rgba(255, 255, 255, 0.9)",
+			hrColor: "rgba(255, 255, 255, 0.3)",
+		};
 	}
 };
 
-const primaryColor = "#418833";
-const cardColors = generateCardColors(primaryColor, 6);
 
 // Get featured projects
 const featuredProjects: Project[] = projects
 	.sort((a, b) => Number(b.year) - Number(a.year))
-	.slice(0, 6)
+	.slice(0, 5)
 	.map((project) => ({
 		...project,
 		link: `/projects/${project.id}`,
