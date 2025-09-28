@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, User, CheckCircle } from "lucide-react"; // Removed unused Clock import
+import { Phone, Mail, User } from "lucide-react"; // Removed unused Clock import
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -85,7 +85,10 @@ export default function BookingFormBeta() {
 	// ];
 
 	return (
-		<section id="book-demo" className="py-20 md:py-20 bg-[#27918B50] rounded-t-4xl">
+		<section
+			id="book-demo"
+			className="py-20 md:py-20 bg-[#27918B50] rounded-t-4xl"
+		>
 			<div className="container mx-auto px-2 sm:px-6 lg:px-8">
 				<div className="max-w-6xl mx-auto flex flex-col gap-4 md:gap-12">
 					{/* <div className="text-center">
