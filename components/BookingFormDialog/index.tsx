@@ -43,7 +43,7 @@ type FormData = z.infer<typeof schema>;
 const BookingForm = ({
 	hasTrigger,
 	triggerText,
-	isScrolled,
+	// isScrolled,
 }: {
 	hasTrigger: boolean;
 	triggerText?: string;

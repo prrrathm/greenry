@@ -1,7 +1,7 @@
-"use client";
+// "use client";
 import Link from "next/link";
 // import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import BookingForm from "./BookingFormDialog";
 // import { Button } from "./ui/button";
@@ -24,16 +24,16 @@ const getNavDescription = (label: string): string => {
 };
 
 export const NavBar = () => {
-	const [isScrolled, setIsScrolled] = useState(true);
+	// const [isScrolled, setIsScrolled] = useState(true);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 150);
-		};
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		setIsScrolled(window.scrollY > 150);
+	// 	};
 
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	// 	window.addEventListener("scroll", handleScroll);
+	// 	return () => window.removeEventListener("scroll", handleScroll);
+	// }, []);
 	const navLinks = [
 		{ label: "Home", link: "/" },
 		{ label: "Services", link: "/services" },
