@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, User } from "lucide-react"; // Removed unused Clock import
+import { Phone, Mail, User, CheckCircle } from "lucide-react"; // Removed unused Clock import
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -85,54 +85,51 @@ export default function BookingFormBeta() {
 	// ];
 
 	return (
-		<section
-			id="book-demo"
-			className="py-20 md:py-20 bg-gradient-to-br from-lime-50 to-white"
-		>
+		<section id="book-demo" className="py-20 md:py-20 bg-[#27918B50] rounded-t-4xl">
 			<div className="container mx-auto px-2 sm:px-6 lg:px-8">
-				<div className="max-w-4xl mx-auto flex flex-col gap-4 md:gap-10">
-					<div className="text-center">
-						<h2 className="text-2xl sm:text-4xl font-roboto font-extrabold text-gray-700 mb-2 md:mb-4">
+				<div className="max-w-6xl mx-auto flex flex-col gap-4 md:gap-12">
+					{/* <div className="text-center">
+						<h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
 							Book Your Free Consultation
 						</h2>
-						<p className="text-sm md:text-xl text-gray-600 max-w-2xl mx-auto">
+						<p className="text-lg text-gray-600 max-w-2xl mx-auto">
 							Let our experts assess your space and create a customized plant
 							solution that transforms your environment.
 						</p>
-					</div>
+					</div> */}
 
-					<div className="grid lg:grid-cols-2 gap-12 px-4">
+					<div className="max-w-2xl mx-auto px-4">
 						{/* Form */}
-						<Card className="shadow-xl border-0">
-							<CardHeader>
-								<CardTitle className="text-2xl text-gray-900">
-									Get in Touch
+						<Card className="shadow-lg border border-gray-200">
+							<CardHeader className=" border-b border-gray-200">
+								<CardTitle className="text-3xl font-semibold text-gray-900">
+									Schedule Your Consultation
 								</CardTitle>
-								<CardDescription>
+								<CardDescription className="text-gray-600">
 									Fill out the form below and we&apos;ll contact you within 24
 									hours to confirm your appointment.
 								</CardDescription>
 							</CardHeader>
-							<CardContent>
+							<CardContent className="p-8">
 								<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-									<div className="grid md:grid-cols-2 gap-4">
+									<div className="grid md:grid-cols-2 gap-6">
 										<div className="space-y-2">
 											<label
 												htmlFor="booking-name"
-												className="text-sm font-medium text-gray-700"
+												className="text-sm font-semibold text-gray-700"
 											>
-												Name *
+												Full Name *
 											</label>
 											<div className="relative">
 												<User
-													className="absolute left-3 top-3 h-4 w-4 text-gray-400"
+													className="absolute left-3 top-3.5 h-5 w-5 text-[#418833]"
 													aria-hidden="true"
 												/>
 												<Input
 													id="booking-name"
 													{...register("name")}
-													placeholder="John Doe"
-													className="pl-10"
+													placeholder="Enter your full name"
+													className="pl-12 h-12 border-2 border-gray-200 focus:border-[#418833] rounded-lg transition-colors"
 													aria-describedby={
 														errors.name ? "booking-name-error" : undefined
 													}
@@ -140,7 +137,7 @@ export default function BookingFormBeta() {
 												{errors.name && (
 													<p
 														id="booking-name-error"
-														className="text-red-500 text-xs mt-1"
+														className="text-red-500 text-sm mt-1 flex items-center gap-1"
 														role="alert"
 													>
 														{errors.name.message}
@@ -151,13 +148,13 @@ export default function BookingFormBeta() {
 										<div className="space-y-2">
 											<label
 												htmlFor="booking-phone"
-												className="text-sm font-medium text-gray-700"
+												className="text-sm font-semibold text-gray-700"
 											>
-												Phone *
+												Phone Number *
 											</label>
 											<div className="relative">
 												<Phone
-													className="absolute left-3 top-3 h-4 w-4 text-gray-400"
+													className="absolute left-3 top-3.5 h-5 w-5 text-[#27918B]"
 													aria-hidden="true"
 												/>
 												<Input
@@ -165,7 +162,7 @@ export default function BookingFormBeta() {
 													{...register("phone")}
 													type="tel"
 													placeholder="+91 9891347119"
-													className="pl-10"
+													className="pl-12 h-12 border-2 border-gray-200 focus:border-[#27918B] rounded-lg transition-colors"
 													aria-describedby={
 														errors.phone ? "booking-phone-error" : undefined
 													}
@@ -173,7 +170,7 @@ export default function BookingFormBeta() {
 												{errors.phone && (
 													<p
 														id="booking-phone-error"
-														className="text-red-500 text-xs mt-1"
+														className="text-red-500 text-sm mt-1 flex items-center gap-1"
 														role="alert"
 													>
 														{errors.phone.message}
@@ -183,7 +180,7 @@ export default function BookingFormBeta() {
 										</div>
 									</div>
 
-									<div className="grid md:grid-cols-2 gap-4">
+									<div className="grid md:grid-cols-2 gap-6">
 										<div className="space-y-2">
 											<label
 												htmlFor="booking-email"
@@ -200,7 +197,7 @@ export default function BookingFormBeta() {
 													id="booking-email"
 													{...register("email")}
 													type="email"
-													placeholder="john@company.com"
+													placeholder="Your Email"
 													className="pl-10"
 													aria-describedby={
 														errors.email ? "booking-email-error" : undefined
@@ -316,94 +313,20 @@ export default function BookingFormBeta() {
 												: "Submit consultation request form"
 										}
 										className={cn(
-											"w-full bg-primary hover:bg-primary text-white py-3 min-h-[44px] min-w-[44px]",
-											isSubmitting ? "cursor-progress" : "cursor-pointer",
+											"w-full bg-[#27918B] text-white font-medium py-3 h-11",
+											isSubmitting
+												? "cursor-progress opacity-80"
+												: "cursor-pointer",
 										)}
 										disabled={isSubmitting}
 									>
 										{isSubmitting
 											? "Submitting..."
-											: "Schedule a Free Consultation"}
+											: "Schedule Free Consultation"}
 									</Button>
 								</form>
 							</CardContent>
 						</Card>
-
-						{/* Info Panel */}
-						<div className="space-y-4">
-							<Card className="border-0 bg-green-50">
-								<CardContent className="p-6 text-sm">
-									<h3 className="text-xl font-semibold text-gray-900 mb-4">
-										What to Expect
-									</h3>
-									<ul className="space-y-1">
-										<li className="flex items-start">
-											<div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
-											<span className="text-gray-700">
-												Comprehensive space assessment
-											</span>
-										</li>
-										<li className="flex items-start">
-											<div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
-											<span className="text-gray-700">
-												Customized plant recommendations
-											</span>
-										</li>
-										<li className="flex items-start">
-											<div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
-											<span className="text-gray-700">
-												Detailed proposal and pricing
-											</span>
-										</li>
-										<li className="flex items-start">
-											<div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></div>
-											<span className="text-gray-700">
-												Maintenance plan discussion
-											</span>
-										</li>
-									</ul>
-								</CardContent>
-							</Card>
-
-							<Card className="border-0 bg-blue-50">
-								<CardContent className="p-6 text-sm">
-									<h3 className="text-xl font-semibold text-gray-900 mb-4">
-										Contact Information
-									</h3>
-									<div className="space-y-1">
-										<div className="flex items-center">
-											<Phone className="h-5 w-5 text-blue-600 mr-3" />
-											<span className="text-gray-700">+91 9891347119</span>
-										</div>
-										<div className="flex items-center">
-											<Mail className="h-5 w-5 text-blue-600 mr-3" />
-											<span className="text-gray-700">
-												green@evergreenry.com
-											</span>
-										</div>
-										<div className="flex items-center">
-											<MapPin className="h-5 w-5 text-blue-600 mr-3" />
-											<span className="text-gray-700">
-												Available nationwide
-											</span>
-										</div>
-									</div>
-								</CardContent>
-							</Card>
-
-							<Card className="border-0 bg-yellow-50">
-								<CardContent className="p-6">
-									<h3 className="text-xl font-semibold text-gray-900 mb-2">
-										Free Consultation
-									</h3>
-									<p className="text-gray-700 text-sm">
-										Our initial consultation is completely free with no
-										obligation. We&apos;ll assess your space and provide expert
-										recommendations tailored to your needs.
-									</p>
-								</CardContent>
-							</Card>
-						</div>
 					</div>
 				</div>
 			</div>

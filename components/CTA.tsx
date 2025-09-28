@@ -11,7 +11,7 @@ export default function CTA() {
 	};
 
 	return (
-		<section className="py-20 flex items-center bg-primary ">
+		<section className="py-20 flex items-center bg-[#A05459] ">
 			<div className="container mx-auto px-2 sm:px-6 lg:px-8 text-white flex flex-col items-center justify-center text-center">
 				<h2 className="text-2xl sm:text-4xl font-bold mb-2 md:mb-4 px-0">
 					Ready to Transform Your Space?
@@ -26,7 +26,7 @@ export default function CTA() {
 						onClick={scrollToBooking}
 						aria-label="Book free consultation - Schedule your plant transformation visit"
 						title="Click to book your free consultation and transform your space with plants"
-						className="bg-white text-primary hover:bg-gray-100 py-4 font-bold text-sm md:text-base w-full min-h-[44px]"
+						className="bg-white text-[#A05459] hover:bg-gray-100 py-4 font-bold text-sm md:text-base w-full min-h-[44px]"
 					>
 						Book Free Consultation
 						<ArrowUp className="h-5 w-5" aria-hidden="true" />
@@ -39,8 +39,8 @@ export default function CTA() {
 						className="border-white text-black hover:bg-white hover:text-primary p-2 md:p-2.5 text-sm md:text-base w-fit rounded-full min-w-[44px] min-h-[44px]"
 					>
 						<Phone
-							fill="#418833"
-							className="h-5 w-5 text-primary"
+							fill="#A05459"
+							className="h-5 w-5 text-[#A05459]"
 							aria-hidden="true"
 						/>
 					</Button>

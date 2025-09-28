@@ -53,7 +53,7 @@ export default function Features() {
 		<section className="py-20 bg-white">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-8 md:mb-16">
-					<h2 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 font-roboto font-extrabold text-gray-700">
+					<h2 className="text-2xl sm:text-4xl mb-4 font-roboto font-extrabold text-gray-700">
 						Why Choose Evergreenry?
 					</h2>
 					<p className="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -67,11 +67,11 @@ export default function Features() {
 					{features.map((feature, index) => (
 						<Card
 							key={index}
-							className="border-green-800/40 shadow-sm md:hover:shadow-lg transition-shadow duration-300 flex flex-col md:gap-2 justify-between px-0"
+							className="border-[#42758F] shadow-sm md:hover:shadow-lg transition-shadow duration-300 flex flex-col md:gap-2 justify-between px-0"
 						>
 							<CardHeader className="text-center pb-1 ">
-								<div className="mx-auto p-2 md:p-4 bg-secondary rounded-full flex items-center justify-center mb-4">
-									<feature.icon className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+								<div className="mx-auto p-2 md:p-4 bg-[#4C88B850] rounded-full flex items-center justify-center mb-4">
+									<feature.icon className="h-4 w-4 md:h-8 md:w-8 text-[#42758F]" />
 								</div>
 								<CardTitle className="text-sm md:text-xl font-semibold text-gray-900">
 									{feature.title}
