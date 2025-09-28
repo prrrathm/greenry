@@ -50,10 +50,10 @@ export const NavBar = () => {
 	return (
 		<div
 			className={cn({
-				"fixed flex items-center justify-between z-50 px-4 sm:px-8 py-4 backdrop-blur transition-all duration-500 inset-x-0 top-0":
+				"fixed flex items-center justify-between z-50 px-4 sm:px-8 py-4 backdrop-blur transition-all duration-500 inset-x-0 top-0 bg-white/80 drop-shadow-sm":
 					true,
-				"bg-[var(--color-background-primary)]": isScrolled,
-				"bg-primary/10": !isScrolled,
+				// "bg-[var(--color-primary)]": isScrolled,
+				// "bg-white": !isScrolled,
 			})}
 		>
 			{/* Logo */}
@@ -62,8 +62,8 @@ export const NavBar = () => {
 				aria-label="Evergreenry home page - Premium plant solutions for offices and homes"
 				title="Return to Evergreenry homepage"
 				className={cn(
-					"font-black text-lg md:text-xl flex items-center",
-					isScrolled ? "text-primary" : "text-white",
+					"font-black text-lg md:text-xl flex items-center ",
+					// isScrolled ? "text-primary" : "text-white",
 				)}
 			>
 				<Image
@@ -86,10 +86,10 @@ export const NavBar = () => {
 						)}`}
 						title={getNavDescription(item.label)}
 						className={cn(
-							" transition-colors duration-200",
-							isScrolled
-								? "text-black hover:text-secondary"
-								: "text-secondary hover:text-white",
+							" transition-colors duration-200 text-black",
+							// isScrolled
+							// 	? "text-black hover:text-secondary"
+							// 	: "text-secondary hover:text-white",
 						)}
 					>
 						{item.label}
@@ -106,18 +106,18 @@ export const NavBar = () => {
 					aria-label="Call Evergreenry North Office at +91 9891347119 for plant consultation and services"
 					title="Call us for immediate plant consultation"
 					className={cn(
-						"group inline-flex items-center justify-center cursor-pointer text-white",
-						isScrolled ? "text-primary" : "text-white",
+						"group inline-flex items-center justify-center cursor-pointer text-black",
+						// isScrolled ? "text-primary" : "text-white",
 					)}
 				>
 					<Phone
-						fill={isScrolled ? "#418833" : "#fff"}
+						fill={"black"}
 						// fill={"#fff"}
 						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90"
 					/>
 					<PhoneCall
 						// fill={"#fff"}
-						fill={isScrolled ? "#418833" : "#fff"}
+						fill={"black"}
 						className="h-4 w-4 md:h-5 md:w-5 cursor-pointer transition-all duration-200 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 absolute"
 					/>
 				</Link>
@@ -127,7 +127,7 @@ export const NavBar = () => {
 					title="Send us an email for detailed plant consultation"
 					className={cn(
 						"group inline-flex items-center ",
-						isScrolled ? "text-primary" : "text-white",
+						// isScrolled ? "text-primary" : "text-white",
 					)}
 				>
 					<Mail className="h-5 w-5 md:h-6 md:w-6 cursor-pointer transition-all duration-200 group-hover:opacity-0 group-hover:scale-90" />

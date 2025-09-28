@@ -100,10 +100,10 @@ const BookingForm = ({
 				<DialogTrigger asChild>
 					<Button
 						className={cn(
-							"hidden md:block px-6 py-2 cursor-pointer ",
-							isScrolled
-								? "bg-amber-400 hover:bg-amber-600 text-black"
-								: "bg-amber-600 hover:bg-amber-700 text-white",
+							"hidden md:block px-6 py-2 cursor-pointer text-white",
+							// isScrolled
+							// 	? "bg-amber-400 hover:bg-amber-600 text-black"
+							// 	: "bg-amber-600 hover:bg-amber-700 text-white",
 						)}
 					>
 						{triggerText}
