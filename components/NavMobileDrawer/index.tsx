@@ -1,3 +1,4 @@
+"use client"
 import {
 	Drawer,
 	DrawerClose,
@@ -38,7 +39,7 @@ const getNavDescription = (label: string): string => {
 
 export default function NavMobileDrawer({
 	navLinks,
-	isScrolled,
+	// isScrolled,
 }: {
 	navLinks: {
 		label: string;
@@ -54,8 +55,8 @@ export default function NavMobileDrawer({
 					<Menu
 						fill="#1e2939"
 						className={cn(
-							"h-6 w-6 ",
-							isScrolled ? "text-white" : "text-gray-800",
+							"h-6 w-6 text-gray-800",
+							// isScrolled ? "text-white" : "text-gray-800",
 						)}
 					/>
 				</div>

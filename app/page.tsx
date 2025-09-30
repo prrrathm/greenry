@@ -1,4 +1,5 @@
-import Hero from "@/components/Hero";
+// import Hero from "@/components/Hero";
+import VideoHero from "@/components/VideoHero";
 import Features from "@/components/Features";
 import Services from "@/components/Services";
 // import GalleryCarousel from "@/components/carousel/Gallery";
@@ -151,7 +152,8 @@ export default function Home() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
 			/>
 			{/* <Stacker /> */}
-			<Hero />
+			{/* <Hero /> */}
+			<VideoHero />
 			<MainTagline />
 			<Services />
 			{/* <ProjectsCarousel slides={[1,2,3,4]} /> */}
