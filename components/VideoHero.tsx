@@ -58,7 +58,7 @@ export default function VideoHero() {
 			{/* Mute/Unmute Button - Bottom Right */}
 			<button
 				onClick={toggleMute}
-				className="absolute bottom-6 right-6 z-20 bg-white/90 hover:bg-white text-primary rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+				className="absolute bottom-6 right-6 z-20 text-white rounded-full p-3 transition-all duration-300 hover:scale-110"
 				aria-label={isMuted ? "Unmute video" : "Mute video"}
 				title={isMuted ? "Unmute" : "Mute"}
 			>
@@ -70,11 +70,6 @@ export default function VideoHero() {
 			</button>
 
 			{/* Optional Content Overlay */}
-			<div className="absolute inset-0 flex items-center justify-center z-10">
-				<div className="text-center text-white px-4">
-					{/* Add any overlay content here if needed */}
-				</div>
-			</div>
 		</section>
 	);
 }
